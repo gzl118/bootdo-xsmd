@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+<link rel="stylesheet"
+	href="/js/plugins/layer/laydate/skins/default/laydate.css" />
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<input id="oid" name="oid" th:value="${foid}" type="hidden">
+							<input id="status" name="status" value="1" type="hidden">
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><em
+									style="color: red; font-style: normal; padding-right: 5px;">*</em>意见：</label>
+								<div class="col-sm-8">
+									<textarea id="remark" name="remark" class="form-control"
+										rows="4"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<input type="button" id="btnApprovePass" value="审批通过" onclick="check(2)" class="btn btn-primary"/>
+									<input type="button" id="btnApproveNoPass" value="审批不通过"  onclick="check(3)" class="btn btn-primary"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/plugins/layer/laydate/laydate.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/labourreportmain/appovemain.js"></script>
+		</body>
+		</html>
+	

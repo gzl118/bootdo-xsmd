@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bootdo.system.dao.LabourrepotapproveDao">
+
+	<select id="get" resultType="com.bootdo.system.domain.LabourrepotapproveDO">
+		select `oid`,`foid`,`content`,`Status`,`UptTime`,`UptUser`,`Ext1`,`Ext2`,`Ext3` from labourrepotapprove where oid = #{value}
+	</select>
+
+	<select id="list" resultType="com.bootdo.system.domain.LabourrepotapproveDO">
+		select l.`oid`,l.`foid`,l.`content`,l.`Status`,l.`UptTime`,l.`Ext1`,l.`Ext2`,l.`Ext3`,case when u.name='' or ISNULL(u.`name`) then u.username else u.name end as UptUser from labourrepotapprove l,sys_user u 
+        <where>  
+		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
+		  		  <if test="foid != null and foid != ''"> and foid = #{foid} </if>
+		  		  <if test="content != null and content != ''"> and content = #{content} </if>
+		  		  <if test="status != null and status != ''"> and Status = #{status} </if>
+		  		  <if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
+		  		  <if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
+		  		  <if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
+		  		  <if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
+		  		  <if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
+		  		  and u.user_id=l.UptUser
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by upttime desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from labourrepotapprove
+		 <where>  
+		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
+		  		  <if test="foid != null and foid != ''"> and foid = #{foid} </if>
+		  		  <if test="content != null and content != ''"> and content = #{content} </if>
+		  		  <if test="status != null and status != ''"> and Status = #{status} </if>
+		  		  <if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
+		  		  <if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
+		  		  <if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
+		  		  <if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
+		  		  <if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.bootdo.system.domain.LabourrepotapproveDO">
+		insert into labourrepotapprove
+		(
+			`oid`, 
+			`foid`, 
+			`content`, 
+			`Status`, 
+			`UptTime`, 
+			`UptUser`, 
+			`Ext1`, 
+			`Ext2`, 
+			`Ext3`
+		)
+		values
+		(
+			#{oid}, 
+			#{foid}, 
+			#{content}, 
+			#{status}, 
+			#{upttime}, 
+			#{uptuser}, 
+			#{ext1}, 
+			#{ext2}, 
+			#{ext3}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.bootdo.system.domain.LabourrepotapproveDO">
+		update labourrepotapprove 
+		<set>
+			<if test="foid != null">`foid` = #{foid}, </if>
+			<if test="content != null">`content` = #{content}, </if>
+			<if test="status != null">`Status` = #{status}, </if>
+			<if test="upttime != null">`UptTime` = #{upttime}, </if>
+			<if test="uptuser != null">`UptUser` = #{uptuser}, </if>
+			<if test="ext1 != null">`Ext1` = #{ext1}, </if>
+			<if test="ext2 != null">`Ext2` = #{ext2}, </if>
+			<if test="ext3 != null">`Ext3` = #{ext3}</if>
+		</set>
+		where oid = #{oid}
+	</update>
+	
+	<delete id="remove">
+		delete from labourrepotapprove where oid = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from labourrepotapprove where oid in 
+		<foreach item="oid" collection="array" open="(" separator="," close=")">
+			#{oid}
+		</foreach>
+	</delete>
+
+</mapper>
