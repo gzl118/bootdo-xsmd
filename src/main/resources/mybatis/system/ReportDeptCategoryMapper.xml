@@ -4,24 +4,24 @@
 <mapper namespace="com.bootdo.system.dao.ReportDeptCategoryDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		select `rdc_id`,`name`,`describe`,`order`,`flag` from sys_report_dept_category where rdc_id = #{value}
+		select `rdc_id`,`name`,`describe`,`orders`,`flag` from sys_report_dept_category where rdc_id = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		select `rdc_id`,`name`,`describe`,`order`,`flag` from sys_report_dept_category
+		select `rdc_id`,`name`,`describe`,`orders`,`flag` from sys_report_dept_category
         <where>  
 		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
 		  		  <if test="name != null and name != ''"> and name = #{name} </if>
 		  		  <if test="describe != null and describe != ''"> and describe = #{describe} </if>
-		  		  <if test="order != null and order != ''"> and order = #{order} </if>
+		  		  <if test="orders != null and orders != ''"> and orders = #{orders} </if>
 		  		  <if test="flag != null and flag != ''"> and flag = #{flag} </if>
 		  		</where>
         <choose>
             <when test="sort != null and sort.trim() != ''">
-                order by ${sort} ${order}
+                order by ${sort} ${orders}
             </when>
 			<otherwise>
-                order by rdc_id desc
+                order by orders 
 			</otherwise>
         </choose>
 		<if test="offset != null and limit != null">
@@ -35,7 +35,7 @@
 		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
 		  		  <if test="name != null and name != ''"> and name = #{name} </if>
 		  		  <if test="describe != null and describe != ''"> and describe = #{describe} </if>
-		  		  <if test="order != null and order != ''"> and order = #{order} </if>
+		  		  <if test="orders != null and orders != ''"> and orders = #{orders} </if>
 		  		  <if test="flag != null and flag != ''"> and flag = #{flag} </if>
 		  		</where>
 	</select>
@@ -45,14 +45,14 @@
 		(
 			`name`, 
 			`describe`, 
-			`order`, 
+			`orders`, 
 			`flag`
 		)
 		values
 		(
 			#{name}, 
 			#{describe}, 
-			#{order}, 
+			#{orders}, 
 			#{flag}
 		)
 	</insert>
@@ -62,7 +62,7 @@
 		<set>
 			<if test="name != null">`name` = #{name}, </if>
 			<if test="describe != null">`describe` = #{describe}, </if>
-			<if test="order != null">`order` = #{order}, </if>
+			<if test="orders != null">`orders` = #{orders}, </if>
 			<if test="flag != null">`flag` = #{flag}</if>
 		</set>
 		where rdc_id = #{rdcId}

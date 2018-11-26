@@ -53,6 +53,16 @@ public class ReportDeptCategoryController {
 		return pageUtils;
 	}
 	
+	@ResponseBody
+	@GetMapping("/grouplist")
+//	@RequiresPermissions("system:reportDeptCategory:reportDeptCategory")
+	public List<ReportDeptCategoryDO> groupList(@RequestParam Map<String, Object> params){
+		//查询列表数据
+        Query query = new Query(params);
+		List<ReportDeptCategoryDO> reportDeptCategoryList = reportDeptCategoryService.list(query);
+		return reportDeptCategoryList;
+	}
+	
 	@GetMapping("/add")
 	@RequiresPermissions("system:reportDeptCategory:add")
 	String add(){

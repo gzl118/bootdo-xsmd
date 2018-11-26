@@ -22,7 +22,7 @@ public class ReportDeptCategoryDO implements Serializable {
 	//描述
 	private String describe;
 	//排序
-	private Integer order;
+	private Integer orders;
 	//是否删除  -1：已删除  0：正常
 	private Integer flag;
 
@@ -65,14 +65,14 @@ public class ReportDeptCategoryDO implements Serializable {
 	/**
 	 * 设置：排序
 	 */
-	public void setOrder(Integer order) {
-		this.order = order;
+	public void setOrders(Integer orders) {
+		this.orders = orders;
 	}
 	/**
 	 * 获取：排序
 	 */
-	public Integer getOrder() {
-		return order;
+	public Integer getOrders() {
+		return orders;
 	}
 	/**
 	 * 设置：是否删除  -1：已删除  0：正常
