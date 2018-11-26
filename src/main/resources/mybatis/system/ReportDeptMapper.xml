@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bootdo.system.dao.ReportDeptDao">
+
+	<select id="get" resultType="com.bootdo.system.domain.ReportDeptDO">
+		select `rd_id`,`dept_id`,`parent_id`,`sname`,`order_num`,`rdc_id` from sys_report_dept where rd_id = #{value}
+	</select>
+
+	<select id="list" resultType="com.bootdo.system.domain.ReportDeptDO">
+		select `rd_id`,`dept_id`,`parent_id`,`sname`,`order_num`,`rdc_id` from sys_report_dept
+        <where>  
+		  		  <if test="rdId != null and rdId != ''"> and rd_id = #{rdId} </if>
+		  		  <if test="parentId != null and parentId != ''"> and parent_id = #{parentId} </if>
+		  		  <if test="sname != null and sname != ''"> and sname = #{sname} </if>
+		  		  <if test="orderNum != null and orderNum != ''"> and order_num = #{orderNum} </if>
+		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by order_num 
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from sys_report_dept
+		 <where>  
+		  		  <if test="rdId != null and rdId != ''"> and rd_id = #{rdId} </if>
+		  		  <if test="parentId != null and parentId != ''"> and parent_id = #{parentId} </if>
+		  		  <if test="sname != null and sname != ''"> and sname = #{sname} </if>
+		  		  <if test="orderNum != null and orderNum != ''"> and order_num = #{orderNum} </if>
+		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.bootdo.system.domain.ReportDeptDO" useGeneratedKeys="true" keyProperty="rdId">
+		insert into sys_report_dept
+		(
+			`dept_id`,
+			`parent_id`, 
+			`sname`, 
+			`order_num`, 
+			`rdc_id`
+		)
+		values
+		(
+			#{deptId}, 
+			#{parentId}, 
+			#{sname}, 
+			#{orderNum}, 
+			#{rdcId} 
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.bootdo.system.domain.ReportDeptDO">
+		update sys_report_dept 
+		<set>
+			<if test="deptId != null">`dept_id` = #{deptId}, </if>
+			<if test="parentId != null">`parent_id` = #{parentId}, </if>
+			<if test="sname != null">`sname` = #{sname}, </if>
+			<if test="orderNum != null">`order_num` = #{orderNum}, </if>
+			<if test="rdcId != null">`rdc_id` = #{rdcId}</if>
+		</set>
+		where rd_id = #{rdId}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_report_dept where rd_id = #{value}
+	</delete>
+	
+	<delete id="removeByRdcId">
+		delete from sys_report_dept where rdc_id = #{value}
+	</delete>
+	
+	
+	<delete id="batchRemove">
+		delete from sys_report_dept where rd_id in 
+		<foreach item="rdId" collection="array" open="(" separator="," close=")">
+			#{rdId}
+		</foreach>
+	</delete>
+	
+	<insert id="batchSave">
+		INSERT INTO sys_report_dept(dept_id, parent_id,sname,rdc_id) select `dept_id`,`parent_id`,`name`,#{rdcId} from sys_dept where dept_id in 
+		<foreach item="deptId" collection="deptIds" open="(" separator="," close=")">
+			#{deptId}
+		</foreach>
+	</insert>
+
+</mapper>
