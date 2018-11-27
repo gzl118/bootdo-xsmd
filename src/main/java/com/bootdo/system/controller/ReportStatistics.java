@@ -23,8 +23,17 @@ public class ReportStatistics {
 	@GetMapping("/staff")
 	@RequiresPermissions("system:reportStatistics:staff")
 //	String ShowReportStatistics(Model model){
-		String ShowReportStatistics(Model model){
+		String ShowReportStatisticsStaff(Model model){
 //		model.addAttribute("rdcId", rdcId);
 	    return "system/report/staffStatistics";
+	}
+	
+	
+	@GetMapping("/capital")
+	@RequiresPermissions("system:reportStatistics:capital")
+//	String ShowReportStatistics(Model model){
+		String ShowReportStatisticsCapital(Model model){
+//		model.addAttribute("rdcId", rdcId);
+	    return "system/report/capitalStatistics";
 	}
 }
