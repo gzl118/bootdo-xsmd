@@ -4,17 +4,18 @@
 <mapper namespace="com.bootdo.system.dao.ReportDeptCategoryDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		select `rdc_id`,`name`,`describe`,`orders`,`flag` from sys_report_dept_category where rdc_id = #{value}
+		select `rdc_id`,`name`,`describe`,`orders`,`flag`,`code` from sys_report_dept_category where rdc_id = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		select `rdc_id`,`name`,`describe`,`orders`,`flag` from sys_report_dept_category
+		select `rdc_id`,`name`,`describe`,`orders`,`flag`,`code` from sys_report_dept_category
         <where>  
 		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
 		  		  <if test="name != null and name != ''"> and name = #{name} </if>
 		  		  <if test="describe != null and describe != ''"> and describe = #{describe} </if>
 		  		  <if test="orders != null and orders != ''"> and orders = #{orders} </if>
 		  		  <if test="flag != null and flag != ''"> and flag = #{flag} </if>
+		  		  <if test="code != null and code != ''"> and code = #{code} </if>
 		  		</where>
         <choose>
             <when test="sort != null and sort.trim() != ''">
@@ -37,6 +38,7 @@
 		  		  <if test="describe != null and describe != ''"> and describe = #{describe} </if>
 		  		  <if test="orders != null and orders != ''"> and orders = #{orders} </if>
 		  		  <if test="flag != null and flag != ''"> and flag = #{flag} </if>
+		  		  <if test="code != null and code != ''"> and code = #{code} </if>
 		  		</where>
 	</select>
 	 
@@ -46,14 +48,16 @@
 			`name`, 
 			`describe`, 
 			`orders`, 
-			`flag`
+			`flag`,
+			`code`
 		)
 		values
 		(
 			#{name}, 
 			#{describe}, 
 			#{orders}, 
-			#{flag}
+			#{flag},
+			#{code}
 		)
 	</insert>
 	 
@@ -64,6 +68,7 @@
 			<if test="describe != null">`describe` = #{describe}, </if>
 			<if test="orders != null">`orders` = #{orders}, </if>
 			<if test="flag != null">`flag` = #{flag}</if>
+			<if test="code != null">`code` = #{code}</if>
 		</set>
 		where rdc_id = #{rdcId}
 	</update>

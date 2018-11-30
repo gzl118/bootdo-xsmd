@@ -25,6 +25,8 @@ public class ReportDeptCategoryDO implements Serializable {
 	private Integer orders;
 	//是否删除  -1：已删除  0：正常
 	private Integer flag;
+	
+	private Integer code;
 
 	/**
 	 * 设置：
@@ -85,5 +87,11 @@ public class ReportDeptCategoryDO implements Serializable {
 	 */
 	public Integer getFlag() {
 		return flag;
+	}
+	public Integer getCode() {
+		return code;
+	}
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 }

@@ -84,6 +84,7 @@ public class ReportDeptCategoryController {
 	@PostMapping("/save")
 	@RequiresPermissions("system:reportDeptCategory:add")
 	public R save( ReportDeptCategoryDO reportDeptCategory){
+		reportDeptCategory.setCode(11001);
 		if(reportDeptCategoryService.save(reportDeptCategory)>0){
 			return R.ok();
 		}

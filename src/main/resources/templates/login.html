@@ -117,6 +117,11 @@
             }
         })
     }
+    
+    document.onkeydown = function (event){
+ 	 　　if (event.keyCode==13) //回车键的键值为13
+ 	            $("#signupForm").submit();
+ 	 　　};
 </script>
 </body>
 </html>
