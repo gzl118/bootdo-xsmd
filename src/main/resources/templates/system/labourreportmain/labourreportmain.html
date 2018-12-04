@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <head th:include="include :: header">
 <link rel="stylesheet"
-	href="/js/plugins/layer/laydate/skins/default/laydate.css" />
+	href="/js/plugins/laydate5.9/theme/default/laydate.css" />
 </head>
 <body class="gray-bg">
 	<div class="wrapper wrapper-content ">
@@ -12,10 +12,10 @@
 				<div class="ibox-body">
 					<div class="fixed-table-toolbar">
 						<div class="columns pull-left">
-							<input id="code"
-										name="code" th:value="${Code}" class="form-control" type="hidden">
-										<input id="status"
-										name="status" th:value="${Status}" class="form-control" type="hidden">
+							<input id="code" name="code" th:value="${Code}"
+								class="form-control" type="hidden"> <input id="status"
+								name="status" th:value="${Status}" class="form-control"
+								type="hidden">
 							<button shiro:hasPermission="system:labourreportmain:add"
 								type="button" class="btn  btn-primary" onclick="add()">
 								<i class="fa fa-plus" aria-hidden="true"></i>添加
@@ -27,14 +27,12 @@
 						<div class="columns pull-right col-md-2 nopadding">
 							<input type="text" class="laydate-icon layer-date form-control"
 								id="renderdate" name="renderdate" placeholder="请选择汇报年月"
-								onclick="laydate({istime: false, format: 'YYYY-MM'})"
-								style="background-color: #fff; margin-top: -10px;"
-								readonly="readonly" />
+								style="background-color: #fff;" readonly="readonly" />
 						</div>
 						<div class="columns pull-right nopadding">
 							<label class="control-label"
-								style="padding: 0px; font-weight: 800; margin-top: 5px;margin-left:20px;">汇报年月：</label>
-						</div>						
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">汇报年月：</label>
+						</div>
 						<div class="columns pull-right col-md-2 nopadding">
 							<input id="renderdepart" name="renderdepart" type="text"
 								class="form-control" placeholder="请输入单位名称">
@@ -93,8 +91,7 @@
 	</div>
 	</div>
 	<div th:include="include :: footer"></div>
-	<script type="text/javascript"
-		src="/js/plugins/layer/laydate/laydate.js"></script>
+	<script type="text/javascript" src="/js/plugins/laydate5.9/laydate.js"></script>
 	<script type="text/javascript"
 		src="/js/appjs/system/labourreportmain/labourreportmain.js"></script>
 </body>

@@ -54,8 +54,44 @@ public class ReportStatistics {
 	
 	@GetMapping("/report/30001")
 	@RequiresPermissions("system:reportStatistics:30001")
-		String ShowReportStatistics_new(Model model){
+		String ShowReportStatistics30001(Model model){
 		model.addAttribute("dcode", "30001");
 	    return "system/report/statistics_30001";
+	}
+	@GetMapping("/report/30002")
+	@RequiresPermissions("system:reportStatistics:30002")
+		String ShowReportStatistics30002(Model model){
+		model.addAttribute("dcode", "30002");
+	    return "system/report/statistics_30002";
+	}
+	@GetMapping("/report/30003")
+	@RequiresPermissions("system:reportStatistics:30003")
+		String ShowReportStatistics30003(Model model){
+		model.addAttribute("dcode", "30003");
+	    return "system/report/statistics_30003";
+	}
+	@GetMapping("/report/30004")
+	@RequiresPermissions("system:reportStatistics:30004")
+		String ShowReportStatistics30004(Model model){
+		model.addAttribute("dcode", "30004");
+	    return "system/report/statistics_30004";
+	}
+	@GetMapping("/report/30006")
+	@RequiresPermissions("system:reportStatistics:30006")
+		String ShowReportStatistics30006(Model model){
+		model.addAttribute("dcode", "30006");
+	    return "system/report/statistics_30006";
+	}
+	@GetMapping("/report/30007")
+	@RequiresPermissions("system:reportStatistics:30007")
+		String ShowReportStatistics30007(Model model){
+		model.addAttribute("dcode", "30007");
+	    return "system/report/statistics_30007";
+	}
+	@GetMapping("/report/30013")
+	@RequiresPermissions("system:reportStatistics:30013")
+		String ShowReportStatistics30013(Model model){
+		model.addAttribute("dcode", "30013");
+	    return "system/report/statistics_30013";
 	}
 }

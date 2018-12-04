@@ -1,6 +1,12 @@
 var prefix = "/system/labourreportmain"
 $(function() {
-	load();
+	laydate.render({
+		elem : '#renderdate',
+		type : 'month',
+		trigger : 'click',
+		format:'yyyy-MM'
+	});
+	load();	
 });
 
 function load() {

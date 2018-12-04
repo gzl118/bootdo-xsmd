@@ -183,7 +183,6 @@ function showReport() {
 	// 打开统计报表
 	url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 			+ curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
-	console.log(url);
 	console.log("---" + rdepart + "-----" + rdate);
 	var index = layer.open({
 		type : 2,
