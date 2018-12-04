@@ -56,4 +56,10 @@ public class ReportDeptCategoryServiceImpl implements ReportDeptCategoryService 
 		return reportDeptCategoryDao.batchRemove(rdcIds);
 	}
 	
+	
+//	@Override
+	public int saveCategoryAndDepts(ReportDeptCategoryDO reportDeptCategory,Long[] deptIds){
+		reportDeptCategoryDao.save(reportDeptCategory);
+		return	reportDeptDao.batchSave(deptIds, reportDeptCategory.getRdcId());
+	}
 }

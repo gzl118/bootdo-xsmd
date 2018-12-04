@@ -53,7 +53,22 @@ public class ReportDeptController {
 		List<ReportDeptDO> reportDeptList = reportDeptService.list(query);
 		return reportDeptList;
 	}
-	
+	@ResponseBody
+	@GetMapping("/list/depts")
+	public List<Long> getDepts(@RequestParam Long rdcId){
+		//查询列表数据
+		List<Long> reportDeptList = reportDeptService.getDeptsByRdcId(rdcId);
+		return reportDeptList;
+	}
+	//統計报表里面的单位配置查询，不设置权限
+	@ResponseBody
+	@GetMapping("/list/30001")
+	public List<ReportDeptDO> list30001(@RequestParam Map<String, Object> params){
+		//查询列表数据
+        Query query = new Query(params);
+		List<ReportDeptDO> reportDeptList = reportDeptService.list(query);
+		return reportDeptList;
+	}
 	@GetMapping("/add")
 	@RequiresPermissions("system:reportDept:add")
 	String add(Long parentId,Model model){

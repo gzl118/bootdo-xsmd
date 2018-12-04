@@ -29,7 +29,6 @@ public class ReportStatistics {
 	    return "system/report/staffStatistics";
 	}
 	
-	
 	@GetMapping("/capital")
 	@RequiresPermissions("system:reportStatistics:capital")
 //	String ShowReportStatistics(Model model){
@@ -38,17 +37,25 @@ public class ReportStatistics {
 	    return "system/report/capitalStatistics";
 	}
 	
-	@GetMapping("/report/11001")
-	@RequiresPermissions("system:reportStatistics:11001")
-		String ShowReportStatistics(Model model){
-		model.addAttribute("code", "11001");
-	    return "system/report/statistics";
+	//20001  快报和整合的使用2000x
+	@GetMapping("/report/20001")
+	@RequiresPermissions("system:reportStatistics:20001")
+		String ShowReportStatistics20001(Model model){
+		model.addAttribute("code", "20001");
+	    return "system/report/statistics_20001";
+	}
+	//20001  快报和整合的使用2000x
+	@GetMapping("/report/20002")
+	@RequiresPermissions("system:reportStatistics:20002")
+		String ShowReportStatistics20002(Model model){
+		model.addAttribute("code", "20002");
+	    return "system/report/statistics_20002";
 	}
 	
-	@GetMapping("/report/12001")
-	@RequiresPermissions("system:reportStatistics:12001")
+	@GetMapping("/report/30001")
+	@RequiresPermissions("system:reportStatistics:30001")
 		String ShowReportStatistics_new(Model model){
-		model.addAttribute("code", "12001");
-	    return "system/report/statistics2";
+		model.addAttribute("dcode", "30001");
+	    return "system/report/statistics_30001";
 	}
 }

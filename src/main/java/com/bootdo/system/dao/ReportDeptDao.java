@@ -35,5 +35,5 @@ public interface ReportDeptDao {
 	
 	int batchSave(@Param("deptIds") Long[] deptIds, @Param("rdcId") Long  rdcId);
 	
-	
+	List<Long> getDeptsByRdcId(Long rdcId);
 }

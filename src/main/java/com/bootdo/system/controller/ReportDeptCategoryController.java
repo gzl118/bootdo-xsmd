@@ -62,7 +62,6 @@ public class ReportDeptCategoryController {
 		List<ReportDeptCategoryDO> reportDeptCategoryList = reportDeptCategoryService.list(query);
 		return reportDeptCategoryList;
 	}
-	
 	@GetMapping("/add")
 	@RequiresPermissions("system:reportDeptCategory:add")
 	String add(){
@@ -84,8 +83,20 @@ public class ReportDeptCategoryController {
 	@PostMapping("/save")
 	@RequiresPermissions("system:reportDeptCategory:add")
 	public R save( ReportDeptCategoryDO reportDeptCategory){
-		reportDeptCategory.setCode(11001);
+		reportDeptCategory.setCode(20001);
 		if(reportDeptCategoryService.save(reportDeptCategory)>0){
+			return R.ok();
+		}
+		return R.error();
+	}
+	
+	/**
+	 * 保存,部门配置分类
+	 */
+	@ResponseBody
+	@PostMapping("/save/treport")
+	public R saveCategory(ReportDeptCategoryDO reportDeptCategory,@RequestParam("ids[]") Long[] deptIds){
+		if(reportDeptCategoryService.saveCategoryAndDepts(reportDeptCategory,deptIds)>0){
 			return R.ok();
 		}
 		return R.error();

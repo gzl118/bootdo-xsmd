@@ -1,7 +1,7 @@
 var prefix = "/system/reportStatistics"
 $(function() {
+	laydateon();
 	selectLoad();
-	loaddepts($('#dw-select').val());
 });
 function loaddepts(rdcId) {
 	//加载已配置的单位配置
@@ -13,7 +13,7 @@ function loaddepts(rdcId) {
                 parentCode : 'parentId',
                 params:'85',
 				type : "GET", // 请求数据的ajax类型
-				url : '/system/reportDept/list', // 请求数据的ajax的url
+				url : '/system/reportDept/list/30001', // 请求数据的ajax的url
 				ajaxParams : {
 					rdcId : rdcId,
 					limit : 5000,
@@ -50,19 +50,17 @@ function loaddepts(rdcId) {
 						align : 'center',
                         valign : 'center',
 						formatter : function(item, index) {
-							var e = '<a class="btn btn-primary btn-sm ' + s_edit_h + '" href="#" mce_href="#" title="编辑" onclick="edit(\''
-								+ item.rdId
-								+ '\')"><i class="fa fa-edit"></i></a> ';
-							var a = '<a class="btn btn-primary btn-sm ' + s_add_h + '" href="#" title="增加下級"  mce_href="#" onclick="add(\''
+							var a = '<a class="btn btn-primary btn-sm " href="#" title="增加下級"  mce_href="#" onclick="add(\''
 								+ item.deptId
 								+ '\')"><i class="fa fa-plus"></i></a> ';
-							var d = '<a class="btn btn-warning btn-sm ' + s_remove_h + '" href="#" title="删除"  mce_href="#" onclick="removeone(\''
+							var d = '<a class="btn btn-warning btn-sm " href="#" title="删除"  mce_href="#" onclick="removeone(\''
 								+ item.rdId
 								+ '\')"><i class="fa fa-remove"></i></a> ';
-							return e + a + d;
+							return  a + d;
 						}
 					} ]
 			});
+	showSaveBnt(true);
 }
 function loaddeptslist() {
 	//加载自定义单位配置列表
@@ -111,18 +109,19 @@ function loaddeptslist() {
 					}
 				}]
 		});
-}
-function reLoad() {
-	loaddepts($('#dw-select').val());
+	showSaveBnt(false);
 }
 function selectLoad() {
 	var html = "";
 	$.ajax({
 		url : '/system/reportDeptCategory/grouplist',
 		data : {
+			sort: 'rdc_id',
+			order: 'desc',
 			limit: 20,
 			offset: 0,
-			code: 12001   //不同的统计报表，选择不同的code分类,后台自己控制
+//			code: 30001   //不同的统计报表，选择不同的code分类,后台自己控制
+			code: $('#dcode').val()
 		},
 		success : function(data) {
 			//没有数据，加载自定义的单位列表
@@ -130,8 +129,11 @@ function selectLoad() {
 				 loaddeptslist();
 				 return;
 			 }
+			 $(".chosen-select").empty();
+			 html += '<option value="-1" selected >添加新配置</option>';
 			//加载数据
 			for (var i = 0; i < data.length; i++) {
+//				console.log(data[i].name);
 				if(i==0){
 					html += '<option value="' + data[i].rdcId + '" selected >' + data[i].name + '</option>';
 				}
@@ -139,6 +141,7 @@ function selectLoad() {
 					html += '<option value="' + data[i].rdcId + '">' + data[i].name + '</option>';
 				}
 			}
+			
 			$(".chosen-select").append(html);
 			$(".chosen-select").chosen({
 				maxHeight : 200
@@ -147,30 +150,31 @@ function selectLoad() {
 			$('.chosen-select').on('change', function(e, params) {
 				console.log(params.selected);
 				if(params.selected==-1){//选择自定义单位配置
-					alert("-1");
 					loaddeptslist();
 				}
 				else{
-					alert("222");
 					loaddepts(params.selected);
 				}
 			});
+			loaddepts($('#dw-select').val());
 		}
 	});
 }
 function showReport() {
 	
-	
-	var deptss;
+	//获取部门和时间
+	var rdepart=new String();
+	var rdcId=$('#dw-select').val();
 	if(rdcId==-1){
 		// 自定义部门的选择
-	 deptss =	getSelectedDept();
+		rdepart =  getSelectedDept();
+		if(rdepart=="-1") return;
 	}
 	else{
-		rdcId=$('#dw-select').val();
+		rdepart=getDeptsStrByRdcId(rdcId);
 	}
 	
-	rdate=$('#renderdate').val();
+	var rdate=$('#renderdate').val();
 	if(rdate=="") 
 	{
 		var d=new Date();
@@ -179,12 +183,13 @@ function showReport() {
 	}
 	else rdate=$('#renderdate').val()+ '-01';	
 	
+	// 打开统计报表
 //	url='http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq=11001.raq&rdate='+rdate+'&rdcId='+rdcId;
-	url='www.baidu.com';  //自己根据业务添加路径
-	
+	url='http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq=T1001.raq&rdate='+rdate+'&rdepart='+rdepart;
+	console.log("---"+rdepart+"-----"+rdate);
 	var index = layer.open({
 		type : 2,
-		title : "统计报表明显",
+		title : "统计报表",
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '1000px', '620px' ],
 		fixed: false,
@@ -201,17 +206,15 @@ function formatdate(date){
     d = d < 10 ? ('0' + d) : d;  
     return y + '-' + m + '-' + d;  
 }
-function selectDept(){
-	add(0);
-}
 function delectDeptCategory(){
-	removeDeptCategory($('#dw-select').val());
-	selectLoad();
-}
-function removeDeptCategory(id) {
 	layer.confirm('确定要删除当前的单位配置？删除后无法恢复。', {
 		btn : [ '确定', '取消' ]
 	}, function() {
+		removeDeptCategory($('#dw-select').val());
+		selectLoad();
+	});
+}
+function removeDeptCategory(id) {
 		$.ajax({
 			url : "/system/reportDeptCategory/remove",
 			type : "post",
@@ -221,13 +224,12 @@ function removeDeptCategory(id) {
 			success : function(r) {
 				if (r.code==0) {
 					layer.msg(r.msg);
-					reLoad();
+					selectLoad();
 				}else{
 					layer.msg(r.msg);
 				}
 			}
 		});
-	})
 }
 function add(pId) {
 	layer.open({
@@ -260,7 +262,7 @@ function saveAddedDept(deptId,name,parentId) {
 			} else {
 				parent.layer.alert(data.msg)
 			}
-			reLoad();
+			loaddepts($('#dw-select').val());
 		}
 	});
 }
@@ -280,23 +282,13 @@ function batchAddedDepts(deptIds) {
 		success : function(data) {
 			if (data.code == 0) {
 				parent.layer.msg("操作成功");
-				reLoad();
 			} else {
 				parent.layer.alert(data.msg)
 			}
 			
 		}
 	});
-}
-function edit(id) {
-	layer.open({
-		type : 2,
-		title : '编辑',
-		maxmin : true,
-		shadeClose : false, // 点击遮罩关闭层
-		area : [ '800px', '520px' ],
-		content : '/system/reportDept/edit/' + id // iframe的url
-	});
+	loaddepts($('#dw-select').val());
 }
 function removeone(id) {
 	layer.confirm('确定要删除选中的记录？', {
@@ -311,59 +303,125 @@ function removeone(id) {
 			success : function(r) {
 				if (r.code==0) {
 					layer.msg(r.msg);
-					reLoad();
+					loaddepts($('#dw-select').val());
 				}else{
 					layer.msg(r.msg);
 				}
 			}
 		});
-	})
+	});
 }
-function getSelectedDept()
-{
+function getSelectedDept()//返回单位字符串，逗号拼接
+{ 
 	var rows = $('#exampleTable').bootstrapTreeTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
 	if (rows.length == 0) {
-		layer.msg("您没有选择统计使用的任何单位部门");
-		return;
+		layer.msg("请选择单位,您没有选择统计使用的任何单位部门");
+		return "-1";
 	}
 	var ids = new String();
 	// 遍历所有选择的行数据，取每条数据对应的ID
 	$.each(rows, function(i, row) {
-			console.log(row.id);
+//			console.log(row.id);
 			ids += ','+row.id;
 //			console.log(ids);
 		});
-	console.log(ids.substr(1));
+//	console.log(ids.substr(1));
 	return ids.substr(1);
+};
+function getSelectedDepts()//返回单位id数组
+{
+	var rows = $('#exampleTable').bootstrapTreeTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
+	var ids = new Array();
+	// 遍历所有选择的行数据，取每条数据对应的ID
+	$.each(rows, function(i, row) {
+//			console.log(row.id);
+			ids[i] = row.id
+		});
+//	console.log(ids);
+	return ids;
 }
-function saveDeptToCategory(){
-	layer.prompt({title: '请输入保存配置的名称', formType: 1}, function(val, index){
+function saveCategory(){//保存成单位配置
+	var rows = $('#exampleTable').bootstrapTreeTable('getSelections'); 
+	if (rows.length == 0) {
+		layer.msg("请选择单位,您没有选择统计使用的任何单位");
+		return;
+	}
+	layer.prompt({title: '请输入保存配置的名称', formType: 0}, function(val, index){
 		  layer.msg('新的配置命名为：'+val);
 		  layer.close(index);
+		  saveDeptToCategory(val);
+		  selectLoad();
 		});
-}
-function getDeptsStr() {
+
+};
+function saveDeptToCategory(pname){	
 	$.ajax({
 		cache : true,
-		type : "GET",
-		url :  "/system/reportDept/save",
+		type : "POST",
+		url : "/system/reportDeptCategory/save/treport",
 		data : {
-			rdcId: $('#dw-select').val(),
-			parentId: parentId,
-			deptId: deptId,
-			sname: name
+			name: pname,
+			code: $('#dcode').val(),
+			ids: getSelectedDepts()
 		},
 		async : false,
 		error : function(request) {
-			parent.layer.alert("Connection error");
+			layer.alert("Connection error");
 		},
 		success : function(data) {
 			if (data.code == 0) {
-				parent.layer.msg("操作成功");
+				layer.msg("操作成功");
+
 			} else {
-				parent.layer.alert(data.msg)
+				layer.alert(data.msg)
 			}
-			reLoad();
+
 		}
 	});
-}
+};
+function getDeptsStrByRdcId(rdcId) {
+	var datas=new String();
+	$.ajax({
+		cache : true,
+		type : "GET",
+		url :  "/system/reportDept/list/depts",
+		async : false,
+		data : {
+			rdcId: rdcId,
+		},
+		error : function(request) {
+			layer.alert("Connection error");
+		},
+		success : function(data) {
+			if(data.lenght<1) return;
+			$.each(data, function(i, row) {
+				datas += ','+row;
+			});
+			datas=datas.substr(1);
+//			console.log(datas.substr(1));
+		}
+	});
+	return datas;
+};
+function laydateon(){
+	laydate.render({
+		elem : '#renderdate',
+		type : 'month',
+		trigger : 'click',
+		format:'yyyy-MM'
+	});
+};
+function showSaveBnt(isshow){
+	//控制保存配置按钮的显示隐藏
+//	console.log(isshow);
+	if(isshow){
+		$("#dept_select").show();
+		$("#dept_del").show();
+		$("#dept_save").hide();
+	}
+	else{
+		$("#dept_select").hide();
+		$("#dept_del").hide();
+		$("#dept_save").show();
+	}
+};

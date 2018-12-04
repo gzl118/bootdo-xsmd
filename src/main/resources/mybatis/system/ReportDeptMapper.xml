@@ -29,6 +29,10 @@
 		</if>
 	</select>
 	
+	<select id="getDeptsByRdcId" resultType="java.lang.Long">
+		select `dept_id` from sys_report_dept where rdc_id = #{value}
+	</select>
+	
  	<select id="count" resultType="int">
 		select count(*) from sys_report_dept
 		 <where>  

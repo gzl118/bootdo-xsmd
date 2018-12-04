@@ -1,7 +1,7 @@
 var prefix = "/system/reportStatistics"
 $(function() {
+	laydateon();
 	selectLoad();
-	load($('#dw-select').val());
 });
 
 function load(rdcId) {
@@ -56,18 +56,21 @@ function selectLoad() {
 		data : {
 			limit: 20,
 			offset:0,
-			code: 11001
+			code: 20001
 		},
 		success : function(data) {
+			//没有数据，不加载
+			 if(data.length<1) return;
 			//加载数据
 			for (var i = 0; i < data.length; i++) {
+//				console.log(data[i].rdcId);
 				if(i==0){
 					html += '<option value="' + data[i].rdcId + '" selected >' + data[i].name + '</option>';
 				}
 				else{
 					html += '<option value="' + data[i].rdcId + '">' + data[i].name + '</option>';
 				}
-			}
+			};
 			$(".chosen-select").append(html);
 			$(".chosen-select").chosen({
 				maxHeight : 200
@@ -77,10 +80,13 @@ function selectLoad() {
 				console.log(params.selected);
 				load(params.selected);
 			});
+//			console.log($('#dw-select').val());
+			load($('#dw-select').val());
 		}
 	});
 }
 function showReport() {
+	
 	rdate=$('#renderdate').val();
 	if(rdate=="") 
 	{
@@ -91,7 +97,7 @@ function showReport() {
 	else rdate=$('#renderdate').val()+ '-01';	
 	
 	rdcId=$('#dw-select').val();
-	url='http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq=11001.raq&rdate='+rdate+'&rdcId='+rdcId;
+	url='http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq=20001.raq&rdate='+rdate+'&rdcId='+rdcId;
 	
 	var index = layer.open({
 		type : 2,
@@ -112,4 +118,12 @@ function formatdate(date){
     d = d < 10 ? ('0' + d) : d;  
     return y + '-' + m + '-' + d;  
 }; 
+function laydateon(){
+	laydate.render({
+		elem : '#renderdate',
+		type : 'month',
+		trigger : 'click',
+		format:'yyyy-MM'
+	});
+};
 

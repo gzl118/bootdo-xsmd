@@ -55,4 +55,9 @@ public class ReportDeptServiceImpl implements ReportDeptService {
 		// TODO Auto-generated method stub
 		return reportDeptDao.batchSave(deptIds,rdcId);
 	}
+	
+	@Override
+	public List<Long> getDeptsByRdcId(Long rdcId){
+		return reportDeptDao.getDeptsByRdcId(rdcId);
+	}
 }

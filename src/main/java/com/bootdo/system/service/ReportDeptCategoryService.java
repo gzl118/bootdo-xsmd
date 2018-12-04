@@ -21,6 +21,8 @@ public interface ReportDeptCategoryService {
 	int count(Map<String, Object> map);
 	
 	int save(ReportDeptCategoryDO reportDeptCategory);
+
+	int saveCategoryAndDepts(ReportDeptCategoryDO reportDeptCategory,Long[] deptIds);
 	
 	int update(ReportDeptCategoryDO reportDeptCategory);
 

@@ -33,7 +33,7 @@ function load() {
 								//说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
 								limit: params.limit,
 								offset:params.offset,
-								code: 11001
+								code: 20001
 					           // name:$('#searchName').val(),
 					           // username:$('#searchName').val()
 							};
@@ -54,6 +54,10 @@ function load() {
 																{
 									field : 'describe', 
 									title : '描述说明' 
+								},
+								{
+									field : 'orders', 
+									title : '排序' 
 								},
 																{
 									field : 'flag', 

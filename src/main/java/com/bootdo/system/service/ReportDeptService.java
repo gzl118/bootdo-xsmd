@@ -29,4 +29,6 @@ public interface ReportDeptService {
 	int batchRemove(Long[] rdIds);
 	
 	int batchSave(Long[] deptIds, Long  rdcId);
+	
+	List<Long> getDeptsByRdcId(Long rdcId);
 }
