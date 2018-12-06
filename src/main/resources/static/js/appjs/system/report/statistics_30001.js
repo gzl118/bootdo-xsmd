@@ -168,6 +168,10 @@ function showReport() {
 	} else {
 		rdepart = getDeptsStrByRdcId(rdcId);
 	}
+	if (rdepart == "-1" || rdepart == "") {
+		layer.msg("请选择要统计单位");
+		return;
+	}
 
 	var rdate = $('#renderdate').val();
 	if (rdate == "") {
@@ -394,13 +398,14 @@ function getDeptsStrByRdcId(rdcId) {
 			layer.alert("Connection error");
 		},
 		success : function(data) {
-			if (data.lenght < 1)
-				return;
-			$.each(data, function(i, row) {
-				datas += ',' + row;
-			});
-			datas = datas.substr(1);
-			// console.log(datas.substr(1));
+			if (data.lenght < 1) {
+				datas = "-1";
+			} else {
+				$.each(data, function(i, row) {
+					datas += ',' + row;
+				});
+				datas = datas.substr(1);
+			}
 		}
 	});
 	return datas;
@@ -426,3 +431,36 @@ function showSaveBnt(isshow) {
 		$("#dept_save").show();
 	}
 };
+
+function saveReport() {
+	var rdepart = new String();
+	var rdcId = $('#dw-select').val();
+	if (rdcId == -1) {
+		// 自定义部门的选择
+		rdepart = getSelectedDept();
+		if (rdepart == "-1")
+			return;
+	} else {
+		rdepart = getDeptsStrByRdcId(rdcId);
+	}
+	if (rdepart == "-1" || rdepart == "") {
+		layer.msg("请选择要统计单位");
+		return;
+	}
+	var rdate = $("#renderdate").val();
+	if (rdate == null || rdate == "") {
+		layer.msg("请选择要统计的年月！");
+		return;
+	}
+	rdate = rdate + "-01";
+	var curcode = $("#dcode").val();
+	layer.open({
+		type : 2,
+		title : '保存统计报表',
+		maxmin : true,
+		shadeClose : false, // 点击遮罩关闭层
+		area : [ '800px', '520px' ],
+		content : '/system/labourreportstaticmain/add?ctype=1&rdate=' + rdate
+				+ '&rdepart=' + rdepart + '&code=' + curcode// iframe的url
+	});
+}

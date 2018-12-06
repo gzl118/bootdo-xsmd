@@ -166,7 +166,8 @@ public class LabourreportmainController extends BaseController {
 	@ResponseBody
 	@PostMapping("/saveapprove")
 	@RequiresPermissions(value = { "system:labourreportmain:sumitinfo",
-			"system:labourreportmain:approve" }, logical = Logical.OR)
+			"system:labourreportmain:approve",
+			"system:labourreportstaticmain:sumitinfo" }, logical = Logical.OR)
 	public R saveapprove(String oid, Integer status, String remark, Model model) {
 		LabourreportmainDO labourreportmain = new LabourreportmainDO();
 		labourreportmain.setOid(oid);
