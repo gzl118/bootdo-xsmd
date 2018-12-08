@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" style="padding-left:5px; overflow: auto;">
+	<table id="rpt" align="center" width="100%" height="100%">
+		<tbody>
+			<tr>
+				<td align="center" valign="top" height="100%">
+					<style id="report1_style">
+.report1_1 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_2 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_3 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_4 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	line-height: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_5 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_6 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 黑体;
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_7 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_8 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+</style>
+					<table id="report1" cellspacing="0" cellpadding="0"
+						style="width: 1482px; table-layout: fixed; border-collapse: collapse">
+						<colgroup>
+							<col style="width: 44px;">
+							<col style="width: 50px;">
+							<col style="width: 49px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+							<col style="width: 57px;">
+						</colgroup>
+						<tbody>
+							<tr rn="1" height="61" style="height: 61px;">
+								<td class="report1_6" style="display: none;"></td>
+								<td colspan="26" class="report1_6"><div
+										style="float: left;">
+										<input type="button" id="btnReset" value="重置"
+											class="btn btn-default" onclick="resetReportConfig7()" />
+									</div>各类专业技术人员情况统计年报</td>
+							</tr>
+							<tr rn="3" height="37" style="height: 37px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td rowspan="2" colspan="3" class="report1_1"></td>
+								<td rowspan="2" class="report1_4">总人数</td>
+								<td rowspan="2" class="report1_1">女性</td>
+								<td colspan="21" class="report1_1">按系列分组</td>
+							</tr>
+							<tr rn="4" height="48" style="height: 48px;">
+								<td class="report1_2" style="display: none;"></td>
+								<td class="report1_4">工程技术<br>人员
+								</td>
+								<td class="report1_4">农业技<br>术人员
+								</td>
+								<td class="report1_4">科学研究<br>人员
+								</td>
+								<td class="report1_4">卫生技<br>术人员
+								</td>
+								<td class="report1_4">教学<br>人员
+								</td>
+								<td class="report1_4">经济<br>人员
+								</td>
+								<td class="report1_4">会计<br>人员
+								</td>
+								<td class="report1_4">统计<br>人员
+								</td>
+								<td class="report1_4">翻译<br>人员
+								</td>
+								<td class="report1_4">图书<br>档案
+								</td>
+								<td class="report1_4">文博<br>人员
+								</td>
+								<td class="report1_4">新闻</td>
+								<td class="report1_4">出版<br>人员
+								</td>
+								<td class="report1_4">律师</td>
+								<td class="report1_4">公证<br>人员
+								</td>
+								<td class="report1_4">播音<br>人员
+								</td>
+								<td class="report1_4">工艺<br>美术
+								</td>
+								<td class="report1_4">体育<br>人员
+								</td>
+								<td class="report1_4">艺术<br>人员
+								</td>
+								<td class="report1_4">政工<br>人员
+								</td>
+								<td class="report1_4">其他<br>人员
+								</td>
+							</tr>
+							<tr rn="5" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">1</td>
+								<td colspan="3" class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;">合计</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_1_Total" data-colname="合计,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a1" data-colname="合计,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a2" data-colname="合计,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a3" data-colname="合计,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a4" data-colname="合计,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a5" data-colname="合计,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a6" data-colname="合计,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a7" data-colname="合计,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a8" data-colname="合计,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a9" data-colname="合计,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a10" data-colname="合计,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a11" data-colname="合计,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a12" data-colname="合计,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a13" data-colname="合计,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a14" data-colname="合计,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a15" data-colname="合计,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a16" data-colname="合计,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a17" data-colname="合计,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a18" data-colname="合计,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a19" data-colname="合计,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a20" data-colname="合计,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a21" data-colname="合计,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a22" data-colname="合计,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="6" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">2</td>
+								<td colspan="3" class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;">其中：女&nbsp;性</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_2_Total" data-colname="其中：女性,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a1" data-colname="其中：女性,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a2" data-colname="其中：女性,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a3" data-colname="其中：女性,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a4" data-colname="其中：女性,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a5" data-colname="其中：女性,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a6" data-colname="其中：女性,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a7" data-colname="其中：女性,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a8" data-colname="其中：女性,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a9" data-colname="其中：女性,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a10" data-colname="其中：女性,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a11" data-colname="其中：女性,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a12" data-colname="其中：女性,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a13" data-colname="其中：女性,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a14" data-colname="其中：女性,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a15" data-colname="其中：女性,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a16" data-colname="其中：女性,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a17" data-colname="其中：女性,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a18" data-colname="其中：女性,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a19" data-colname="其中：女性,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a20" data-colname="其中：女性,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a21" data-colname="其中：女性,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a22" data-colname="其中：女性,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="7" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">3</td>
+								<td rowspan="5" class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;">学历</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">研究生及以上</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_3_Total" data-colname="研究生及以上,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a1" data-colname="研究生及以上,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a2" data-colname="研究生及以上,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a3" data-colname="研究生及以上,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a4" data-colname="研究生及以上,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a5" data-colname="研究生及以上,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a6" data-colname="研究生及以上,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a7" data-colname="研究生及以上,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a8" data-colname="研究生及以上,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a9" data-colname="研究生及以上,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a10" data-colname="研究生及以上,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a11" data-colname="研究生及以上,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a12" data-colname="研究生及以上,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a13" data-colname="研究生及以上,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a14" data-colname="研究生及以上,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a15" data-colname="研究生及以上,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a16" data-colname="研究生及以上,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a17" data-colname="研究生及以上,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a18" data-colname="研究生及以上,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a19" data-colname="研究生及以上,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a20" data-colname="研究生及以上,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a21" data-colname="研究生及以上,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a22" data-colname="研究生及以上,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="8" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">4</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">大学</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_4_Total" data-colname="大学,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a1" data-colname="大学,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a2" data-colname="大学,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a3" data-colname="大学,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a4" data-colname="大学,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a5" data-colname="大学,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a6" data-colname="大学,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a7" data-colname="大学,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a8" data-colname="大学,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a9" data-colname="大学,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a10" data-colname="大学,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a11" data-colname="大学,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a12" data-colname="大学,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a13" data-colname="大学,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a14" data-colname="大学,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a15" data-colname="大学,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a16" data-colname="大学,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a17" data-colname="大学,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a18" data-colname="大学,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a19" data-colname="大学,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a20" data-colname="大学,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a21" data-colname="大学,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a22" data-colname="大学,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="9" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">5</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">大专</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_5_Total" data-colname="大专,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a1" data-colname="大专,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a2" data-colname="大专,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a3" data-colname="大专,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a4" data-colname="大专,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a5" data-colname="大专,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a6" data-colname="大专,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a7" data-colname="大专,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a8" data-colname="大专,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a9" data-colname="大专,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a10" data-colname="大专,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a11" data-colname="大专,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a12" data-colname="大专,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a13" data-colname="大专,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a14" data-colname="大专,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a15" data-colname="大专,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a16" data-colname="大专,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a17" data-colname="大专,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a18" data-colname="大专,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a19" data-colname="大专,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a20" data-colname="大专,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a21" data-colname="大专,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a22" data-colname="大专,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="10" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">6</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">中专</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_6_Total" data-colname="中专,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a1" data-colname="中专,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a2" data-colname="中专,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a3" data-colname="中专,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a4" data-colname="中专,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a5" data-colname="中专,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a6" data-colname="中专,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a7" data-colname="中专,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a8" data-colname="中专,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a9" data-colname="中专,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a10" data-colname="中专,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a11" data-colname="中专,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a12" data-colname="中专,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a13" data-colname="中专,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a14" data-colname="中专,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a15" data-colname="中专,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a16" data-colname="中专,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a17" data-colname="中专,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a18" data-colname="中专,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a19" data-colname="中专,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a20" data-colname="中专,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a21" data-colname="中专,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a22" data-colname="中专,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="11" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">7</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">高中及以下</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_7_Total" data-colname="高中及以下,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a1" data-colname="高中及以下,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a2" data-colname="高中及以下,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a3" data-colname="高中及以下,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a4" data-colname="高中及以下,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a5" data-colname="高中及以下,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a6" data-colname="高中及以下,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a7" data-colname="高中及以下,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a8" data-colname="高中及以下,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a9" data-colname="高中及以下,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a10" data-colname="高中及以下,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a11" data-colname="高中及以下,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a12" data-colname="高中及以下,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a13" data-colname="高中及以下,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a14" data-colname="高中及以下,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a15" data-colname="高中及以下,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a16" data-colname="高中及以下,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a17" data-colname="高中及以下,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a18" data-colname="高中及以下,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a19" data-colname="高中及以下,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a20" data-colname="高中及以下,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a21" data-colname="高中及以下,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a22" data-colname="高中及以下,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="12" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">8</td>
+								<td rowspan="7" class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;">年龄</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">30以下</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_8_Total" data-colname="年龄30以下,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a1" data-colname="年龄30以下,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a2" data-colname="年龄30以下,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a3" data-colname="年龄30以下,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a4" data-colname="年龄30以下,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a5" data-colname="年龄30以下,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a6" data-colname="年龄30以下,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a7" data-colname="年龄30以下,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a8" data-colname="年龄30以下,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a9" data-colname="年龄30以下,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a10" data-colname="年龄30以下,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a11" data-colname="年龄30以下,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a12" data-colname="年龄30以下,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a13" data-colname="年龄30以下,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a14" data-colname="年龄30以下,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a15" data-colname="年龄30以下,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a16" data-colname="年龄30以下,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a17" data-colname="年龄30以下,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a18" data-colname="年龄30以下,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a19" data-colname="年龄30以下,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a20" data-colname="年龄30以下,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a21" data-colname="年龄30以下,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a22" data-colname="年龄30以下,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="13" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">9</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">31-35</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_9_Total" data-colname="年龄31-35,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a1" data-colname="年龄31-35,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a2" data-colname="年龄31-35,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a3" data-colname="年龄31-35,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a4" data-colname="年龄31-35,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a5" data-colname="年龄31-35,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a6" data-colname="年龄31-35,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a7" data-colname="年龄31-35,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a8" data-colname="年龄31-35,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a9" data-colname="年龄31-35,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a10" data-colname="年龄31-35,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a11" data-colname="年龄31-35,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a12" data-colname="年龄31-35,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a13" data-colname="年龄31-35,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a14" data-colname="年龄31-35,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a15" data-colname="年龄31-35,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a16" data-colname="年龄31-35,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a17" data-colname="年龄31-35,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a18" data-colname="年龄31-35,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a19" data-colname="年龄31-35,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a20" data-colname="年龄31-35,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a21" data-colname="年龄31-35,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a22" data-colname="年龄31-35,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="14" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">10</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">36-40</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_10_Total" data-colname="年龄36-40,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a1" data-colname="年龄36-40,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a2"
+									data-colname="年龄36-40,按系列分组工程技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a3"
+									data-colname="年龄36-40,按系列分组农业技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a4"
+									data-colname="年龄36-40,按系列分组科学研究人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a5"
+									data-colname="年龄36-40,按系列分组卫生技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a6" data-colname="年龄36-40,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a7" data-colname="年龄36-40,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a8" data-colname="年龄36-40,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a9" data-colname="年龄36-40,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a10" data-colname="年龄36-40,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a11" data-colname="年龄36-40,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a12" data-colname="年龄36-40,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a13" data-colname="年龄36-40,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a14" data-colname="年龄36-40,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a15" data-colname="年龄36-40,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a16" data-colname="年龄36-40,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a17" data-colname="年龄36-40,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a18" data-colname="年龄36-40,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a19" data-colname="年龄36-40,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a20" data-colname="年龄36-40,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a21" data-colname="年龄36-40,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a22" data-colname="年龄36-40,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="15" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">11</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">41-45</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_11_Total" data-colname="年龄41-45,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a1" data-colname="年龄41-45,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a2"
+									data-colname="年龄41-45,按系列分组工程技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a3"
+									data-colname="年龄41-45,按系列分组农业技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a4"
+									data-colname="年龄41-45,按系列分组科学研究人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a5"
+									data-colname="年龄41-45,按系列分组卫生技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a6" data-colname="年龄41-45,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a7" data-colname="年龄41-45,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a8" data-colname="年龄41-45,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a9" data-colname="年龄41-45,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a10" data-colname="年龄41-45,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a11" data-colname="年龄41-45,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a12" data-colname="年龄41-45,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a13" data-colname="年龄41-45,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a14" data-colname="年龄41-45,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a15" data-colname="年龄41-45,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a16" data-colname="年龄41-45,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a17" data-colname="年龄41-45,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a18" data-colname="年龄41-45,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a19" data-colname="年龄41-45,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a20" data-colname="年龄41-45,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a21" data-colname="年龄41-45,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a22" data-colname="年龄41-45,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="16" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">12</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">46-50</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_12_Total" data-colname="年龄46-50,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a1" data-colname="年龄46-50,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a2"
+									data-colname="年龄46-50,按系列分组工程技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a3"
+									data-colname="年龄46-50,按系列分组农业技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a4"
+									data-colname="年龄46-50,按系列分组科学研究人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a5"
+									data-colname="年龄46-50,按系列分组卫生技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a6" data-colname="年龄46-50,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a7" data-colname="年龄46-50,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a8" data-colname="年龄46-50,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a9" data-colname="年龄46-50,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a10" data-colname="年龄46-50,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a11" data-colname="年龄46-50,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a12" data-colname="年龄46-50,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a13" data-colname="年龄46-50,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a14" data-colname="年龄46-50,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a15" data-colname="年龄46-50,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a16" data-colname="年龄46-50,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a17" data-colname="年龄46-50,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a18" data-colname="年龄46-50,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a19" data-colname="年龄46-50,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a20" data-colname="年龄46-50,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a21" data-colname="年龄46-50,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a22" data-colname="年龄46-50,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="17" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">13</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">51-54</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_13_Total" data-colname="年龄51-54,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a1" data-colname="年龄51-54,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a2"
+									data-colname="年龄51-54,按系列分组工程技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a3"
+									data-colname="年龄51-54,按系列分组农业技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a4"
+									data-colname="年龄51-54,按系列分组科学研究人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a5"
+									data-colname="年龄51-54,按系列分组卫生技术人员" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a6" data-colname="年龄51-54,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a7" data-colname="年龄51-54,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a8" data-colname="年龄51-54,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a9" data-colname="年龄51-54,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a10" data-colname="年龄51-54,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a11" data-colname="年龄51-54,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a12" data-colname="年龄51-54,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a13" data-colname="年龄51-54,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a14" data-colname="年龄51-54,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a15" data-colname="年龄51-54,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a16" data-colname="年龄51-54,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a17" data-colname="年龄51-54,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a18" data-colname="年龄51-54,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a19" data-colname="年龄51-54,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a20" data-colname="年龄51-54,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a21" data-colname="年龄51-54,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a22" data-colname="年龄51-54,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="18" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">14</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">55以上</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_14_Total" data-colname="年龄55以上,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a1" data-colname="年龄55以上,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a2" data-colname="年龄55以上,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a3" data-colname="年龄55以上,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a4" data-colname="年龄55以上,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a5" data-colname="年龄55以上,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a6" data-colname="年龄55以上,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a7" data-colname="年龄55以上,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a8" data-colname="年龄55以上,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a9" data-colname="年龄55以上,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a10" data-colname="年龄55以上,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a11" data-colname="年龄55以上,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a12" data-colname="年龄55以上,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a13" data-colname="年龄55以上,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a14" data-colname="年龄55以上,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a15" data-colname="年龄55以上,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a16" data-colname="年龄55以上,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a17" data-colname="年龄55以上,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a18" data-colname="年龄55以上,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a19" data-colname="年龄55以上,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a20" data-colname="年龄55以上,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a21" data-colname="年龄55以上,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a22" data-colname="年龄55以上,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="19" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">15</td>
+								<td rowspan="4" class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;">职称</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">高级职称</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_15_Total" data-colname="高级职称,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a1" data-colname="高级职称,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a2" data-colname="高级职称,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a3" data-colname="高级职称,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a4" data-colname="高级职称,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a5" data-colname="高级职称,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a6" data-colname="高级职称,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a7" data-colname="高级职称,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a8" data-colname="高级职称,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a9" data-colname="高级职称,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a10" data-colname="高级职称,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a11" data-colname="高级职称,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a12" data-colname="高级职称,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a13" data-colname="高级职称,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a14" data-colname="高级职称,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a15" data-colname="高级职称,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a16" data-colname="高级职称,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a17" data-colname="高级职称,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a18" data-colname="高级职称,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a19" data-colname="高级职称,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a20" data-colname="高级职称,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a21" data-colname="高级职称,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a22" data-colname="高级职称,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="20" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">16</td>
+								<td colspan="2" class="report1_3" style="padding-left: 17px;">其中：正高级</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_16_Total" data-colname="其中：正高级,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a1" data-colname="其中：正高级,女性"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a2" data-colname="其中：正高级,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a3" data-colname="其中：正高级,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a4" data-colname="其中：正高级,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a5" data-colname="其中：正高级,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a6" data-colname="其中：正高级,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a7" data-colname="其中：正高级,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a8" data-colname="其中：正高级,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a9" data-colname="其中：正高级,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a10" data-colname="其中：正高级,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a11" data-colname="其中：正高级,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a12" data-colname="其中：正高级,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a13" data-colname="其中：正高级,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a14" data-colname="其中：正高级,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a15" data-colname="其中：正高级,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a16" data-colname="其中：正高级,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a17" data-colname="其中：正高级,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a18" data-colname="其中：正高级,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a19" data-colname="其中：正高级,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a20" data-colname="其中：正高级,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a21" data-colname="其中：正高级,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a22" data-colname="其中：正高级,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="21" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">17</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">中级职称</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_17_Total" data-colname="中级职称,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a1" data-colname="中级职称,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a2" data-colname="中级职称,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a3" data-colname="中级职称,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a4" data-colname="中级职称,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a5" data-colname="中级职称,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a6" data-colname="中级职称,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a7" data-colname="中级职称,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a8" data-colname="中级职称,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a9" data-colname="中级职称,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a10" data-colname="中级职称,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a11" data-colname="中级职称,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a12" data-colname="中级职称,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a13" data-colname="中级职称,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a14" data-colname="中级职称,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a15" data-colname="中级职称,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a16" data-colname="中级职称,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a17" data-colname="中级职称,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a18" data-colname="中级职称,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a19" data-colname="中级职称,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a20" data-colname="中级职称,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a21" data-colname="中级职称,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a22" data-colname="中级职称,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+							<tr rn="22" height="23" style="height: 23px;">
+								<td class="report1_2" style="display: none;">18</td>
+								<td colspan="2" class="report1_3" style="padding-left: 8px;">初级职称</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_18_Total" data-colname="初级职称,总人数" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a1" data-colname="初级职称,女性" name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a2" data-colname="初级职称,按系列分组工程技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a3" data-colname="初级职称,按系列分组农业技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a4" data-colname="初级职称,按系列分组科学研究人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a5" data-colname="初级职称,按系列分组卫生技术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a6" data-colname="初级职称,按系列分组教学人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a7" data-colname="初级职称,按系列分组经济人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a8" data-colname="初级职称,按系列分组会计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a9" data-colname="初级职称,按系列分组统计人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a10" data-colname="初级职称,按系列分组翻译人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a11" data-colname="初级职称,按系列分组图书档案"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a12" data-colname="初级职称,按系列分组文博人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a13" data-colname="初级职称,按系列分组新闻"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a14" data-colname="初级职称,按系列分组出版人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a15" data-colname="初级职称,按系列分组律师"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a16" data-colname="初级职称,按系列分组公证人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a17" data-colname="初级职称,按系列分组播音人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a18" data-colname="初级职称,按系列分组工艺美术"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a19" data-colname="初级职称,按系列分组体育人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a20" data-colname="初级职称,按系列分组艺术人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a21" data-colname="初级职称,按系列分组政工人员"
+									name="l7" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a22" data-colname="初级职称,按系列分组其他人员"
+									name="l7" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportautoconfig/reportconfig1.js"></script>
+</body>
+</html>

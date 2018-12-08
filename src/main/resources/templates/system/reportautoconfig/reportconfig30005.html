@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0"
+	style="padding-left: 5px; overflow: auto;">
+	<table id="rpt" align="center" width="100%" height="100%">
+		<tbody>
+			<tr>
+				<td align="center" valign="top" height="100%">
+					<style id="report1_style">
+.report1_1 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_2 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_3 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_4 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_5 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_6 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_7 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_8 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 黑体;
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_9 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_10 {
+	text-align: right;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_11 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_12 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_13 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_14 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_15 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_16 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_17 {
+	text-align: center;
+	vertical-align: bottom;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_18 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	line-height: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_19 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_20 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_21 {
+	text-align: center;
+	vertical-align: bottom;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: transparent;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+</style>
+					<table id="report1" cellspacing="0" cellpadding="0" align="center"
+						style="width: 1528px; table-layout: fixed; border-collapse: collapse">
+						<colgroup>
+							<col style="width: 168px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+							<col style="width: 80px;">
+						</colgroup>
+						<tbody>
+							<tr rn="1" height="66" style="height: 66px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td class="report1_8"><div style="float: left;">
+										<input type="button" id="btnReset" value="重置"
+											class="btn btn-default" onclick="resetReportConfig5()" />
+									</div></td>
+								<td colspan="17" class="report1_8">职工劳动报酬及工资总额构成情况月、年报</td>
+							</tr>
+							<tr rn="3" height="23" style="height: 23px;">
+								<td class="report1_15" style="display: none;"></td>
+								<td rowspan="4" class="report1_1"></td>
+								<td colspan="2" class="report1_1">年初至本月累计</td>
+								<td colspan="11" class="report1_1">本月工资额及工资构成</td>
+								<td colspan="2" class="report1_1">平均工资</td>
+								<td colspan="2" class="report1_1">上年同期</td>
+							</tr>
+							<tr rn="4" height="23" style="height: 23px;">
+								<td class="report1_15" style="display: none;"></td>
+								<td rowspan="3" class="report1_1">平均人数</td>
+								<td rowspan="3" class="report1_1">工资总额</td>
+								<td rowspan="3" class="report1_1">平均人数1</td>
+								<td rowspan="3" class="report1_1">工资总额1</td>
+								<td colspan="9" class="report1_5">其中：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工资构成</td>
+								<td rowspan="3" class="report1_1">本月</td>
+								<td rowspan="3" class="report1_18">年&nbsp;初&nbsp;至<br>本月累计
+								</td>
+								<td rowspan="3" class="report1_1">本月</td>
+								<td rowspan="3" class="report1_18">年&nbsp;初&nbsp;至<br>本月累计
+								</td>
+							</tr>
+							<tr rn="5" height="23" style="height: 23px;">
+								<td class="report1_15" style="display: none;"></td>
+								<td rowspan="2" class="report1_6">1、计时工资</td>
+								<td colspan="3" class="report1_6">2、计件工资</td>
+								<td rowspan="2" class="report1_6">3、绩效工资</td>
+								<td rowspan="2" class="report1_6">4、各种奖励</td>
+								<td rowspan="2" class="report1_6">5、辅助工资</td>
+								<td rowspan="2" class="report1_6">6、加班工资</td>
+								<td rowspan="2" class="report1_6">7、其它工资</td>
+							</tr>
+							<tr rn="6" height="23" style="height: 23px;">
+								<td class="report1_15" style="display: none;"></td>
+								<td class="report1_1">计</td>
+								<td class="report1_1">计件标准</td>
+								<td class="report1_1">计件超额</td>
+							</tr>
+							<tr rn="7" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">1</td>
+								<td class="report1_5" style="padding-left: 14px;">全部在册人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a1"
+									data-colname="全部在册人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a2"
+									data-colname="全部在册人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a3"
+									data-colname="全部在册人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a4"
+									data-colname="全部在册人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a5"
+									data-colname="全部在册人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a6"
+									data-colname="全部在册人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a7"
+									data-colname="全部在册人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a8"
+									data-colname="全部在册人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a9"
+									data-colname="全部在册人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a10"
+									data-colname="全部在册人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a11"
+									data-colname="全部在册人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a12"
+									data-colname="全部在册人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_1_a13"
+									data-colname="全部在册人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_1_a14"
+									data-colname="全部在册人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_1_a15"
+									data-colname="全部在册人员,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_1_a16"
+									data-colname="全部在册人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_1_a17"
+									data-colname="全部在册人员,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="8" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">2</td>
+								<td class="report1_5" style="padding-left: 14px;">A、在岗职工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a1"
+									data-colname="A、在岗职工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a2"
+									data-colname="A、在岗职工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a3"
+									data-colname="A、在岗职工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a4"
+									data-colname="A、在岗职工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a5"
+									data-colname="A、在岗职工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a6"
+									data-colname="A、在岗职工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a7"
+									data-colname="A、在岗职工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a8"
+									data-colname="A、在岗职工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a9"
+									data-colname="A、在岗职工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a10"
+									data-colname="A、在岗职工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a11"
+									data-colname="A、在岗职工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a12"
+									data-colname="A、在岗职工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_2_a13"
+									data-colname="A、在岗职工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_2_a14"
+									data-colname="A、在岗职工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_2_a15"
+									data-colname="A、在岗职工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_2_a16"
+									data-colname="A、在岗职工,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_2_a17"
+									data-colname="A、在岗职工,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="9" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">3</td>
+								<td class="report1_5" style="padding-left: 14px;">⑴合同制职工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a1"
+									data-colname="⑴合同制职工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a2"
+									data-colname="⑴合同制职工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a3"
+									data-colname="⑴合同制职工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a4"
+									data-colname="⑴合同制职工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a5"
+									data-colname="⑴合同制职工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a6"
+									data-colname="⑴合同制职工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a7"
+									data-colname="⑴合同制职工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a8"
+									data-colname="⑴合同制职工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a9"
+									data-colname="⑴合同制职工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a10"
+									data-colname="⑴合同制职工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a11"
+									data-colname="⑴合同制职工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a12"
+									data-colname="⑴合同制职工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_3_a13"
+									data-colname="⑴合同制职工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_3_a14"
+									data-colname="⑴合同制职工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_3_a15"
+									data-colname="⑴合同制职工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_3_a16"
+									data-colname="⑴合同制职工,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_3_a17"
+									data-colname="⑴合同制职工,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="10" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">4</td>
+								<td class="report1_5" style="padding-left: 14px;">①全民合同职工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a1"
+									data-colname="①全民合同职工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a2"
+									data-colname="①全民合同职工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a3"
+									data-colname="①全民合同职工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a4"
+									data-colname="①全民合同职工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a5"
+									data-colname="①全民合同职工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a6"
+									data-colname="①全民合同职工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a7"
+									data-colname="①全民合同职工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a8"
+									data-colname="①全民合同职工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a9"
+									data-colname="①全民合同职工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a10"
+									data-colname="①全民合同职工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a11"
+									data-colname="①全民合同职工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a12"
+									data-colname="①全民合同职工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_4_a13"
+									data-colname="①全民合同职工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_4_a14"
+									data-colname="①全民合同职工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_4_a15"
+									data-colname="①全民合同职工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_4_a16"
+									data-colname="①全民合同职工,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_4_a17"
+									data-colname="①全民合同职工,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="11" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">5</td>
+								<td class="report1_5" style="padding-left: 14px;">②短合职工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a1"
+									data-colname="②短合职工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a2"
+									data-colname="②短合职工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a3"
+									data-colname="②短合职工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a4"
+									data-colname="②短合职工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a5"
+									data-colname="②短合职工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a6"
+									data-colname="②短合职工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a7"
+									data-colname="②短合职工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a8"
+									data-colname="②短合职工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a9"
+									data-colname="②短合职工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a10"
+									data-colname="②短合职工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a11"
+									data-colname="②短合职工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a12"
+									data-colname="②短合职工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_5_a13"
+									data-colname="②短合职工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_5_a14"
+									data-colname="②短合职工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_5_a15"
+									data-colname="②短合职工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_5_a16"
+									data-colname="②短合职工,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_5_a17"
+									data-colname="②短合职工,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="12" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">6</td>
+								<td class="report1_5" style="padding-left: 14px;">③农合职工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a1"
+									data-colname="③农合职工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a2"
+									data-colname="③农合职工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a3"
+									data-colname="③农合职工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a4"
+									data-colname="③农合职工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a5"
+									data-colname="③农合职工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a6"
+									data-colname="③农合职工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a7"
+									data-colname="③农合职工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a8"
+									data-colname="③农合职工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a9"
+									data-colname="③农合职工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a10"
+									data-colname="③农合职工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a11"
+									data-colname="③农合职工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a12"
+									data-colname="③农合职工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_6_a13"
+									data-colname="③农合职工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_6_a14"
+									data-colname="③农合职工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_6_a15"
+									data-colname="③农合职工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_6_a16"
+									data-colname="③农合职工,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_6_a17"
+									data-colname="③农合职工,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="13" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">7</td>
+								<td class="report1_5" style="padding-left: 14px;">④农轮职工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a1"
+									data-colname="④农轮职工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a2"
+									data-colname="④农轮职工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a3"
+									data-colname="④农轮职工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a4"
+									data-colname="④农轮职工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a5"
+									data-colname="④农轮职工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a6"
+									data-colname="④农轮职工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a7"
+									data-colname="④农轮职工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a8"
+									data-colname="④农轮职工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a9"
+									data-colname="④农轮职工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a10"
+									data-colname="④农轮职工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a11"
+									data-colname="④农轮职工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a12"
+									data-colname="④农轮职工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_7_a13"
+									data-colname="④农轮职工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_7_a14"
+									data-colname="④农轮职工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_7_a15"
+									data-colname="④农轮职工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_7_a16"
+									data-colname="④农轮职工,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_7_a17"
+									data-colname="④农轮职工,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="14" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">8</td>
+								<td class="report1_5" style="padding-left: 14px;">⑤混岗集体</td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a1"
+									data-colname="⑤混岗集体,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a2"
+									data-colname="⑤混岗集体,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a3"
+									data-colname="⑤混岗集体,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a4"
+									data-colname="⑤混岗集体,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a5"
+									data-colname="⑤混岗集体,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a6"
+									data-colname="⑤混岗集体,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a7"
+									data-colname="⑤混岗集体,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a8"
+									data-colname="⑤混岗集体,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a9"
+									data-colname="⑤混岗集体,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a10"
+									data-colname="⑤混岗集体,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a11"
+									data-colname="⑤混岗集体,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a12"
+									data-colname="⑤混岗集体,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_8_a13"
+									data-colname="⑤混岗集体,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_8_a14"
+									data-colname="⑤混岗集体,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_8_a15"
+									data-colname="⑤混岗集体,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_8_a16"
+									data-colname="⑤混岗集体,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_8_a17"
+									data-colname="⑤混岗集体,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="15" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">9</td>
+								<td class="report1_5" style="padding-left: 14px;">⑵其它用工</td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a1"
+									data-colname="⑵其它用工,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a2"
+									data-colname="⑵其它用工,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a3"
+									data-colname="⑵其它用工,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a4"
+									data-colname="⑵其它用工,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a5"
+									data-colname="⑵其它用工,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a6"
+									data-colname="⑵其它用工,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a7"
+									data-colname="⑵其它用工,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a8"
+									data-colname="⑵其它用工,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a9"
+									data-colname="⑵其它用工,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a10"
+									data-colname="⑵其它用工,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a11"
+									data-colname="⑵其它用工,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a12"
+									data-colname="⑵其它用工,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_9_a13"
+									data-colname="⑵其它用工,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_9_a14"
+									data-colname="⑵其它用工,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_9_a15"
+									data-colname="⑵其它用工,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox" id="cb_9_a16"
+									data-colname="全部在册人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox" id="cb_9_a17"
+									data-colname="全部在册人员,上年同期年初至本月累计平均工资" name="l5" /></td>
+							</tr>
+							<tr rn="16" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">10</td>
+								<td class="report1_5" style="padding-left: 14px;">1、生产工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a1"
+									data-colname="1、生产工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a2"
+									data-colname="1、生产工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a3"
+									data-colname="1、生产工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a4"
+									data-colname="1、生产工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a5"
+									data-colname="1、生产工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a6"
+									data-colname="1、生产工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a7"
+									data-colname="1、生产工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a8"
+									data-colname="1、生产工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a9"
+									data-colname="1、生产工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a10"
+									data-colname="1、生产工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a11"
+									data-colname="1、生产工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a12"
+									data-colname="1、生产工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_10_a13"
+									data-colname="1、生产工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_10_a14" data-colname="1、生产工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_10_a15" data-colname="1、生产工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_10_a16" data-colname="1、生产工人,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_10_a17" data-colname="1、生产工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="17" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">11</td>
+								<td class="report1_5" style="padding-left: 14px;">其中：计件工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a1"
+									data-colname="其中：计件工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a2"
+									data-colname="其中：计件工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a3"
+									data-colname="其中：计件工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a4"
+									data-colname="其中：计件工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a5"
+									data-colname="其中：计件工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a6"
+									data-colname="其中：计件工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a7"
+									data-colname="其中：计件工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a8"
+									data-colname="其中：计件工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a9"
+									data-colname="其中：计件工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a10"
+									data-colname="其中：计件工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a11"
+									data-colname="其中：计件工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a12"
+									data-colname="其中：计件工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_11_a13"
+									data-colname="其中：计件工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_11_a14" data-colname="其中：计件工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_11_a15" data-colname="其中：计件工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_11_a16" data-colname="其中：计件工人,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_11_a17" data-colname="其中：计件工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="18" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">12</td>
+								<td class="report1_5" style="padding-left: 14px;">2、工技人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a1"
+									data-colname="2、工技人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a2"
+									data-colname="2、工技人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a3"
+									data-colname="2、工技人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a4"
+									data-colname="2、工技人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a5"
+									data-colname="2、工技人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a6"
+									data-colname="2、工技人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a7"
+									data-colname="2、工技人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a8"
+									data-colname="2、工技人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a9"
+									data-colname="2、工技人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a10"
+									data-colname="2、工技人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a11"
+									data-colname="2、工技人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a12"
+									data-colname="2、工技人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_12_a13"
+									data-colname="2、工技人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_12_a14" data-colname="2、工技人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_12_a15" data-colname="2、工技人员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_12_a16" data-colname="2、工技人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_12_a17" data-colname="2、工技人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="19" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">13</td>
+								<td class="report1_5" style="padding-left: 14px;">3、管理人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a1"
+									data-colname="3、管理人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a2"
+									data-colname="3、管理人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a3"
+									data-colname="3、管理人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a4"
+									data-colname="3、管理人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a5"
+									data-colname="3、管理人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a6"
+									data-colname="3、管理人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a7"
+									data-colname="3、管理人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a8"
+									data-colname="3、管理人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a9"
+									data-colname="3、管理人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a10"
+									data-colname="3、管理人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a11"
+									data-colname="3、管理人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a12"
+									data-colname="3、管理人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_13_a13"
+									data-colname="3、管理人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_13_a14" data-colname="3、管理人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_13_a15" data-colname="3、管理人员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_13_a16" data-colname="3、管理人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_13_a17" data-colname="3、管理人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="20" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">14</td>
+								<td class="report1_5" style="padding-left: 14px;">4、服务人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a1"
+									data-colname="4、服务人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a2"
+									data-colname="4、服务人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a3"
+									data-colname="4、服务人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a4"
+									data-colname="4、服务人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a5"
+									data-colname="4、服务人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a6"
+									data-colname="4、服务人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a7"
+									data-colname="4、服务人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a8"
+									data-colname="4、服务人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a9"
+									data-colname="4、服务人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a10"
+									data-colname="4、服务人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a11"
+									data-colname="4、服务人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a12"
+									data-colname="4、服务人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_14_a13"
+									data-colname="4、服务人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_14_a14" data-colname="4、服务人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_14_a15" data-colname="4、服务人员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_14_a16" data-colname="4、服务人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_14_a17" data-colname="4、服务人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="21" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">15</td>
+								<td class="report1_5" style="padding-left: 14px;">5、其他人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a1"
+									data-colname="5、其他人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a2"
+									data-colname="5、其他人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a3"
+									data-colname="5、其他人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a4"
+									data-colname="5、其他人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a5"
+									data-colname="5、其他人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a6"
+									data-colname="5、其他人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a7"
+									data-colname="5、其他人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a8"
+									data-colname="5、其他人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a9"
+									data-colname="5、其他人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a10"
+									data-colname="5、其他人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a11"
+									data-colname="5、其他人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a12"
+									data-colname="5、其他人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_15_a13"
+									data-colname="5、其他人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_15_a14" data-colname="5、其他人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_15_a15" data-colname="5、其他人员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_15_a16" data-colname="5、其他人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_15_a17" data-colname="5、其他人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="22" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">16</td>
+								<td class="report1_5" style="padding-left: 14px;">㈠管理岗位</td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a1"
+									data-colname="㈠管理岗位,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a2"
+									data-colname="㈠管理岗位,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a3"
+									data-colname="㈠管理岗位,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a4"
+									data-colname="㈠管理岗位,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a5"
+									data-colname="㈠管理岗位,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a6"
+									data-colname="㈠管理岗位,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a7"
+									data-colname="㈠管理岗位,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a8"
+									data-colname="㈠管理岗位,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a9"
+									data-colname="㈠管理岗位,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a10"
+									data-colname="㈠管理岗位,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a11"
+									data-colname="㈠管理岗位,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a12"
+									data-colname="㈠管理岗位,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_16_a13"
+									data-colname="㈠管理岗位,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_16_a14" data-colname="㈠管理岗位,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_16_a15" data-colname="㈠管理岗位,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_16_a16" data-colname="㈠管理岗位,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_16_a17" data-colname="㈠管理岗位,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="23" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">17</td>
+								<td class="report1_5" style="padding-left: 14px;">其中：⑴公司班子成员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a1"
+									data-colname="其中：⑴公司班子成员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a2"
+									data-colname="其中：⑴公司班子成员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a3"
+									data-colname="其中：⑴公司班子成员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a4"
+									data-colname="其中：⑴公司班子成员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a5"
+									data-colname="其中：⑴公司班子成员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a6"
+									data-colname="其中：⑴公司班子成员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a7"
+									data-colname="其中：⑴公司班子成员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a8"
+									data-colname="其中：⑴公司班子成员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a9"
+									data-colname="其中：⑴公司班子成员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a10"
+									data-colname="其中：⑴公司班子成员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a11"
+									data-colname="其中：⑴公司班子成员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a12"
+									data-colname="其中：⑴公司班子成员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_17_a13"
+									data-colname="其中：⑴公司班子成员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_17_a14" data-colname="其中：⑴公司班子成员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_17_a15" data-colname="其中：⑴公司班子成员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_17_a16" data-colname="其中：⑴公司班子成员,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_17_a17" data-colname="其中：⑴公司班子成员,上年同期年初至本月累计平均工资"
+									name="l5" /></td>
+							</tr>
+							<tr rn="24" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">18</td>
+								<td class="report1_5" style="padding-left: 14px;">⑵处级人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a1"
+									data-colname="⑵处级人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a2"
+									data-colname="⑵处级人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a3"
+									data-colname="⑵处级人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a4"
+									data-colname="⑵处级人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a5"
+									data-colname="⑵处级人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a6"
+									data-colname="⑵处级人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a7"
+									data-colname="⑵处级人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a8"
+									data-colname="⑵处级人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a9"
+									data-colname="⑵处级人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a10"
+									data-colname="⑵处级人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a11"
+									data-colname="⑵处级人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a12"
+									data-colname="⑵处级人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_18_a13"
+									data-colname="⑵处级人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_18_a14" data-colname="⑵处级人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_18_a15" data-colname="⑵处级人员,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_18_a16" data-colname="⑵处级人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_18_a17" data-colname="⑵处级人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="25" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">19</td>
+								<td class="report1_5" style="padding-left: 14px;">⑶科级人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a1"
+									data-colname="⑶科级人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a2"
+									data-colname="⑶科级人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a3"
+									data-colname="⑶科级人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a4"
+									data-colname="⑶科级人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a5"
+									data-colname="⑶科级人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a6"
+									data-colname="⑶科级人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a7"
+									data-colname="⑶科级人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a8"
+									data-colname="⑶科级人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a9"
+									data-colname="⑶科级人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a10"
+									data-colname="⑶科级人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a11"
+									data-colname="⑶科级人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a12"
+									data-colname="⑶科级人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_19_a13"
+									data-colname="⑶科级人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_19_a14" data-colname="⑶科级人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_19_a15" data-colname="⑶科级人员,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_19_a16" data-colname="⑶科级人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_19_a17" data-colname="⑶科级人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="26" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">20</td>
+								<td class="report1_5" style="padding-left: 14px;">⑷一般管理人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a1"
+									data-colname="⑷一般管理人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a2"
+									data-colname="⑷一般管理人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a3"
+									data-colname="⑷一般管理人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a4"
+									data-colname="⑷一般管理人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a5"
+									data-colname="⑷一般管理人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a6"
+									data-colname="⑷一般管理人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a7"
+									data-colname="⑷一般管理人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a8"
+									data-colname="⑷一般管理人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a9"
+									data-colname="⑷一般管理人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a10"
+									data-colname="⑷一般管理人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a11"
+									data-colname="⑷一般管理人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a12"
+									data-colname="⑷一般管理人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_20_a13"
+									data-colname="⑷一般管理人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_20_a14" data-colname="⑷一般管理人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_20_a15" data-colname="⑷一般管理人员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_20_a16" data-colname="⑷一般管理人员,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_20_a17" data-colname="⑷一般管理人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="27" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">21</td>
+								<td class="report1_5" style="padding-left: 14px;">㈡专业技术岗位</td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a1"
+									data-colname="㈡专业技术岗位,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a2"
+									data-colname="㈡专业技术岗位,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a3"
+									data-colname="㈡专业技术岗位,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a4"
+									data-colname="㈡专业技术岗位,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a5"
+									data-colname="㈡专业技术岗位,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a6"
+									data-colname="㈡专业技术岗位,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a7"
+									data-colname="㈡专业技术岗位,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a8"
+									data-colname="㈡专业技术岗位,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a9"
+									data-colname="㈡专业技术岗位,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a10"
+									data-colname="㈡专业技术岗位,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a11"
+									data-colname="㈡专业技术岗位,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a12"
+									data-colname="㈡专业技术岗位,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_21_a13"
+									data-colname="㈡专业技术岗位,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_21_a14" data-colname="㈡专业技术岗位,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_21_a15" data-colname="㈡专业技术岗位,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_21_a16" data-colname="㈡专业技术岗位,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_21_a17" data-colname="㈡专业技术岗位,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="28" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">22</td>
+								<td class="report1_5" style="padding-left: 14px;">㈢操作岗位</td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a1"
+									data-colname="㈢操作岗位,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a2"
+									data-colname="㈢操作岗位,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a3"
+									data-colname="㈢操作岗位,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a4"
+									data-colname="㈢操作岗位,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a5"
+									data-colname="㈢操作岗位,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a6"
+									data-colname="㈢操作岗位,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a7"
+									data-colname="㈢操作岗位,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a8"
+									data-colname="㈢操作岗位,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a9"
+									data-colname="㈢操作岗位,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a10"
+									data-colname="㈢操作岗位,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a11"
+									data-colname="㈢操作岗位,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a12"
+									data-colname="㈢操作岗位,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_22_a13"
+									data-colname="㈢操作岗位,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_22_a14" data-colname="㈢操作岗位,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_22_a15" data-colname="㈢操作岗位,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_22_a16" data-colname="㈢操作岗位,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_22_a17" data-colname="㈢操作岗位,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="29" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">23</td>
+								<td class="report1_5" style="padding-left: 14px;">B、其他从业人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a1"
+									data-colname="B、其他从业人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a2"
+									data-colname="B、其他从业人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a3"
+									data-colname="B、其他从业人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a4"
+									data-colname="B、其他从业人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a5"
+									data-colname="B、其他从业人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a6"
+									data-colname="B、其他从业人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a7"
+									data-colname="B、其他从业人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a8"
+									data-colname="B、其他从业人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a9"
+									data-colname="B、其他从业人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a10"
+									data-colname="B、其他从业人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a11"
+									data-colname="B、其他从业人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a12"
+									data-colname="B、其他从业人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_23_a13"
+									data-colname="B、其他从业人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_23_a14" data-colname="B、其他从业人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_23_a15" data-colname="B、其他从业人员,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_23_a16" data-colname="B、其他从业人员,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_23_a17" data-colname="B、其他从业人员,上年同期年初至本月累计平均工资"
+									name="l5" /></td>
+							</tr>
+							<tr rn="30" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">24</td>
+								<td class="report1_5" style="padding-left: 14px;">C、离单位留关系</td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a1"
+									data-colname="C、离单位留关系,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a2"
+									data-colname="C、离单位留关系,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a3"
+									data-colname="C、离单位留关系,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a4"
+									data-colname="C、离单位留关系,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a5"
+									data-colname="C、离单位留关系,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a6"
+									data-colname="C、离单位留关系,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a7"
+									data-colname="C、离单位留关系,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a8"
+									data-colname="C、离单位留关系,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a9"
+									data-colname="C、离单位留关系,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a10"
+									data-colname="C、离单位留关系,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a11"
+									data-colname="C、离单位留关系,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a12"
+									data-colname="C、离单位留关系,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_24_a13"
+									data-colname="C、离单位留关系,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_24_a14" data-colname="C、离单位留关系,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_24_a15" data-colname="C、离单位留关系,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_24_a16" data-colname="C、离单位留关系,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_24_a17" data-colname="C、离单位留关系,上年同期年初至本月累计平均工资"
+									name="l5" /></td>
+							</tr>
+							<tr rn="31" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">25</td>
+								<td class="report1_5" style="padding-left: 14px;">其中：内部退养</td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a1"
+									data-colname="其中：内部退养,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a2"
+									data-colname="其中：内部退养,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a3"
+									data-colname="其中：内部退养,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a4"
+									data-colname="其中：内部退养,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a5"
+									data-colname="其中：内部退养,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a6"
+									data-colname="其中：内部退养,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a7"
+									data-colname="其中：内部退养,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a8"
+									data-colname="其中：内部退养,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a9"
+									data-colname="其中：内部退养,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a10"
+									data-colname="其中：内部退养,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a11"
+									data-colname="其中：内部退养,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a12"
+									data-colname="其中：内部退养,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_25_a13"
+									data-colname="其中：内部退养,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_25_a14" data-colname="其中：内部退养,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_25_a15" data-colname="其中：内部退养,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_25_a16" data-colname="其中：内部退养,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_25_a17" data-colname="其中：内部退养,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="32" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">26</td>
+								<td class="report1_5" style="padding-left: 14px;">其他人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a1"
+									data-colname="其他人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a2"
+									data-colname="其他人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a3"
+									data-colname="其他人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a4"
+									data-colname="其他人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a5"
+									data-colname="其他人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a6"
+									data-colname="其他人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a7"
+									data-colname="其他人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a8"
+									data-colname="其他人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a9"
+									data-colname="其他人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a10"
+									data-colname="其他人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a11"
+									data-colname="其他人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a12"
+									data-colname="其他人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_26_a13"
+									data-colname="其他人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_26_a14" data-colname="其他人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_26_a15" data-colname="其他人员,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_26_a16" data-colname="其他人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_26_a17" data-colname="其他人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="33" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">27</td>
+								<td class="report1_5" style="padding-left: 14px;">原煤人员</td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a1"
+									data-colname="原煤人员,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a2"
+									data-colname="原煤人员,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a3"
+									data-colname="原煤人员,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a4"
+									data-colname="原煤人员,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a5"
+									data-colname="原煤人员,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a6"
+									data-colname="原煤人员,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a7"
+									data-colname="原煤人员,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a8"
+									data-colname="原煤人员,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a9"
+									data-colname="原煤人员,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a10"
+									data-colname="原煤人员,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a11"
+									data-colname="原煤人员,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a12"
+									data-colname="原煤人员,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_27_a13"
+									data-colname="原煤人员,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_27_a14" data-colname="原煤人员,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_27_a15" data-colname="原煤人员,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_27_a16" data-colname="原煤人员,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_27_a17" data-colname="原煤人员,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="34" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">28</td>
+								<td class="report1_5" style="padding-left: 14px;">原煤工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a1"
+									data-colname="原煤工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a2"
+									data-colname="原煤工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a3"
+									data-colname="原煤工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a4"
+									data-colname="原煤工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a5"
+									data-colname="原煤工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a6"
+									data-colname="原煤工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a7"
+									data-colname="原煤工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a8"
+									data-colname="原煤工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a9"
+									data-colname="原煤工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a10"
+									data-colname="原煤工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a11"
+									data-colname="原煤工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a12"
+									data-colname="原煤工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_28_a13"
+									data-colname="原煤工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_28_a14" data-colname="原煤工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_28_a15" data-colname="原煤工人,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_28_a16" data-colname="原煤工人,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_28_a17" data-colname="原煤工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="35" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">29</td>
+								<td class="report1_5" style="padding-left: 14px;">1、井下工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a1"
+									data-colname="1、井下工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a2"
+									data-colname="1、井下工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a3"
+									data-colname="1、井下工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a4"
+									data-colname="1、井下工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a5"
+									data-colname="1、井下工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a6"
+									data-colname="1、井下工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a7"
+									data-colname="1、井下工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a8"
+									data-colname="1、井下工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a9"
+									data-colname="1、井下工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a10"
+									data-colname="1、井下工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a11"
+									data-colname="1、井下工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a12"
+									data-colname="1、井下工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_29_a13"
+									data-colname="1、井下工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_29_a14" data-colname="1、井下工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_29_a15" data-colname="1、井下工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_29_a16" data-colname="1、井下工人,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_29_a17" data-colname="1、井下工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="36" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">30</td>
+								<td class="report1_5" style="padding-left: 14px;">其中：⑴回采工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a1"
+									data-colname="其中：⑴回采工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a2"
+									data-colname="其中：⑴回采工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a3"
+									data-colname="其中：⑴回采工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a4"
+									data-colname="其中：⑴回采工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a5"
+									data-colname="其中：⑴回采工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a6"
+									data-colname="其中：⑴回采工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a7"
+									data-colname="其中：⑴回采工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a8"
+									data-colname="其中：⑴回采工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a9"
+									data-colname="其中：⑴回采工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a10"
+									data-colname="其中：⑴回采工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a11"
+									data-colname="其中：⑴回采工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a12"
+									data-colname="其中：⑴回采工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_30_a13"
+									data-colname="其中：⑴回采工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_30_a14" data-colname="其中：⑴回采工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_30_a15" data-colname="其中：⑴回采工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_30_a16" data-colname="其中：⑴回采工人,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_30_a17" data-colname="其中：⑴回采工人,上年同期年初至本月累计平均工资"
+									name="l5" /></td>
+							</tr>
+							<tr rn="37" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">31</td>
+								<td class="report1_5" style="padding-left: 14px;">⑵掘进工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a1"
+									data-colname="⑵掘进工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a2"
+									data-colname="⑵掘进工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a3"
+									data-colname="⑵掘进工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a4"
+									data-colname="⑵掘进工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a5"
+									data-colname="⑵掘进工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a6"
+									data-colname="⑵掘进工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a7"
+									data-colname="⑵掘进工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a8"
+									data-colname="⑵掘进工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a9"
+									data-colname="⑵掘进工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a10"
+									data-colname="⑵掘进工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a11"
+									data-colname="⑵掘进工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a12"
+									data-colname="⑵掘进工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_31_a13"
+									data-colname="⑵掘进工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_31_a14" data-colname="⑵掘进工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_31_a15" data-colname="⑵掘进工人,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_31_a16" data-colname="⑵掘进工人,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_31_a17" data-colname="⑵掘进工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="38" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">32</td>
+								<td class="report1_5" style="padding-left: 14px;">⑶井下辅助</td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a1"
+									data-colname="⑶井下辅助,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a2"
+									data-colname="⑶井下辅助,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a3"
+									data-colname="⑶井下辅助,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a4"
+									data-colname="⑶井下辅助,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a5"
+									data-colname="⑶井下辅助,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a6"
+									data-colname="⑶井下辅助,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a7"
+									data-colname="⑶井下辅助,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a8"
+									data-colname="⑶井下辅助,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a9"
+									data-colname="⑶井下辅助,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a10"
+									data-colname="⑶井下辅助,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a11"
+									data-colname="⑶井下辅助,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a12"
+									data-colname="⑶井下辅助,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_32_a13"
+									data-colname="⑶井下辅助,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_32_a14" data-colname="⑶井下辅助,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_32_a15" data-colname="⑶井下辅助,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_32_a16" data-colname="⑶井下辅助,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_32_a17" data-colname="⑶井下辅助,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="39" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">33</td>
+								<td class="report1_5" style="padding-left: 14px;">2、地面工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a1"
+									data-colname="2、地面工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a2"
+									data-colname="2、地面工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a3"
+									data-colname="2、地面工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a4"
+									data-colname="2、地面工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a5"
+									data-colname="2、地面工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a6"
+									data-colname="2、地面工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a7"
+									data-colname="2、地面工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a8"
+									data-colname="2、地面工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a9"
+									data-colname="2、地面工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a10"
+									data-colname="2、地面工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a11"
+									data-colname="2、地面工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a12"
+									data-colname="2、地面工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_33_a13"
+									data-colname="2、地面工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_33_a14" data-colname="2、地面工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_33_a15" data-colname="2、地面工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_33_a16" data-colname="2、地面工人,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_33_a17" data-colname="2、地面工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="40" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">34</td>
+								<td class="report1_5" style="padding-left: 14px;">3、矿山救护工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a1"
+									data-colname="3、矿山救护工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a2"
+									data-colname="3、矿山救护工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a3"
+									data-colname="3、矿山救护工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a4"
+									data-colname="3、矿山救护工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a5"
+									data-colname="3、矿山救护工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a6"
+									data-colname="3、矿山救护工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a7"
+									data-colname="3、矿山救护工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a8"
+									data-colname="3、矿山救护工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a9"
+									data-colname="3、矿山救护工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a10"
+									data-colname="3、矿山救护工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a11"
+									data-colname="3、矿山救护工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a12"
+									data-colname="3、矿山救护工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_34_a13"
+									data-colname="3、矿山救护工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_34_a14" data-colname="3、矿山救护工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_34_a15" data-colname="3、矿山救护工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_34_a16" data-colname="3、矿山救护工人,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_34_a17" data-colname="3、矿山救护工人,上年同期年初至本月累计平均工资"
+									name="l5" /></td>
+							</tr>
+							<tr rn="41" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">35</td>
+								<td class="report1_5" style="padding-left: 14px;">非原煤井下工人</td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a1"
+									data-colname="非原煤井下工人,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a2"
+									data-colname="非原煤井下工人,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a3"
+									data-colname="非原煤井下工人,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a4"
+									data-colname="非原煤井下工人,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a5"
+									data-colname="非原煤井下工人,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a6"
+									data-colname="非原煤井下工人,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a7"
+									data-colname="非原煤井下工人,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a8"
+									data-colname="非原煤井下工人,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a9"
+									data-colname="非原煤井下工人,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a10"
+									data-colname="非原煤井下工人,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a11"
+									data-colname="非原煤井下工人,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a12"
+									data-colname="非原煤井下工人,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_35_a13"
+									data-colname="非原煤井下工人,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_35_a14" data-colname="非原煤井下工人,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_35_a15" data-colname="非原煤井下工人,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_35_a16" data-colname="非原煤井下工人,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_35_a17" data-colname="非原煤井下工人,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="42" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">36</td>
+								<td class="report1_5" style="padding-left: 14px;">全部井下</td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a1"
+									data-colname="全部井下,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a2"
+									data-colname="全部井下,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a3"
+									data-colname="全部井下,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a4"
+									data-colname="全部井下,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a5"
+									data-colname="全部井下,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a6"
+									data-colname="全部井下,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a7"
+									data-colname="全部井下,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a8"
+									data-colname="全部井下,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a9"
+									data-colname="全部井下,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a10"
+									data-colname="全部井下,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a11"
+									data-colname="全部井下,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a12"
+									data-colname="全部井下,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_36_a13"
+									data-colname="全部井下,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_36_a14" data-colname="全部井下,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_36_a15" data-colname="全部井下,年初至本月累计平均工资" name="l5" /></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_36_a16" data-colname="全部井下,上年同期本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_36_a17" data-colname="全部井下,上年同期年初至本月累计平均工资" name="l5" />
+								</td>
+							</tr>
+							<tr rn="43" height="23" style="height: 23px;">
+								<td class="report1_14" style="display: none;">37</td>
+								<td class="report1_5" style="padding-left: 14px;">其中：井下采掘开</td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a1"
+									data-colname="其中：井下采掘开,年初至本月累计平均人数" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a2"
+									data-colname="其中：井下采掘开,年初至本月累计工资总额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a3"
+									data-colname="其中：井下采掘开,平均人数1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a4"
+									data-colname="其中：井下采掘开,工资总额1" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a5"
+									data-colname="其中：井下采掘开,1、计时工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a6"
+									data-colname="其中：井下采掘开,2、计件工资总计" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a7"
+									data-colname="其中：井下采掘开,计件标准" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a8"
+									data-colname="其中：井下采掘开,计件超额" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a9"
+									data-colname="其中：井下采掘开,3、绩效工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a10"
+									data-colname="其中：井下采掘开,4、各种奖励" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a11"
+									data-colname="其中：井下采掘开,5、辅助工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a12"
+									data-colname="其中：井下采掘开,6、加班工资" name="l5" /></td>
+								<td class="report1_1"><input type="checkbox" id="cb_37_a13"
+									data-colname="其中：井下采掘开,7、其它工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_37_a14" data-colname="其中：井下采掘开,本月平均工资" name="l5" /></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_37_a15" data-colname="其中：井下采掘开,年初至本月累计平均工资" name="l5" />
+								</td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_1" style="display: none;"></td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_37_a16" data-colname="其中：井下采掘开,上年同期本月平均工资" name="l5" />
+								</td>
+								<td class="report1_18"><input type="checkbox"
+									id="cb_37_a17" data-colname="其中：井下采掘开,上年同期年初至本月累计平均工资"
+									name="l5" /></td>
+							</tr>
+							<tr rn="44" height="23" style="height: 23px;">
+								<td class="report1_11" style="display: none;">38</td>
+								<td class="report1_13" style="padding-left: 14px;">补充资料：</td>
+								<td colspan="3" class="report1_2" style="padding-left: 56px;">1、使用非全日制用工：本月</td>
+								<td class="report1_9"><input type="checkbox" id="cb_38_a1"
+									data-colname="补充资料,1、使用非全日制用工本月" name="l5" /></td>
+								<td class="report1_9">&nbsp;元，累计：</td>
+								<td class="report1_9"><input type="checkbox" id="cb_38_a2"
+									data-colname="补充资料,1、使用非全日制用工累计" name="l5" /></td>
+								<td class="report1_2">元。</td>
+								<td class="report1_2"></td>
+								<td class="report1_2"></td>
+								<td colspan="3" class="report1_10" style="padding-right: 28px;">2、使用劳务派遣人员：本月</td>
+								<td class="report1_9"><input type="checkbox" id="cb_38_a3"
+									data-colname="补充资料,2、使用劳务派遣人员本月" name="l5" /></td>
+								<td class="report1_9">元，累计：</td>
+								<td class="report1_9"><input type="checkbox" id="cb_38_a4"
+									data-colname="补充资料,2、使用劳务派遣人员累计" name="l5" /></td>
+								<td class="report1_2" style="display: none;"></td>
+								<td class="report1_2" style="display: none;"></td>
+								<td class="report1_2" style="display: none;"></td>
+								<td class="report1_2" style="display: none;"></td>
+								<td class="report1_2" style="display: none;"></td>
+								<td class="report1_2">元。</td>
+								<td class="report1_16"></td>
+							</tr>
+							<tr rn="45" height="23" style="height: 23px;">
+								<td class="report1_19" style="display: none;"></td>
+								<td class="report1_12" style="padding-left: 56px;"></td>
+								<td colspan="4" class="report1_3" style="padding-left: 56px;">3、使用完成一定工作任务人员：本月</td>
+								<td class="report1_7"><input type="checkbox" id="cb_38_a5"
+									data-colname="补充资料,3、使用完成一定工作任务人员本月" name="l5" /></td>
+								<td class="report1_7">元，累计：</td>
+								<td class="report1_7"><input type="checkbox" id="cb_38_a6"
+									data-colname="补充资料,3、使用完成一定工作任务人员累计" name="l5" /></td>
+								<td class="report1_3">元。</td>
+								<td class="report1_3"></td>
+								<td class="report1_3"></td>
+								<td class="report1_4"></td>
+								<td class="report1_4"></td>
+								<td class="report1_4"></td>
+								<td class="report1_4"></td>
+								<td class="report1_4"></td>
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_4"></td>
+								<td class="report1_20"></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportautoconfig/reportconfig1.js"></script>
+</body>
+</html>

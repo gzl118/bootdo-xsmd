@@ -33,4 +33,6 @@ public interface ReportAutoconfigDao {
 	int savelist(List<ReportAutoconfigDO> list);
 
 	int removebyfk(String foid);
+
+	List<ReportAutoconfigDO> listbyfk(String foid);
 }

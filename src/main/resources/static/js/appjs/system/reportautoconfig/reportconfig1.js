@@ -52,3 +52,27 @@ function saveReportConfig1() {
 function resetReportConfig1() {
 	$('input[name="l1"]').removeAttr("checked");
 }
+function resetReportConfig2() {
+	$('input[name="l2"]').removeAttr("checked");
+}
+function resetReportConfig3() {
+	$('input[name="l3"]').removeAttr("checked");
+}
+function resetReportConfig32() {
+	$('input[name="l32"]').removeAttr("checked");
+}
+function resetReportConfig4() {
+	$('input[name="l4"]').removeAttr("checked");
+}
+function resetReportConfig5() {
+	$('input[name="l5"]').removeAttr("checked");
+}
+function resetReportConfig52() {
+	$('input[name="l52"]').removeAttr("checked");
+}
+function resetReportConfig6() {
+	$('input[name="l6"]').removeAttr("checked");
+}
+function resetReportConfig7() {
+	$('input[name="l7"]').removeAttr("checked");
+}

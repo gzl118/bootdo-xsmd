@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" style="padding-left: 5px; overflow: auto;">
+
+	<table id="rpt" align="center" width="100%" height="100%">
+		<tbody>
+			<tr>
+				<td align="center" valign="top" height="100%">
+					<style id="report1_style">
+.report1_1 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_2 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_3 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	line-height: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_4 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 黑体;
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_5 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_6 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_7 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_8 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+</style>
+					<table id="report1" cellspacing="0" cellpadding="0"
+						style="width: 1453px; table-layout: fixed; border-collapse: collapse">
+						<colgroup>
+							<col style="width: 151px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 57px;">
+							<col style="width: 54px;">
+							<col style="width: 54px;">
+							<col style="width: 57px;">
+						</colgroup>
+						<tbody>
+							<tr rn="1" height="65" style="height: 65px;">
+								<td class="report1_4" style="display: none;"></td>
+								<td colspan="25" class="report1_4"><div
+										style="float: left;">
+										<input type="button" id="btnReset" value="重置"
+											class="btn btn-default" onclick="resetReportConfig4()" />
+									</div>煤炭企业职工工时利用情况月、年报</td>
+							</tr>
+							<tr rn="3" height="35" style="height: 35px;">
+								<td class="report1_5" style="display: none;"></td>
+								<td rowspan="3" class="report1_2"></td>
+								<td rowspan="3" class="report1_3">本期职<br>工平均<br>人数
+								</td>
+								<td rowspan="3" class="report1_3">本期日<br>历天数
+								</td>
+								<td rowspan="3" class="report1_3">制度工<br>休工日
+								</td>
+								<td rowspan="3" class="report1_3">制度工<br>作工日
+								</td>
+								<td colspan="4" class="report1_2">全日停工工日</td>
+								<td rowspan="3" class="report1_3">全日停<br>工工日<br>中被利<br>用工日
+								</td>
+								<td colspan="7" class="report1_3">全日缺勤工日</td>
+								<td rowspan="3" class="report1_3">非生产<br>工日
+								</td>
+								<td rowspan="3" class="report1_3">年休假</td>
+								<td colspan="2" class="report1_3">实际工作日</td>
+								<td rowspan="3" class="report1_3">出勤率</td>
+								<td colspan="2" class="report1_3">年初至本月累计</td>
+								<td rowspan="3" class="report1_3">出勤率</td>
+							</tr>
+							<tr rn="4" height="29" style="height: 29px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td rowspan="2" class="report1_3">计</td>
+								<td rowspan="2" class="report1_3">由于没<br>有生产<br>任务
+								</td>
+								<td rowspan="2" class="report1_3">由于设<br>备维修
+								</td>
+								<td rowspan="2" class="report1_2">其它</td>
+								<td rowspan="2" class="report1_2">计</td>
+								<td colspan="6" class="report1_2">其中</td>
+								<td rowspan="2" class="report1_3">计</td>
+								<td rowspan="2" class="report1_3">其中<br>公休加<br>班工日
+								</td>
+								<td rowspan="2" class="report1_2">子项</td>
+								<td rowspan="2" class="report1_2">母项</td>
+							</tr>
+							<tr rn="5" height="51" style="height: 51px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td class="report1_3">病假</td>
+								<td class="report1_3">事假</td>
+								<td class="report1_3">探亲丧<br>婚假
+								</td>
+								<td class="report1_3">工伤假</td>
+								<td class="report1_3">产假</td>
+								<td class="report1_3">旷工</td>
+							</tr>
+							<tr rn="6" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">1</td>
+								<td class="report1_7" style="padding-left: 8px;">在岗职工</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a1" data-colname="在岗职工,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a2" data-colname="在岗职工,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a3" data-colname="在岗职工,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a4" data-colname="在岗职工,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a5" data-colname="在岗职工,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a6" data-colname="在岗职工,全日停工工日由于没有生产任务"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a7" data-colname="在岗职工,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a8" data-colname="在岗职工,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a9" data-colname="在岗职工,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a10" data-colname="在岗职工,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a11" data-colname="在岗职工,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a12" data-colname="在岗职工,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a13" data-colname="在岗职工,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a14" data-colname="在岗职工,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a15" data-colname="在岗职工,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a16" data-colname="在岗职工,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a17" data-colname="在岗职工,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a18" data-colname="在岗职工,年休假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a19" data-colname="在岗职工,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a20" data-colname="在岗职工,实际工作日其中公休加班工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a21" data-colname="在岗职工,出勤率" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a22" data-colname="在岗职工,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a23" data-colname="在岗职工,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a24" data-colname="在岗职工,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="7" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">2</td>
+								<td class="report1_7" style="padding-left: 8px;">生产工人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a1" data-colname="生产工人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a2" data-colname="生产工人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a3" data-colname="生产工人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a4" data-colname="生产工人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a5" data-colname="生产工人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a6" data-colname="生产工人,全日停工工日由于没有生产任务"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a7" data-colname="生产工人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a8" data-colname="生产工人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a9" data-colname="生产工人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a10" data-colname="生产工人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a11" data-colname="生产工人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a12" data-colname="生产工人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a13" data-colname="生产工人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a14" data-colname="生产工人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a15" data-colname="生产工人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a16" data-colname="生产工人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a17" data-colname="生产工人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a18" data-colname="生产工人,年休假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a19" data-colname="生产工人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a20" data-colname="生产工人,实际工作日其中公休加班工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a21" data-colname="生产工人,出勤率" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a22" data-colname="生产工人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a23" data-colname="生产工人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a24" data-colname="生产工人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="8" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">3</td>
+								<td class="report1_7" style="padding-left: 8px;">原煤生产人员</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a1" data-colname="原煤生产人员,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a2" data-colname="原煤生产人员,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a3" data-colname="原煤生产人员,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a4" data-colname="原煤生产人员,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a5" data-colname="原煤生产人员,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a6"
+									data-colname="原煤生产人员,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a7" data-colname="原煤生产人员,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a8" data-colname="原煤生产人员,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a9" data-colname="原煤生产人员,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a10" data-colname="原煤生产人员,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a11" data-colname="原煤生产人员,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a12" data-colname="原煤生产人员,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a13" data-colname="原煤生产人员,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a14" data-colname="原煤生产人员,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a15" data-colname="原煤生产人员,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a16" data-colname="原煤生产人员,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a17" data-colname="原煤生产人员,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a18" data-colname="原煤生产人员,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a19" data-colname="原煤生产人员,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a20"
+									data-colname="原煤生产人员,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a21" data-colname="原煤生产人员,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a22" data-colname="原煤生产人员,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a23" data-colname="原煤生产人员,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a24" data-colname="原煤生产人员,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="9" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">4</td>
+								<td class="report1_7" style="padding-left: 8px;">其中计效原煤生产人员</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a1" data-colname="其中计效原煤生产人员,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a2" data-colname="其中计效原煤生产人员,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a3" data-colname="其中计效原煤生产人员,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a4" data-colname="其中计效原煤生产人员,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a5" data-colname="其中计效原煤生产人员,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a6"
+									data-colname="其中计效原煤生产人员,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a7"
+									data-colname="其中计效原煤生产人员,全日停工工日由于设备维修" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a8" data-colname="其中计效原煤生产人员,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a9"
+									data-colname="其中计效原煤生产人员,全日停工工日中被利用工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a10" data-colname="其中计效原煤生产人员,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a11"
+									data-colname="其中计效原煤生产人员,全日缺勤工日病假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a12"
+									data-colname="其中计效原煤生产人员,全日缺勤工日事假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a13"
+									data-colname="其中计效原煤生产人员,全日缺勤工日探亲丧婚假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a14"
+									data-colname="其中计效原煤生产人员,全日缺勤工日工伤假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a15"
+									data-colname="其中计效原煤生产人员,全日缺勤工日产假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a16"
+									data-colname="其中计效原煤生产人员,全日缺勤工日旷工" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a17" data-colname="其中计效原煤生产人员,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a18" data-colname="其中计效原煤生产人员,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a19" data-colname="其中计效原煤生产人员,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a20"
+									data-colname="其中计效原煤生产人员,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a21" data-colname="其中计效原煤生产人员,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a22"
+									data-colname="其中计效原煤生产人员,年初至本月累计子项" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a23"
+									data-colname="其中计效原煤生产人员,年初至本月累计母项" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a24"
+									data-colname="其中计效原煤生产人员,年初至本月累计出勤率" name="l4" /></td>
+							</tr>
+							<tr rn="10" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">5</td>
+								<td class="report1_7" style="padding-left: 8px;">原煤生产工人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a1" data-colname="原煤生产工人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a2" data-colname="原煤生产工人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a3" data-colname="原煤生产工人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a4" data-colname="原煤生产工人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a5" data-colname="原煤生产工人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a6"
+									data-colname="原煤生产工人,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a7" data-colname="原煤生产工人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a8" data-colname="原煤生产工人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a9" data-colname="原煤生产工人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a10" data-colname="原煤生产工人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a11" data-colname="原煤生产工人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a12" data-colname="原煤生产工人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a13" data-colname="原煤生产工人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a14" data-colname="原煤生产工人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a15" data-colname="原煤生产工人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a16" data-colname="原煤生产工人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a17" data-colname="原煤生产工人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a18" data-colname="原煤生产工人,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a19" data-colname="原煤生产工人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a20"
+									data-colname="原煤生产工人,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a21" data-colname="原煤生产工人,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a22" data-colname="原煤生产工人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a23" data-colname="原煤生产工人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a24" data-colname="原煤生产工人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="11" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">6</td>
+								<td class="report1_7" style="padding-left: 8px;">原煤井下工人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a1" data-colname="原煤井下工人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a2" data-colname="原煤井下工人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a3" data-colname="原煤井下工人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a4" data-colname="原煤井下工人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a5" data-colname="原煤井下工人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a6"
+									data-colname="原煤井下工人,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a7" data-colname="原煤井下工人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a8" data-colname="原煤井下工人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a9" data-colname="原煤井下工人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a10" data-colname="原煤井下工人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a11" data-colname="原煤井下工人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a12" data-colname="原煤井下工人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a13" data-colname="原煤井下工人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a14" data-colname="原煤井下工人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a15" data-colname="原煤井下工人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a16" data-colname="原煤井下工人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a17" data-colname="原煤井下工人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a18" data-colname="原煤井下工人,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a19" data-colname="原煤井下工人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a20"
+									data-colname="原煤井下工人,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a21" data-colname="原煤井下工人,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a22" data-colname="原煤井下工人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a23" data-colname="原煤井下工人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a24" data-colname="原煤井下工人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="12" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">7</td>
+								<td class="report1_7" style="padding-left: 8px;">回采工人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a1" data-colname="回采工人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a2" data-colname="回采工人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a3" data-colname="回采工人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a4" data-colname="回采工人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a5" data-colname="回采工人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a6" data-colname="回采工人,全日停工工日由于没有生产任务"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a7" data-colname="回采工人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a8" data-colname="回采工人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a9" data-colname="回采工人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a10" data-colname="回采工人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a11" data-colname="回采工人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a12" data-colname="回采工人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a13" data-colname="回采工人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a14" data-colname="回采工人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a15" data-colname="回采工人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a16" data-colname="回采工人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a17" data-colname="回采工人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a18" data-colname="回采工人,年休假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a19" data-colname="回采工人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a20" data-colname="回采工人,实际工作日其中公休加班工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a21" data-colname="回采工人,出勤率" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a22" data-colname="回采工人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a23" data-colname="回采工人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a24" data-colname="回采工人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="13" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">8</td>
+								<td class="report1_7" style="padding-left: 8px;">掘进工人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a1" data-colname="掘进工人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a2" data-colname="掘进工人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a3" data-colname="掘进工人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a4" data-colname="掘进工人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a5" data-colname="掘进工人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a6" data-colname="掘进工人,全日停工工日由于没有生产任务"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a7" data-colname="掘进工人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a8" data-colname="掘进工人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a9" data-colname="掘进工人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a10" data-colname="掘进工人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a11" data-colname="掘进工人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a12" data-colname="掘进工人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a13" data-colname="掘进工人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a14" data-colname="掘进工人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a15" data-colname="掘进工人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a16" data-colname="掘进工人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a17" data-colname="掘进工人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a18" data-colname="掘进工人,年休假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a19" data-colname="掘进工人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a20" data-colname="掘进工人,实际工作日其中公休加班工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a21" data-colname="掘进工人,出勤率" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a22" data-colname="掘进工人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a23" data-colname="掘进工人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a24" data-colname="掘进工人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="14" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">9</td>
+								<td class="report1_7" style="padding-left: 8px;">建筑安装工人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a1" data-colname="建筑安装工人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a2" data-colname="建筑安装工人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a3" data-colname="建筑安装工人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a4" data-colname="建筑安装工人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a5" data-colname="建筑安装工人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a6"
+									data-colname="建筑安装工人,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a7" data-colname="建筑安装工人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a8" data-colname="建筑安装工人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a9" data-colname="建筑安装工人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a10" data-colname="建筑安装工人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a11" data-colname="建筑安装工人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a12" data-colname="建筑安装工人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a13" data-colname="建筑安装工人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a14" data-colname="建筑安装工人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a15" data-colname="建筑安装工人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a16" data-colname="建筑安装工人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a17" data-colname="建筑安装工人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a18" data-colname="建筑安装工人,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a19" data-colname="建筑安装工人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a20"
+									data-colname="建筑安装工人,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a21" data-colname="建筑安装工人,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a22" data-colname="建筑安装工人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a23" data-colname="建筑安装工人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a24" data-colname="建筑安装工人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="15" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">10</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;1.全部井下</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a1" data-colname="1.全部井下,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a2" data-colname="1.全部井下,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a3" data-colname="1.全部井下,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a4" data-colname="1.全部井下,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a5" data-colname="1.全部井下,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a6"
+									data-colname="1.全部井下,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a7"
+									data-colname="1.全部井下,全日停工工日由于设备维修" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a8" data-colname="1.全部井下,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a9"
+									data-colname="1.全部井下,全日停工工日中被利用工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a10" data-colname="1.全部井下,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a11" data-colname="1.全部井下,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a12" data-colname="1.全部井下,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a13"
+									data-colname="1.全部井下,全日缺勤工日探亲丧婚假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a14" data-colname="1.全部井下,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a15" data-colname="1.全部井下,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a16" data-colname="1.全部井下,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a17" data-colname="1.全部井下,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a18" data-colname="1.全部井下,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a19" data-colname="1.全部井下,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a20"
+									data-colname="1.全部井下,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a21" data-colname="1.全部井下,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a22" data-colname="1.全部井下,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a23" data-colname="1.全部井下,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a24" data-colname="1.全部井下,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="16" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">11</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;&nbsp;&nbsp;其中：采掘开</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a1" data-colname="其中：采掘开,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a2" data-colname="其中：采掘开,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a3" data-colname="其中：采掘开,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a4" data-colname="其中：采掘开,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a5" data-colname="其中：采掘开,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a6"
+									data-colname="其中：采掘开,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a7"
+									data-colname="其中：采掘开,全日停工工日由于设备维修" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a8" data-colname="其中：采掘开,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a9"
+									data-colname="其中：采掘开,全日停工工日中被利用工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a10" data-colname="其中：采掘开,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a11" data-colname="其中：采掘开,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a12" data-colname="其中：采掘开,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a13"
+									data-colname="其中：采掘开,全日缺勤工日探亲丧婚假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a14" data-colname="其中：采掘开,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a15" data-colname="其中：采掘开,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a16" data-colname="其中：采掘开,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a17" data-colname="其中：采掘开,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a18" data-colname="其中：采掘开,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a19" data-colname="其中：采掘开,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a20"
+									data-colname="其中：采掘开,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a21" data-colname="其中：采掘开,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a22" data-colname="其中：采掘开,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a23" data-colname="其中：采掘开,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a24" data-colname="其中：采掘开,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="17" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">12</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;井下辅助</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a1" data-colname="井下辅助,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a2" data-colname="井下辅助,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a3" data-colname="井下辅助,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a4" data-colname="井下辅助,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a5" data-colname="井下辅助,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a6"
+									data-colname="井下辅助,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a7" data-colname="井下辅助,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a8" data-colname="井下辅助,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a9" data-colname="井下辅助,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a10" data-colname="井下辅助,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a11" data-colname="井下辅助,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a12" data-colname="井下辅助,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a13" data-colname="井下辅助,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a14" data-colname="井下辅助,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a15" data-colname="井下辅助,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a16" data-colname="井下辅助,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a17" data-colname="井下辅助,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a18" data-colname="井下辅助,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a19" data-colname="井下辅助,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a20"
+									data-colname="井下辅助,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a21" data-colname="井下辅助,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a22" data-colname="井下辅助,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a23" data-colname="井下辅助,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a24" data-colname="井下辅助,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="18" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">13</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;2.全部地面</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a1" data-colname="2.全部地面,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a2" data-colname="2.全部地面,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a3" data-colname="2.全部地面,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a4" data-colname="2.全部地面,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a5" data-colname="2.全部地面,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a6"
+									data-colname="2.全部地面,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a7"
+									data-colname="2.全部地面,全日停工工日由于设备维修" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a8" data-colname="2.全部地面,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a9"
+									data-colname="2.全部地面,全日停工工日中被利用工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a10" data-colname="2.全部地面,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a11" data-colname="2.全部地面,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a12" data-colname="2.全部地面,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a13"
+									data-colname="2.全部地面,全日缺勤工日探亲丧婚假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a14" data-colname="2.全部地面,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a15" data-colname="2.全部地面,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a16" data-colname="2.全部地面,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a17" data-colname="2.全部地面,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a18" data-colname="2.全部地面,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a19" data-colname="2.全部地面,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a20"
+									data-colname="2.全部地面,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a21" data-colname="2.全部地面,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a22" data-colname="2.全部地面,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a23" data-colname="2.全部地面,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a24" data-colname="2.全部地面,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="19" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">14</td>
+								<td class="report1_7" style="padding-left: 8px;">三类人员</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a1" data-colname="三类人员,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a2" data-colname="三类人员,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a3" data-colname="三类人员,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a4" data-colname="三类人员,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a5" data-colname="三类人员,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a6"
+									data-colname="三类人员,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a7" data-colname="三类人员,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a8" data-colname="三类人员,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a9" data-colname="三类人员,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a10" data-colname="三类人员,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a11" data-colname="三类人员,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a12" data-colname="三类人员,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a13" data-colname="三类人员,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a14" data-colname="三类人员,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a15" data-colname="三类人员,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a16" data-colname="三类人员,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a17" data-colname="三类人员,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a18" data-colname="三类人员,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a19" data-colname="三类人员,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a20"
+									data-colname="三类人员,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a21" data-colname="三类人员,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a22" data-colname="三类人员,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a23" data-colname="三类人员,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a24" data-colname="三类人员,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="20" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">15</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;其中：大中专操作岗</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a1" data-colname="其中：大中专操作岗,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a2" data-colname="其中：大中专操作岗,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a3" data-colname="其中：大中专操作岗,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a4" data-colname="其中：大中专操作岗,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a5" data-colname="其中：大中专操作岗,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a6"
+									data-colname="其中：大中专操作岗,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a7"
+									data-colname="其中：大中专操作岗,全日停工工日由于设备维修" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a8" data-colname="其中：大中专操作岗,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a9"
+									data-colname="其中：大中专操作岗,全日停工工日中被利用工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a10" data-colname="其中：大中专操作岗,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a11"
+									data-colname="其中：大中专操作岗,全日缺勤工日病假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a12"
+									data-colname="其中：大中专操作岗,全日缺勤工日事假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a13"
+									data-colname="其中：大中专操作岗,全日缺勤工日探亲丧婚假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a14"
+									data-colname="其中：大中专操作岗,全日缺勤工日工伤假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a15"
+									data-colname="其中：大中专操作岗,全日缺勤工日产假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a16"
+									data-colname="其中：大中专操作岗,全日缺勤工日旷工" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a17" data-colname="其中：大中专操作岗,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a18" data-colname="其中：大中专操作岗,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a19" data-colname="其中：大中专操作岗,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a20"
+									data-colname="其中：大中专操作岗,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a21" data-colname="其中：大中专操作岗,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a22"
+									data-colname="其中：大中专操作岗,年初至本月累计子项" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a23"
+									data-colname="其中：大中专操作岗,年初至本月累计母项" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a24"
+									data-colname="其中：大中专操作岗,年初至本月累计出勤率" name="l4" /></td>
+							</tr>
+							<tr rn="21" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">16</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;&nbsp;&nbsp;&nbsp;技校生</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a1" data-colname="技校生,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a2" data-colname="技校生,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a3" data-colname="技校生,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a4" data-colname="技校生,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a5" data-colname="技校生,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a6" data-colname="技校生,全日停工工日由于没有生产任务"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a7" data-colname="技校生,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a8" data-colname="技校生,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a9" data-colname="技校生,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a10" data-colname="技校生,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a11" data-colname="技校生,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a12" data-colname="技校生,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a13" data-colname="技校生,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a14" data-colname="技校生,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a15" data-colname="技校生,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a16" data-colname="技校生,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a17" data-colname="技校生,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a18" data-colname="技校生,年休假" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a19" data-colname="技校生,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a20" data-colname="技校生,实际工作日其中公休加班工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a21" data-colname="技校生,出勤率" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a22" data-colname="技校生,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a23" data-colname="技校生,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a24" data-colname="技校生,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+							<tr rn="22" height="23" style="height: 23px;">
+								<td class="report1_8" style="display: none;">17</td>
+								<td class="report1_7" style="padding-left: 8px;">&nbsp;&nbsp;&nbsp;&nbsp;复转军人</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a1" data-colname="复转军人,本期职工平均人数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a2" data-colname="复转军人,本期日历天数"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a3" data-colname="复转军人,制度工休工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a4" data-colname="复转军人,制度工作工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a5" data-colname="复转军人,全日停工工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a6"
+									data-colname="复转军人,全日停工工日由于没有生产任务" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a7" data-colname="复转军人,全日停工工日由于设备维修"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a8" data-colname="复转军人,全日停工工日其它"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a9" data-colname="复转军人,全日停工工日中被利用工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a10" data-colname="复转军人,全日缺勤工日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a11" data-colname="复转军人,全日缺勤工日病假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a12" data-colname="复转军人,全日缺勤工日事假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a13" data-colname="复转军人,全日缺勤工日探亲丧婚假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a14" data-colname="复转军人,全日缺勤工日工伤假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a15" data-colname="复转军人,全日缺勤工日产假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a16" data-colname="复转军人,全日缺勤工日旷工"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a17" data-colname="复转军人,非生产工日"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a18" data-colname="复转军人,年休假"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a19" data-colname="复转军人,实际工作日计"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a20"
+									data-colname="复转军人,实际工作日其中公休加班工日" name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a21" data-colname="复转军人,出勤率"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a22" data-colname="复转军人,年初至本月累计子项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a23" data-colname="复转军人,年初至本月累计母项"
+									name="l4" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a24" data-colname="复转军人,年初至本月累计出勤率"
+									name="l4" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportautoconfig/reportconfig1.js"></script>
+</body>
+</html>

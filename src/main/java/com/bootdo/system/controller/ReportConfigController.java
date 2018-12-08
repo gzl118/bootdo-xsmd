@@ -13,7 +13,8 @@ import com.bootdo.common.controller.BaseController;
 public class ReportConfigController extends BaseController {
 	@GetMapping()
 	@RequiresPermissions("system:reportconfig:reportconfig")
-	String ReportConfig() {
+	String ReportConfig(String foid, Model model) {
+		model.addAttribute("foid", foid);
 		return "system/reportautoconfig/reportautoconfigmain";
 	}
 

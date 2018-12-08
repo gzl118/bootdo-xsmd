@@ -59,4 +59,9 @@ public class ReportAutoconfigServiceImpl implements ReportAutoconfigService {
 	public int removebyfk(String foid) {
 		return reportAutoconfigDao.removebyfk(foid);
 	}
+
+	@Override
+	public List<ReportAutoconfigDO> listbyfk(String foid) {
+		return reportAutoconfigDao.listbyfk(foid);
+	}
 }

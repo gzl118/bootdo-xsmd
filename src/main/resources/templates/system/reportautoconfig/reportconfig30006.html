@@ -1,0 +1,2569 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" style="padding-left: 5px; overflow: auto;">
+
+	<table id="rpt" align="center" width="100%" height="100%">
+		<tbody>
+			<tr>
+				<td align="center" valign="top" height="100%">
+					<style id="report1_style">
+.report1_1 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_2 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_3 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	line-height: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_4 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_5 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_6 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_7 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_8 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 黑体;
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+</style>
+					<table id="report1" cellspacing="0" cellpadding="0"
+						style="width: 1801px; table-layout: fixed; border-collapse: collapse">
+						<colgroup>
+							<col style="width: 168px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+							<col style="width: 71px;">
+						</colgroup>
+						<tbody>
+							<tr rn="1" height="59" style="height: 59px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td colspan="24" class="report1_8"><div
+										style="float: left;">
+										<input type="button" id="btnReset" value="重置"
+											class="btn btn-default" onclick="resetReportConfig6()" />
+									</div>各单位人员结构状况统计年报</td>
+							</tr>
+							<tr rn="3" height="23" style="height: 23px;">
+								<td class="report1_7" style="display: none;"></td>
+								<td rowspan="2" class="report1_1"></td>
+								<td rowspan="2" class="report1_3">总人数</td>
+								<td colspan="7" class="report1_3">按用工形式划分</td>
+								<td colspan="7" class="report1_3">按年龄段划分</td>
+								<td colspan="8" class="report1_1">按学历层次划分</td>
+							</tr>
+							<tr rn="4" height="43" style="height: 43px;">
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_1">固定</td>
+								<td class="report1_1">长合</td>
+								<td class="report1_1">短合</td>
+								<td class="report1_3">农合</td>
+								<td class="report1_3">农轮</td>
+								<td class="report1_3">混岗</td>
+								<td class="report1_1">其它</td>
+								<td class="report1_1">30以下</td>
+								<td class="report1_1">31-35</td>
+								<td class="report1_1">36-40</td>
+								<td class="report1_1">41-45</td>
+								<td class="report1_1">46-50</td>
+								<td class="report1_1">51-54</td>
+								<td class="report1_1">55以上</td>
+								<td class="report1_3">研究生<br>及以上
+								</td>
+								<td class="report1_1">大学</td>
+								<td class="report1_1">大专</td>
+								<td class="report1_3">中专</td>
+								<td class="report1_3">技校</td>
+								<td class="report1_1">高中</td>
+								<td class="report1_1">初中</td>
+								<td class="report1_3">小学及<br>以下
+								</td>
+							</tr>
+							<tr rn="5" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">1</td>
+								<td class="report1_2" style="padding-left: 8px;">职工总数</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_1_ntotal" data-colname="职工总数,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a1" data-colname="职工总数,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a2" data-colname="职工总数,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a3" data-colname="职工总数,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a4" data-colname="职工总数,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a5" data-colname="职工总数,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a6" data-colname="职工总数,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a7" data-colname="职工总数,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a8" data-colname="职工总数,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a9" data-colname="职工总数,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a10" data-colname="职工总数,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a11" data-colname="职工总数,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a12" data-colname="职工总数,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a13" data-colname="职工总数,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a14" data-colname="职工总数,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a15" data-colname="职工总数,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a16" data-colname="职工总数,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a17" data-colname="职工总数,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a18" data-colname="职工总数,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a19" data-colname="职工总数,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a20" data-colname="职工总数,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a21" data-colname="职工总数,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a22" data-colname="职工总数,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="6" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">2</td>
+								<td class="report1_2" style="padding-left: 8px;">一、在岗职工</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_2_ntotal" data-colname="一、在岗职工,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a1" data-colname="一、在岗职工,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a2" data-colname="一、在岗职工,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a3" data-colname="一、在岗职工,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a4" data-colname="一、在岗职工,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a5" data-colname="一、在岗职工,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a6" data-colname="一、在岗职工,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a7" data-colname="一、在岗职工,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a8" data-colname="一、在岗职工,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a9" data-colname="一、在岗职工,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a10" data-colname="一、在岗职工,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a11" data-colname="一、在岗职工,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a12" data-colname="一、在岗职工,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a13" data-colname="一、在岗职工,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a14" data-colname="一、在岗职工,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a15"
+									data-colname="一、在岗职工,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a16" data-colname="一、在岗职工,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a17" data-colname="一、在岗职工,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a18" data-colname="一、在岗职工,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a19" data-colname="一、在岗职工,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a20" data-colname="一、在岗职工,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a21" data-colname="一、在岗职工,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a22"
+									data-colname="一、在岗职工,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="7" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">3</td>
+								<td class="report1_2" style="padding-left: 17px;">其中：女职工人数</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_3_ntotal" data-colname="其中：女职工人数,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a1" data-colname="其中：女职工人数,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a2" data-colname="其中：女职工人数,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a3" data-colname="其中：女职工人数,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a4" data-colname="其中：女职工人数,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a5" data-colname="其中：女职工人数,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a6" data-colname="其中：女职工人数,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a7" data-colname="其中：女职工人数,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a8" data-colname="其中：女职工人数,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a9"
+									data-colname="其中：女职工人数,按年龄段划分31-35" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a10"
+									data-colname="其中：女职工人数,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a11"
+									data-colname="其中：女职工人数,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a12"
+									data-colname="其中：女职工人数,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a13"
+									data-colname="其中：女职工人数,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a14"
+									data-colname="其中：女职工人数,按年龄段划分55以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a15"
+									data-colname="其中：女职工人数,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a16" data-colname="其中：女职工人数,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a17" data-colname="其中：女职工人数,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a18" data-colname="其中：女职工人数,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a19" data-colname="其中：女职工人数,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a20" data-colname="其中：女职工人数,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a21" data-colname="其中：女职工人数,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a22"
+									data-colname="其中：女职工人数,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="8" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">4</td>
+								<td class="report1_2" style="padding-left: 53px;">干部人数</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_4_ntotal" data-colname="干部人数,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a1" data-colname="干部人数,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a2" data-colname="干部人数,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a3" data-colname="干部人数,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a4" data-colname="干部人数,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a5" data-colname="干部人数,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a6" data-colname="干部人数,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a7" data-colname="干部人数,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a8" data-colname="干部人数,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a9" data-colname="干部人数,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a10" data-colname="干部人数,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a11" data-colname="干部人数,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a12" data-colname="干部人数,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a13" data-colname="干部人数,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a14" data-colname="干部人数,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a15" data-colname="干部人数,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a16" data-colname="干部人数,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a17" data-colname="干部人数,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a18" data-colname="干部人数,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a19" data-colname="干部人数,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a20" data-colname="干部人数,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a21" data-colname="干部人数,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a22" data-colname="干部人数,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="9" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">5</td>
+								<td class="report1_2" style="padding-left: 53px;">专业技术人员</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_5_ntotal" data-colname="专业技术人员,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a1" data-colname="专业技术人员,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a2" data-colname="专业技术人员,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a3" data-colname="专业技术人员,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a4" data-colname="专业技术人员,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a5" data-colname="专业技术人员,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a6" data-colname="专业技术人员,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a7" data-colname="专业技术人员,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a8" data-colname="专业技术人员,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a9" data-colname="专业技术人员,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a10" data-colname="专业技术人员,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a11" data-colname="专业技术人员,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a12" data-colname="专业技术人员,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a13" data-colname="专业技术人员,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a14" data-colname="专业技术人员,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a15"
+									data-colname="专业技术人员,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a16" data-colname="专业技术人员,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a17" data-colname="专业技术人员,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a18" data-colname="专业技术人员,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a19" data-colname="专业技术人员,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a20" data-colname="专业技术人员,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a21" data-colname="专业技术人员,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a22"
+									data-colname="专业技术人员,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="10" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">6</td>
+								<td class="report1_2" style="padding-left: 17px;">其中：全民职工</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_6_ntotal" data-colname="其中：全民职工,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a1" data-colname="其中：全民职工,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a2" data-colname="其中：全民职工,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a3" data-colname="其中：全民职工,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a4" data-colname="其中：全民职工,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a5" data-colname="其中：全民职工,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a6" data-colname="其中：全民职工,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a7" data-colname="其中：全民职工,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a8" data-colname="其中：全民职工,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a9" data-colname="其中：全民职工,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a10"
+									data-colname="其中：全民职工,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a11"
+									data-colname="其中：全民职工,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a12"
+									data-colname="其中：全民职工,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a13"
+									data-colname="其中：全民职工,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a14" data-colname="其中：全民职工,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a15"
+									data-colname="其中：全民职工,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a16" data-colname="其中：全民职工,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a17" data-colname="其中：全民职工,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a18" data-colname="其中：全民职工,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a19" data-colname="其中：全民职工,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a20" data-colname="其中：全民职工,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a21" data-colname="其中：全民职工,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a22"
+									data-colname="其中：全民职工,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="11" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">7</td>
+								<td class="report1_2" style="padding-left: 53px;">农民工</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_7_ntotal" data-colname="农民工,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a1" data-colname="农民工,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a2" data-colname="农民工,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a3" data-colname="农民工,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a4" data-colname="农民工,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a5" data-colname="农民工,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a6" data-colname="农民工,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a7" data-colname="农民工,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a8" data-colname="农民工,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a9" data-colname="农民工,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a10" data-colname="农民工,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a11" data-colname="农民工,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a12" data-colname="农民工,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a13" data-colname="农民工,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a14" data-colname="农民工,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a15" data-colname="农民工,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a16" data-colname="农民工,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a17" data-colname="农民工,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a18" data-colname="农民工,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a19" data-colname="农民工,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a20" data-colname="农民工,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a21" data-colname="农民工,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a22" data-colname="农民工,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="12" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">8</td>
+								<td class="report1_2" style="padding-left: 53px;">大集体</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_8_ntotal" data-colname="大集体,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a1" data-colname="大集体,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a2" data-colname="大集体,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a3" data-colname="大集体,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a4" data-colname="大集体,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a5" data-colname="大集体,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a6" data-colname="大集体,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a7" data-colname="大集体,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a8" data-colname="大集体,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a9" data-colname="大集体,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a10" data-colname="大集体,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a11" data-colname="大集体,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a12" data-colname="大集体,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a13" data-colname="大集体,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a14" data-colname="大集体,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a15" data-colname="大集体,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a16" data-colname="大集体,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a17" data-colname="大集体,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a18" data-colname="大集体,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a19" data-colname="大集体,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a20" data-colname="大集体,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a21" data-colname="大集体,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a22" data-colname="大集体,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="13" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">9</td>
+								<td class="report1_2" style="padding-left: 53px;">复转军人</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_9_ntotal" data-colname="复转军人,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a1" data-colname="复转军人,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a2" data-colname="复转军人,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a3" data-colname="复转军人,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a4" data-colname="复转军人,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a5" data-colname="复转军人,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a6" data-colname="复转军人,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a7" data-colname="复转军人,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a8" data-colname="复转军人,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a9" data-colname="复转军人,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a10" data-colname="复转军人,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a11" data-colname="复转军人,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a12" data-colname="复转军人,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a13" data-colname="复转军人,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a14" data-colname="复转军人,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a15" data-colname="复转军人,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a16" data-colname="复转军人,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a17" data-colname="复转军人,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a18" data-colname="复转军人,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a19" data-colname="复转军人,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a20" data-colname="复转军人,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a21" data-colname="复转军人,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a22" data-colname="复转军人,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="14" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">10</td>
+								<td class="report1_2" style="padding-left: 65px;">其中：军转干部</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_10_ntotal" data-colname="其中：军转干部,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a1" data-colname="其中：军转干部,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a2" data-colname="其中：军转干部,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a3" data-colname="其中：军转干部,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a4" data-colname="其中：军转干部,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a5" data-colname="其中：军转干部,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a6" data-colname="其中：军转干部,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a7" data-colname="其中：军转干部,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a8" data-colname="其中：军转干部,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a9"
+									data-colname="其中：军转干部,按年龄段划分31-35" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a10"
+									data-colname="其中：军转干部,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a11"
+									data-colname="其中：军转干部,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a12"
+									data-colname="其中：军转干部,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a13"
+									data-colname="其中：军转干部,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a14"
+									data-colname="其中：军转干部,按年龄段划分55以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a15"
+									data-colname="其中：军转干部,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a16" data-colname="其中：军转干部,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a17" data-colname="其中：军转干部,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a18" data-colname="其中：军转干部,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a19" data-colname="其中：军转干部,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a20" data-colname="其中：军转干部,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a21" data-colname="其中：军转干部,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a22"
+									data-colname="其中：军转干部,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="15" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">11</td>
+								<td class="report1_2" style="padding-left: 17px;">其中：管理岗位</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_11_ntotal" data-colname="其中：管理岗位,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a1" data-colname="其中：管理岗位,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a2" data-colname="其中：管理岗位,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a3" data-colname="其中：管理岗位,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a4" data-colname="其中：管理岗位,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a5" data-colname="其中：管理岗位,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a6" data-colname="其中：管理岗位,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a7" data-colname="其中：管理岗位,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a8" data-colname="其中：管理岗位,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a9"
+									data-colname="其中：管理岗位,按年龄段划分31-35" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a10"
+									data-colname="其中：管理岗位,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a11"
+									data-colname="其中：管理岗位,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a12"
+									data-colname="其中：管理岗位,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a13"
+									data-colname="其中：管理岗位,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a14"
+									data-colname="其中：管理岗位,按年龄段划分55以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a15"
+									data-colname="其中：管理岗位,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a16" data-colname="其中：管理岗位,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a17" data-colname="其中：管理岗位,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a18" data-colname="其中：管理岗位,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a19" data-colname="其中：管理岗位,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a20" data-colname="其中：管理岗位,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a21" data-colname="其中：管理岗位,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a22"
+									data-colname="其中：管理岗位,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="16" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">12</td>
+								<td class="report1_2" style="padding-left: 25px;">其中：1、公司班子人员</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_12_ntotal" data-colname="其中：1、公司班子人员,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a1"
+									data-colname="其中：1、公司班子人员,按用工形式划分固定" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a2"
+									data-colname="其中：1、公司班子人员,按用工形式划分长合" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a3"
+									data-colname="其中：1、公司班子人员,按用工形式划分短合" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a4"
+									data-colname="其中：1、公司班子人员,按用工形式划分农合" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a5"
+									data-colname="其中：1、公司班子人员,按用工形式划分农轮" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a6"
+									data-colname="其中：1、公司班子人员,按用工形式划分混岗" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a7"
+									data-colname="其中：1、公司班子人员,按用工形式划分其它" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a8"
+									data-colname="其中：1、公司班子人员,按年龄段划分30以下" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a9"
+									data-colname="其中：1、公司班子人员,按年龄段划分31-35" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a10"
+									data-colname="其中：1、公司班子人员,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a11"
+									data-colname="其中：1、公司班子人员,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a12"
+									data-colname="其中：1、公司班子人员,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a13"
+									data-colname="其中：1、公司班子人员,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a14"
+									data-colname="其中：1、公司班子人员,按年龄段划分55以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a15"
+									data-colname="其中：1、公司班子人员,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a16"
+									data-colname="其中：1、公司班子人员,按学历层次划分大学" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a17"
+									data-colname="其中：1、公司班子人员,按学历层次划分大专" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a18"
+									data-colname="其中：1、公司班子人员,按学历层次划分中专" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a19"
+									data-colname="其中：1、公司班子人员,按学历层次划分技校" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a20"
+									data-colname="其中：1、公司班子人员,按学历层次划分高中" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a21"
+									data-colname="其中：1、公司班子人员,按学历层次划分初中" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a22"
+									data-colname="其中：1、公司班子人员,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="17" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">13</td>
+								<td class="report1_2" style="padding-left: 62px;">2、处级人员</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_13_ntotal" data-colname="2、处级人员,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a1" data-colname="2、处级人员,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a2" data-colname="2、处级人员,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a3" data-colname="2、处级人员,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a4" data-colname="2、处级人员,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a5" data-colname="2、处级人员,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a6" data-colname="2、处级人员,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a7" data-colname="2、处级人员,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a8" data-colname="2、处级人员,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a9" data-colname="2、处级人员,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a10"
+									data-colname="2、处级人员,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a11"
+									data-colname="2、处级人员,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a12"
+									data-colname="2、处级人员,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a13"
+									data-colname="2、处级人员,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a14" data-colname="2、处级人员,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a15"
+									data-colname="2、处级人员,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a16" data-colname="2、处级人员,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a17" data-colname="2、处级人员,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a18" data-colname="2、处级人员,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a19" data-colname="2、处级人员,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a20" data-colname="2、处级人员,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a21" data-colname="2、处级人员,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a22"
+									data-colname="2、处级人员,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="18" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">14</td>
+								<td class="report1_2" style="padding-left: 62px;">3、科级人员</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_14_ntotal" data-colname="3、科级人员,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a1" data-colname="3、科级人员,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a2" data-colname="3、科级人员,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a3" data-colname="3、科级人员,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a4" data-colname="3、科级人员,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a5" data-colname="3、科级人员,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a6" data-colname="3、科级人员,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a7" data-colname="3、科级人员,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a8" data-colname="3、科级人员,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a9" data-colname="3、科级人员,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a10"
+									data-colname="3、科级人员,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a11"
+									data-colname="3、科级人员,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a12"
+									data-colname="3、科级人员,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a13"
+									data-colname="3、科级人员,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a14" data-colname="3、科级人员,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a15"
+									data-colname="3、科级人员,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a16" data-colname="3、科级人员,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a17" data-colname="3、科级人员,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a18" data-colname="3、科级人员,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a19" data-colname="3、科级人员,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a20" data-colname="3、科级人员,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a21" data-colname="3、科级人员,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a22"
+									data-colname="3、科级人员,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="19" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">15</td>
+								<td class="report1_2" style="padding-left: 62px;">4、一般人员</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_15_ntotal" data-colname="4、一般人员,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a1" data-colname="4、一般人员,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a2" data-colname="4、一般人员,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a3" data-colname="4、一般人员,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a4" data-colname="4、一般人员,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a5" data-colname="4、一般人员,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a6" data-colname="4、一般人员,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a7" data-colname="4、一般人员,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a8" data-colname="4、一般人员,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a9" data-colname="4、一般人员,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a10"
+									data-colname="4、一般人员,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a11"
+									data-colname="4、一般人员,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a12"
+									data-colname="4、一般人员,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a13"
+									data-colname="4、一般人员,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a14" data-colname="4、一般人员,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a15"
+									data-colname="4、一般人员,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a16" data-colname="4、一般人员,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a17" data-colname="4、一般人员,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a18" data-colname="4、一般人员,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a19" data-colname="4、一般人员,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a20" data-colname="4、一般人员,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a21" data-colname="4、一般人员,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a22"
+									data-colname="4、一般人员,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="20" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">16</td>
+								<td class="report1_2" style="padding-left: 8px;">1、全部井下职工</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_16_ntotal" data-colname="1、全部井下职工,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a1" data-colname="1、全部井下职工,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a2" data-colname="1、全部井下职工,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a3" data-colname="1、全部井下职工,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a4" data-colname="1、全部井下职工,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a5" data-colname="1、全部井下职工,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a6" data-colname="1、全部井下职工,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a7" data-colname="1、全部井下职工,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a8"
+									data-colname="1、全部井下职工,按年龄段划分30以下" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a9"
+									data-colname="1、全部井下职工,按年龄段划分31-35" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a10"
+									data-colname="1、全部井下职工,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a11"
+									data-colname="1、全部井下职工,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a12"
+									data-colname="1、全部井下职工,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a13"
+									data-colname="1、全部井下职工,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a14"
+									data-colname="1、全部井下职工,按年龄段划分55以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a15"
+									data-colname="1、全部井下职工,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a16"
+									data-colname="1、全部井下职工,按学历层次划分大学" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a17"
+									data-colname="1、全部井下职工,按学历层次划分大专" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a18"
+									data-colname="1、全部井下职工,按学历层次划分中专" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a19"
+									data-colname="1、全部井下职工,按学历层次划分技校" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a20"
+									data-colname="1、全部井下职工,按学历层次划分高中" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a21"
+									data-colname="1、全部井下职工,按学历层次划分初中" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a22"
+									data-colname="1、全部井下职工,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="21" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">17</td>
+								<td class="report1_2" style="padding-left: 25px;">其中：采掘开</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_17_ntotal" data-colname="其中：采掘开,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a1" data-colname="其中：采掘开,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a2" data-colname="其中：采掘开,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a3" data-colname="其中：采掘开,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a4" data-colname="其中：采掘开,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a5" data-colname="其中：采掘开,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a6" data-colname="其中：采掘开,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a7" data-colname="其中：采掘开,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a8" data-colname="其中：采掘开,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a9" data-colname="其中：采掘开,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a10"
+									data-colname="其中：采掘开,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a11"
+									data-colname="其中：采掘开,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a12"
+									data-colname="其中：采掘开,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a13"
+									data-colname="其中：采掘开,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a14" data-colname="其中：采掘开,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a15"
+									data-colname="其中：采掘开,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a16" data-colname="其中：采掘开,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a17" data-colname="其中：采掘开,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a18" data-colname="其中：采掘开,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a19" data-colname="其中：采掘开,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a20" data-colname="其中：采掘开,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a21" data-colname="其中：采掘开,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a22"
+									data-colname="其中：采掘开,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="22" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">18</td>
+								<td class="report1_2" style="padding-left: 8px;">2、全部地面</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_18_ntotal" data-colname="2、全部地面,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a1" data-colname="2、全部地面,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a2" data-colname="2、全部地面,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a3" data-colname="2、全部地面,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a4" data-colname="2、全部地面,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a5" data-colname="2、全部地面,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a6" data-colname="2、全部地面,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a7" data-colname="2、全部地面,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a8" data-colname="2、全部地面,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a9" data-colname="2、全部地面,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a10"
+									data-colname="2、全部地面,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a11"
+									data-colname="2、全部地面,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a12"
+									data-colname="2、全部地面,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a13"
+									data-colname="2、全部地面,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a14" data-colname="2、全部地面,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a15"
+									data-colname="2、全部地面,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a16" data-colname="2、全部地面,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a17" data-colname="2、全部地面,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a18" data-colname="2、全部地面,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a19" data-colname="2、全部地面,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a20" data-colname="2、全部地面,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a21" data-colname="2、全部地面,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a22"
+									data-colname="2、全部地面,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="23" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">19</td>
+								<td class="report1_2" style="padding-left: 25px;">其中：机关</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_19_ntotal" data-colname="其中：机关,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a1" data-colname="其中：机关,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a2" data-colname="其中：机关,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a3" data-colname="其中：机关,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a4" data-colname="其中：机关,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a5" data-colname="其中：机关,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a6" data-colname="其中：机关,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a7" data-colname="其中：机关,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a8" data-colname="其中：机关,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a9" data-colname="其中：机关,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a10" data-colname="其中：机关,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a11" data-colname="其中：机关,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a12" data-colname="其中：机关,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a13" data-colname="其中：机关,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a14" data-colname="其中：机关,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a15"
+									data-colname="其中：机关,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a16" data-colname="其中：机关,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a17" data-colname="其中：机关,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a18" data-colname="其中：机关,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a19" data-colname="其中：机关,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a20" data-colname="其中：机关,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a21" data-colname="其中：机关,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a22"
+									data-colname="其中：机关,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="24" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">20</td>
+								<td class="report1_2" style="padding-left: 8px;">二、离单位保留关系</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_20_ntotal" data-colname="二、离单位保留关系,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a1"
+									data-colname="二、离单位保留关系,按用工形式划分固定" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a2"
+									data-colname="二、离单位保留关系,按用工形式划分长合" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a3"
+									data-colname="二、离单位保留关系,按用工形式划分短合" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a4"
+									data-colname="二、离单位保留关系,按用工形式划分农合" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a5"
+									data-colname="二、离单位保留关系,按用工形式划分农轮" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a6"
+									data-colname="二、离单位保留关系,按用工形式划分混岗" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a7"
+									data-colname="二、离单位保留关系,按用工形式划分其它" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a8"
+									data-colname="二、离单位保留关系,按年龄段划分30以下" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a9"
+									data-colname="二、离单位保留关系,按年龄段划分31-35" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a10"
+									data-colname="二、离单位保留关系,按年龄段划分36-40" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a11"
+									data-colname="二、离单位保留关系,按年龄段划分41-45" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a12"
+									data-colname="二、离单位保留关系,按年龄段划分46-50" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a13"
+									data-colname="二、离单位保留关系,按年龄段划分51-54" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a14"
+									data-colname="二、离单位保留关系,按年龄段划分55以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a15"
+									data-colname="二、离单位保留关系,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a16"
+									data-colname="二、离单位保留关系,按学历层次划分大学" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a17"
+									data-colname="二、离单位保留关系,按学历层次划分大专" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a18"
+									data-colname="二、离单位保留关系,按学历层次划分中专" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a19"
+									data-colname="二、离单位保留关系,按学历层次划分技校" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a20"
+									data-colname="二、离单位保留关系,按学历层次划分高中" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a21"
+									data-colname="二、离单位保留关系,按学历层次划分初中" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a22"
+									data-colname="二、离单位保留关系,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="25" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">21</td>
+								<td class="report1_2" style="padding-left: 25px;">其中：女性</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_21_ntotal" data-colname="其中：女性,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a1" data-colname="其中：女性,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a2" data-colname="其中：女性,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a3" data-colname="其中：女性,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a4" data-colname="其中：女性,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a5" data-colname="其中：女性,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a6" data-colname="其中：女性,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a7" data-colname="其中：女性,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a8" data-colname="其中：女性,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a9" data-colname="其中：女性,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a10" data-colname="其中：女性,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a11" data-colname="其中：女性,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a12" data-colname="其中：女性,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a13" data-colname="其中：女性,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a14" data-colname="其中：女性,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a15"
+									data-colname="其中：女性,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a16" data-colname="其中：女性,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a17" data-colname="其中：女性,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a18" data-colname="其中：女性,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a19" data-colname="其中：女性,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a20" data-colname="其中：女性,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a21" data-colname="其中：女性,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a22"
+									data-colname="其中：女性,按学历层次划分小学及以下" name="l6" /></td>
+							</tr>
+							<tr rn="26" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">22</td>
+								<td class="report1_2" style="padding-left: 59px;">全民职工</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_22_ntotal" data-colname="全民职工,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a1" data-colname="全民职工,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a2" data-colname="全民职工,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a3" data-colname="全民职工,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a4" data-colname="全民职工,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a5" data-colname="全民职工,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a6" data-colname="全民职工,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a7" data-colname="全民职工,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a8" data-colname="全民职工,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a9" data-colname="全民职工,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a10" data-colname="全民职工,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a11" data-colname="全民职工,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a12" data-colname="全民职工,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a13" data-colname="全民职工,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a14" data-colname="全民职工,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a15"
+									data-colname="全民职工,按学历层次划分研究生及以上" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a16" data-colname="全民职工,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a17" data-colname="全民职工,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a18" data-colname="全民职工,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a19" data-colname="全民职工,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a20" data-colname="全民职工,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a21" data-colname="全民职工,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a22" data-colname="全民职工,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="27" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">23</td>
+								<td class="report1_2" style="padding-left: 59px;">内退</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_23_ntotal" data-colname="内退,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a1" data-colname="内退,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a2" data-colname="内退,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a3" data-colname="内退,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a4" data-colname="内退,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a5" data-colname="内退,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a6" data-colname="内退,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a7" data-colname="内退,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a8" data-colname="内退,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a9" data-colname="内退,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a10" data-colname="内退,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a11" data-colname="内退,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a12" data-colname="内退,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a13" data-colname="内退,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a14" data-colname="内退,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a15" data-colname="内退,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a16" data-colname="内退,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a17" data-colname="内退,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a18" data-colname="内退,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a19" data-colname="内退,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a20" data-colname="内退,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a21" data-colname="内退,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a22" data-colname="内退,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+							<tr rn="28" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">24</td>
+								<td class="report1_2" style="padding-left: 59px;">其它</td>
+								<td class="report1_1"><input type="checkbox"
+									id="cb_24_ntotal" data-colname="其它,总人数" name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a1" data-colname="其它,按用工形式划分固定"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a2" data-colname="其它,按用工形式划分长合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a3" data-colname="其它,按用工形式划分短合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a4" data-colname="其它,按用工形式划分农合"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a5" data-colname="其它,按用工形式划分农轮"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a6" data-colname="其它,按用工形式划分混岗"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a7" data-colname="其它,按用工形式划分其它"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a8" data-colname="其它,按年龄段划分30以下"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a9" data-colname="其它,按年龄段划分31-35"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a10" data-colname="其它,按年龄段划分36-40"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a11" data-colname="其它,按年龄段划分41-45"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a12" data-colname="其它,按年龄段划分46-50"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a13" data-colname="其它,按年龄段划分51-54"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a14" data-colname="其它,按年龄段划分55以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a15" data-colname="其它,按学历层次划分研究生及以上"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a16" data-colname="其它,按学历层次划分大学"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a17" data-colname="其它,按学历层次划分大专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a18" data-colname="其它,按学历层次划分中专"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a19" data-colname="其它,按学历层次划分技校"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a20" data-colname="其它,按学历层次划分高中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a21" data-colname="其它,按学历层次划分初中"
+									name="l6" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a22" data-colname="其它,按学历层次划分小学及以下"
+									name="l6" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportautoconfig/reportconfig1.js"></script>
+</body>
+</html>

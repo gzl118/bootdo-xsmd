@@ -126,7 +126,7 @@ public class ReportAutoconfigController extends BaseController {
 	@RequestMapping(value = "saveconfig", method = { RequestMethod.GET,
 			RequestMethod.POST })
 	@ResponseBody
-	public Map<String, String> saveconfig(String sjson,
+	public Map<String, String> saveconfig(String sjson, String foid,
 			HttpServletRequest request, HttpServletResponse response) {
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		response.addHeader("Access-Control-Allow-Methods", "POST");
@@ -136,9 +136,9 @@ public class ReportAutoconfigController extends BaseController {
 			Long uid = getUserId();
 			List<ReportAutoconfigDO> list = JSON.parseArray(sjson,
 					ReportAutoconfigDO.class);
+			// String foid = list.get(0).getFoid();
+			reportAutoconfigService.removebyfk(foid);
 			if (list.size() > 0) {
-				String foid = list.get(0).getFoid();
-				reportAutoconfigService.removebyfk(foid);
 				list.stream().forEach(p -> {
 					p.setOid(UUID.randomUUID().toString().replace("-", ""));
 					p.setUptuser(uid.toString());
@@ -147,11 +147,20 @@ public class ReportAutoconfigController extends BaseController {
 					map.put("message", "1");
 				else
 					map.put("message", "0");
-			} else
-				map.put("message", "2"); // 没有要保存的数据
+			} else {
+				map.put("message", "1");
+			}
 		} catch (Exception e) {
 			map.put("message", "0");
 		}
 		return map;
+	}
+
+	@ResponseBody
+	@GetMapping("/listbyfk")
+	public List<ReportAutoconfigDO> listbyfk(String foid) {
+		List<ReportAutoconfigDO> reportAutoconfigList = reportAutoconfigService
+				.listbyfk(foid);
+		return reportAutoconfigList;
 	}
 }

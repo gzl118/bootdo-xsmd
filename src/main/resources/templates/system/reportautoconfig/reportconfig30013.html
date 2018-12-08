@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" style="padding-left: 5px; overflow: auto;">
+
+	<table id="rpt" align="center" width="100%" height="100%">
+		<tbody>
+			<tr>
+				<td align="center" valign="top" height="100%">
+					<style id="report1_style">
+.report1_1 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	line-height: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_2 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_3 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 黑体;
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_4 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_5 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_6 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_7 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_8 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+</style>
+					<table id="report1" cellspacing="0" cellpadding="0"
+						style="width: 1012px; table-layout: fixed; border-collapse: collapse">
+						<colgroup>
+							<col style="width: 100px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+							<col style="width: 114px;">
+						</colgroup>
+						<tbody>
+							<tr rn="1" height="60" style="height: 60px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td colspan="9" class="report1_3"><div
+										style="float: left;">
+										<input type="button" id="btnReset" value="重置"
+											class="btn btn-default" onclick="resetReportConfig32()" />
+									</div>电力、焦炭劳动效率及人均收入月、年报</td>
+							</tr>
+							<tr rn="3" height="33" style="height: 33px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td rowspan="2" class="report1_2"></td>
+								<td colspan="4" class="report1_2">焦炭人员效率（吨/人）</td>
+								<td colspan="4" class="report1_2">发电人员效率（万度/人）</td>
+							</tr>
+							<tr rn="4" height="29" style="height: 29px;">
+								<td class="report1_6" style="display: none;"></td>
+								<td class="report1_2">焦炭产量（吨）</td>
+								<td class="report1_1">平均人数（人）</td>
+								<td class="report1_1">效率</td>
+								<td class="report1_1">同期</td>
+								<td class="report1_1">发电量（万度）</td>
+								<td class="report1_1">平均人数（人）</td>
+								<td class="report1_1">效率</td>
+								<td class="report1_1">同期</td>
+							</tr>
+							<tr rn="5" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">1</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;">本月合计</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a1" data-colname="本月合计,焦炭产量（吨）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a2" data-colname="本月合计,平均人数（人）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a3" data-colname="本月合计,焦炭人员效率"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a4" data-colname="本月合计,焦炭人员效率同期"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a5" data-colname="本月合计,发电量（万度）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a6" data-colname="本月合计,平均人数（人）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a7" data-colname="本月合计,发电人员效率"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a8" data-colname="本月合计,发电人员效率同期"
+									name="l32" /></td>
+							</tr>
+							<tr rn="6" height="23" style="height: 23px;">
+								<td class="report1_4" style="display: none;">2</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;">累计合计</td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a1" data-colname="累计合计,焦炭产量（吨）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a2" data-colname="累计合计,平均人数（人）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a3" data-colname="累计合计,焦炭人员效率"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a4" data-colname="累计合计,焦炭人员效率同期"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a5" data-colname="累计合计,发电量（万度）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a6" data-colname="累计合计,平均人数（人）"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a7" data-colname="累计合计,发电人员效率"
+									name="l32" /></td>
+								<td class="report1_2"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a8" data-colname="累计合计,发电人员效率同期"
+									name="l32" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportautoconfig/reportconfig1.js"></script>
+</body>
+</html>

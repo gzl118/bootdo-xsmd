@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0"
+	style="padding-left: 5px; overflow: auto;">
+	<table id="rpt" align="center" width="100%" height="100%">
+		<tbody>
+			<tr>
+				<td align="center" valign="top" height="100%">
+					<style type="text/css">
+.report1_1 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_2 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_3 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_4 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_5 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_6 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_7 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	line-height: 17px;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_8 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 黑体;
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_9 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_10 {
+	text-align: center;
+	vertical-align: middle;
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+
+.report1_11 {
+	text-align: left;
+	vertical-align: middle;
+	font-family: Dialog;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: keep-all;
+}
+</style>
+					<table id="report1" cellspacing="0" cellpadding="0"
+						style="width: 1166px; table-layout: fixed; border-collapse: collapse">
+						<colgroup>
+							<col style="width: 171px;">
+							<col style="width: 103px;">
+							<col style="width: 103px;">
+							<col style="width: 103px;">
+							<col style="width: 103px;">
+							<col style="width: 171px;">
+							<col style="width: 103px;">
+							<col style="width: 103px;">
+							<col style="width: 103px;">
+							<col style="width: 103px;">
+						</colgroup>
+						<tbody>
+							<tr rn="1" height="59" style="height: 59px;">
+								<td class="report1_8" style="display: none;"></td>
+								<td class="report1_6" style="display: none;"></td>
+								<td colspan="10" class="report1_8"><div
+										style="float: left;">
+										<input type="button" id="btnReset" value="重置"
+											class="btn btn-default" onclick="resetReportConfig2()" />
+									</div>职工增加来源和减少去向变动情况</td>
+							</tr>
+							<tr rn="3" height="23" style="height: 23px;">
+								<td class="report1_5" style="display: none;"></td>
+								<td class="report1_9" style="display: none;"></td>
+								<td rowspan="2" class="report1_1"></td>
+								<td colspan="2" class="report1_7">本期</td>
+								<td colspan="2" class="report1_1">年初至本期止累计</td>
+								<td class="report1_4" style="display: none;"></td>
+								<td rowspan="2" class="report1_4"></td>
+								<td colspan="2" class="report1_7">本期</td>
+								<td colspan="2" class="report1_1">年初至本期止累计</td>
+							</tr>
+							<tr rn="4" height="43" style="height: 43px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_9" style="display: none;"></td>
+								<td class="report1_1">在册职工</td>
+								<td class="report1_1">在岗职工</td>
+								<td class="report1_1">在册职工</td>
+								<td class="report1_1">在岗职工</td>
+								<td class="report1_4" style="display: none;"></td>
+								<td class="report1_1">在册职工</td>
+								<td class="report1_1">在岗职工</td>
+								<td class="report1_1">在册职工</td>
+								<td class="report1_1">在岗职工</td>
+							</tr>
+							<tr rn="5" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">1</td>
+								<td class="report1_4" style="padding-left: 8px;">期初职工人数</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a1" data-colname="期初职工人数,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a2" data-colname="期初职工人数,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a3" data-colname="期初职工人数,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_1_a4" data-colname="期初职工人数,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">28</td>
+								<td class="report1_4" style="padding-left: 8px;">其中：①农民工解除合同</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_28_a1" data-colname="其中：①农民工解除合同,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_28_a2" data-colname="其中：①农民工解除合同,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_28_a3"
+									data-colname="其中：①农民工解除合同,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_28_a4"
+									data-colname="其中：①农民工解除合同,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="6" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">2</td>
+								<td class="report1_4">一、新增和调入职工人数</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a1" data-colname="一、新增和调入职工人数,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a2" data-colname="一、新增和调入职工人数,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a3"
+									data-colname="一、新增和调入职工人数,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_2_a4"
+									data-colname="一、新增和调入职工人数,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">29</td>
+								<td class="report1_4" style="padding-left: 59px;">开除</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_29_a1"
+									data-colname="其中：①农民工解除合同开除,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_29_a2"
+									data-colname="其中：①农民工解除合同开除,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_29_a3"
+									data-colname="其中：①农民工解除合同开除,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_29_a4"
+									data-colname="其中：①农民工解除合同开除,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="7" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">3</td>
+								<td class="report1_4" style="padding-left: 8px;">1、新增职工人数</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a1" data-colname="1、新增职工人数,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a2" data-colname="1、新增职工人数,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a3"
+									data-colname="1、新增职工人数,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_3_a4"
+									data-colname="1、新增职工人数,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">30</td>
+								<td class="report1_4" style="padding-left: 59px;">除名</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_30_a1"
+									data-colname="其中：①农民工解除合同除名,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_30_a2"
+									data-colname="其中：①农民工解除合同除名,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_30_a3"
+									data-colname="其中：①农民工解除合同除名,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_30_a4"
+									data-colname="其中：①农民工解除合同除名,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="8" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">4</td>
+								<td class="report1_4" style="padding-left: 17px;">(1)&nbsp;新招职工</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a1" data-colname="(1)新招职工,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a2" data-colname="(1)新招职工,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a3"
+									data-colname="(1)新招职工,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_4_a4"
+									data-colname="(1)新招职工,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">31</td>
+								<td class="report1_4" style="padding-left: 59px;">辞退</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_31_a1"
+									data-colname="其中：①农民工解除合同辞退,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_31_a2"
+									data-colname="其中：①农民工解除合同辞退,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_31_a3"
+									data-colname="其中：①农民工解除合同辞退,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_31_a4"
+									data-colname="其中：①农民工解除合同辞退,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="9" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">5</td>
+								<td class="report1_4" style="padding-left: 34px;">①全民合同制工人</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a1" data-colname="①全民合同制工人,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a2" data-colname="①全民合同制工人,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a3"
+									data-colname="①全民合同制工人,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_5_a4"
+									data-colname="①全民合同制工人,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">32</td>
+								<td class="report1_4" style="padding-left: 42px;">②全民工解除合同</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_32_a1" data-colname="②全民工解除合同,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_32_a2" data-colname="②全民工解除合同,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_32_a3"
+									data-colname="②全民工解除合同,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_32_a4"
+									data-colname="②全民工解除合同,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="10" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">6</td>
+								<td class="report1_4" style="padding-left: 48px;">其中：来自农村</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a1" data-colname="其中：来自农村,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a2" data-colname="其中：来自农村,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a3"
+									data-colname="其中：来自农村,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_6_a4"
+									data-colname="其中：来自农村,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">33</td>
+								<td class="report1_4" style="padding-left: 59px;">开除</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_33_a1" data-colname="②全民工解除合同开除,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_33_a2" data-colname="②全民工解除合同开除,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_33_a3"
+									data-colname="②全民工解除合同开除,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_33_a4"
+									data-colname="②全民工解除合同开除,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="11" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">7</td>
+								<td class="report1_4" style="padding-left: 34px;">②农民轮换工</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a1" data-colname="②农民轮换工,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a2" data-colname="②农民轮换工,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a3" data-colname="②农民轮换工,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_7_a4" data-colname="②农民轮换工,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">34</td>
+								<td class="report1_4" style="padding-left: 59px;">除名</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_34_a1" data-colname="②全民工解除合同除名,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_34_a2" data-colname="②全民工解除合同除名,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_34_a3"
+									data-colname="②全民工解除合同除名,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_34_a4"
+									data-colname="②全民工解除合同除名,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="12" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">8</td>
+								<td class="report1_4" style="padding-left: 34px;">③其他</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a1" data-colname="③其他,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a2" data-colname="③其他,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a3" data-colname="③其他,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_8_a4" data-colname="③其他,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">35</td>
+								<td class="report1_4" style="padding-left: 59px;">辞退</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_35_a1" data-colname="②全民工解除合同辞退,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_35_a2" data-colname="②全民工解除合同辞退,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_35_a3"
+									data-colname="②全民工解除合同辞退,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_35_a4"
+									data-colname="②全民工解除合同辞退,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="13" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">9</td>
+								<td class="report1_4" style="padding-left: 17px;">(2)&nbsp;分配退伍军人</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a1" data-colname="(2)分配退伍军人,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a2" data-colname="(2)分配退伍军人,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a3"
+									data-colname="(2)分配退伍军人,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_9_a4"
+									data-colname="(2)分配退伍军人,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">36</td>
+								<td class="report1_4" style="padding-left: 17px;">(5)死亡</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_36_a1" data-colname="(5)死亡,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_36_a2" data-colname="(5)死亡,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_36_a3" data-colname="(5)死亡,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_36_a4" data-colname="(5)死亡,年初至本期止累计在岗职工"
+									name="l2" /></td>
+							</tr>
+							<tr rn="14" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">10</td>
+								<td class="report1_4" style="padding-left: 17px;">(3)&nbsp;分配大中专毕业生</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a1" data-colname="(3)分配大中专毕业生,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a2" data-colname="(3)分配大中专毕业生,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a3"
+									data-colname="(3)分配大中专毕业生,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_10_a4"
+									data-colname="(3)分配大中专毕业生,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">37</td>
+								<td class="report1_4" style="padding-left: 17px;">(6)转入城镇集体所有制</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_37_a1"
+									data-colname="(6)转入城镇集体所有制,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_37_a2"
+									data-colname="(6)转入城镇集体所有制,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_37_a3"
+									data-colname="(6)转入城镇集体所有制,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_37_a4"
+									data-colname="(6)转入城镇集体所有制,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="15" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">11</td>
+								<td class="report1_4" style="padding-left: 17px;">(4)&nbsp;分配技校毕业生</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a1" data-colname="(4)分配技校毕业生,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a2" data-colname="(4)分配技校毕业生,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a3"
+									data-colname="(4)分配技校毕业生,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_11_a4"
+									data-colname="(4)分配技校毕业生,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">38</td>
+								<td class="report1_4" style="padding-left: 17px;">(7)其他</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_38_a1" data-colname="(7)其他,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_38_a2" data-colname="(7)其他,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_38_a3" data-colname="(7)其他,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_38_a4" data-colname="(7)其他,年初至本期止累计在岗职工"
+									name="l2" /></td>
+							</tr>
+							<tr rn="16" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">12</td>
+								<td class="report1_4" style="padding-left: 17px;">(5)&nbsp;由城镇集体所有制转入</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a1"
+									data-colname="(5)由城镇集体所有制转入,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a2"
+									data-colname="(5)由城镇集体所有制转入,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a3"
+									data-colname="(5)由城镇集体所有制转入,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_12_a4"
+									data-colname="(5)由城镇集体所有制转入,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">39</td>
+								<td class="report1_4" style="padding-left: 8px;">2、调入其他企事业单位</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_39_a1" data-colname="2、调入其他企事业单位,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_39_a2" data-colname="2、调入其他企事业单位,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_39_a3"
+									data-colname="2、调入其他企事业单位,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_39_a4"
+									data-colname="2、调入其他企事业单位,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="17" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">13</td>
+								<td class="report1_4" style="padding-left: 17px;">(6)&nbsp;其&nbsp;他</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a1" data-colname="(6)其他,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a2" data-colname="(6)其他,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a3" data-colname="(6)其他,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_13_a4" data-colname="(6)其他,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">40</td>
+								<td class="report1_4" style="padding-left: 25px;">其中：调到外系统</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_40_a1" data-colname="其中：调到外系统,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_40_a2" data-colname="其中：调到外系统,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_40_a3"
+									data-colname="其中：调到外系统,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_40_a4"
+									data-colname="其中：调到外系统,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="18" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">14</td>
+								<td class="report1_4" style="padding-left: 8px;">2、由其他企事业单位调入</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a1"
+									data-colname="2、由其他企事业单位调入,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a2"
+									data-colname="2、由其他企事业单位调入,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a3"
+									data-colname="2、由其他企事业单位调入,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_14_a4"
+									data-colname="2、由其他企事业单位调入,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">41</td>
+								<td class="report1_4" style="padding-left: 25px;">(1)调出省外</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_41_a1" data-colname="(1)调出省外,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_41_a2" data-colname="(1)调出省外,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_41_a3"
+									data-colname="(1)调出省外,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_41_a4"
+									data-colname="(1)调出省外,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="19" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">15</td>
+								<td class="report1_4" style="padding-left: 25px;">其中：外系统调入</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a1" data-colname="其中：外系统调入,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a2" data-colname="其中：外系统调入,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a3"
+									data-colname="其中：外系统调入,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_15_a4"
+									data-colname="其中：外系统调入,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">42</td>
+								<td class="report1_4" style="padding-left: 25px;">(2)其&nbsp;&nbsp;他</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_42_a1" data-colname="(2)其他,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_42_a2" data-colname="(2)其他,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_42_a3" data-colname="(2)其他,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_42_a4" data-colname="(2)其他,年初至本期止累计在岗职工"
+									name="l2" /></td>
+							</tr>
+							<tr rn="20" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">16</td>
+								<td class="report1_4" style="padding-left: 25px;">(1)&nbsp;省外调入</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a1" data-colname="(1)省外调入,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a2" data-colname="(1)省外调入,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a3"
+									data-colname="(1)省外调入,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_16_a4"
+									data-colname="(1)省外调入,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">43</td>
+								<td class="report1_4" style="padding-left: 8px;">3、局内调动</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_43_a1" data-colname="3、局内调动,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_43_a2" data-colname="3、局内调动,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_43_a3"
+									data-colname="3、局内调动,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_43_a4"
+									data-colname="3、局内调动,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="21" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">17</td>
+								<td class="report1_4" style="padding-left: 25px;">(2)&nbsp;其&nbsp;&nbsp;他</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a1" data-colname="(2)其他,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a2" data-colname="(2)其他,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a3" data-colname="(2)其他,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_17_a4" data-colname="(2)其他,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">44</td>
+								<td class="report1_4" style="padding-left: 8px;">4、转入离单位保留关系</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_44_a1" data-colname="4、转入离单位保留关系,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_44_a2" data-colname="4、转入离单位保留关系,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_44_a3"
+									data-colname="4、转入离单位保留关系,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_44_a4"
+									data-colname="4、转入离单位保留关系,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="22" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">18</td>
+								<td class="report1_4" style="padding-left: 8px;">3、局内调动</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a1" data-colname="3、局内调动,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a2" data-colname="3、局内调动,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a3"
+									data-colname="3、局内调动,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_18_a4"
+									data-colname="3、局内调动,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">45</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;">期末职工人数</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_45_a1" data-colname="期末职工人数,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_45_a2" data-colname="期末职工人数,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_45_a3"
+									data-colname="期末职工人数,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_45_a4"
+									data-colname="期末职工人数,年初至本期止累计在岗职工" name="l2" /></td>
+							</tr>
+							<tr rn="23" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">19</td>
+								<td class="report1_4" style="padding-left: 8px;">4、从离单位保留关系转入</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a1"
+									data-colname="4、从离单位保留关系转入,本期在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a2"
+									data-colname="4、从离单位保留关系转入,本期在岗职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a3"
+									data-colname="4、从离单位保留关系转入,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_19_a4"
+									data-colname="4、从离单位保留关系转入,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_11" style="display: none;"></td>
+								<td class="report1_4" style="padding-left: 8px;">三、补充资料</td>
+								<td class="report1_1">本月调入</td>
+								<td class="report1_1">本月调出</td>
+								<td class="report1_1">累计调入</td>
+								<td class="report1_1">累计调出</td>
+							</tr>
+							<tr rn="24" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">20</td>
+								<td class="report1_4">二、精减和调出职工人数</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a1" data-colname="二、精减和调出职工人数,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a2" data-colname="二、精减和调出职工人数,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a3"
+									data-colname="二、精减和调出职工人数,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_20_a4"
+									data-colname="二、精减和调出职工人数,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">46</td>
+								<td class="report1_4" style="padding-left: 17px;">1、干部集团内调入、调出</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_46_a1" data-colname="1、干部集团内调入、调出,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_46_a2" data-colname="1、干部集团内调入、调出,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_46_a3" data-colname="1、干部集团内调入、调出,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_46_a4" data-colname="1、干部集团内调入、调出,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="25" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">21</td>
+								<td class="report1_4" style="padding-left: 8px;">1、减少职工人数</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a1" data-colname="1、减少职工人数,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a2" data-colname="1、减少职工人数,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a3"
+									data-colname="1、减少职工人数,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_21_a4"
+									data-colname="1、减少职工人数,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">47</td>
+								<td class="report1_4" style="padding-left: 17px;">2、干部集团外调入、调出</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_47_a1" data-colname="2、干部集团外调入、调出,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_47_a2" data-colname="2、干部集团外调入、调出,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_47_a3" data-colname="2、干部集团外调入、调出,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_47_a4" data-colname="2、干部集团外调入、调出,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="26" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">22</td>
+								<td class="report1_4" style="padding-left: 17px;">(1)退休</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a1" data-colname="(1)退休,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a2" data-colname="(1)退休,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a3" data-colname="(1)退休,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_22_a4" data-colname="(1)退休,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">48</td>
+								<td class="report1_4" style="padding-left: 17px;">3、矿与选煤厂调入、调出</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_48_a1" data-colname="3、矿与选煤厂调入、调出,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_48_a2" data-colname="3、矿与选煤厂调入、调出,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_48_a3" data-colname="3、矿与选煤厂调入、调出,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_48_a4" data-colname="3、矿与选煤厂调入、调出,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="27" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">23</td>
+								<td class="report1_4" style="padding-left: 17px;">(2)退职</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a1" data-colname="(2)退职,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a2" data-colname="(2)退职,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a3" data-colname="(2)退职,年初至本期止累计在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_23_a4" data-colname="(2)退职,年初至本期止累计在岗职工"
+									name="l2" /></td>
+								<td class="report1_4" style="display: none;">49</td>
+								<td class="report1_4" style="padding-left: 17px;">4、矿与多调入、调出</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_49_a1" data-colname="4、矿与多调入、调出,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_49_a2" data-colname="4、矿与多调入、调出,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_49_a3" data-colname="4、矿与多调入、调出,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_49_a4" data-colname="4、矿与多调入、调出,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="28" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">24</td>
+								<td class="report1_4" style="padding-left: 17px;">(3)终止合同</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a1" data-colname="(3)终止合同,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a2" data-colname="(3)终止合同,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a3"
+									data-colname="(3)终止合同,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_24_a4"
+									data-colname="(3)终止合同,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">50</td>
+								<td class="report1_4" style="padding-left: 17px;">5、焦煤内部调入、调出</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_50_a1" data-colname="5、焦煤内部调入、调出,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_50_a2" data-colname="5、焦煤内部调入、调出,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_50_a3" data-colname="5、焦煤内部调入、调出,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_50_a4" data-colname="5、焦煤内部调入、调出,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="29" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">25</td>
+								<td class="report1_4" style="padding-left: 8px;">其中：农民工终止合同</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_25_a1" data-colname="其中：农民工终止合同,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_25_a2" data-colname="其中：农民工终止合同,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_25_a3"
+									data-colname="其中：农民工终止合同,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_25_a4"
+									data-colname="其中：农民工终止合同,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">51</td>
+								<td class="report1_4" style="padding-left: 17px;">6、分流到多经三产</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_51_a1" data-colname="6、分流到多经三产,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_51_a2" data-colname="6、分流到多经三产,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_51_a3" data-colname="6、分流到多经三产,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_51_a4" data-colname="6、分流到多经三产,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="30" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">26</td>
+								<td class="report1_4" style="padding-left: 42px;">全民工终止合同</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_26_a1" data-colname="全民工终止合同,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_26_a2" data-colname="全民工终止合同,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_26_a3"
+									data-colname="全民工终止合同,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_26_a4"
+									data-colname="全民工终止合同,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">52</td>
+								<td class="report1_4" style="padding-left: 17px;">7、分流到后勤服务</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_52_a1" data-colname="7、分流到后勤服务,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_52_a2" data-colname="7、分流到后勤服务,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_52_a3" data-colname="7、分流到后勤服务,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_52_a4" data-colname="7、分流到后勤服务,累计调出"
+									name="l2" /></td>
+							</tr>
+							<tr rn="31" height="23" style="height: 23px;">
+								<td class="report1_3" style="display: none;"></td>
+								<td class="report1_2" style="display: none;">27</td>
+								<td class="report1_4" style="padding-left: 17px;">(4)解除合同</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_27_a1" data-colname="(4)解除合同,本期在册职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_27_a2" data-colname="(4)解除合同,本期在岗职工"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_27_a3"
+									data-colname="(4)解除合同,年初至本期止累计在册职工" name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_27_a4"
+									data-colname="(4)解除合同,年初至本期止累计在岗职工" name="l2" /></td>
+								<td class="report1_4" style="display: none;">53</td>
+								<td class="report1_4" style="padding-left: 17px;">8、其他创收自养</td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_53_a1" data-colname="8、其他创收自养,本月调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_53_a2" data-colname="8、其他创收自养,本月调出"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_53_a3" data-colname="8、其他创收自养,累计调入"
+									name="l2" /></td>
+								<td class="report1_1"
+									style="padding-left: 8px; padding-right: 8px;"><input
+									type="checkbox" id="cb_53_a4" data-colname="8、其他创收自养,累计调出"
+									name="l2" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportautoconfig/reportconfig1.js"></script>
+</body>
+</html>

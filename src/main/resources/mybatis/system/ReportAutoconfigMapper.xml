@@ -33,7 +33,7 @@
 				order by ${sort} ${order}
 			</when>
 			<otherwise>
-				order by oid desc
+				order by tbname,colorder
 			</otherwise>
 		</choose>
 		<if test="offset != null and limit != null">
@@ -168,4 +168,11 @@
 		delete from sys_report_autoconfig where foid =
 		#{value}
 	</delete>
+	<select id="listbyfk"  resultType="com.bootdo.system.domain.ReportAutoconfigDO">
+		select
+		`oid`,`foid`,`tbname`,`rowoid`,`colfieldname`,`colname`,`colaliasname`,`colorder`,`UptTime`,`UptUser`,`Ext1`,`Ext2`,`Ext3`
+		from sys_report_autoconfig
+		where foid = #{value}
+		order by tbname,colorder
+	</select>
 </mapper>
