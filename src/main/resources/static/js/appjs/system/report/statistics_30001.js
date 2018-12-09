@@ -118,13 +118,14 @@ function selectLoad() {
 			// code: 30001 //不同的统计报表，选择不同的code分类,后台自己控制
 			code : $('#dcode').val()
 		},
+		cache : false,
 		success : function(data) {
 			// 没有数据，加载自定义的单位列表
 			if (data.length < 1) {
 				loaddeptslist();
 				return;
 			}
-			$(".chosen-select").empty();
+			$("#dw-select").empty();
 			html += '<option value="-1" selected >添加新配置</option>';
 			// 加载数据
 			for (var i = 0; i < data.length; i++) {
@@ -138,12 +139,12 @@ function selectLoad() {
 				}
 			}
 
-			$(".chosen-select").append(html);
-			$(".chosen-select").chosen({
+			$("#dw-select").append(html);
+			$("#dw-select").chosen({
 				maxHeight : 200
 			});
 			// 点击事件
-			$('.chosen-select').on('change', function(e, params) {
+			$('#dw-select').on('change', function(e, params) {
 				console.log(params.selected);
 				if (params.selected == -1) {// 选择自定义单位配置
 					loaddeptslist();
@@ -213,7 +214,6 @@ function delectDeptCategory() {
 		btn : [ '确定', '取消' ]
 	}, function() {
 		removeDeptCategory($('#dw-select').val());
-		selectLoad();
 	});
 }
 function removeDeptCategory(id) {
