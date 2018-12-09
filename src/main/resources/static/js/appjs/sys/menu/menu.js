@@ -80,6 +80,7 @@ var load = function () {
                         field: 'id',
                         align: 'center',
                         valign: 'center',
+                        width : '10%',
                         formatter: function (item, index) {
                             var e = '<a class="btn btn-primary btn-sm '
                                 + s_edit_h

@@ -14,7 +14,7 @@
 						<div class="columns pull-left">
 							<input id="code" name="code" th:value="${Code}"
 								class="form-control" type="hidden"> <input id="status"
-								name="status" th:value="${Status}" class="form-control"
+								name="status" class="form-control" th:value="${Status}"
 								type="hidden">
 							<!-- <button shiro:hasPermission="system:labourreportstaticmain:add"
 								type="button" class="btn  btn-primary" onclick="add()">
@@ -76,7 +76,7 @@
 			var s_approve_h = '';
 		</script>
 	</div>
-	<div shiro:hasPermission="system:labourreportmain:detail">
+	<div shiro:hasPermission="system:labourreportstaticmain:detail">
 		<script type="text/javascript">
 			var s_detail_h = '';
 		</script>

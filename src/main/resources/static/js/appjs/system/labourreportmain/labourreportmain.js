@@ -172,24 +172,29 @@ function load() {
 									align : 'left',
 									halign : 'center',
 									formatter : function(value, row, index) {
+										s_edit_h='';
+										s_remove_h='';
 										var curCode = row.code;
 										var rol = $("#status").val();
-										var temp = 0;
-										var checksubmit = '';
-										if (row.status == 1 || row.status == 2)
+										var temp = 0; // 控制报表可写操作，1可写，0不可写
+										var checksubmit = ''; // 提交按钮控制
+										if (row.status == 1 || row.status == 2) {
 											checksubmit = 'hidden';
-										var checkapprove = '';
+											s_edit_h = 'hidden';
+											s_remove_h = 'hidden';
+										}
+										var checkapprove = ''; // 审批按钮控制
 										if (row.status != 1)
 											checkapprove = 'hidden';
-										var approverecord = '';
+										var approverecord = ''; // 审批记录按钮控制
 										if (row.status == 0)
 											approverecord = 'hidden';
-										if (rol == '5') {
+										if (rol == '5') { // 可填报报表数据管理员
 											if (row.status == 0
 													|| row.status == 3)
 												temp = 1;
 											checkapprove = 'hidden';
-										} else if (rol == '6') {
+										} else if (rol == '6') { // 可填报报表数据审批管理员
 											if (row.status == 1)
 												temp = 1;
 											checksubmit = 'hidden';

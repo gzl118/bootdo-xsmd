@@ -7,26 +7,26 @@ import java.util.UUID;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bootdo.system.domain.LabourreportmainDO;
-import com.bootdo.system.domain.LabourreportstaticmainDO;
-import com.bootdo.system.domain.LabourrepotapproveDO;
-import com.bootdo.system.service.LabourreportstaticmainService;
-import com.bootdo.system.service.LabourrepotapproveService;
 import com.bootdo.common.controller.BaseController;
 import com.bootdo.common.utils.PageUtils;
 import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
 import com.bootdo.common.utils.StringUtils;
+import com.bootdo.system.domain.LabourreportstaticmainDO;
+import com.bootdo.system.domain.LabourrepotapproveDO;
+import com.bootdo.system.domain.UserDO;
+import com.bootdo.system.service.LabourreportstaticmainService;
+import com.bootdo.system.service.LabourrepotapproveService;
+import com.bootdo.system.service.UserService;
 
 /**
  * 
@@ -43,12 +43,16 @@ public class LabourreportstaticmainController extends BaseController {
 	private LabourreportstaticmainService labourreportstaticmainService;
 	@Autowired
 	private LabourrepotapproveService labourrepotapproveService;
+	@Autowired
+	UserService userService;
 
 	@GetMapping()
 	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmain")
-	String Labourreportstaticmain(Model model) {
-		model.addAttribute("Code", "30001");
-		model.addAttribute("Status", "");
+	String Labourreportstaticmain(String Code, Model model) {
+		model.addAttribute("Code", Code);
+		// model.addAttribute("Status", "");
+		Integer result = CheckRole();
+		model.addAttribute("Status", result);
 		return "system/labourreportstaticmain/labourreportstaticmain";
 	}
 
@@ -66,7 +70,7 @@ public class LabourreportstaticmainController extends BaseController {
 	}
 
 	@GetMapping("/add")
-	@RequiresPermissions("system:labourreportstaticmain:add")
+	// @RequiresPermissions("system:labourreportstaticmain:add")
 	String add(String rdate, String rdepart, String code, Integer ctype,
 			Model model) {
 		model.addAttribute("rdate", rdate);
@@ -77,7 +81,7 @@ public class LabourreportstaticmainController extends BaseController {
 	}
 
 	@GetMapping("/edit/{oid}")
-	@RequiresPermissions("system:labourreportstaticmain:edit")
+	// @RequiresPermissions("system:labourreportstaticmain:edit")
 	String edit(@PathVariable("oid") String oid, Model model) {
 		LabourreportstaticmainDO labourreportstaticmain = labourreportstaticmainService
 				.get(oid);
@@ -90,7 +94,7 @@ public class LabourreportstaticmainController extends BaseController {
 	 */
 	@ResponseBody
 	@PostMapping("/save")
-	@RequiresPermissions("system:labourreportstaticmain:add")
+	// @RequiresPermissions("system:labourreportstaticmain:add")
 	public R save(LabourreportstaticmainDO labourreportstaticmain) {
 		if (StringUtils.isEmpty(labourreportstaticmain.getOid()))
 			labourreportstaticmain.setOid(UUID.randomUUID().toString()
@@ -111,7 +115,7 @@ public class LabourreportstaticmainController extends BaseController {
 	 */
 	@ResponseBody
 	@RequestMapping("/update")
-	@RequiresPermissions("system:labourreportstaticmain:edit")
+	// @RequiresPermissions("system:labourreportstaticmain:edit")
 	public R update(LabourreportstaticmainDO labourreportstaticmain) {
 		if (!StringUtils.isEmpty(labourreportstaticmain.getRenderdate()))
 			labourreportstaticmain.setRenderdate(labourreportstaticmain
@@ -125,7 +129,7 @@ public class LabourreportstaticmainController extends BaseController {
 	 */
 	@PostMapping("/remove")
 	@ResponseBody
-	@RequiresPermissions("system:labourreportstaticmain:remove")
+	// @RequiresPermissions("system:labourreportstaticmain:remove")
 	public R remove(String oid) {
 		if (labourreportstaticmainService.remove(oid) > 0) {
 			return R.ok();
@@ -138,14 +142,14 @@ public class LabourreportstaticmainController extends BaseController {
 	 */
 	@PostMapping("/batchRemove")
 	@ResponseBody
-	@RequiresPermissions("system:labourreportstaticmain:batchRemove")
+	// @RequiresPermissions("system:labourreportstaticmain:batchRemove")
 	public R remove(@RequestParam("ids[]") String[] oids) {
 		labourreportstaticmainService.batchRemove(oids);
 		return R.ok();
 	}
 
 	@GetMapping("/sumitinfo")
-	@RequiresPermissions("system:labourreportstaticmain:sumitinfo")
+	// @RequiresPermissions("system:labourreportstaticmain:sumitinfo")
 	public String sumitinfo(String oid, Model model) {
 		model.addAttribute("foid", oid);
 		return "system/labourreportstaticmain/sumitinfo";
@@ -176,5 +180,23 @@ public class LabourreportstaticmainController extends BaseController {
 			}
 		}
 		return R.error();
+	}
+
+	private Integer CheckRole() {
+		Integer result = -1;
+		Long id = getUserId();
+		UserDO userDO = userService.get(id);
+		List<Long> list = userDO.getRoleIds();
+		if (list == null || list.size() == 0)
+			return result;
+		Long a = Long.valueOf(7);
+		Long b = Long.valueOf(8);
+		if (list.contains(a)) {
+			return 7;
+		}
+		if (list.contains(b)) {
+			return 8;
+		}
+		return result;
 	}
 }

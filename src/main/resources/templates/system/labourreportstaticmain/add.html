@@ -18,9 +18,11 @@
 									<input id="deptids" name="deptids" th:value="${rdepart}"
 										class="form-control" type="hidden"> <input id="code"
 										name="code" th:value="${code}" class="form-control"
-										type="hidden"> <input id="ctype" name="ctype"
-										th:value="${ctype}" class="form-control" type="hidden">
-									<input id="renderdate" name="renderdate" class="form-control"
+										type="hidden"> <input id="status" name="status"
+										class="form-control" value='0' type="hidden"><input
+										id="ctype" name="ctype" th:value="${ctype}"
+										class="form-control" type="hidden"> <input
+										id="renderdate" name="renderdate" class="form-control"
 										th:value="${rdate}==null?null:${#dates.format(rdate,'yyyy-MM')}"
 										type="text" readonly="readonly">
 								</div>

@@ -178,6 +178,20 @@ function load() {
 									halign : 'center',
 									width : '240px',
 									formatter : function(value, row, index) {
+										s_edit_h = '';
+										s_remove_h = '';
+										var rol = $("#status").val();
+										var checksubmit = ''; // 提交按钮控制
+										if (row.status == 1) {
+											checksubmit = 'hidden';
+											s_edit_h = 'hidden';
+											s_remove_h = 'hidden';
+										}
+										var approverecord = ''; // 审批记录按钮控制
+										if (row.status == 0 || row.status == ''
+												|| row.status == null)
+											approverecord = 'hidden';
+
 										var curCode = row.code;
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
@@ -189,6 +203,20 @@ function load() {
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
 												+ curUrl
 												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
+
+										if (curCode == '30005') {
+											var suburl = urlrunqian
+													+ "raq=30015&rdate="
+													+ row.renderdate
+													+ "&rdepart=" + row.deptids;
+											g = '<a class="btn btn-warning btn-sm '
+													+ s_detail_h
+													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''
+													+ curUrl
+													+ '\',\''
+													+ suburl
+													+ '\')"><i class="fa fa fa-tasks"></i></a> ';
+										}
 										var e = '<a class="btn btn-primary btn-sm '
 												+ s_edit_h
 												+ '" href="#" mce_href="#" title="编辑" onclick="edit(\''
@@ -203,11 +231,15 @@ function load() {
 												+ '\')"><i class="fa fa-remove"></i></a> ';
 										var h = '<a class="btn btn-warning btn-sm '
 												+ s_sumitinfo_h
+												+ ' '
+												+ checksubmit
 												+ '" href="#" title="提交"  mce_href="#" onclick="submitinfo(\''
 												+ row.oid
 												+ '\')"><i class="fa fa-check-square-o"></i></a> ';
 										var j = '<a class="btn btn-warning btn-sm '
 												+ s_approve_h
+												+ ' '
+												+ approverecord
 												+ '" href="#" title="审批记录"  mce_href="#" onclick="suggest(\''
 												+ row.oid
 												+ '\')"><i class="fa fa-envelope-o"></i></a> ';
@@ -326,5 +358,34 @@ function suggest(id) {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : '/system/labourrepotapprove?foid=' + id // iframe的url
+	});
+}
+function report5confirm(murl, surl) {
+	layer.confirm('选择要查看的表格', {
+		btn : [ '主表', '附表' ],
+		skin : 'layui-layer-molv'
+	// 按钮
+	}, function(curindex) {
+		layer.close(curindex);
+		var index = layer.open({
+			type : 2,
+			title : '报表明细',
+			maxmin : true,
+			shadeClose : false, // 点击遮罩关闭层
+			area : [ '800px', '520px' ],
+			content : murl
+		});
+		layer.full(index);
+
+	}, function() {
+		var index = layer.open({
+			type : 2,
+			title : '报表明细',
+			maxmin : true,
+			shadeClose : false, // 点击遮罩关闭层
+			area : [ '800px', '520px' ],
+			content : surl
+		});
+		layer.full(index);
 	});
 }
