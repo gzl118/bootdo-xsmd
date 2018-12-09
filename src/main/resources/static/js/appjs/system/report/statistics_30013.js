@@ -11,7 +11,6 @@ function loaddepts(rdcId) {
 						id : 'deptId',
 						code : 'deptId',
 						parentCode : 'parentId',
-						params : '85',
 						type : "GET", // 请求数据的ajax类型
 						url : '/system/reportDept/list/30001', // 请求数据的ajax的url
 						ajaxParams : {
@@ -118,13 +117,14 @@ function selectLoad() {
 			// code: 30001 //不同的统计报表，选择不同的code分类,后台自己控制
 			code : $('#dcode').val()
 		},
+		cache : false,
 		success : function(data) {
 			// 没有数据，加载自定义的单位列表
 			if (data.length < 1) {
 				loaddeptslist();
 				return;
 			}
-			$(".chosen-select").empty();
+			$("#dw-select").empty();
 			html += '<option value="-1" selected >添加新配置</option>';
 			// 加载数据
 			for (var i = 0; i < data.length; i++) {
@@ -138,12 +138,12 @@ function selectLoad() {
 				}
 			}
 
-			$(".chosen-select").append(html);
-			$(".chosen-select").chosen({
+			$("#dw-select").append(html);
+			$("#dw-select").chosen({
 				maxHeight : 200
 			});
 			// 点击事件
-			$('.chosen-select').on('change', function(e, params) {
+			$('#dw-select').on('change', function(e, params) {
 				console.log(params.selected);
 				if (params.selected == -1) {// 选择自定义单位配置
 					loaddeptslist();
@@ -168,6 +168,10 @@ function showReport() {
 	} else {
 		rdepart = getDeptsStrByRdcId(rdcId);
 	}
+	if (rdepart == "-1" || rdepart == "") {
+		layer.msg("请选择要统计单位");
+		return;
+	}
 
 	var rdate = $('#renderdate').val();
 	if (rdate == "") {
@@ -181,9 +185,11 @@ function showReport() {
 
 	var curcode = $("#dcode").val();
 	// 打开统计报表
-	url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
-			+ curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
-	console.log("---" + rdepart + "-----" + rdate);
+	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
+	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
+	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rdepart='
+			+ rdepart;
+	console.log(url);
 	var index = layer.open({
 		type : 2,
 		title : "统计报表",
@@ -208,7 +214,6 @@ function delectDeptCategory() {
 		btn : [ '确定', '取消' ]
 	}, function() {
 		removeDeptCategory($('#dw-select').val());
-		selectLoad();
 	});
 }
 function removeDeptCategory(id) {
@@ -393,13 +398,14 @@ function getDeptsStrByRdcId(rdcId) {
 			layer.alert("Connection error");
 		},
 		success : function(data) {
-			if (data.lenght < 1)
-				return;
-			$.each(data, function(i, row) {
-				datas += ',' + row;
-			});
-			datas = datas.substr(1);
-			// console.log(datas.substr(1));
+			if (data.lenght < 1) {
+				datas = "-1";
+			} else {
+				$.each(data, function(i, row) {
+					datas += ',' + row;
+				});
+				datas = datas.substr(1);
+			}
 		}
 	});
 	return datas;
@@ -425,3 +431,36 @@ function showSaveBnt(isshow) {
 		$("#dept_save").show();
 	}
 };
+
+function saveReport() {
+	var rdepart = new String();
+	var rdcId = $('#dw-select').val();
+	if (rdcId == -1) {
+		// 自定义部门的选择
+		rdepart = getSelectedDept();
+		if (rdepart == "-1")
+			return;
+	} else {
+		rdepart = getDeptsStrByRdcId(rdcId);
+	}
+	if (rdepart == "-1" || rdepart == "") {
+		layer.msg("请选择要统计单位");
+		return;
+	}
+	var rdate = $("#renderdate").val();
+	if (rdate == null || rdate == "") {
+		layer.msg("请选择要统计的年月！");
+		return;
+	}
+	rdate = rdate + "-01";
+	var curcode = $("#dcode").val();
+	layer.open({
+		type : 2,
+		title : '保存统计报表',
+		maxmin : true,
+		shadeClose : false, // 点击遮罩关闭层
+		area : [ '800px', '520px' ],
+		content : '/system/labourreportstaticmain/add?ctype=1&rdate=' + rdate
+				+ '&rdepart=' + rdepart + '&code=' + curcode// iframe的url
+	});
+}

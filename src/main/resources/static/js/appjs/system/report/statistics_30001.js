@@ -11,7 +11,6 @@ function loaddepts(rdcId) {
 						id : 'deptId',
 						code : 'deptId',
 						parentCode : 'parentId',
-						params : '85',
 						type : "GET", // 请求数据的ajax类型
 						url : '/system/reportDept/list/30001', // 请求数据的ajax的url
 						ajaxParams : {
@@ -186,10 +185,11 @@ function showReport() {
 
 	var curcode = $("#dcode").val();
 	// 打开统计报表
-	url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
-			+ curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
+	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
+	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
+	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rdepart='
+			+ rdepart;
 	console.log(url);
-	console.log("---" + rdepart + "-----" + rdate);
 	var index = layer.open({
 		type : 2,
 		title : "统计报表",

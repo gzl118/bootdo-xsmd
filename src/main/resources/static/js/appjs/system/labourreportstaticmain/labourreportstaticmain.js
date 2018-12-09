@@ -55,9 +55,9 @@ function load() {
 						// sortOrder.
 						// 返回false将会终止请求
 						columns : [
-								{
-									checkbox : true
-								},
+								// {
+								// checkbox : false
+								// },
 								{
 									field : 'oid',
 									title : '主键',
@@ -72,7 +72,7 @@ function load() {
 									field : 'renderdate',
 									title : '统计年月',
 									align : 'center',
-									width : '200px',
+									width : '180px',
 									formatter : function(value, row, index) {
 										var val = value;
 										if (val != null) {
@@ -102,7 +102,7 @@ function load() {
 									field : 'status',
 									title : '状态',
 									align : 'center',
-									width : '100px',
+									width : '80px',
 									formatter : function(value, row, index) { // 单元格格式化函数
 										// 0未提交，1已提交，2已审核通过，3审核未通过
 										var text = '-';
@@ -124,7 +124,7 @@ function load() {
 								{
 									field : 'remark',
 									title : '说明',
-									width : '300px'
+									width : '250px'
 								},
 								{
 									field : 'renderdepart',
@@ -176,14 +176,12 @@ function load() {
 									field : 'id',
 									align : 'left',
 									halign : 'center',
-									width : '200px',
+									width : '240px',
 									formatter : function(value, row, index) {
 										var curCode = row.code;
-										var curUrl = "http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq="
-												+ curCode
-												+ "&rdate="
-												+ row.renderdate
-												+ "&rdepart="
+										var curUrl = urlrunqian + "raq="
+												+ curCode + "&rdate="
+												+ row.renderdate + "&rdepart="
 												+ row.deptids;
 
 										var g = '<a class="btn btn-warning btn-sm '

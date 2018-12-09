@@ -4,9 +4,9 @@ $(function() {
 		elem : '#renderdate',
 		type : 'month',
 		trigger : 'click',
-		format:'yyyy-MM'
+		format : 'yyyy-MM'
 	});
-	load();	
+	load();
 });
 
 function load() {
@@ -208,14 +208,10 @@ function load() {
 												+ '\',\''
 												+ row.code
 												+ '\')"><i class="fa fa-remove"></i></a> ';
-										var curUrl = "http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq="
-												+ curCode
-												+ "&moid="
-												+ row.oid
-												+ "&cdate="
-												+ row.renderdate
-												+ "&cdepart="
-												+ row.ext1
+										var curUrl = urlrunqiantb + "raq="
+												+ curCode + "&moid=" + row.oid
+												+ "&cdate=" + row.renderdate
+												+ "&cdepart=" + row.ext1
 												+ "&IsWrite=" + temp;
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
@@ -223,12 +219,11 @@ function load() {
 												+ curUrl
 												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
 										if (curCode == '10005') {
-											var suburl = "http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq=10015&moid="
-													+ row.oid
-													+ "&cdate="
+											var suburl = urlrunqiantb
+													+ "raq=10015&moid="
+													+ row.oid + "&cdate="
 													+ row.renderdate
-													+ "&cdepart="
-													+ row.ext1
+													+ "&cdepart=" + row.ext1
 													+ "&IsWrite=" + temp;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
