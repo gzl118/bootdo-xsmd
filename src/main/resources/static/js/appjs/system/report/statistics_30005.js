@@ -1,5 +1,17 @@
 var prefix = "/system/reportStatistics"
 $(function() {
+	$("#dw-select").chosen({
+		maxHeight : 200
+	});
+	// 点击事件
+	$('#dw-select').on('change', function(e, params) {
+		console.log(params.selected);
+		if (params.selected == -1) {// 选择自定义单位配置
+			loaddeptslist();
+		} else {
+			loaddepts(params.selected);
+		}
+	});
 	laydateon();
 	selectLoad();
 });
@@ -139,18 +151,7 @@ function selectLoad() {
 			}
 
 			$("#dw-select").append(html);
-			$("#dw-select").chosen({
-				maxHeight : 200
-			});
-			// 点击事件
-			$('#dw-select').on('change', function(e, params) {
-				console.log(params.selected);
-				if (params.selected == -1) {// 选择自定义单位配置
-					loaddeptslist();
-				} else {
-					loaddepts(params.selected);
-				}
-			});
+			$("#dw-select").trigger("chosen:updated");
 			loaddepts($('#dw-select').val());
 		}
 	});
