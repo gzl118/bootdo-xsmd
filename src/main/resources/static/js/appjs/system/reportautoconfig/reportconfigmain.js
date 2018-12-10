@@ -15,7 +15,9 @@ function saveReportConfig() {
 	var configfoid = $("#foid").val();
 	var arritems = new Array();
 	var items = $('input[name="l1"]:checked');
+	var colindex = 0;
 	$(items).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -26,11 +28,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items2 = $('input[name="l2"]:checked');
 	$(items2).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -41,11 +44,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items3 = $('input[name="l3"]:checked');
 	$(items3).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -56,11 +60,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items32 = $('input[name="l32"]:checked');
 	$(items32).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -71,11 +76,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items4 = $('input[name="l4"]:checked');
 	$(items4).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -86,11 +92,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items5 = $('input[name="l5"]:checked');
 	$(items5).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -101,11 +108,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items52 = $('input[name="l52"]:checked');
 	$(items52).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -116,11 +124,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items6 = $('input[name="l6"]:checked');
 	$(items6).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -131,11 +140,12 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var items7 = $('input[name="l7"]:checked');
 	$(items7).each(function(i) {
+		colindex++;
 		var colname = $(this).data("colname");
 		var id = $(this).attr("id");
 		var arr = id.split("_");
@@ -146,7 +156,7 @@ function saveReportConfig() {
 		confnew.rowoid = arr[1];
 		confnew.colfieldname = arr[2];
 		confnew.colname = colname;
-		confnew.colorder = (i + 1);
+		confnew.colorder = colindex;
 		arritems.push(confnew);
 	});
 	var jsonresult = JSON.stringify(arritems);
