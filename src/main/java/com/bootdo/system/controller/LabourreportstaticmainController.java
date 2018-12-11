@@ -80,6 +80,18 @@ public class LabourreportstaticmainController extends BaseController {
 		return "system/labourreportstaticmain/add";
 	}
 
+	@GetMapping("/addautoconfig")
+	// @RequiresPermissions("system:labourreportstaticmain:addautoconfig")
+	String addautoconfig(String rdate, String rdepart, String code,
+			Integer ctype, String configid, Model model) {
+		model.addAttribute("rdate", rdate);
+		model.addAttribute("rdepart", rdepart);
+		model.addAttribute("code", code);
+		model.addAttribute("ctype", ctype);
+		model.addAttribute("configid", configid);
+		return "system/labourreportstaticmain/addautoconfig";
+	}
+
 	@GetMapping("/edit/{oid}")
 	// @RequiresPermissions("system:labourreportstaticmain:edit")
 	String edit(@PathVariable("oid") String oid, Model model) {
@@ -87,6 +99,15 @@ public class LabourreportstaticmainController extends BaseController {
 				.get(oid);
 		model.addAttribute("labourreportstaticmain", labourreportstaticmain);
 		return "system/labourreportstaticmain/edit";
+	}
+
+	@GetMapping("/editautoconfig/{oid}")
+	// @RequiresPermissions("system:labourreportstaticmain:editautoconfig")
+	String editautoconfig(@PathVariable("oid") String oid, Model model) {
+		LabourreportstaticmainDO labourreportstaticmain = labourreportstaticmainService
+				.get(oid);
+		model.addAttribute("labourreportstaticmain", labourreportstaticmain);
+		return "system/labourreportstaticmain/editautoconfig";
 	}
 
 	/**
@@ -180,6 +201,28 @@ public class LabourreportstaticmainController extends BaseController {
 			}
 		}
 		return R.error();
+	}
+
+	@GetMapping("/labourreportautoconfigmain")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportautoconfigmain")
+	String Labourreportautoconfigmain(String Code, Model model) {
+		model.addAttribute("Code", Code);
+		Integer result = CheckRole();
+		model.addAttribute("Status", result);
+		return "system/labourreportstaticmain/labourreportautoconfigmain";
+	}
+
+	@ResponseBody
+	@GetMapping("/listautoconfig")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportautoconfigmain")
+	public PageUtils listautoconfig(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
+		List<LabourreportstaticmainDO> labourreportstaticmainList = labourreportstaticmainService
+				.list(query);
+		int total = labourreportstaticmainService.count(query);
+		PageUtils pageUtils = new PageUtils(labourreportstaticmainList, total);
+		return pageUtils;
 	}
 
 	private Integer CheckRole() {

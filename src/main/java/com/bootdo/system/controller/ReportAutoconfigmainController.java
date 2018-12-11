@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bootdo.system.domain.ReportAutoconfigmainDO;
+import com.bootdo.system.domain.ReportDeptCategoryDO;
 import com.bootdo.system.service.ReportAutoconfigmainService;
 import com.bootdo.common.controller.BaseController;
 import com.bootdo.common.utils.PageUtils;
@@ -55,6 +56,17 @@ public class ReportAutoconfigmainController extends BaseController {
 		int total = reportAutoconfigmainService.count(query);
 		PageUtils pageUtils = new PageUtils(reportAutoconfigmainList, total);
 		return pageUtils;
+	}
+
+	@ResponseBody
+	@GetMapping("/grouplist")
+	public List<ReportAutoconfigmainDO> groupList(
+			@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
+		List<ReportAutoconfigmainDO> list = reportAutoconfigmainService
+				.list(query);
+		return list;
 	}
 
 	@GetMapping("/add")

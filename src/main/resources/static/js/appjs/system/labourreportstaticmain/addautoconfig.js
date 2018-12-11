@@ -10,14 +10,14 @@ $().ready(function() {
 
 $.validator.setDefaults({
 	submitHandler : function() {
-		update();
+		save();
 	}
 });
-function update() {
+function save() {
 	$.ajax({
 		cache : true,
 		type : "POST",
-		url : "/system/labourreportstaticmain/update",
+		url : "/system/labourreportstaticmain/save",
 		data : $('#signupForm').serialize(),// 你的formid
 		async : false,
 		error : function(request) {
@@ -26,12 +26,12 @@ function update() {
 		success : function(data) {
 			if (data.code == 0) {
 				parent.layer.msg("操作成功");
-				parent.reLoad();
+				// parent.reLoad();
 				var index = parent.layer.getFrameIndex(window.name); // 获取窗口索引
 				parent.layer.close(index);
 
 			} else {
-				parent.layer.alert(data.msg)
+				parent.layer.alert(data.msg);
 			}
 
 		}
@@ -48,7 +48,7 @@ function validateRule() {
 		},
 		messages : {
 			remark : {
-				required : icon + "请输入说明"
+				required : icon + "请输入报表标题"
 			}
 		}
 	})

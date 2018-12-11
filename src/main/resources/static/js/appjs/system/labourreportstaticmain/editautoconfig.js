@@ -48,7 +48,7 @@ function validateRule() {
 		},
 		messages : {
 			remark : {
-				required : icon + "请输入说明"
+				required : icon + "请输入报表标题"
 			}
 		}
 	})

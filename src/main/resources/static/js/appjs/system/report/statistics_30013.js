@@ -133,6 +133,10 @@ function selectLoad() {
 		success : function(data) {
 			// 没有数据，加载自定义的单位列表
 			if (data.length < 1) {
+				$("#dw-select").empty();
+				html += '<option value="-1" selected >添加新配置</option>';
+				$("#dw-select").append(html);
+				$("#dw-select").trigger("chosen:updated");
 				loaddeptslist();
 				return;
 			}

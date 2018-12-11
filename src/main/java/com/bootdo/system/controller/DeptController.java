@@ -41,15 +41,15 @@ public class DeptController extends BaseController {
 		return prefix + "/dept";
 	}
 
-	@ApiOperation(value="获取部门列表", notes="")
+	@ApiOperation(value = "获取部门列表", notes = "")
 	@ResponseBody
 	@GetMapping("/list")
-	@RequiresPermissions("system:sysDept:sysDept")
-//	public List<DeptDO> list() {
-//		Map<String, Object> query = new HashMap<>(16);
-//		List<DeptDO> sysDeptList = sysDeptService.list(query);
-//		return sysDeptList;
-//	}
+	// @RequiresPermissions("system:sysDept:sysDept")
+	// public List<DeptDO> list() {
+	// Map<String, Object> query = new HashMap<>(16);
+	// List<DeptDO> sysDeptList = sysDeptService.list(query);
+	// return sysDeptList;
+	// }
 	public List<DeptDO> list(@RequestParam Map<String, Object> params) {
 		// 查询列表数据
 		Query query = new Query(params);
@@ -66,7 +66,7 @@ public class DeptController extends BaseController {
 		} else {
 			model.addAttribute("pName", sysDeptService.get(pId).getName());
 		}
-		return  prefix + "/add";
+		return prefix + "/add";
 	}
 
 	@GetMapping("/edit/{deptId}")
@@ -74,13 +74,13 @@ public class DeptController extends BaseController {
 	String edit(@PathVariable("deptId") Long deptId, Model model) {
 		DeptDO sysDept = sysDeptService.get(deptId);
 		model.addAttribute("sysDept", sysDept);
-		if(Constant.DEPT_ROOT_ID.equals(sysDept.getParentId())) {
+		if (Constant.DEPT_ROOT_ID.equals(sysDept.getParentId())) {
 			model.addAttribute("parentDeptName", "无");
-		}else {
+		} else {
 			DeptDO parDept = sysDeptService.get(sysDept.getParentId());
 			model.addAttribute("parentDeptName", parDept.getName());
 		}
-		return  prefix + "/edit";
+		return prefix + "/edit";
 	}
 
 	/**
@@ -127,14 +127,14 @@ public class DeptController extends BaseController {
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("parentId", deptId);
-		if(sysDeptService.count(map)>0) {
+		if (sysDeptService.count(map) > 0) {
 			return R.error(1, "包含下级部门,不允许修改");
 		}
-		if(sysDeptService.checkDeptHasUser(deptId)) {
+		if (sysDeptService.checkDeptHasUser(deptId)) {
 			if (sysDeptService.remove(deptId) > 0) {
 				return R.ok();
 			}
-		}else {
+		} else {
 			return R.error(1, "部门包含用户,不允许修改");
 		}
 		return R.error();
@@ -164,7 +164,7 @@ public class DeptController extends BaseController {
 
 	@GetMapping("/treeView")
 	String treeView() {
-		return  prefix + "/deptTree";
+		return prefix + "/deptTree";
 	}
 
 }
