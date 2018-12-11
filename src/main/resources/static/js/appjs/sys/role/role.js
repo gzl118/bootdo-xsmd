@@ -33,7 +33,7 @@ function load() {
 						// sortOrder.
 						// 返回false将会终止请求
 						columns : [
-								{ 
+								{
 									// 数据类型，详细参数配置参见文档http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
 									checkbox : true
 								},
@@ -54,20 +54,30 @@ function load() {
 									title : '操作',
 									field : 'id',
 									align : 'left',
-									halign:'center',
+									halign : 'center',
 									formatter : function(value, row, index) {
-										var c = '<a class="btn btn-primary btn-sm '+s_edit_h+'" href="#" mce_href="#" title="成员" onclick="ulist(\''
-												+ row.roleId + '\''+','+'\''
-												+ row.roleName+ '\''
+										var c = '<a class="btn btn-primary btn-sm '
+												+ s_edit_h
+												+ '" href="#" mce_href="#" title="成员" onclick="ulist(\''
+												+ row.roleId
+												+ '\''
+												+ ','
+												+ '\''
+												+ row.roleName
+												+ '\''
 												+ ')"><i class="fa fa-group"></i></a> ';
-										var e = '<a class="btn btn-primary btn-sm '+s_edit_h+'" href="#" mce_href="#" title="编辑" onclick="edit(\''
+										var e = '<a class="btn btn-primary btn-sm '
+												+ s_edit_h
+												+ '" href="#" mce_href="#" title="编辑" onclick="edit(\''
 												+ row.roleId
 												+ '\')"><i class="fa fa-edit"></i></a> ';
-										if(row.roleId<10)
-											s_remove_h='hidden';
+										if (row.roleId <= 10)
+											s_remove_h = 'hidden';
 										else
-											s_remove_h='';
-										var d = '<a class="btn btn-warning btn-sm '+s_remove_h+'" href="#" title="删除"  mce_href="#" onclick="remove(\''
+											s_remove_h = '';
+										var d = '<a class="btn btn-warning btn-sm '
+												+ s_remove_h
+												+ '" href="#" title="删除"  mce_href="#" onclick="remove(\''
 												+ row.roleId
 												+ '\')"><i class="fa fa-remove"></i></a> ';
 										return c + e + d;
@@ -112,15 +122,15 @@ function remove(id) {
 
 }
 
-function ulist(id,rolename) {
+function ulist(id, rolename) {
 	// iframe层
 	layer.open({
 		type : 2,
-		title : '角色【'+rolename+'】成员列表',
+		title : '角色【' + rolename + '】成员列表',
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : '/sys/roleuser/members/'+ id // iframe的url
+		content : '/sys/roleuser/members/' + id // iframe的url
 	});
 }
 function edit(id) {
@@ -134,7 +144,7 @@ function edit(id) {
 	});
 }
 function batchRemove() {
-	
+
 	var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
 	if (rows.length == 0) {
 		layer.msg("请选择要删除的数据");
@@ -163,5 +173,6 @@ function batchRemove() {
 				}
 			}
 		});
-	}, function() {});
+	}, function() {
+	});
 }
