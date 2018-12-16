@@ -60,8 +60,8 @@ public class LabourreportmainController extends BaseController {
 	@GetMapping("/list")
 	@RequiresPermissions("system:labourreportmain:labourreportmain")
 	public PageUtils list(@RequestParam Map<String, Object> params) {
-		// Integer result = CheckRole();
-		// params.put("status", result);
+		UserDO u = getUser();
+		params.put("ext1", u.getDeptId().toString());
 		// 查询列表数据
 		Query query = new Query(params);
 		List<LabourreportmainDO> labourreportmainList = labourreportmainService
@@ -74,6 +74,10 @@ public class LabourreportmainController extends BaseController {
 	@GetMapping("/add")
 	@RequiresPermissions("system:labourreportmain:add")
 	String add(String Code, Model model) {
+		Long id = getUserId();
+		UserDO userDO = userService.get(id);
+		model.addAttribute("renderdepart", userDO.getDeptName());
+		model.addAttribute("ext1", userDO.getDeptId().toString());
 		model.addAttribute("Code", Code);
 		return "system/labourreportmain/add";
 	}
