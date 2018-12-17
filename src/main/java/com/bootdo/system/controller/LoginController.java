@@ -9,6 +9,7 @@ import com.bootdo.common.utils.MD5Utils;
 import com.bootdo.common.utils.R;
 import com.bootdo.common.utils.ShiroUtils;
 import com.bootdo.system.domain.MenuDO;
+import com.bootdo.system.service.DeptService;
 import com.bootdo.system.service.MenuService;
 import io.swagger.models.auth.In;
 import org.apache.shiro.SecurityUtils;
@@ -34,6 +35,11 @@ public class LoginController extends BaseController {
 	MenuService menuService;
 	@Autowired
 	FileService fileService;
+	
+	@Autowired
+	DeptService sysDeptService;
+	
+	
 	@GetMapping({ "/", "" })
 	String welcome(Model model) {
 
@@ -58,6 +64,11 @@ public class LoginController extends BaseController {
 			model.addAttribute("picUrl","/img/court.jpg");
 		}
 		model.addAttribute("username", getUser().getUsername());
+		String dept_name="西山煤电劳资管理系统";
+		if(getUser().getDeptId()!=null&&sysDeptService.get(getUser().getDeptId())!=null)
+			dept_name=sysDeptService.get(getUser().getDeptId()).getName();
+		model.addAttribute("deptname", dept_name);
+		
 		return "index_v1";
 	}
 
