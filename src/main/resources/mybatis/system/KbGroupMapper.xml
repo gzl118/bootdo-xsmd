@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bootdo.system.dao.KbGroupDao">
+
+	<select id="get" resultType="com.bootdo.system.domain.KbGroupDO">
+		select `oid`,`cname`,`remark`,`uptuser`,`upttime` from sys_kb_group where oid = #{value}
+	</select>
+
+	<select id="list" resultType="com.bootdo.system.domain.KbGroupDO">
+		select `oid`,`cname`,`remark`,`uptuser`,`upttime` from sys_kb_group
+        <where>  
+		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
+		  		  <if test="cname != null and cname != ''"> and cname = #{cname} </if>
+		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+		  		  <if test="uptuser != null and uptuser != ''"> and uptuser = #{uptuser} </if>
+		  		  <if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by oid desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from sys_kb_group
+		 <where>  
+		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
+		  		  <if test="cname != null and cname != ''"> and cname = #{cname} </if>
+		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
+		  		  <if test="uptuser != null and uptuser != ''"> and uptuser = #{uptuser} </if>
+		  		  <if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.bootdo.system.domain.KbGroupDO">
+		insert into sys_kb_group
+		(
+			`oid`, 
+			`cname`, 
+			`remark`, 
+			`uptuser`, 
+			`upttime`
+		)
+		values
+		(
+			#{oid}, 
+			#{cname}, 
+			#{remark}, 
+			#{uptuser}, 
+			#{upttime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.bootdo.system.domain.KbGroupDO">
+		update sys_kb_group 
+		<set>
+			<if test="cname != null">`cname` = #{cname}, </if>
+			<if test="remark != null">`remark` = #{remark}, </if>
+			<if test="uptuser != null">`uptuser` = #{uptuser}, </if>
+			<if test="upttime != null">`upttime` = #{upttime}</if>
+		</set>
+		where oid = #{oid}
+	</update>
+	
+	<delete id="remove">
+		delete from sys_kb_group where oid = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from sys_kb_group where oid in 
+		<foreach item="oid" collection="array" open="(" separator="," close=")">
+			#{oid}
+		</foreach>
+	</delete>
+
+</mapper>
