@@ -4,65 +4,70 @@
 <mapper namespace="com.bootdo.system.dao.ReportDeptCategoryDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		select `rdc_id`,`name`,`describe`,`orders`,`flag`,`code` from sys_report_dept_category where rdc_id = #{value}
+		select
+		`rdc_id`,`name`,`describe`,`orders`,`flag`,`code` from
+		sys_report_dept_category where rdc_id = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		select `rdc_id`,`name`,`describe`,`orders`,`flag`,`code` from sys_report_dept_category
-        <where>  
-		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
-		  		  <if test="name != null and name != ''"> and name = #{name} </if>
-		  		  <if test="describe != null and describe != ''"> and describe = #{describe} </if>
-		  		  <if test="orders != null and orders != ''"> and orders = #{orders} </if>
-		  		  <if test="flag != null and flag != ''"> and flag = #{flag} </if>
-		  		  <if test="code != null and code != ''"> and code = #{code} </if>
-		  		</where>
-        <choose>
-            <when test="sort != null and sort.trim() != ''">
-                order by ${sort} ${order}
-            </when>
+		select `rdc_id`,`name`,`describe`,`orders`,`flag`,`code` from
+		sys_report_dept_category
+		<where>
+			<if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
+			<if test="name != null and name != ''"> and name = #{name} </if>
+			<if test="describe != null and describe != ''"> and describe = #{describe} </if>
+			<if test="orders != null and orders != ''"> and orders = #{orders} </if>
+			<if test="flag != null and flag != ''"> and flag = #{flag} </if>
+			<if test="code != null and code != ''"> and code = #{code} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
 			<otherwise>
-                order by orders 
+				order by orders
 			</otherwise>
-        </choose>
+		</choose>
 		<if test="offset != null and limit != null">
 			limit #{offset}, #{limit}
 		</if>
 	</select>
-	
- 	<select id="count" resultType="int">
+
+	<select id="count" resultType="int">
 		select count(*) from sys_report_dept_category
-		 <where>  
-		  		  <if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
-		  		  <if test="name != null and name != ''"> and name = #{name} </if>
-		  		  <if test="describe != null and describe != ''"> and describe = #{describe} </if>
-		  		  <if test="orders != null and orders != ''"> and orders = #{orders} </if>
-		  		  <if test="flag != null and flag != ''"> and flag = #{flag} </if>
-		  		  <if test="code != null and code != ''"> and code = #{code} </if>
-		  		</where>
+		<where>
+			<if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
+			<if test="name != null and name != ''"> and name = #{name} </if>
+			<if test="describe != null and describe != ''"> and describe = #{describe} </if>
+			<if test="orders != null and orders != ''"> and orders = #{orders} </if>
+			<if test="flag != null and flag != ''"> and flag = #{flag} </if>
+			<if test="code != null and code != ''"> and code = #{code} </if>
+		</where>
 	</select>
-	 
-	<insert id="save" parameterType="com.bootdo.system.domain.ReportDeptCategoryDO" useGeneratedKeys="true" keyProperty="rdcId">
-		insert into sys_report_dept_category
+
+	<insert id="save" parameterType="com.bootdo.system.domain.ReportDeptCategoryDO"
+		useGeneratedKeys="true" keyProperty="rdcId">
+		insert into
+		sys_report_dept_category
 		(
-			`name`, 
-			`describe`, 
-			`orders`, 
-			`flag`,
-			`code`
+		`name`,
+		`describe`,
+		`orders`,
+		`flag`,
+		`code`
 		)
 		values
 		(
-			#{name}, 
-			#{describe}, 
-			#{orders}, 
-			#{flag},
-			#{code}
+		#{name},
+		#{describe},
+		#{orders},
+		#{flag},
+		#{code}
 		)
 	</insert>
-	 
+
 	<update id="update" parameterType="com.bootdo.system.domain.ReportDeptCategoryDO">
-		update sys_report_dept_category 
+		update sys_report_dept_category
 		<set>
 			<if test="name != null">`name` = #{name}, </if>
 			<if test="describe != null">`describe` = #{describe}, </if>
@@ -72,14 +77,19 @@
 		</set>
 		where rdc_id = #{rdcId}
 	</update>
-		
+
 	<delete id="remove">
-		delete from sys_report_dept_category where rdc_id = #{value}
+		delete from sys_report_dept_category where rdc_id =
+		#{value}
 	</delete>
-	
+	<delete id="removekb">
+		delete from sys_kb_dept where foid=#{value}
+	</delete>
+
 	<delete id="batchRemove">
-		delete from sys_report_dept_category where rdc_id in 
-		<foreach item="rdcId" collection="array" open="(" separator="," close=")">
+		delete from sys_report_dept_category where rdc_id in
+		<foreach item="rdcId" collection="array" open="(" separator=","
+			close=")">
 			#{rdcId}
 		</foreach>
 	</delete>

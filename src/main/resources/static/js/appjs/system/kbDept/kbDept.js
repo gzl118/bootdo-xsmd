@@ -154,10 +154,13 @@ function load() {
 					});
 }
 function reLoad() {
-	// $('#exampleTable').bootstrapTable('refresh');
-	$("#exampleTable").bootstrapTable('refreshOptions', {
-		pageNumber : 1
+	var path = prefix + "/list";
+	$('#exampleTable').bootstrapTable('refresh', {
+		url : path
 	});
+	// $("#exampleTable").bootstrapTable('refreshOptions', {
+	// pageNumber : 1
+	// });
 }
 function add() {
 	layer.open({

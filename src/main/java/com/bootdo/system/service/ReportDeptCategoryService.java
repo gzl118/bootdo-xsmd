@@ -29,4 +29,6 @@ public interface ReportDeptCategoryService {
 	int remove(Long rdcId);
 	
 	int batchRemove(Long[] rdcIds);
+	
+	int removekb(Long rdc_id);
 }

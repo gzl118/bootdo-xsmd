@@ -211,7 +211,7 @@ public class ReportDeptCategoryController {
 	@ResponseBody
 	// @RequiresPermissions("system:reportDeptCategory:remove")
 	public R removekb(Long rdcId) {
-		if (reportDeptCategoryService.remove(rdcId) > 0) {
+		if (reportDeptCategoryService.removekb(rdcId) > 0) {
 			return R.ok();
 		}
 		return R.error();
