@@ -4,85 +4,97 @@
 <mapper namespace="com.bootdo.system.dao.KbDeptDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.KbDeptDO">
-		select `oid`,`foid`,`dept_id`,`dept_group_id`,`norder`,`ntype`,`uptuser`,`upttime`,`ext1`,`ext2`,`ext3` from sys_kb_dept where oid = #{value}
+		select
+		skd.`oid`,skd.`foid`,skd.`dept_id`,skd.`dept_group_id`,skd.`norder`,skd.`ntype`,skd.`uptuser`,skd.`upttime`,sd.name
+		as ext1,skd.`ext2`,skd.`ext3`
+		from sys_kb_dept skd,sys_dept sd where
+		oid =
+		#{value} and skd.dept_id=sd.dept_id
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.KbDeptDO">
-		select `oid`,`foid`,`dept_id`,`dept_group_id`,`norder`,`ntype`,`uptuser`,`upttime`,`ext1`,`ext2`,`ext3` from sys_kb_dept
-        <where>  
-		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
-		  		  <if test="foid != null and foid != ''"> and foid = #{foid} </if>
-		  		  <if test="deptId != null and deptId != ''"> and dept_id = #{deptId} </if>
-		  		  <if test="deptGroupId != null and deptGroupId != ''"> and dept_group_id = #{deptGroupId} </if>
-		  		  <if test="norder != null and norder != ''"> and norder = #{norder} </if>
-		  		  <if test="ntype != null and ntype != ''"> and ntype = #{ntype} </if>
-		  		  <if test="uptuser != null and uptuser != ''"> and uptuser = #{uptuser} </if>
-		  		  <if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
-		  		  <if test="ext1 != null and ext1 != ''"> and ext1 = #{ext1} </if>
-		  		  <if test="ext2 != null and ext2 != ''"> and ext2 = #{ext2} </if>
-		  		  <if test="ext3 != null and ext3 != ''"> and ext3 = #{ext3} </if>
-		  		</where>
-        <choose>
-            <when test="sort != null and sort.trim() != ''">
-                order by ${sort} ${order}
-            </when>
+		select
+		skd.`oid`,skd.`foid`,skd.`dept_id`,skd.`dept_group_id`,skd.`norder`,
+		skd.`ntype`,sd.`name` as ext1,skg.cname as ext2,
+		case when
+		sd.parent_id=3 THEN '多经'
+		when sd.parent_id=5 THEN '基建'
+		else '生产' end as
+		ext3
+		from sys_kb_dept skd
+		LEFT JOIN sys_kb_group skg on
+		skd.dept_group_id=skg.oid,sys_dept sd
+		where
+		skd.dept_id=sd.dept_id
+
+		<if test="foid != null and foid != ''"> and skd.foid = #{foid} </if>
+		<if test="deptId != null and deptId != ''"> and skd.dept_id = #{deptId} </if>
+		<if test="deptGroupId != null and deptGroupId != ''">
+			and skd.dept_group_id = #{deptGroupId}
+		</if>
+		<if test="ntype != null and ntype != ''"> and skd.ntype = #{ntype} </if>
+		<if test="ext1 != null and ext1 != ''"> and sd.name = #{ext1} </if>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
 			<otherwise>
-                order by oid desc
+				order by norder
 			</otherwise>
-        </choose>
+		</choose>
 		<if test="offset != null and limit != null">
 			limit #{offset}, #{limit}
 		</if>
 	</select>
-	
- 	<select id="count" resultType="int">
-		select count(*) from sys_kb_dept
-		 <where>  
-		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
-		  		  <if test="foid != null and foid != ''"> and foid = #{foid} </if>
-		  		  <if test="deptId != null and deptId != ''"> and dept_id = #{deptId} </if>
-		  		  <if test="deptGroupId != null and deptGroupId != ''"> and dept_group_id = #{deptGroupId} </if>
-		  		  <if test="norder != null and norder != ''"> and norder = #{norder} </if>
-		  		  <if test="ntype != null and ntype != ''"> and ntype = #{ntype} </if>
-		  		  <if test="uptuser != null and uptuser != ''"> and uptuser = #{uptuser} </if>
-		  		  <if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
-		  		  <if test="ext1 != null and ext1 != ''"> and ext1 = #{ext1} </if>
-		  		  <if test="ext2 != null and ext2 != ''"> and ext2 = #{ext2} </if>
-		  		  <if test="ext3 != null and ext3 != ''"> and ext3 = #{ext3} </if>
-		  		</where>
+
+	<select id="count" resultType="int">
+		select count(skd.`oid`)
+		from
+		sys_kb_dept skd
+		LEFT JOIN sys_kb_group skg
+		on
+		skd.dept_group_id=skg.oid,sys_dept sd
+		where
+		skd.dept_id=sd.dept_id
+		<if test="foid != null and foid != ''"> and skd.foid = #{foid} </if>
+		<if test="deptId != null and deptId != ''"> and skd.dept_id = #{deptId} </if>
+		<if test="deptGroupId != null and deptGroupId != ''"> and skd.dept_group_id = #{deptGroupId} </if>
+		<if test="ntype != null and ntype != ''"> and skd.ntype = #{ntype} </if>
+		<if test="ext1 != null and ext1 != ''"> and sd.name = #{ext1} </if>
 	</select>
-	 
-	<insert id="save" parameterType="com.bootdo.system.domain.KbDeptDO" useGeneratedKeys="true" keyProperty="oid">
+
+	<insert id="save" parameterType="com.bootdo.system.domain.KbDeptDO"
+		useGeneratedKeys="true" keyProperty="oid">
 		insert into sys_kb_dept
 		(
-			`foid`, 
-			`dept_id`, 
-			`dept_group_id`, 
-			`norder`, 
-			`ntype`, 
-			`uptuser`, 
-			`upttime`, 
-			`ext1`, 
-			`ext2`, 
-			`ext3`
+		`foid`,
+		`dept_id`,
+		`dept_group_id`,
+		`norder`,
+		`ntype`,
+		`uptuser`,
+		`upttime`,
+		`ext1`,
+		`ext2`,
+		`ext3`
 		)
 		values
 		(
-			#{foid}, 
-			#{deptId}, 
-			#{deptGroupId}, 
-			#{norder}, 
-			#{ntype}, 
-			#{uptuser}, 
-			#{upttime}, 
-			#{ext1}, 
-			#{ext2}, 
-			#{ext3}
+		#{foid},
+		#{deptId},
+		#{deptGroupId},
+		#{norder},
+		#{ntype},
+		#{uptuser},
+		#{upttime},
+		#{ext1},
+		#{ext2},
+		#{ext3}
 		)
 	</insert>
-	 
+
 	<update id="update" parameterType="com.bootdo.system.domain.KbDeptDO">
-		update sys_kb_dept 
+		update sys_kb_dept
 		<set>
 			<if test="foid != null">`foid` = #{foid}, </if>
 			<if test="deptId != null">`dept_id` = #{deptId}, </if>
@@ -97,16 +109,33 @@
 		</set>
 		where oid = #{oid}
 	</update>
-	
+
 	<delete id="remove">
 		delete from sys_kb_dept where oid = #{value}
 	</delete>
-	
+
 	<delete id="batchRemove">
-		delete from sys_kb_dept where oid in 
-		<foreach item="oid" collection="array" open="(" separator="," close=")">
+		delete from sys_kb_dept where oid in
+		<foreach item="oid" collection="array" open="(" separator=","
+			close=")">
 			#{oid}
 		</foreach>
 	</delete>
-
+	<select id="listnew" resultType="com.bootdo.system.domain.KbDeptDO">
+		select skd.oid,skd.dept_group_id
+		as foid,sd.`name` as ext1,sd.parent_id as ext2, skd.ntype,skd.norder
+		FROM sys_kb_dept skd,sys_dept sd
+		where skd.dept_id=sd.dept_id
+		and
+		skd.foid=#{value}
+		UNION
+		SELECT DISTINCT skd.dept_group_id as oid,'0' as
+		foid,skg.cname as ext1,'' as
+		ext2, '' as ntype,'' as norder
+		from
+		sys_kb_dept skd,sys_kb_group skg
+		where skd.dept_group_id=skg.oid
+		and
+		skd.foid=#{value}
+	</select>
 </mapper>

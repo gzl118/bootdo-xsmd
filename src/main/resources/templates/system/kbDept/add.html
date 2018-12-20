@@ -9,67 +9,40 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-content">
 						<form class="form-horizontal m-t" id="signupForm">
-							<div class="form-group">	
-								<label class="col-sm-3 control-label">外键：</label>
+							<input type="hidden" id="foid" th:value="${foid}" name="foid">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">类型：</label>
 								<div class="col-sm-8">
-									<input id="foid" name="foid" class="form-control" type="text">
+									<select id="ntype" name="ntype" class="form-control">
+										<option value="0">集团本部</option>
+										<option value="1">股份公司</option>
+									</select>
 								</div>
 							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">部门编号：</label>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">分组：</label>
 								<div class="col-sm-8">
-									<input id="deptId" name="deptId" class="form-control" type="text">
+									<select id="deptGroupId" name="deptGroupId"
+										class="form-control"></select>
 								</div>
 							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">分组编号：</label>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">单位：</label>
 								<div class="col-sm-8">
-									<input id="deptGroupId" name="deptGroupId" class="form-control" type="text">
+									<input id="deptId" name="deptId" class="hidden"> <input
+										id="deptName" name="deptName" class="form-control" type="text"
+										style="cursor: pointer;" onclick="openDept()"
+										readonly="readonly" placeholder="所属部门">
 								</div>
 							</div>
-														<div class="form-group">	
+							<div class="form-group">
 								<label class="col-sm-3 control-label">顺序：</label>
 								<div class="col-sm-8">
-									<input id="norder" name="norder" class="form-control" type="text">
+									<input id="norder" name="norder" class="form-control"
+										type="text">
 								</div>
 							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">类型，0集团本部，1股份公司：</label>
-								<div class="col-sm-8">
-									<input id="ntype" name="ntype" class="form-control" type="text">
-								</div>
-							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">操作人：</label>
-								<div class="col-sm-8">
-									<input id="uptuser" name="uptuser" class="form-control" type="text">
-								</div>
-							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">操作时间：</label>
-								<div class="col-sm-8">
-									<input id="upttime" name="upttime" class="form-control" type="text">
-								</div>
-							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">备注：</label>
-								<div class="col-sm-8">
-									<input id="ext1" name="ext1" class="form-control" type="text">
-								</div>
-							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">备注：</label>
-								<div class="col-sm-8">
-									<input id="ext2" name="ext2" class="form-control" type="text">
-								</div>
-							</div>
-														<div class="form-group">	
-								<label class="col-sm-3 control-label">备注：</label>
-								<div class="col-sm-8">
-									<input id="ext3" name="ext3" class="form-control" type="text">
-								</div>
-							</div>
-																					<div class="form-group">
+							<div class="form-group">
 								<div class="col-sm-8 col-sm-offset-3">
 									<button type="submit" class="btn btn-primary">提交</button>
 								</div>
@@ -78,10 +51,11 @@
 					</div>
 				</div>
 			</div>
-	</div>
+		</div>
 	</div>
 	<div th:include="include::footer"></div>
 	<script type="text/javascript" src="/js/appjs/system/kbDept/add.js">
+		
 	</script>
 </body>
 </html>

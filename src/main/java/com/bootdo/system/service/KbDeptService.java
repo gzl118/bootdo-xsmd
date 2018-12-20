@@ -13,18 +13,20 @@ import java.util.Map;
  * @date 2018-12-19 21:38:56
  */
 public interface KbDeptService {
-	
+
 	KbDeptDO get(Integer oid);
-	
+
 	List<KbDeptDO> list(Map<String, Object> map);
-	
+
 	int count(Map<String, Object> map);
-	
+
 	int save(KbDeptDO kbDept);
-	
+
 	int update(KbDeptDO kbDept);
-	
+
 	int remove(Integer oid);
-	
+
 	int batchRemove(Integer[] oids);
+
+	List<KbDeptDO> listnew(Integer foid);
 }

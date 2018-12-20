@@ -1,5 +1,9 @@
 $().ready(function() {
 	validateRule();
+	$("#deptGroupId").chosen({
+		maxHeight : 200
+	});
+	selectLoad();
 });
 
 $.validator.setDefaults({
@@ -46,4 +50,50 @@ function validateRule() {
 			}
 		}
 	})
+}
+function selectLoad() {
+	var html = "";
+	$.ajax({
+		url : '/system/kbGroup/grouplist',
+		data : {
+			limit : 1000,
+			offset : 0
+		},
+		cache : false,
+		success : function(data) {
+			// 没有数据，加载自定义的单位列表
+			if (data.length < 1) {
+				html += '<option value="0" selected >无</option>';
+				$("#deptGroupId").append(html);
+				$("#deptGroupId").trigger("chosen:updated");
+				return;
+			}
+			html += '<option value="0" selected >无</option>';
+			// 加载数据
+			for (var i = 0; i < data.length; i++) {
+				if (i == 0) {
+					html += '<option value="' + data[i].oid + '" selected >'
+							+ data[i].cname + '</option>';
+				} else {
+					html += '<option value="' + data[i].oid + '">'
+							+ data[i].cname + '</option>';
+				}
+			}
+
+			$("#deptGroupId").append(html);
+			$("#deptGroupId").trigger("chosen:updated");
+		}
+	});
+}
+var openDept = function() {
+	layer.open({
+		type : 2,
+		title : "选择部门",
+		area : [ '300px', '450px' ],
+		content : "/system/sysDept/treeView"
+	})
+}
+function loadDept(deptId, deptName) {
+	$("#deptId").val(deptId);
+	$("#deptName").val(deptName);
 }

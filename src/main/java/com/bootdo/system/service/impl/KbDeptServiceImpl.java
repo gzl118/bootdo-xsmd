@@ -10,46 +10,48 @@ import com.bootdo.system.dao.KbDeptDao;
 import com.bootdo.system.domain.KbDeptDO;
 import com.bootdo.system.service.KbDeptService;
 
-
-
 @Service
 public class KbDeptServiceImpl implements KbDeptService {
 	@Autowired
 	private KbDeptDao kbDeptDao;
-	
+
 	@Override
-	public KbDeptDO get(Integer oid){
+	public KbDeptDO get(Integer oid) {
 		return kbDeptDao.get(oid);
 	}
-	
+
 	@Override
-	public List<KbDeptDO> list(Map<String, Object> map){
+	public List<KbDeptDO> list(Map<String, Object> map) {
 		return kbDeptDao.list(map);
 	}
-	
+
 	@Override
-	public int count(Map<String, Object> map){
+	public int count(Map<String, Object> map) {
 		return kbDeptDao.count(map);
 	}
-	
+
 	@Override
-	public int save(KbDeptDO kbDept){
+	public int save(KbDeptDO kbDept) {
 		return kbDeptDao.save(kbDept);
 	}
-	
+
 	@Override
-	public int update(KbDeptDO kbDept){
+	public int update(KbDeptDO kbDept) {
 		return kbDeptDao.update(kbDept);
 	}
-	
+
 	@Override
-	public int remove(Integer oid){
+	public int remove(Integer oid) {
 		return kbDeptDao.remove(oid);
 	}
-	
+
 	@Override
-	public int batchRemove(Integer[] oids){
+	public int batchRemove(Integer[] oids) {
 		return kbDeptDao.batchRemove(oids);
 	}
-	
+
+	@Override
+	public List<KbDeptDO> listnew(Integer foid) {
+		return kbDeptDao.listnew(foid);
+	}
 }

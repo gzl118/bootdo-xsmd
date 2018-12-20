@@ -17,16 +17,18 @@ import org.apache.ibatis.annotations.Mapper;
 public interface KbDeptDao {
 
 	KbDeptDO get(Integer oid);
-	
-	List<KbDeptDO> list(Map<String,Object> map);
-	
-	int count(Map<String,Object> map);
-	
+
+	List<KbDeptDO> list(Map<String, Object> map);
+
+	int count(Map<String, Object> map);
+
 	int save(KbDeptDO kbDept);
-	
+
 	int update(KbDeptDO kbDept);
-	
+
 	int remove(Integer oid);
-	
+
 	int batchRemove(Integer[] oids);
+
+	List<KbDeptDO> listnew(Integer foid);
 }

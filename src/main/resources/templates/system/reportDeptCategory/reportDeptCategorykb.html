@@ -8,13 +8,14 @@
 			<div class="ibox">
 				<div class="ibox-body">
 					<div class="fixed-table-toolbar">
-						<input type="hidden" id="foid" th:value="${foid}">
+						<input type="hidden" th:value="${code}" id="code" />
 						<div class="columns pull-left">
-							<button shiro:hasPermission="system:kbDept:add" type="button"
-								class="btn  btn-primary" onclick="add()">
-								<i class="fa fa-plus" aria-hidden="true"></i>添加
+							<button shiro:hasPermission="system:reportDeptCategory:add"
+								type="button" class="btn  btn-primary" onclick="add()">
+								<i class="fa fa-plus" aria-hidden="true"></i>新增
 							</button>
-							<button shiro:hasPermission="system:kbDept:batchRemove"
+							<button
+								shiro:hasPermission="system:reportDeptCategory:batchRemove"
 								type="button" class="btn  btn-danger" onclick="batchRemove()">
 								<i class="fa fa-trash" aria-hidden="true"></i>删除
 							</button>
@@ -22,17 +23,9 @@
 						<div class="columns pull-right">
 							<button class="btn btn-success" onclick="reLoad()">查询</button>
 						</div>
-						<div class="columns pull-right nopadding"
-							style="padding-right: 10px; width: 200px;">
-							<input id="ext1" type="text" class="form-control"
-								placeholder="请输入部门名称">
-						</div>
-						<div class="columns pull-right nopadding"
-							style="padding-right: 10px; width: 200px;">
-							<select id="deptGroupId" placeholder="请选择分组名称"
-								class="form-control chosen-select" tabindex="2"
-								style="width: 100%">
-							</select>
+						<div class="columns pull-right col-md-2 nopadding">
+							<input id="searchName" type="text" class="form-control"
+								placeholder="分类名称">
 						</div>
 					</div>
 					<table id="exampleTable" data-mobile-responsive="true">
@@ -46,26 +39,27 @@
 		<script type="text/javascript">
 			var s_edit_h = 'hidden';
 			var s_remove_h = 'hidden';
-			var s_resetPwd_h = 'hidden';
+			var s_detail_h = 'hidden';
 		</script>
 	</div>
-	<div shiro:hasPermission="system:kbDept:edit">
+	<div shiro:hasPermission="system:reportDeptCategory:editkb">
 		<script type="text/javascript">
 			s_edit_h = '';
 		</script>
 	</div>
-	<div shiro:hasPermission="system:kbDept:remove">
+	<div shiro:hasPermission="system:reportDeptCategory:removekb">
 		<script type="text/javascript">
 			var s_remove_h = '';
 		</script>
 	</div>
-	<div shiro:hasPermission="system:kbDept:resetPwd">
+	<div shiro:hasPermission="system:kbDept:kbDept">
 		<script type="text/javascript">
-			var s_resetPwd_h = '';
+			var s_detail_h = '';
 		</script>
 	</div>
 	</div>
 	<div th:include="include :: footer"></div>
-	<script type="text/javascript" src="/js/appjs/system/kbDept/kbDept.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportDeptCategory/reportDeptCategorykb.js"></script>
 </body>
 </html>

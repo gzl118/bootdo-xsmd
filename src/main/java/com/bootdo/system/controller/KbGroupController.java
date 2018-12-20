@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bootdo.system.domain.KbGroupDO;
+import com.bootdo.system.domain.ReportDeptCategoryDO;
 import com.bootdo.system.service.KbGroupService;
 import com.bootdo.common.controller.BaseController;
 import com.bootdo.common.utils.PageUtils;
@@ -54,6 +55,16 @@ public class KbGroupController extends BaseController {
 		int total = kbGroupService.count(query);
 		PageUtils pageUtils = new PageUtils(kbGroupList, total);
 		return pageUtils;
+	}
+
+	@ResponseBody
+	@GetMapping("/grouplist")
+	// @RequiresPermissions("system:reportDeptCategory:reportDeptCategory")
+	public List<KbGroupDO> groupList(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
+		List<KbGroupDO> list = kbGroupService.list(query);
+		return list;
 	}
 
 	@GetMapping("/add")

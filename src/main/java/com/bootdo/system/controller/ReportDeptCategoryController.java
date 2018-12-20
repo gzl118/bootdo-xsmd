@@ -144,4 +144,84 @@ public class ReportDeptCategoryController {
 		return R.ok();
 	}
 
+	@GetMapping("/kb")
+	@RequiresPermissions("system:reportDeptCategory:reportDeptCategorykb")
+	String ReportDeptCategorykb(String code, Model model) {
+		model.addAttribute("code", code);
+		return "system/reportDeptCategory/reportDeptCategorykb";
+	}
+
+	@ResponseBody
+	@GetMapping("/listkb")
+	@RequiresPermissions("system:reportDeptCategory:reportDeptCategorykb")
+	public PageUtils listkb(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
+		List<ReportDeptCategoryDO> reportDeptCategoryList = reportDeptCategoryService
+				.list(query);
+		int total = reportDeptCategoryService.count(query);
+		PageUtils pageUtils = new PageUtils(reportDeptCategoryList, total);
+		return pageUtils;
+	}
+
+	@GetMapping("/addkb")
+	@RequiresPermissions("system:reportDeptCategory:addkb")
+	String addkb(String code, Model model) {
+		model.addAttribute("code", code);
+		return "system/reportDeptCategory/addkb";
+	}
+
+	@GetMapping("/editkb/{rdcId}")
+	@RequiresPermissions("system:reportDeptCategory:editkb")
+	String editkb(@PathVariable("rdcId") Long rdcId, Model model) {
+		ReportDeptCategoryDO reportDeptCategory = reportDeptCategoryService
+				.get(rdcId);
+		model.addAttribute("reportDeptCategory", reportDeptCategory);
+		return "system/reportDeptCategory/editkb";
+	}
+
+	/**
+	 * 保存
+	 */
+	@ResponseBody
+	@PostMapping("/savekb")
+	@RequiresPermissions("system:reportDeptCategory:addkb")
+	public R savekb(ReportDeptCategoryDO reportDeptCategory) {
+		if (reportDeptCategoryService.save(reportDeptCategory) > 0) {
+			return R.ok();
+		}
+		return R.error();
+	}
+
+	/**
+	 * 修改
+	 */
+	@ResponseBody
+	@RequestMapping("/updatekb")
+	@RequiresPermissions("system:reportDeptCategory:editkb")
+	public R updatekb(ReportDeptCategoryDO reportDeptCategory) {
+		reportDeptCategoryService.update(reportDeptCategory);
+		return R.ok();
+	}
+
+	/**
+	 * 删除
+	 */
+	@PostMapping("/removekb")
+	@ResponseBody
+	// @RequiresPermissions("system:reportDeptCategory:remove")
+	public R removekb(Long rdcId) {
+		if (reportDeptCategoryService.remove(rdcId) > 0) {
+			return R.ok();
+		}
+		return R.error();
+	}
+
+	@PostMapping("/batchRemovekb")
+	@ResponseBody
+	@RequiresPermissions("system:reportDeptCategory:batchRemovekb")
+	public R removekb(@RequestParam("ids[]") Long[] rdcIds) {
+		reportDeptCategoryService.batchRemove(rdcIds);
+		return R.ok();
+	}
 }
