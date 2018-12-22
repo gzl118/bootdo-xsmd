@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+<link rel="stylesheet"
+	href="/js/plugins/laydate5.9/theme/default/laydate.css" />
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="col-sm-12">
+			<div class="ibox">
+				<div class="ibox-body">
+					<div class="fixed-table-toolbar">
+						<div class="columns pull-left">
+							<input id="code" name="code" th:value="${Code}"
+								class="form-control" type="hidden"> <input id="status"
+								name="status" class="form-control" th:value="${Status}"
+								type="hidden">
+							<!-- <button shiro:hasPermission="system:labourreportstaticmain:add"
+								type="button" class="btn  btn-primary" onclick="add()">
+								<i class="fa fa-plus" aria-hidden="true"></i>添加
+							</button> -->
+							<button
+								shiro:hasPermission="system:labourreportstaticmain:batchRemove"
+								type="button" class="btn  btn-danger" onclick="batchRemove()">
+								<i class="fa fa-trash" aria-hidden="true"></i>删除
+							</button>
+						</div>
+						<div class="columns pull-right" style="margin-left: 20px;">
+							<button class="btn btn-success" onclick="reLoad()">查询</button>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<input type="text" class="laydate-icon layer-date form-control"
+								id="renderdate" name="renderdate" placeholder="请选择统计年月"
+								style="background-color: #fff;" readonly="readonly" />
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">统计年月：</label>
+						</div>
+					</div>
+					<table id="exampleTable" data-mobile-responsive="true">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--shiro控制bootstraptable行内按钮看见性 来自bootdo的创新方案 -->
+	<div>
+		<script type="text/javascript">
+			var s_edit_h = 'hidden';
+			var s_remove_h = 'hidden';
+			var s_resetPwd_h = 'hidden';
+			var s_sumitinfo_h = 'hidden';
+			var s_approve_h = 'hidden';
+			var s_detail_h = 'hidden';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportstaticmain:edit">
+		<script type="text/javascript">
+			s_edit_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportstaticmain:remove">
+		<script type="text/javascript">
+			var s_remove_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportstaticmain:sumitinfo">
+		<script type="text/javascript">
+			var s_sumitinfo_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourrepotapprove:labourrepotapprove">
+		<script type="text/javascript">
+			var s_approve_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportstaticmain:detail">
+		<script type="text/javascript">
+			var s_detail_h = '';
+		</script>
+	</div>
+	<div th:include="include :: footer"></div>
+	<script type="text/javascript" src="/js/plugins/laydate5.9/laydate.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/common/globalcom/projectconfig.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/labourreportstaticmain/labourreportstaticmainkb.js"></script>
+</body>
+</html>

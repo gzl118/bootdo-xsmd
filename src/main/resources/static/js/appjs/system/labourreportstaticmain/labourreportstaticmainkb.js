@@ -14,7 +14,7 @@ function load() {
 			.bootstrapTable(
 					{
 						method : 'get', // 服务器数据的请求方式 get or post
-						url : prefix + "/list", // 服务器数据的加载地址
+						url : prefix + "/listnew", // 服务器数据的加载地址
 						// showRefresh : true,
 						// showToggle : true,
 						// showColumns : true,
@@ -86,7 +86,7 @@ function load() {
 								{
 									field : 'ext1',
 									align : 'center',
-									title : '统计单位'
+									title : '配置文件名称'
 								},
 								{
 									field : 'ctype',
@@ -195,7 +195,7 @@ function load() {
 										var curCode = row.code;
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
-												+ row.renderdate + "&rdepart="
+												+ row.renderdate + "&rfoid="
 												+ row.deptids;
 
 										var g = '<a class="btn btn-warning btn-sm '
@@ -203,20 +203,6 @@ function load() {
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
 												+ curUrl
 												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
-
-										if (curCode == '30005') {
-											var suburl = urlrunqian
-													+ "raq=30015&rdate="
-													+ row.renderdate
-													+ "&rdepart=" + row.deptids;
-											g = '<a class="btn btn-warning btn-sm '
-													+ s_detail_h
-													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''
-													+ curUrl
-													+ '\',\''
-													+ suburl
-													+ '\')"><i class="fa fa fa-tasks"></i></a> ';
-										}
 										var e = '<a class="btn btn-primary btn-sm '
 												+ s_edit_h
 												+ '" href="#" mce_href="#" title="编辑" onclick="edit(\''
@@ -268,7 +254,7 @@ function edit(id, deptname) {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : prefix + '/edit/' + id
+		content : prefix + '/editkb/' + id// iframe的url
 	});
 }
 function remove(id) {

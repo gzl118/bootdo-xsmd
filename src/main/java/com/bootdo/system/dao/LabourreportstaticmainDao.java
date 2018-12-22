@@ -29,4 +29,8 @@ public interface LabourreportstaticmainDao {
 	int remove(String oid);
 	
 	int batchRemove(String[] oids);
+	
+	List<LabourreportstaticmainDO> listnew(Map<String,Object> map);
+	
+	LabourreportstaticmainDO getnew(String oid);
 }

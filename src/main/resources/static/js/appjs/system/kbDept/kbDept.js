@@ -105,23 +105,28 @@ function load() {
 								},
 								{
 									field : 'ext1',
-									title : '单位名称'
+									title : '单位名称',
+									align:'center'
 								},
 								{
 									field : 'ext3',
-									title : '单位分类'
+									title : '单位分类',
+									align:'center'
 								},
 								{
 									field : 'ext2',
-									title : '分组名称'
+									title : '分组名称',
+									align:'center'
 								},
 								{
 									field : 'norder',
-									title : '顺序'
+									title : '顺序',
+									align:'center'
 								},
 								{
 									field : 'ntype',
 									title : '类型',
+									align:'center',
 									formatter : function(value, row, index) { // 单元格格式化函数
 										// 0集团本部，1股份公司
 										var text = '-';

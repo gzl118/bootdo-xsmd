@@ -115,4 +115,11 @@ public class ReportStatistics {
 		model.addAttribute("dcode", "40001");
 		return "system/report/statistics_40001";
 	}
+
+	@GetMapping("/report/20005")
+	@RequiresPermissions("system:reportStatistics:20005")
+	String ShowReportStatistics20005(Model model) {
+		model.addAttribute("dcode", "20005");
+		return "system/report/statistics_20005";
+	}
 }

@@ -242,4 +242,35 @@ public class LabourreportstaticmainController extends BaseController {
 		}
 		return result;
 	}
+
+	@GetMapping("/kb")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmainkb")
+	String Labourreportstaticmainkb(String Code, Model model) {
+		model.addAttribute("Code", Code);
+		Integer result = CheckRole();
+		model.addAttribute("Status", result);
+		return "system/labourreportstaticmain/labourreportstaticmainkb";
+	}
+
+	@ResponseBody
+	@GetMapping("/listnew")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmainkb")
+	public PageUtils listnew(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
+		List<LabourreportstaticmainDO> labourreportstaticmainList = labourreportstaticmainService
+				.listnew(query);
+		int total = labourreportstaticmainService.count(query);
+		PageUtils pageUtils = new PageUtils(labourreportstaticmainList, total);
+		return pageUtils;
+	}
+
+	@GetMapping("/editkb/{oid}")
+	// @RequiresPermissions("system:labourreportstaticmain:edit")
+	String editkb(@PathVariable("oid") String oid, Model model) {
+		LabourreportstaticmainDO labourreportstaticmain = labourreportstaticmainService
+				.getnew(oid);
+		model.addAttribute("labourreportstaticmain", labourreportstaticmain);
+		return "system/labourreportstaticmain/editkb";
+	}
 }
