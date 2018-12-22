@@ -10,7 +10,7 @@ import java.util.Date;
  * 
  * @author chglee
  * @email 1992lcg@163.com
- * @date 2018-12-19 21:38:56
+ * @date 2018-12-22 18:03:26
  */
 public class KbGroupDO implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -25,6 +25,8 @@ public class KbGroupDO implements Serializable {
 	private String uptuser;
 	//操作时间
 	private Date upttime;
+	//0,正常，1手动添加的分组数据
+	private Integer mark;
 
 	/**
 	 * 设置：oid
@@ -85,5 +87,17 @@ public class KbGroupDO implements Serializable {
 	 */
 	public Date getUpttime() {
 		return upttime;
+	}
+	/**
+	 * 设置：0,正常，1手动添加的分组数据
+	 */
+	public void setMark(Integer mark) {
+		this.mark = mark;
+	}
+	/**
+	 * 获取：0,正常，1手动添加的分组数据
+	 */
+	public Integer getMark() {
+		return mark;
 	}
 }

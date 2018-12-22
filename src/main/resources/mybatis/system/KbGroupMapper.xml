@@ -4,17 +4,18 @@
 <mapper namespace="com.bootdo.system.dao.KbGroupDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.KbGroupDO">
-		select `oid`,`cname`,`remark`,`uptuser`,`upttime` from sys_kb_group where oid = #{value}
+		select `oid`,`cname`,`remark`,`uptuser`,`upttime`,`mark` from sys_kb_group where oid = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.KbGroupDO">
-		select `oid`,`cname`,`remark`,`uptuser`,`upttime` from sys_kb_group
+		select `oid`,`cname`,`remark`,`uptuser`,`upttime`,`mark` from sys_kb_group
         <where>  
 		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
 		  		  <if test="cname != null and cname != ''"> and cname = #{cname} </if>
 		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
 		  		  <if test="uptuser != null and uptuser != ''"> and uptuser = #{uptuser} </if>
 		  		  <if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
+		  		  <if test="mark != null and mark != ''"> and mark = #{mark} </if>
 		  		</where>
         <choose>
             <when test="sort != null and sort.trim() != ''">
@@ -37,6 +38,7 @@
 		  		  <if test="remark != null and remark != ''"> and remark = #{remark} </if>
 		  		  <if test="uptuser != null and uptuser != ''"> and uptuser = #{uptuser} </if>
 		  		  <if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
+		  		  <if test="mark != null and mark != ''"> and mark = #{mark} </if>
 		  		</where>
 	</select>
 	 
@@ -47,7 +49,8 @@
 			`cname`, 
 			`remark`, 
 			`uptuser`, 
-			`upttime`
+			`upttime`, 
+			`mark`
 		)
 		values
 		(
@@ -55,7 +58,8 @@
 			#{cname}, 
 			#{remark}, 
 			#{uptuser}, 
-			#{upttime}
+			#{upttime}, 
+			#{mark}
 		)
 	</insert>
 	 
@@ -65,7 +69,8 @@
 			<if test="cname != null">`cname` = #{cname}, </if>
 			<if test="remark != null">`remark` = #{remark}, </if>
 			<if test="uptuser != null">`uptuser` = #{uptuser}, </if>
-			<if test="upttime != null">`upttime` = #{upttime}</if>
+			<if test="upttime != null">`upttime` = #{upttime}, </if>
+			<if test="mark != null">`mark` = #{mark}</if>
 		</set>
 		where oid = #{oid}
 	</update>
