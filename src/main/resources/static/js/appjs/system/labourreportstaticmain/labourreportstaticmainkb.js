@@ -191,13 +191,13 @@ function load() {
 										if (row.status == 0 || row.status == ''
 												|| row.status == null)
 											approverecord = 'hidden';
-
+										var temp = 1;
 										var curCode = row.code;
-										var curUrl = urlrunqian + "raq="
+										var curUrl = urlrunqiantb + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rfoid="
-												+ row.deptids;
-
+												+ row.deptids + "&IsWrite="
+												+ temp + "&roid=" + row.oid;
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''

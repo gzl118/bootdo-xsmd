@@ -60,4 +60,9 @@ public class LabourreportstaticmainServiceImpl implements
 	public LabourreportstaticmainDO getnew(String oid) {
 		return labourreportstaticmainDao.getnew(oid);
 	}
+
+	@Override
+	public String extcutekbdetail(String oid) {
+		return labourreportstaticmainDao.extcutekbdetail(oid);
+	}
 }

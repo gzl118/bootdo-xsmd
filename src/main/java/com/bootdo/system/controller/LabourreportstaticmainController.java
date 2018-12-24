@@ -273,4 +273,35 @@ public class LabourreportstaticmainController extends BaseController {
 		model.addAttribute("labourreportstaticmain", labourreportstaticmain);
 		return "system/labourreportstaticmain/editkb";
 	}
+
+	@GetMapping("/addkb")
+	String addkb(String rdate, String rdepart, String code, Integer ctype,
+			Model model) {
+		model.addAttribute("rdate", rdate);
+		model.addAttribute("rdepart", rdepart);
+		model.addAttribute("code", code);
+		model.addAttribute("ctype", ctype);
+		return "system/labourreportstaticmain/addkb";
+	}
+
+	@ResponseBody
+	@PostMapping("/savekb")
+	public R savekb(LabourreportstaticmainDO labourreportstaticmain) {
+		String noid = "";
+		if (StringUtils.isEmpty(labourreportstaticmain.getOid()))
+			noid = UUID.randomUUID().toString().replace("-", "");
+		labourreportstaticmain.setOid(noid);
+		if (!StringUtils.isEmpty(labourreportstaticmain.getRenderdate()))
+			labourreportstaticmain.setRenderdate(labourreportstaticmain
+					.getRenderdate() + "-01");
+		Long uid = getUserId();
+		labourreportstaticmain.setUptuser(uid.toString());
+		if (labourreportstaticmainService.save(labourreportstaticmain) > 0) {
+			String foid = labourreportstaticmainService.extcutekbdetail(noid);
+			if (!StringUtils.isEmpty(foid))
+				return R.ok();
+			return R.error();
+		}
+		return R.error();
+	}
 }

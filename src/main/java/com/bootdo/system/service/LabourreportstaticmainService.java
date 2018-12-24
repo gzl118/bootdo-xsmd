@@ -31,4 +31,6 @@ public interface LabourreportstaticmainService {
 	List<LabourreportstaticmainDO> listnew(Map<String,Object> map);
 	
 	LabourreportstaticmainDO getnew(String oid);
+	
+	String extcutekbdetail(String oid);
 }

@@ -122,4 +122,25 @@ public class ReportStatistics {
 		model.addAttribute("dcode", "20005");
 		return "system/report/statistics_20005";
 	}
+
+	@GetMapping("/report/20008")
+	@RequiresPermissions("system:reportStatistics:20008")
+	String ShowReportStatistics20008(Model model) {
+		model.addAttribute("dcode", "20008");
+		return "system/report/statistics_20005";
+	}
+
+	@GetMapping("/report/20006")
+	@RequiresPermissions("system:reportStatistics:20006")
+	String ShowReportStatistics20006(Model model) {
+		model.addAttribute("dcode", "20006");
+		return "system/report/statistics_20007";
+	}
+
+	@GetMapping("/report/20007")
+	@RequiresPermissions("system:reportStatistics:20007")
+	String ShowReportStatistics20007(Model model) {
+		model.addAttribute("dcode", "20007");
+		return "system/report/statistics_20007";
+	}
 }
