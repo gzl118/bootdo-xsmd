@@ -37,8 +37,9 @@ public class KbDeptController {
 
 	@GetMapping()
 	@RequiresPermissions("system:kbDept:kbDept")
-	String KbDept(String foid, Model model) {
+	String KbDept(String foid, String code, Model model) {
 		model.addAttribute("foid", foid);
+		model.addAttribute("code", code);
 		return "system/kbDept/kbDept";
 	}
 
@@ -65,16 +66,18 @@ public class KbDeptController {
 
 	@GetMapping("/add")
 	@RequiresPermissions("system:kbDept:add")
-	String add(String foid, Model model) {
+	String add(String foid, String code, Model model) {
 		model.addAttribute("foid", foid);
+		model.addAttribute("code", code);
 		return "system/kbDept/add";
 	}
 
 	@GetMapping("/edit/{oid}")
 	@RequiresPermissions("system:kbDept:edit")
-	String edit(@PathVariable("oid") Integer oid, Model model) {
+	String edit(@PathVariable("oid") Integer oid, String code, Model model) {
 		KbDeptDO kbDept = kbDeptService.get(oid);
 		model.addAttribute("kbDept", kbDept);
+		model.addAttribute("code", code);
 		return "system/kbDept/edit";
 	}
 

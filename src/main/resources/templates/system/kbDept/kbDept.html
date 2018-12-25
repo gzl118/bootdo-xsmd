@@ -8,7 +8,8 @@
 			<div class="ibox">
 				<div class="ibox-body">
 					<div class="fixed-table-toolbar">
-						<input type="hidden" id="foid" th:value="${foid}">
+						<input type="hidden" id="foid" th:value="${foid}"> <input
+							type="hidden" id="code" th:value="${code}">
 						<div class="columns pull-left">
 							<button shiro:hasPermission="system:kbDept:add" type="button"
 								class="btn  btn-primary" onclick="add()">

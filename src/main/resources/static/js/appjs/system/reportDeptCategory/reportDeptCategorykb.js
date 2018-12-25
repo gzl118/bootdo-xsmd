@@ -153,7 +153,7 @@ function deptDetails(id, name) {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : '/system/kbDept?foid=' + id
+		content : '/system/kbDept?foid=' + id + '&code=' + $("#code").val()
 	});
 	layer.full(index);
 }

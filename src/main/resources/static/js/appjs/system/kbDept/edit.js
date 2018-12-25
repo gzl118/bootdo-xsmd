@@ -4,8 +4,21 @@ $().ready(function() {
 		maxHeight : 200
 	});
 	selectLoad();
+	ctldis();
+	initSel();
 });
-
+function ctldis() {
+	var code = $("#code").val();
+	if (code == '20006') {
+		$("#ntype")
+				.html(
+						'<option value="0">矿合计</option><option value="1">选煤厂合计</option>');
+	}
+}
+function initSel() {
+	var nt = $("#hiddentype").val();
+	$("#ntype").val(nt);
+}
 $.validator.setDefaults({
 	submitHandler : function() {
 		update();

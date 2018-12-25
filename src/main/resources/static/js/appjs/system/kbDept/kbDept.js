@@ -38,6 +38,7 @@ function selectLoad() {
 	});
 }
 function load() {
+	var code = $("#code").val();
 	$('#exampleTable')
 			.bootstrapTable(
 					{
@@ -106,34 +107,42 @@ function load() {
 								{
 									field : 'ext1',
 									title : '单位名称',
-									align:'center'
+									align : 'center'
 								},
 								{
 									field : 'ext3',
 									title : '单位分类',
-									align:'center'
+									align : 'center'
 								},
 								{
 									field : 'ext2',
 									title : '分组名称',
-									align:'center'
+									align : 'center'
 								},
 								{
 									field : 'norder',
 									title : '顺序',
-									align:'center'
+									align : 'center'
 								},
 								{
 									field : 'ntype',
 									title : '类型',
-									align:'center',
+									align : 'center',
 									formatter : function(value, row, index) { // 单元格格式化函数
 										// 0集团本部，1股份公司
 										var text = '-';
-										if (value == 0) {
-											text = "集团本部";
-										} else if (value == 1) {
-											text = "股份公司";
+										if (code == '20006') {
+											if (value == 0) {
+												text = "矿合计";
+											} else if (value == 1) {
+												text = "选煤厂合计";
+											}
+										} else {
+											if (value == 0) {
+												text = "集团本部";
+											} else if (value == 1) {
+												text = "股份公司";
+											}
 										}
 										return text;
 									}
@@ -174,7 +183,8 @@ function add() {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : prefix + '/add?foid=' + $("#foid").val() // iframe的url
+		content : prefix + '/add?foid=' + $("#foid").val() + '&code='
+				+ $("#code").val() // iframe的url
 	});
 }
 function edit(id) {
@@ -184,7 +194,7 @@ function edit(id) {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : prefix + '/edit/' + id // iframe的url
+		content : prefix + '/edit/' + id + '?code=' + $("#code").val() // iframe的url
 	});
 }
 function remove(id) {

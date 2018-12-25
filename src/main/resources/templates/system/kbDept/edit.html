@@ -9,12 +9,13 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-content">
 						<form class="form-horizontal m-t" id="signupForm">
-							<input id="oid" name="oid" th:value="${kbDept.oid}" type="hidden">
+							<input id="oid" name="oid" th:value="${kbDept.oid}" type="hidden"><input
+								type="hidden" id="code" th:value="${code}">
 							<div class="form-group">
 								<label class="col-sm-3 control-label">类型：</label>
 								<div class="col-sm-8">
-									<select id="ntype" th:value="${kbDept.ntype}" name="ntype"
-										class="form-control">
+									<input type="hidden" id="hiddentype" th:value="${kbDept.ntype}">
+									<select id="ntype" name="ntype" class="form-control">
 										<option value="0">集团本部</option>
 										<option value="1">股份公司</option>
 									</select>

@@ -4,8 +4,17 @@ $().ready(function() {
 		maxHeight : 200
 	});
 	selectLoad();
+	ctldis();
 });
 
+function ctldis() {
+	var code = $("#code").val();
+	if (code == '20006') {
+		$("#ntype")
+				.html(
+						'<option value="0">矿合计</option><option value="1">选煤厂合计</option>');
+	}
+}
 $.validator.setDefaults({
 	submitHandler : function() {
 		save();
@@ -57,7 +66,8 @@ function selectLoad() {
 		url : '/system/kbGroup/grouplist',
 		data : {
 			limit : 1000,
-			offset : 0
+			offset : 0,
+			mark : 0
 		},
 		cache : false,
 		success : function(data) {
