@@ -304,4 +304,15 @@ public class LabourreportstaticmainController extends BaseController {
 		}
 		return R.error();
 	}
+
+	@PostMapping("/removekb")
+	@ResponseBody
+	public R removekb(String oid) {
+		if (labourreportstaticmainService.remove(oid) > 0) {
+			if (labourreportstaticmainService.removekbdetial(oid) > 0)
+				return R.ok();
+			return R.error();
+		}
+		return R.error();
+	}
 }

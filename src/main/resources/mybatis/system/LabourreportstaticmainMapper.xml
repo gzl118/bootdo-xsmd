@@ -205,7 +205,12 @@
 		lmain.deptIDs=srdc.rdc_id and
 		lmain.oid = #{value}
 	</select>
-	<select id="extcutekbdetail" statementType="CALLABLE" resultType="java.lang.String">
-        SELECT funcKBDetail(#{value})
-    </select>
+	<select id="extcutekbdetail" statementType="CALLABLE"
+		resultType="java.lang.String">
+		SELECT funcKBDetail(#{value})
+	</select>
+	<delete id="removekbdetial">
+		delete from sys_kb_salarydetail where foid =
+		#{value}
+	</delete>
 </mapper>

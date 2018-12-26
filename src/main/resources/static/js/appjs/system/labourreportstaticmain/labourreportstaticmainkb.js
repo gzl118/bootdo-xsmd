@@ -262,7 +262,7 @@ function remove(id) {
 		btn : [ '确定', '取消' ]
 	}, function() {
 		$.ajax({
-			url : prefix + "/remove",
+			url : prefix + "/removekb",
 			type : "post",
 			data : {
 				'oid' : id

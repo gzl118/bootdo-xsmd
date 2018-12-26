@@ -65,4 +65,9 @@ public class LabourreportstaticmainServiceImpl implements
 	public String extcutekbdetail(String oid) {
 		return labourreportstaticmainDao.extcutekbdetail(oid);
 	}
+
+	@Override
+	public int removekbdetial(String oid) {
+		return labourreportstaticmainDao.removekbdetial(oid);
+	}
 }

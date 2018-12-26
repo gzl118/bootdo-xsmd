@@ -13,24 +13,26 @@ import java.util.Map;
  * @date 2018-12-06 09:30:46
  */
 public interface LabourreportstaticmainService {
-	
+
 	LabourreportstaticmainDO get(String oid);
-	
+
 	List<LabourreportstaticmainDO> list(Map<String, Object> map);
-	
+
 	int count(Map<String, Object> map);
-	
+
 	int save(LabourreportstaticmainDO labourreportstaticmain);
-	
+
 	int update(LabourreportstaticmainDO labourreportstaticmain);
-	
+
 	int remove(String oid);
-	
+
 	int batchRemove(String[] oids);
-	
-	List<LabourreportstaticmainDO> listnew(Map<String,Object> map);
-	
+
+	List<LabourreportstaticmainDO> listnew(Map<String, Object> map);
+
 	LabourreportstaticmainDO getnew(String oid);
-	
+
 	String extcutekbdetail(String oid);
+
+	int removekbdetial(String oid);
 }
