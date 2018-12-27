@@ -172,8 +172,8 @@ function load() {
 									align : 'left',
 									halign : 'center',
 									formatter : function(value, row, index) {
-										s_edit_h='';
-										s_remove_h='';
+										s_edit_h = '';
+										s_remove_h = '';
 										var curCode = row.code;
 										var rol = $("#status").val();
 										var temp = 0; // 控制报表可写操作，1可写，0不可写
@@ -222,7 +222,18 @@ function load() {
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
 												+ curUrl
-												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
+												+ '\')"><i class="fa fa-tasks"></i></a> ';
+										var adminUrl = urlrunqiantb + "raq="
+												+ curCode + "&moid=" + row.oid
+												+ "&cdate=" + row.renderdate
+												+ "&cdepart=" + row.ext1
+												+ "&IsWrite=1";
+										var adming = '<a class="btn btn-success btn-sm '
+												+ s_admindetail_h
+												+ '" href="#" title="管理员报表"  mce_href="#" onclick="reportfunc(\''
+												+ adminUrl
+												+ '\')"><i class="fa fa-tasks"></i></a> ';
+
 										if (curCode == '10005') {
 											var suburl = urlrunqiantb
 													+ "raq=10015&moid="
@@ -236,7 +247,20 @@ function load() {
 													+ curUrl
 													+ '\',\''
 													+ suburl
-													+ '\')"><i class="fa fa fa-tasks"></i></a> ';
+													+ '\')"><i class="fa fa-tasks"></i></a> ';
+											var adminsuburl = urlrunqiantb
+													+ "raq=10015&moid="
+													+ row.oid + "&cdate="
+													+ row.renderdate
+													+ "&cdepart=" + row.ext1
+													+ "&IsWrite=1";
+											adming = '<a class="btn btn-success btn-sm '
+													+ s_admindetail_h
+													+ '" href="#" title="管理员报表"  mce_href="#" onclick="report5confirm(\''
+													+ adminUrl
+													+ '\',\''
+													+ adminsuburl
+													+ '\')"><i class="fa fa-tasks"></i></a> ';
 										}
 										var h = '<a class="btn btn-warning btn-sm '
 												+ s_sumitinfo_h
@@ -259,7 +283,7 @@ function load() {
 												+ '" href="#" title="审批记录"  mce_href="#" onclick="suggest(\''
 												+ row.oid
 												+ '\')"><i class="fa fa-envelope-o"></i></a> ';
-										return e + d + g + h + i + j;
+										return e + d + g + h + i + j + adming;
 									}
 								} ]
 					});
