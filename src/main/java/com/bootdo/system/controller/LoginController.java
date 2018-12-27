@@ -35,15 +35,14 @@ public class LoginController extends BaseController {
 	MenuService menuService;
 	@Autowired
 	FileService fileService;
-	
+
 	@Autowired
 	DeptService sysDeptService;
-	
-	
+
 	@GetMapping({ "/", "" })
 	String welcome(Model model) {
 
-//		return "redirect:/blog";
+		// return "redirect:/blog";
 		return "redirect:/login";
 	}
 
@@ -54,21 +53,22 @@ public class LoginController extends BaseController {
 		model.addAttribute("menus", menus);
 		model.addAttribute("name", getUser().getName());
 		FileDO fileDO = fileService.get(getUser().getPicId());
-		if(fileDO!=null&&fileDO.getUrl()!=null){
-			if(fileService.isExist(fileDO.getUrl())){
-				model.addAttribute("picUrl",fileDO.getUrl());
-			}else {
-				model.addAttribute("picUrl","/img/court.jpg");
+		if (fileDO != null && fileDO.getUrl() != null) {
+			if (fileService.isExist(fileDO.getUrl())) {
+				model.addAttribute("picUrl", fileDO.getUrl());
+			} else {
+				model.addAttribute("picUrl", "/img/logo.png");
 			}
-		}else {
-			model.addAttribute("picUrl","/img/court.jpg");
+		} else {
+			model.addAttribute("picUrl", "/img/logo.png");
 		}
 		model.addAttribute("username", getUser().getUsername());
-		String dept_name="西山煤电劳资管理系统";
-		if(getUser().getDeptId()!=null&&sysDeptService.get(getUser().getDeptId())!=null)
-			dept_name=sysDeptService.get(getUser().getDeptId()).getName();
+		String dept_name = "西山煤电劳资管理系统";
+		if (getUser().getDeptId() != null
+				&& sysDeptService.get(getUser().getDeptId()) != null)
+			dept_name = sysDeptService.get(getUser().getDeptId()).getName();
 		model.addAttribute("deptname", dept_name);
-		
+
 		return "index_v1";
 	}
 
@@ -83,7 +83,8 @@ public class LoginController extends BaseController {
 	R ajaxLogin(String username, String password) {
 
 		password = MD5Utils.encrypt(username, password);
-		UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+		UsernamePasswordToken token = new UsernamePasswordToken(username,
+				password);
 		Subject subject = SecurityUtils.getSubject();
 		try {
 			subject.login(token);
