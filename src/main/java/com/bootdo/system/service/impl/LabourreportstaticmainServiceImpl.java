@@ -70,4 +70,9 @@ public class LabourreportstaticmainServiceImpl implements
 	public int removekbdetial(String oid) {
 		return labourreportstaticmainDao.removekbdetial(oid);
 	}
+
+	@Override
+	public List<LabourreportstaticmainDO> listexport(Map<String, Object> map) {
+		return labourreportstaticmainDao.listexport(map);
+	}
 }

@@ -315,4 +315,23 @@ public class LabourreportstaticmainController extends BaseController {
 		}
 		return R.error();
 	}
+
+	@GetMapping("/export")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmainexport")
+	String Labourreportstaticmainexport(Model model) {
+		return "system/labourreportstaticmain/labourreportstaticmainexport";
+	}
+
+	@ResponseBody
+	@GetMapping("/listexport")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmainexport")
+	public PageUtils listexport(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
+		List<LabourreportstaticmainDO> labourreportstaticmainList = labourreportstaticmainService
+				.listexport(query);
+		int total = labourreportstaticmainService.count(query);
+		PageUtils pageUtils = new PageUtils(labourreportstaticmainList, total);
+		return pageUtils;
+	}
 }

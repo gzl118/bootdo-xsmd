@@ -213,4 +213,43 @@
 		delete from sys_kb_salarydetail where foid =
 		#{value}
 	</delete>
+	<select id="listexport" resultType="com.bootdo.system.domain.LabourreportstaticmainDO">
+		select
+		lmain.`oid`,lmain.`Code`,lmain.`RenderDate`,lmain.`ctype`,lmain.`deptIDs`,lmain.`Status`,lmain.`Remark`,lmain.`RenderDepart`,lmain.`MineLeader`,lmain.`BusinessLeader`,lmain.`EditUser`,
+		lmain.`EditTime`,lmain.`UptTime`,lmain.`UptUser`,lmain.`Ext2`,lmain.`Ext3`,
+		case when lmain.ctype=2 THEN (SELECT srdc.name from
+		sys_report_dept_category srdc where srdc.rdc_id=lmain.deptIDs)
+		else
+		funcGetDeptName(lmain.deptIDs) END as `Ext1`
+		from
+		labourreportstaticmain lmain
+		<where>
+			<if test="oid != null and oid != ''"> and lmain.oid = #{oid} </if>
+			<if test="code != null and code != ''"> and lmain.Code = #{code} </if>
+			<if test="renderdate != null and renderdate != ''">and DATE_FORMAT(lmain.RenderDate,'%Y%m') =
+				DATE_FORMAT(#{renderdate},'%Y%m') </if>
+			<if test="ctype != null and ctype != ''"> and lmain.ctype = #{ctype} </if>
+			<if test="deptids != null and deptids != ''"> and lmain.deptIDs = #{deptids} </if>
+			<!-- <if test="status != null and status != ''"> and Status = #{status} 
+				</if> -->
+			<if test="status != null and status != ''">
+				and lmain.Status = #{status}
+			</if>
+			<if test="remark != null and remark != ''"> and lmain.Remark = #{remark} </if>
+			<if test="renderdepart != null and renderdepart != ''"> and lmain.RenderDepart = #{renderdepart} </if>
+			<if test="mineleader != null and mineleader != ''"> and lmain.MineLeader = #{mineleader} </if>
+			<if test="businessleader != null and businessleader != ''"> and BusinessLeader = #{businessleader} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by lmain.Code,lmain.`RenderDate`
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
 </mapper>
