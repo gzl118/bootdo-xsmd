@@ -4,113 +4,121 @@
 <mapper namespace="com.bootdo.system.dao.LabourreportmainDao">
 
 	<select id="get" resultType="com.bootdo.system.domain.LabourreportmainDO">
-		select `oid`,`Code`,`RenderDepart`,`RenderDate`,`Status`,`MineLeader`,`BusinessLeader`,`EditUser`,`EditTime`,`UptTime`,`UptUser`,`Remark`,`Ext1`,`Ext2`,`Ext3` from labourreportmain where oid = #{value}
+		select
+		`oid`,`Code`,`RenderDepart`,`RenderDate`,`Status`,`MineLeader`,`BusinessLeader`,`EditUser`,`EditTime`,`UptTime`,`UptUser`,`Remark`,`Ext1`,`Ext2`,`Ext3`
+		from labourreportmain where oid = #{value}
 	</select>
 
 	<select id="list" resultType="com.bootdo.system.domain.LabourreportmainDO">
-		select `oid`,`Code`,`RenderDepart`,`RenderDate`,`Status`,`MineLeader`,`BusinessLeader`,`EditUser`,`EditTime`,`UptTime`,`UptUser`,`Remark`,`Ext1`,`Ext2`,`Ext3` from labourreportmain
-        <where>  
-		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
-		  		  <if test="code != null and code != ''"> and Code = #{code} </if>
-		  		  <if test="renderdepart != null and renderdepart != ''"> and RenderDepart LIKE CONCAT(#{renderdepart},'%') </if>
-		  		  <if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(RenderDate,'%Y%m') = DATE_FORMAT(#{renderdate},'%Y%m') </if>
-		  		  <!-- <if test="status != null and status != ''"> and Status = #{status} </if> -->
-		  		  <if test="status != null and status != ''"> 
-						<if test="status==5"></if>
-						<if test="status==6">and Status >= 1</if>
-						<if test="status==-1"> and Status = #{status} </if>
-				  </if>
-		  		  <if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
-		  		  <if test="businessleader != null and businessleader != ''"> and BusinessLeader = #{businessleader} </if>
-		  		  <if test="edituser != null and edituser != ''"> and EditUser = #{edituser} </if>
-		  		  <if test="edittime != null and edittime != ''"> and EditTime = #{edittime} </if>
-		  		  <if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
-		  		  <if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
-		  		  <if test="remark != null and remark != ''"> and Remark = #{remark} </if>
-		  		  <if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
-		  		  <if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
-		  		  <if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
-		  		</where>
-        <choose>
-            <when test="sort != null and sort.trim() != ''">
-                order by ${sort} ${order}
-            </when>
+		select
+		`oid`,`Code`,`RenderDepart`,`RenderDate`,`Status`,`MineLeader`,`BusinessLeader`,`EditUser`,`EditTime`,`UptTime`,`UptUser`,`Remark`,`Ext1`,`Ext2`,`Ext3`
+		from labourreportmain
+		<where>
+			<if test="oid != null and oid != ''"> and oid = #{oid} </if>
+			<if test="code != null and code != ''"> and Code = #{code} </if>
+			<if test="renderdepart != null and renderdepart != ''"> and RenderDepart LIKE CONCAT(#{renderdepart},'%') </if>
+			<if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(RenderDate,'%Y%m') =
+				DATE_FORMAT(#{renderdate},'%Y%m') </if>
+			<!-- <if test="status != null and status != ''"> and Status = #{status} 
+				</if> -->
+			<if test="status != null and status != ''">
+				<if test="status==5"></if>
+				<if test="status==6">and Status >= 1</if>
+				<if test="status==-1"> and Status = #{status} </if>
+			</if>
+			<if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
+			<if test="businessleader != null and businessleader != ''"> and BusinessLeader = #{businessleader} </if>
+			<if test="edituser != null and edituser != ''"> and EditUser = #{edituser} </if>
+			<if test="edittime != null and edittime != ''"> and EditTime = #{edittime} </if>
+			<if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
+			<if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
+			<if test="remark != null and remark != ''"> and Remark = #{remark} </if>
+			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
+			<if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
+			<if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
 			<otherwise>
-                order by renderdepart,renderdate
+				order by renderdepart,renderdate
 			</otherwise>
-        </choose>
+		</choose>
 		<if test="offset != null and limit != null">
 			limit #{offset}, #{limit}
 		</if>
 	</select>
-	
- 	<select id="count" resultType="int">
+
+	<select id="count" resultType="int">
 		select count(*) from labourreportmain
-		 <where>  
-		  		  <if test="oid != null and oid != ''"> and oid = #{oid} </if>
-		  		  <if test="code != null and code != ''"> and Code = #{code} </if>
-		  		  <if test="renderdepart != null and renderdepart != ''"> and RenderDepart LIKE CONCAT(#{renderdepart},'%') </if>
-		  		  <if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(RenderDate,'%Y%m') = DATE_FORMAT(#{renderdate},'%Y%m') </if>
-		  		  <!-- <if test="status != null and status != ''"> and Status = #{status} </if> -->
-		  		  <if test="status != null and status != ''"> 
-						<if test="status==5"></if>
-						<if test="status==6">and Status >= 1</if>
-						<if test="status==-1"> and Status = #{status} </if>
-				  </if>
-		  		  <if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
-		  		  <if test="businessleader != null and businessleader != ''"> and BusinessLeader = #{businessleader} </if>
-		  		  <if test="edituser != null and edituser != ''"> and EditUser = #{edituser} </if>
-		  		  <if test="edittime != null and edittime != ''"> and EditTime = #{edittime} </if>
-		  		  <if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
-		  		  <if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
-		  		  <if test="remark != null and remark != ''"> and Remark = #{remark} </if>
-		  		  <if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
-		  		  <if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
-		  		  <if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
-		  		</where>
+		<where>
+			<if test="oid != null and oid != ''"> and oid = #{oid} </if>
+			<if test="code != null and code != ''"> and Code = #{code} </if>
+			<if test="renderdepart != null and renderdepart != ''"> and RenderDepart LIKE CONCAT(#{renderdepart},'%') </if>
+			<if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(RenderDate,'%Y%m') =
+				DATE_FORMAT(#{renderdate},'%Y%m') </if>
+			<!-- <if test="status != null and status != ''"> and Status = #{status} 
+				</if> -->
+			<if test="status != null and status != ''">
+				<if test="status==5"></if>
+				<if test="status==6">and Status >= 1</if>
+				<if test="status==-1"> and Status = #{status} </if>
+			</if>
+			<if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
+			<if test="businessleader != null and businessleader != ''"> and BusinessLeader = #{businessleader} </if>
+			<if test="edituser != null and edituser != ''"> and EditUser = #{edituser} </if>
+			<if test="edittime != null and edittime != ''"> and EditTime = #{edittime} </if>
+			<if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
+			<if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
+			<if test="remark != null and remark != ''"> and Remark = #{remark} </if>
+			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
+			<if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
+			<if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
+		</where>
 	</select>
-	 
+
 	<insert id="save" parameterType="com.bootdo.system.domain.LabourreportmainDO">
 		insert into labourreportmain
 		(
-			`oid`, 
-			`Code`, 
-			`RenderDepart`, 
-			`RenderDate`, 
-			`Status`, 
-			`MineLeader`, 
-			`BusinessLeader`, 
-			`EditUser`, 
-			`EditTime`, 
-			`UptTime`, 
-			`UptUser`, 
-			`Remark`, 
-			`Ext1`, 
-			`Ext2`, 
-			`Ext3`
+		`oid`,
+		`Code`,
+		`RenderDepart`,
+		`RenderDate`,
+		`Status`,
+		`MineLeader`,
+		`BusinessLeader`,
+		`EditUser`,
+		`EditTime`,
+		`UptTime`,
+		`UptUser`,
+		`Remark`,
+		`Ext1`,
+		`Ext2`,
+		`Ext3`
 		)
 		values
 		(
-			#{oid}, 
-			#{code}, 
-			#{renderdepart}, 
-			#{renderdate}, 
-			#{status}, 
-			#{mineleader}, 
-			#{businessleader}, 
-			#{edituser}, 
-			#{edittime}, 
-			#{upttime}, 
-			#{uptuser}, 
-			#{remark}, 
-			#{ext1}, 
-			#{ext2}, 
-			#{ext3}
+		#{oid},
+		#{code},
+		#{renderdepart},
+		#{renderdate},
+		#{status},
+		#{mineleader},
+		#{businessleader},
+		#{edituser},
+		#{edittime},
+		#{upttime},
+		#{uptuser},
+		#{remark},
+		#{ext1},
+		#{ext2},
+		#{ext3}
 		)
 	</insert>
-	 
+
 	<update id="update" parameterType="com.bootdo.system.domain.LabourreportmainDO">
-		update labourreportmain 
+		update labourreportmain
 		<set>
 			<if test="code != null">`Code` = #{code}, </if>
 			<if test="renderdepart != null">`RenderDepart` = #{renderdepart}, </if>
@@ -129,22 +137,58 @@
 		</set>
 		where oid = #{oid}
 	</update>
-	
+
 	<delete id="remove">
 		delete from labourreportmain where oid = #{value}
 	</delete>
-	
+
 	<delete id="batchRemove">
-		delete from labourreportmain where oid in 
-		<foreach item="oid" collection="array" open="(" separator="," close=")">
+		delete from labourreportmain where oid in
+		<foreach item="oid" collection="array" open="(" separator=","
+			close=")">
 			#{oid}
 		</foreach>
 	</delete>
-	
-	<select id="getPkey"  statementType="CALLABLE" parameterType="com.bootdo.system.domain.LabourreportmainDO" resultType="java.lang.String">
-        SELECT funcReportDetail(#{renderdate},#{renderdepart},#{code},#{uptuser},#{remark},#{ext1})
-    </select>
-    <select id="delPkey" statementType="CALLABLE" resultType="java.lang.String">
-        SELECT funcReportDel(#{oid},#{code})
-    </select>
+
+	<select id="getPkey" statementType="CALLABLE"
+		parameterType="com.bootdo.system.domain.LabourreportmainDO"
+		resultType="java.lang.String">
+		SELECT
+		funcReportDetail(#{renderdate},#{renderdepart},#{code},#{uptuser},#{remark},#{ext1})
+	</select>
+	<select id="delPkey" statementType="CALLABLE" resultType="java.lang.String">
+		SELECT
+		funcReportDel(#{oid},#{code})
+	</select>
+	<select id="listdept" resultType="com.bootdo.system.domain.DeptDO">
+		select * from
+		(SELECT
+		sd.dept_id,sd.`name`,sd.parent_id,lmain.RenderDate as
+		sname,case WHEN
+		lmain.`Status` is null THEN -1 ELSE lmain.`Status` END
+		as order_num
+		from sys_dept sd
+		LEFT JOIN
+		labourreportmain lmain ON
+		lmain.Ext1=sd.dept_id
+		<if test="code != null and code != ''"> and lmain.Code = #{code} </if>
+		<if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(lmain.RenderDate,'%Y%m') =
+			DATE_FORMAT(#{renderdate},'%Y%m') </if>
+		<if test="ext1 != null and ext1 != ''"> and lmain.Ext1 = #{ext1} </if>
+		<where>
+			<if test="renderdepart != null and renderdepart != ''"> and sd.name LIKE CONCAT(#{renderdepart},'%')
+			</if>
+		</where>
+		) AS A
+		<where>
+			<if test="status != null and status != ''">
+				and A.order_num in
+				<foreach collection="status" index="index" item="item" open="("
+					separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+		order by A.order_num desc
+	</select>
 </mapper>

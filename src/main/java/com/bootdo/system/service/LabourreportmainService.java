@@ -1,5 +1,6 @@
 package com.bootdo.system.service;
 
+import com.bootdo.system.domain.DeptDO;
 import com.bootdo.system.domain.LabourreportmainDO;
 
 import java.util.List;
@@ -31,4 +32,6 @@ public interface LabourreportmainService {
 	String getPkey(LabourreportmainDO labourreportmain);
 	
 	String delPkey(Map<String,Object> map);
+	
+	List<DeptDO> listdept(Map<String, Object> map);
 }

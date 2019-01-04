@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+<link rel="stylesheet"
+	href="/js/plugins/laydate5.9/theme/default/laydate.css" />
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="col-sm-12">
+			<div class="ibox">
+				<div class="ibox-body">
+					<div class="fixed-table-toolbar">
+						<div class="columns pull-right" style="margin-left: 20px;">
+							<button class="btn btn-success" onclick="load()">查询</button>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<input type="text" id="renderdepart" name="renderdepart"
+								class="form-control" placeholder="请输入部门" />
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">部门：</label>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<input type="text" class="laydate-icon layer-date form-control"
+								id="renderdate" name="renderdate" placeholder="请选择查询年月"
+								style="background-color: #fff;" readonly="readonly" />
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">查询年月：</label>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<select id="code" name="code" class="form-control">
+								<option value="10001">表1</option>
+								<option value="10002">表2</option>
+								<option value="10003">表3-1</option>
+								<option value="10013">表3-2</option>
+								<option value="10004">表4</option>
+								<option value="10005">表5-1</option>
+								<option value="10015">表5-2</option>
+								<option value="10006">表6</option>
+								<option value="10007">表7</option>
+							</select>
+
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">报表：</label>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<select id="nstatus" name="nstatus" data-placeholder="请选择状态"
+								class="form-control chosen-select" multiple>
+								<option value="-1">未填报</option>
+								<option value="0">未提交</option>
+								<option value="1">已提交</option>
+								<option value="2">审核通过</option>
+								<option value="3">审核不通过</option>
+							</select>
+
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">状态：</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="divDept"
+		style="margin-top: 30px; padding: 15px; width: 100%;"></div>
+	<div th:include="include :: footer"></div>
+	<script type="text/javascript" src="/js/plugins/laydate5.9/laydate.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/labourreportmain/labourreportmaindept.js"></script>
+</body>
+</html>

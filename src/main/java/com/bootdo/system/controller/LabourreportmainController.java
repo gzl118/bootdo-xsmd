@@ -22,6 +22,7 @@ import com.bootdo.common.utils.PageUtils;
 import com.bootdo.common.utils.Query;
 import com.bootdo.common.utils.R;
 import com.bootdo.common.utils.StringUtils;
+import com.bootdo.system.domain.DeptDO;
 import com.bootdo.system.domain.LabourreportmainDO;
 import com.bootdo.system.domain.LabourrepotapproveDO;
 import com.bootdo.system.domain.UserDO;
@@ -211,5 +212,24 @@ public class LabourreportmainController extends BaseController {
 			return 6; // 1
 		}
 		return result;
+	}
+
+	@ResponseBody
+	@GetMapping("/listdept")
+	@RequiresPermissions("system:labourreportmain:labourreportmaindept")
+	public List<DeptDO> listdept(@RequestParam Map<String, Object> params,
+			@RequestParam(value = "status[]", required = false) String[] status) {
+		if (params.containsKey("status[]"))
+			params.remove("status[]");
+		if (status != null && status.length > 0)
+			params.put("status", status);
+		List<DeptDO> list = labourreportmainService.listdept(params);
+		return list;
+	}
+
+	@GetMapping("/dept")
+	@RequiresPermissions("system:labourreportmain:labourreportmaindept")
+	String Labourreportmaindept(Model model) {
+		return "system/labourreportmain/labourreportmaindept";
 	}
 }
