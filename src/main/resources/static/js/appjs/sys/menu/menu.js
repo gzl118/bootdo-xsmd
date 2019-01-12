@@ -24,13 +24,13 @@ var load = function () {
                         visible: false,
                         align: 'center',
                         valign: 'center',
-                        width: '5%'
+                        width: '8px'
                     },
                     {
                         title: '名称',
                         valign: 'center',
                         field: 'name',
-                        width: '20%'
+                        width: '200px'
                     },
 
                     {
@@ -38,7 +38,7 @@ var load = function () {
                         field: 'icon',
                         align: 'center',
                         valign: 'center',
-                        width : '5%',
+                        width : '10px',
                         formatter: function (item, index) {
                             return item.icon == null ? ''
                                 : '<i class="' + item.icon
@@ -50,7 +50,7 @@ var load = function () {
                         field: 'type',
                         align: 'center',
                         valign: 'center',
-                        width : '10%',
+                        width : '10px',
                         formatter: function (item, index) {
                             if (item.type === 0) {
                                 return '<span class="label label-primary">目录</span>';
@@ -66,7 +66,7 @@ var load = function () {
                     {
                         title: '地址',
                         valign: 'center',
-                        width : '20%',
+                        width : '200px',
                         field: 'url'
                     },
                     {
@@ -80,7 +80,7 @@ var load = function () {
                         field: 'id',
                         align: 'center',
                         valign: 'center',
-                        width : '10%',
+                        width : '100px',
                         formatter: function (item, index) {
                             var e = '<a class="btn btn-primary btn-sm '
                                 + s_edit_h

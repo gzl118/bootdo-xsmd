@@ -41,15 +41,28 @@ public class ReportStatistics {
 	@GetMapping("/report/20001")
 	@RequiresPermissions("system:reportStatistics:20001")
 	String ShowReportStatistics20001(Model model) {
-		model.addAttribute("code", "20001");
+		model.addAttribute("dcode", "20001");
 		return "system/report/statistics_20001";
 	}
 
-	// 20001 快报和整合的使用2000x
+	@GetMapping("/report/20004")
+	@RequiresPermissions("system:reportStatistics:20004")
+	String ShowReportStatistics20004(Model model) {
+		model.addAttribute("dcode", "20004");
+		return "system/report/statistics_20001";
+	}
+
 	@GetMapping("/report/20002")
 	@RequiresPermissions("system:reportStatistics:20002")
 	String ShowReportStatistics20002(Model model) {
-		model.addAttribute("code", "20002");
+		model.addAttribute("dcode", "20002");
+		return "system/report/statistics_20002";
+	}
+
+	@GetMapping("/report/20003")
+	@RequiresPermissions("system:reportStatistics:20003")
+	String ShowReportStatistics20003(Model model) {
+		model.addAttribute("dcode", "20003");
 		return "system/report/statistics_20002";
 	}
 
