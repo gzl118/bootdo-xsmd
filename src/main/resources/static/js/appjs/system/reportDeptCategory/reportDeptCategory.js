@@ -1,4 +1,3 @@
-
 var prefix = "/system/reportDeptCategory"
 $(function() {
 	load();
@@ -10,9 +9,9 @@ function load() {
 					{
 						method : 'get', // 服务器数据的请求方式 get or post
 						url : prefix + "/list", // 服务器数据的加载地址
-					//	showRefresh : true,
-					//	showToggle : true,
-					//	showColumns : true,
+						// showRefresh : true,
+						// showToggle : true,
+						// showColumns : true,
 						iconSize : 'outline',
 						toolbar : '#exampleToolbar',
 						striped : true, // 设置为true会有隔行变色效果
@@ -25,69 +24,81 @@ function load() {
 						// //发送到服务器的数据编码类型
 						pageSize : 10, // 如果设置了分页，每页数据条数
 						pageNumber : 1, // 如果设置了分布，首页页码
-						//search : true, // 是否显示搜索框
+						// search : true, // 是否显示搜索框
 						showColumns : false, // 是否显示内容下拉框（选择显示的列）
-						sidePagination : "server", // 设置在哪里进行分页，可选值为"client" 或者 "server"
+						sidePagination : "server", // 设置在哪里进行分页，可选值为"client" 或者
+						// "server"
 						queryParams : function(params) {
 							return {
-								//说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
-								limit: params.limit,
-								offset:params.offset,
-								code: 20001
-					           // name:$('#searchName').val(),
-					           // username:$('#searchName').val()
+								// 说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
+								limit : params.limit,
+								offset : params.offset,
+								code : $("#code").val(),
+								name : $('#searchName').val()
 							};
 						},
 						columns : [
 								{
 									checkbox : true
 								},
-																{
-									field : 'rdcId', 
-									title : '' ,
+								{
+									field : 'rdcId',
+									title : '',
 									visible : false
 								},
-																{
-									field : 'name', 
-									title : '分类名称' 
-								},
-																{
-									field : 'describe', 
-									title : '描述说明' 
+								{
+									field : 'name',
+									title : '分类名称'
 								},
 								{
-									field : 'orders', 
-									title : '排序' 
+									field : 'describe',
+									title : '描述说明'
 								},
-																{
-									field : 'flag', 
-									title : '状态' ,
+								{
+									field : 'orders',
+									title : '排序'
+								},
+								{
+									field : 'flag',
+									title : '状态',
 									align : 'center',
 									formatter : function(value, row, index) {
 										if (value == '1') {
-												return '<span class="label label-danger">禁用</span>';
+											return '<span class="label label-danger">禁用</span>';
 										} else if (value == '0') {
-												return '<span class="label label-primary">正常</span>';
+											return '<span class="label label-primary">正常</span>';
 										}
 									}
 								},
-																{
+								{
 									title : '操作',
 									field : 'id',
 									align : 'center',
 									formatter : function(value, row, index) {
-										var e = '<a class="btn btn-primary btn-sm '+s_edit_h+'" href="#" mce_href="#" title="编辑" onclick="edit(\''
-												+ row.rdcId+ '\''+','+'\''
+										var e = '<a class="btn btn-primary btn-sm '
+												+ s_edit_h
+												+ '" href="#" mce_href="#" title="编辑" onclick="edit(\''
+												+ row.rdcId
+												+ '\''
+												+ ','
+												+ '\''
 												+ row.name
 												+ '\')"><i class="fa fa-edit"></i></a> ';
-										var d = '<a class="btn btn-warning btn-sm '+s_remove_h+'" href="#" title="删除"  mce_href="#" onclick="remove(\''
+										var d = '<a class="btn btn-warning btn-sm '
+												+ s_remove_h
+												+ '" href="#" title="删除"  mce_href="#" onclick="remove(\''
 												+ row.rdcId
 												+ '\')"><i class="fa fa-remove"></i></a> ';
-										var f = '<a class="btn btn-primary btn-sm '+s_detail_h+'" href="#" title="详情"  mce_href="#" onclick="deptDetails(\''
-												+ row.rdcId+ '\''+','+'\''		
+										var f = '<a class="btn btn-primary btn-sm '
+												+ s_detail_h
+												+ '" href="#" title="详情"  mce_href="#" onclick="deptDetails(\''
+												+ row.rdcId
+												+ '\''
+												+ ','
+												+ '\''
 												+ row.name
 												+ '\')"><i class="fa fa-tasks"></i></a> ';
-										return e + d +f;
+										return e + d + f;
 									}
 								} ]
 					});
@@ -102,13 +113,13 @@ function add() {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : prefix + '/add' // iframe的url
+		content : prefix + '/add?code=' + $("#code").val()
 	});
 }
-function edit(id,name) {
+function edit(id, name) {
 	layer.open({
 		type : 2,
-		title : '编辑-部门配置:'+name,
+		title : '编辑-部门配置:' + name,
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
@@ -120,30 +131,30 @@ function remove(id) {
 		btn : [ '确定', '取消' ]
 	}, function() {
 		$.ajax({
-			url : prefix+"/remove",
+			url : prefix + "/remove",
 			type : "post",
 			data : {
 				'rdcId' : id
 			},
 			success : function(r) {
-				if (r.code==0) {
+				if (r.code == 0) {
 					layer.msg(r.msg);
 					reLoad();
-				}else{
+				} else {
 					layer.msg(r.msg);
 				}
 			}
 		});
 	})
 }
-function deptDetails(id,name) {
+function deptDetails(id, name) {
 	var index = layer.open({
 		type : 2,
-		title : '部门配置明细: 【'+name+'】 明细配置',
+		title : '部门配置明细: 【' + name + '】 明细配置',
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : '/system/reportDept?rdcId='+id
+		content : '/system/reportDept?rdcId=' + id
 	});
 	layer.full(index);
 }

@@ -37,7 +37,8 @@ public class ReportDeptCategoryController {
 
 	@GetMapping()
 	@RequiresPermissions("system:reportDeptCategory:reportDeptCategory")
-	String ReportDeptCategory() {
+	String ReportDeptCategory(String code, Model model) {
+		model.addAttribute("code", code);
 		return "system/reportDeptCategory/reportDeptCategory";
 	}
 
@@ -68,7 +69,8 @@ public class ReportDeptCategoryController {
 
 	@GetMapping("/add")
 	@RequiresPermissions("system:reportDeptCategory:add")
-	String add() {
+	String add(String code, Model model) {
+		model.addAttribute("code", code);
 		return "system/reportDeptCategory/add";
 	}
 
@@ -88,7 +90,6 @@ public class ReportDeptCategoryController {
 	@PostMapping("/save")
 	@RequiresPermissions("system:reportDeptCategory:add")
 	public R save(ReportDeptCategoryDO reportDeptCategory) {
-		reportDeptCategory.setCode(20001);
 		if (reportDeptCategoryService.save(reportDeptCategory) > 0) {
 			return R.ok();
 		}

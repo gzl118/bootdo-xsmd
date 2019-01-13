@@ -30,112 +30,115 @@ import com.bootdo.common.utils.R;
  * @email 1992lcg@163.com
  * @date 2018-11-23 17:08:28
  */
- 
+
 @Controller
 @RequestMapping("/system/reportDept")
 public class ReportDeptController {
 	@Autowired
 	private ReportDeptService reportDeptService;
-	
+
 	@GetMapping()
 	@RequiresPermissions("system:reportDept:reportDept")
-	String ReportDept(Long rdcId,Model model){
+	String ReportDept(Long rdcId, Model model) {
 		model.addAttribute("rdcId", rdcId);
-	    return "system/reportDept/reportDept";
+		return "system/reportDept/reportDept";
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/list")
 	@RequiresPermissions("system:reportDept:reportDept")
-	public List<ReportDeptDO> list(@RequestParam Map<String, Object> params){
-		//查询列表数据
-        Query query = new Query(params);
+	public List<ReportDeptDO> list(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
 		List<ReportDeptDO> reportDeptList = reportDeptService.list(query);
 		return reportDeptList;
 	}
+
 	@ResponseBody
 	@GetMapping("/list/depts")
-	public List<Long> getDepts(@RequestParam Long rdcId){
-		//查询列表数据
+	public List<Long> getDepts(@RequestParam Long rdcId) {
+		// 查询列表数据
 		List<Long> reportDeptList = reportDeptService.getDeptsByRdcId(rdcId);
 		return reportDeptList;
 	}
-	//統計报表里面的单位配置查询，不设置权限
+
+	// 統計报表里面的单位配置查询，不设置权限
 	@ResponseBody
 	@GetMapping("/list/30001")
-	public List<ReportDeptDO> list30001(@RequestParam Map<String, Object> params){
-		//查询列表数据
-        Query query = new Query(params);
+	public List<ReportDeptDO> list30001(@RequestParam Map<String, Object> params) {
+		// 查询列表数据
+		Query query = new Query(params);
 		List<ReportDeptDO> reportDeptList = reportDeptService.list(query);
 		return reportDeptList;
 	}
+
 	@GetMapping("/add")
 	@RequiresPermissions("system:reportDept:add")
-	String add(Long parentId,Model model){
+	String add(Long parentId, Model model) {
 		model.addAttribute("parentId", parentId);
-	    return "system/reportDept/add";
+		return "system/reportDept/add";
 	}
 
 	@GetMapping("/edit/{rdId}")
 	@RequiresPermissions("system:reportDept:edit")
-	String edit(@PathVariable("rdId") Long rdId,Model model){
+	String edit(@PathVariable("rdId") Long rdId, Model model) {
 		ReportDeptDO reportDept = reportDeptService.get(rdId);
 		model.addAttribute("reportDept", reportDept);
-	    return "system/reportDept/edit";
+		return "system/reportDept/edit";
 	}
-	
+
 	/**
 	 * 保存
 	 */
 	@ResponseBody
 	@PostMapping("/save")
 	@RequiresPermissions("system:reportDept:add")
-	public R save( ReportDeptDO reportDept){
-		if(reportDeptService.save(reportDept)>0){
+	public R save(ReportDeptDO reportDept) {
+		if (reportDeptService.save(reportDept) > 0) {
 			return R.ok();
 		}
 		return R.error();
 	}
+
 	/**
 	 * 修改
 	 */
 	@ResponseBody
 	@RequestMapping("/update")
 	@RequiresPermissions("system:reportDept:edit")
-	public R update( ReportDeptDO reportDept){
+	public R update(ReportDeptDO reportDept) {
 		reportDeptService.update(reportDept);
 		return R.ok();
 	}
-	
+
 	/**
 	 * 删除
 	 */
-	@PostMapping( "/remove")
+	@PostMapping("/remove")
 	@ResponseBody
 	@RequiresPermissions("system:reportDept:remove")
-	public R remove( Long rdId){
-		if(reportDeptService.remove(rdId)>0){
-		return R.ok();
+	public R remove(Long rdId) {
+		if (reportDeptService.remove(rdId) > 0) {
+			return R.ok();
 		}
 		return R.error();
 	}
-	
+
 	/**
 	 * 删除
 	 */
-	@PostMapping( "/batchRemove")
+	@PostMapping("/batchRemove")
 	@ResponseBody
 	@RequiresPermissions("system:reportDept:batchRemove")
-	public R remove(@RequestParam("ids[]") Long[] rdIds){
+	public R remove(@RequestParam("ids[]") Long[] rdIds) {
 		reportDeptService.batchRemove(rdIds);
 		return R.ok();
 	}
-	
-	
+
 	@ResponseBody()
 	@PostMapping("/batchAddToDepts")
-	R batchAddToDepts(@RequestParam("ids[]") Long[] deptIds,Long rdcId) {
-		int r = reportDeptService.batchSave(deptIds,rdcId);
+	R batchAddToDepts(@RequestParam("ids[]") Long[] deptIds, Long rdcId) {
+		int r = reportDeptService.batchSave(deptIds, rdcId);
 		if (r > 0) {
 			return R.ok();
 		}

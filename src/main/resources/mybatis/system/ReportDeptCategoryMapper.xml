@@ -14,7 +14,7 @@
 		sys_report_dept_category
 		<where>
 			<if test="rdcId != null and rdcId != ''"> and rdc_id = #{rdcId} </if>
-			<if test="name != null and name != ''"> and name = #{name} </if>
+			<if test="name != null and name != ''"> and name LIKE CONCAT('%',#{name},'%') </if>
 			<if test="describe != null and describe != ''"> and describe = #{describe} </if>
 			<if test="orders != null and orders != ''"> and orders = #{orders} </if>
 			<if test="flag != null and flag != ''"> and flag = #{flag} </if>

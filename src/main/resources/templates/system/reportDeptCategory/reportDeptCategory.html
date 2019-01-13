@@ -8,12 +8,15 @@
 			<div class="ibox">
 				<div class="ibox-body">
 					<div class="fixed-table-toolbar">
+						<input type="hidden" th:value="${code}" id="code" />
 						<div class="columns pull-left">
-							<button shiro:hasPermission="system:reportDeptCategory:add" type="button" class="btn  btn-primary" onclick="add()">
+							<button shiro:hasPermission="system:reportDeptCategory:add"
+								type="button" class="btn  btn-primary" onclick="add()">
 								<i class="fa fa-plus" aria-hidden="true"></i>新增
 							</button>
-							<button shiro:hasPermission="system:reportDeptCategory:batchRemove" type="button" class="btn  btn-danger"
-								onclick="batchRemove()">
+							<button
+								shiro:hasPermission="system:reportDeptCategory:batchRemove"
+								type="button" class="btn  btn-danger" onclick="batchRemove()">
 								<i class="fa fa-trash" aria-hidden="true"></i>删除
 							</button>
 						</div>
@@ -32,30 +35,31 @@
 		</div>
 	</div>
 	<!--shiro控制bootstraptable行内按钮看见性 来自bootdo的创新方案 -->
-		<div>
-			<script type="text/javascript">
-				var s_edit_h = 'hidden';
-				var s_remove_h = 'hidden';
-				var s_detail_h = 'hidden';
-			</script>
-		</div>
-		<div shiro:hasPermission="system:reportDeptCategory:edit">
-			<script type="text/javascript">
-				s_edit_h = '';
-			</script>
-		</div>
-		<div shiro:hasPermission="system:reportDeptCategory:remove">
-			<script type="text/javascript">
-				var s_remove_h = '';
-			</script>
-		</div>
-		<div shiro:hasPermission="system:reportDept:reportDept">
-			<script type="text/javascript">
-				var s_detail_h = '';
-			</script>
-		</div>
+	<div>
+		<script type="text/javascript">
+			var s_edit_h = 'hidden';
+			var s_remove_h = 'hidden';
+			var s_detail_h = 'hidden';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:reportDeptCategory:edit">
+		<script type="text/javascript">
+			s_edit_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:reportDeptCategory:remove">
+		<script type="text/javascript">
+			var s_remove_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:reportDept:reportDept">
+		<script type="text/javascript">
+			var s_detail_h = '';
+		</script>
+	</div>
 	</div>
 	<div th:include="include :: footer"></div>
-	<script type="text/javascript" src="/js/appjs/system/reportDeptCategory/reportDeptCategory.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/reportDeptCategory/reportDeptCategory.js"></script>
 </body>
 </html>

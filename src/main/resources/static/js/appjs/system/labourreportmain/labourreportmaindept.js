@@ -65,7 +65,7 @@ function drawhtml(ndata) {
 				statusclass = getdivclass(ndata[nindex].orderNum);
 				statusname = getstatus(ndata[nindex].orderNum);
 
-				nhtml += '<div style="border:1px solid #e5e6e7;padding: 5px;margin:1px;width:16vw;float:left;"><p style="font-size:14px;" >'
+				nhtml += '<div style="border:1px solid #e5e6e7;padding: 5px;margin:1px;width:16vw;float:left;height:50px;"><p style="font-size:12px;" >'
 						+ temp
 						+ '<span style="font-size:12px;float:right;" class="label '
 						+ statusclass + '">' + statusname + '</span></p></div>';
