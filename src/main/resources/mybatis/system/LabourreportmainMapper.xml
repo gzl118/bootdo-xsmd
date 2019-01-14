@@ -176,7 +176,7 @@
 			DATE_FORMAT(#{renderdate},'%Y%m') </if>
 		<if test="ext1 != null and ext1 != ''"> and lmain.Ext1 = #{ext1} </if>
 		<where>
-			<if test="renderdepart != null and renderdepart != ''"> and sd.name LIKE CONCAT(#{renderdepart},'%')
+			<if test="renderdepart != null and renderdepart != ''"> and sd.name LIKE CONCAT('%',#{renderdepart},'%')
 			</if>
 		</where>
 		) AS A

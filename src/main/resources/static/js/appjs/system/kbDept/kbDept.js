@@ -12,7 +12,8 @@ function selectLoad() {
 		url : '/system/kbGroup/grouplist',
 		data : {
 			limit : 1000,
-			offset : 0
+			offset : 0,
+			mark : 0
 		},
 		cache : false,
 		success : function(data) {

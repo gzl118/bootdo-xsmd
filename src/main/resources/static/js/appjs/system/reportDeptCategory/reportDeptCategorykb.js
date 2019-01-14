@@ -109,7 +109,7 @@ function reLoad() {
 function add() {
 	layer.open({
 		type : 2,
-		title : '新增-在册人员统计报表-部门配置分类',
+		title : '新增-本部快报配置分类',
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],

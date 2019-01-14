@@ -1,4 +1,5 @@
-var prefix = "/system/labourreportstaticmain"
+var prefix = "/system/labourreportstaticmain";
+var codeArray = [ '20001', '20004', '20005', '20008' ];
 $(function() {
 	laydate.render({
 		elem : '#renderdate',
@@ -193,7 +194,11 @@ function load() {
 											approverecord = 'hidden';
 										var temp = 1;
 										var curCode = row.code;
-										var curUrl = urlrunqiantb + "raq="
+										var reporturlprefix = urlrunqiantb;
+										var rindex = codeArray.indexOf(curCode);
+										if (rindex > -1)
+											reporturlprefix = urlrunqian;
+										var curUrl = reporturlprefix + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rfoid="
 												+ row.deptids + "&IsWrite="
