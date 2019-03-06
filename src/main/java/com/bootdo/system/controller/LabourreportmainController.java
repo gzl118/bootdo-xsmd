@@ -62,7 +62,8 @@ public class LabourreportmainController extends BaseController {
 	@RequiresPermissions("system:labourreportmain:labourreportmain")
 	public PageUtils list(@RequestParam Map<String, Object> params) {
 		UserDO u = getUser();
-		params.put("ext1", u.getDeptId().toString());
+		if (params.get("status").equals("5"))
+			params.put("ext1", u.getDeptId().toString());
 		// 查询列表数据
 		Query query = new Query(params);
 		List<LabourreportmainDO> labourreportmainList = labourreportmainService
