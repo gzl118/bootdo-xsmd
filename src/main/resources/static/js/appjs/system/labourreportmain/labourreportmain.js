@@ -218,6 +218,12 @@ function load() {
 												+ "&cdate=" + row.renderdate
 												+ "&cdepart=" + row.ext1
 												+ "&IsWrite=" + temp;
+										var curUrl1 = urlrunqiansubmit + "raq="
+												+ curCode + "&moid=" + row.oid
+												+ "&cdate=" + row.renderdate
+												+ "&cdepart=" + row.ext1
+												+ "&IsWrite=" + temp + "&uid="
+												+ $("#uid").val();
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
@@ -309,7 +315,10 @@ function reportfunc(url) {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : url
+		content : url,
+		cancel : function() {
+			location.reload();
+		}
 	});
 	layer.full(index);
 }

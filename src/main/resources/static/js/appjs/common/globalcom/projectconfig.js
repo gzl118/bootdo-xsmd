@@ -1,5 +1,6 @@
 var urlrunqian = "http://localhost:7878/jsDemo/reportJsp/showReportTJ.jsp?";
 var urlrunqiantb = "http://localhost:7878/jsDemo/reportJsp/showReport.jsp?";
+var urlrunqiansubmit = "http://localhost:7878/jsDemo/reportJsp/showReportSubmit.jsp?";
 var urlrunqianexportserver = "http://localhost:7878/jsDemo/reportJsp/exportReportServer.jsp?";
 
 /**

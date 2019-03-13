@@ -53,7 +53,9 @@ public class LabourreportmainController extends BaseController {
 	String Labourreportmain(String Code, Model model) {
 		model.addAttribute("Code", Code);
 		Integer result = CheckRole();
+		Long id = getUserId();
 		model.addAttribute("Status", result);
+		model.addAttribute("uid", id);
 		return "system/labourreportmain/labourreportmain";
 	}
 

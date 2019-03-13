@@ -12,10 +12,11 @@
 				<div class="ibox-body">
 					<div class="fixed-table-toolbar">
 						<div class="columns pull-left">
-							<input id="code" name="code" th:value="${Code}"
-								class="form-control" type="hidden"> <input id="status"
-								name="status" th:value="${Status}" class="form-control"
-								type="hidden">
+							<input id="uid" name="uid" th:value="${uid}" class="form-control"
+								type="hidden"> <input id="code" name="code"
+								th:value="${Code}" class="form-control" type="hidden"> <input
+								id="status" name="status" th:value="${Status}"
+								class="form-control" type="hidden">
 							<button shiro:hasPermission="system:labourreportmain:add"
 								type="button" class="btn  btn-primary" onclick="add()">
 								<i class="fa fa-plus" aria-hidden="true"></i>添加
