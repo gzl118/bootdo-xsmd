@@ -189,16 +189,20 @@ function load() {
 										var approverecord = ''; // 审批记录按钮控制
 										if (row.status == 0)
 											approverecord = 'hidden';
+										var departLevel = 1; // 1下级部门，2上级部门
 										if (rol == '5') { // 可填报报表数据管理员
 											if (row.status == 0
 													|| row.status == 3)
 												temp = 1;
+											departLevel = 1;
 											checkapprove = 'hidden';
 										} else if (rol == '6') { // 可填报报表数据审批管理员
 											if (row.status == 1)
 												temp = 1;
 											checksubmit = 'hidden';
 											s_remove_h = 'hidden';
+											s_edit_h = 'hidden';
+											departLevel = 2;
 										}
 
 										var e = '<a class="btn btn-primary btn-sm '
@@ -217,19 +221,16 @@ function load() {
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
 												+ "&cdepart=" + row.ext1
-												+ "&IsWrite=" + temp;
-										var curUrl1 = urlrunqiansubmit + "raq="
-												+ curCode + "&moid=" + row.oid
-												+ "&cdate=" + row.renderdate
-												+ "&cdepart=" + row.ext1
-												+ "&IsWrite=" + temp + "&uid="
-												+ $("#uid").val();
+												+ "&IsWrite=" + temp
+												+ "&IsValid=" + row.ext3
+												+ "&departLevel=" + departLevel
+												+ "&status=" + row.status;
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
 												+ curUrl
 												+ '\')"><i class="fa fa-tasks"></i></a> ';
-										var adminUrl = urlrunqiantb + "raq="
+										var adminUrl = urlrunqianadmin + "raq="
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
 												+ "&cdepart=" + row.ext1
@@ -246,7 +247,11 @@ function load() {
 													+ row.oid + "&cdate="
 													+ row.renderdate
 													+ "&cdepart=" + row.ext1
-													+ "&IsWrite=" + temp;
+													+ "&IsWrite=" + temp
+													+ "&IsValid=" + row.ext3
+													+ "&departLevel="
+													+ departLevel + "&status="
+													+ row.status;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
 													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''
@@ -254,7 +259,7 @@ function load() {
 													+ '\',\''
 													+ suburl
 													+ '\')"><i class="fa fa-tasks"></i></a> ';
-											var adminsuburl = urlrunqiantb
+											var adminsuburl = urlrunqianadmin
 													+ "raq=10015&moid="
 													+ row.oid + "&cdate="
 													+ row.renderdate
@@ -274,14 +279,18 @@ function load() {
 												+ checksubmit
 												+ '" href="#" title="提交"  mce_href="#" onclick="submitinfo(\''
 												+ row.oid
-												+ '\')"><i class="fa fa-check-square-o"></i></a> ';
+												+ '\','
+												+ row.ext3
+												+ ')"><i class="fa fa-check-square-o"></i></a> ';
 										var i = '<a class="btn btn-warning btn-sm '
 												+ s_suggest_h
 												+ ' '
 												+ checkapprove
 												+ '" href="#" title="审批"  mce_href="#" onclick="approveopt(\''
 												+ row.oid
-												+ '\')"><i class="fa fa-anchor"></i></a> ';
+												+ '\','
+												+ row.ext3
+												+ ')"><i class="fa fa-anchor"></i></a> ';
 										var j = '<a class="btn btn-warning btn-sm '
 												+ s_approve_h
 												+ ' '
@@ -391,7 +400,17 @@ function batchRemove() {
 
 	});
 }
-function submitinfo(id) {
+function submitinfo(id, status) {
+	if (status == null || status == 0) {
+		layer.alert("报表数据未进行校验，只有校验通过后才能提交！");
+		return;
+	} else if (status == 2) { // 2子项已校验，3主项已校验
+		layer.alert("主项校验未通过，只有主项和子项校验都通过后才能提交！");
+		return;
+	} else if (status == 3) {
+		layer.alert("子项校验未通过，只有主项和子项校验都通过后才能提交！");
+		return;
+	}
 	layer.open({
 		type : 2,
 		title : '提交',
@@ -412,7 +431,17 @@ function suggest(id) {
 	});
 }
 
-function approveopt(id) {
+function approveopt(id, status) {
+	if (status == null || status == 0) {
+		layer.alert("报表数据未进行校验，只有校验通过后才能审核！");
+		return;
+	} else if (status == 2) { // 2子项已校验，3主项已校验
+		layer.alert("主项校验未通过，只有主项和子项校验都通过后才能审核！");
+		return;
+	} else if (status == 3) {
+		layer.alert("子项校验未通过，只有主项和子项校验都通过后才能审核！");
+		return;
+	}
 	layer.open({
 		type : 2,
 		title : '审批',
@@ -435,7 +464,10 @@ function report5confirm(murl, surl) {
 			maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
-			content : murl
+			content : murl,
+			cancel : function() {
+				location.reload();
+			}
 		});
 		layer.full(index);
 
@@ -446,7 +478,10 @@ function report5confirm(murl, surl) {
 			maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
-			content : surl
+			content : surl,
+			cancel : function() {
+				location.reload();
+			}
 		});
 		layer.full(index);
 	});

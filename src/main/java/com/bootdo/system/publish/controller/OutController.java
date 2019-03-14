@@ -9,7 +9,6 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +32,7 @@ public class OutController extends BaseController {
 
 	@Log("保存提交信息")
 	@PostMapping("/saveapprove")
-	@ApiOperation(value = "系统登录", notes = "统一登录接口")
+	@ApiOperation(value = "保存提交信息", notes = "保存提交信息")
 	@ApiResponses({ @ApiResponse(response = R.class, code = 200, message = "返回结构:R.class") })
 	public R saveapprove(String oid, Integer status, Integer uid, String remark) {
 		LabourreportmainDO labourreportmain = new LabourreportmainDO();
@@ -53,6 +52,27 @@ public class OutController extends BaseController {
 			if (result > 0) {
 				return R.ok();
 			}
+		}
+		return R.error();
+	}
+
+	@Log("保存校验结果")
+	@PostMapping("/savecheck")
+	@ApiOperation(value = "保存校验结果", notes = "保存校验结果")
+	@ApiResponses({ @ApiResponse(response = R.class, code = 200, message = "返回结构:R.class") })
+	public R savecheck(String oid, Integer status) {
+		LabourreportmainDO m = labourreportmainService.get(oid);
+		if (m.getExt3().equals("2") && status == 3) {
+			status = 1;
+		} else if (m.getExt3().equals("3") && status == 2) {
+			status = 1;
+		}
+		LabourreportmainDO labourreportmain = new LabourreportmainDO();
+		labourreportmain.setOid(oid);
+		labourreportmain.setExt3(status.toString());
+		int result = labourreportmainService.update(labourreportmain);
+		if (result > 0) {
+			return R.ok();
 		}
 		return R.error();
 	}
