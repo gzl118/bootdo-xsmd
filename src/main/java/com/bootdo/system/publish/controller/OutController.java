@@ -62,10 +62,12 @@ public class OutController extends BaseController {
 	@ApiResponses({ @ApiResponse(response = R.class, code = 200, message = "返回结构:R.class") })
 	public R savecheck(String oid, Integer status) {
 		LabourreportmainDO m = labourreportmainService.get(oid);
-		if (m.getExt3().equals("2") && status == 3) {
-			status = 1;
-		} else if (m.getExt3().equals("3") && status == 2) {
-			status = 1;
+		if (m.getExt3() != null) {
+			if (m.getExt3().equals("2") && status == 3) {
+				status = 1;
+			} else if (m.getExt3().equals("3") && status == 2) {
+				status = 1;
+			}
 		}
 		LabourreportmainDO labourreportmain = new LabourreportmainDO();
 		labourreportmain.setOid(oid);
