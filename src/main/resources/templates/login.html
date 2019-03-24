@@ -2,21 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>劳资管理</title>
-    <meta name="keywords" content="西山煤电劳资管理系统">
-    <meta name="description" content="山西焦煤西山煤电集团劳动工资管理系统">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-    <link href="/css/animate.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/login.css" rel="stylesheet">
-    <!--[if lt IE 9]>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>劳资管理</title>
+<meta name="keywords" content="西山煤电劳资管理系统">
+<meta name="description" content="山西焦煤西山煤电集团劳动工资管理系统">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+<link href="/css/animate.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/login.css" rel="stylesheet">
+<!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
-    <script>
+<script>
         if (window.top !== window.self) {
             window.top.location = window.location;
         }
@@ -25,48 +26,52 @@
 </head>
 
 <body class="signin">
-<div class="signinpanel">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <form id="signupForm">
-                <h3 class="text-center">用户登录</h3>
-                <p class="m-t-md text-center">欢迎登录西山煤电劳资管理系统</p>
-                <input type="text" name="username" class="form-control uname"
-                       value="admin"/>
-                <input type="password" name="password"
-                       class="form-control pword m-b" value=""/>
-                <a id="login" class="btn btn-login btn-block">登录</a>
-                <!--按钮模块-->
-<!--                 <div class="outside-login"> -->
-<!--                     <div class="outside-login-tit"> -->
-<!--                         <span>代码链接</span> -->
-<!--                     </div> -->
-<!--                 </div> -->
-            </form>
-        </div>
-         <div class="col-sm-6 col-sm-offset-3 signup-footertop"></div>
- 		  <div class="col-sm-6 col-sm-offset-3 signup-footer">
-          <div class="pull-left">&copy; 2018 All Rights Reserved. RK</div>
-   		  </div>
-    </div>
-   
-</div>
+	<div class="signinpanel">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<form id="signupForm">
+					<h3 class="text-center">用户登录</h3>
+					<p class="m-t-md text-center">欢迎登录西山煤电劳资管理系统</p>
+					<input type="text" name="username" class="form-control uname"
+						value="admin" /> <input type="password" name="password"
+						class="form-control pword m-b" value="" /> <a id="login"
+						class="btn btn-login btn-block">登录</a>
+					<!--按钮模块-->
+					<!--                 <div class="outside-login"> -->
+					<!--                     <div class="outside-login-tit"> -->
+					<!--                         <span>代码链接</span> -->
+					<!--                     </div> -->
+					<!--                 </div> -->
+				</form>
+			</div>
+			<div class="col-sm-6 col-sm-offset-3 signup-footertop"></div>
+			<div class="col-sm-6 col-sm-offset-3 signup-footer">
+				<div class="pull-left">&copy; 2018 All Rights Reserved. RK</div>
+			</div>
+		</div>
+
+	</div>
 
 
-<script th:inline="javascript"> var ctx = [[@{/}]] ; </script>
-<!-- 全局js -->
-<script src="/js/jquery.min.js?v=2.1.4" th:src="@{/js/jquery.min.js?v=2.1.4}"></script>
-<script src="/js/bootstrap.min.js?v=3.3.6" th:src="@{/js/bootstrap.min.js?v=3.3.6}"></script>
+	<script th:inline="javascript"> var ctx = [[@{/}]] ; </script>
+	<!-- 全局js -->
+	<script src="/js/jquery.min.js?v=2.1.4"
+		th:src="@{/js/jquery.min.js?v=2.1.4}"></script>
+	<script src="/js/bootstrap.min.js?v=3.3.6"
+		th:src="@{/js/bootstrap.min.js?v=3.3.6}"></script>
 
-<!-- 自定义js -->
-<script src="/js/content.js?v=1.0.0" th:src="@{/js/content.js?v=1.0.0}"></script>
+	<!-- 自定义js -->
+	<script src="/js/content.js?v=1.0.0" th:src="@{/js/content.js?v=1.0.0}"></script>
 
-<!-- jQuery Validation plugin javascript-->
-<script src="/js/ajax-util.js"></script>
-<script src="/js/plugins/validate/jquery.validate.min.js" th:src="@{/js/plugins/validate/jquery.validate.min.js}"></script>
-<script src="/js/plugins/validate/messages_zh.min.js" th:src="@{/js/plugins/validate/messages_zh.min.js}"></script>
-<script src="/js/plugins/layer/layer.min.js" th:src="@{/js/plugins/layer/layer.min.js}"></script>
-<script type="text/javascript">
+	<!-- jQuery Validation plugin javascript-->
+	<script src="/js/ajax-util.js"></script>
+	<script src="/js/plugins/validate/jquery.validate.min.js"
+		th:src="@{/js/plugins/validate/jquery.validate.min.js}"></script>
+	<script src="/js/plugins/validate/messages_zh.min.js"
+		th:src="@{/js/plugins/validate/messages_zh.min.js}"></script>
+	<script src="/js/plugins/layer/layer.min.js"
+		th:src="@{/js/plugins/layer/layer.min.js}"></script>
+	<script type="text/javascript">
     $(document).ready(function () {
         $("#login").on('click',function(){$("#signupForm").submit();});
         validateRule();
