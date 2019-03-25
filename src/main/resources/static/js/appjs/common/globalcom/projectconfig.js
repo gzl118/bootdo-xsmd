@@ -1,6 +1,6 @@
 var urlrunqian = "http://localhost:7878/jsDemo/reportJsp/showReportTJ.jsp?";
-var urlrunqiantb = "http://localhost:7878/jsDemo/reportJsp/showReport.jsp?";
-var urlrunqianadmin = "http://localhost:7878/jsDemo/reportJsp/showReportAdmin.jsp?";
+var urlrunqiantb = "http://localhost:7878/jsDemo/reportJsp/showReportScroll.jsp?";
+var urlrunqianadmin = "http://localhost:7878/jsDemo/reportJsp/showReportAdminScroll.jsp?";
 var urlrunqianexportserver = "http://localhost:7878/jsDemo/reportJsp/exportReportServer.jsp?";
 
 /**
