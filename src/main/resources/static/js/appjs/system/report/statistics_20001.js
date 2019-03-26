@@ -102,6 +102,9 @@ function showReport() {
 
 	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rfoid='
 			+ rdcId;
+	var w = $(".gray-bg").width() - 30;
+	var h = $(".gray-bg").height() - 85;
+	url += "&width=" + w + "&height=" + h;
 	console.log(url);
 	var index = layer.open({
 		type : 2,

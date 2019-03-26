@@ -194,7 +194,7 @@ function load() {
 											approverecord = 'hidden';
 										var temp = 1;
 										var curCode = row.code;
-										var reporturlprefix = urlrunqiantb;
+										var reporturlprefix = urlrunqiankbtb;
 										var rindex = codeArray.indexOf(curCode);
 										if (rindex > -1)
 											reporturlprefix = urlrunqian;
@@ -331,6 +331,9 @@ function submitinfo(id) {
 	});
 }
 function reportfunc(url) {
+	var w = $(".gray-bg").width() - 30;
+	var h = $(".gray-bg").height() - 85;
+	url += "&width=" + w + "&height=" + h;
 	var index = layer.open({
 		type : 2,
 		title : '报表明细',
@@ -352,6 +355,10 @@ function suggest(id) {
 	});
 }
 function report5confirm(murl, surl) {
+	var w = $(".gray-bg").width() - 30;
+	var h = $(".gray-bg").height() - 85;
+	murl += "&width=" + w + "&height=" + h;
+	surl += "&width=" + w + "&height=" + h;
 	layer.confirm('选择要查看的表格', {
 		btn : [ '主表', '附表' ],
 		skin : 'layui-layer-molv'

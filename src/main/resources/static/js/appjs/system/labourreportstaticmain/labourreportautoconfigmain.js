@@ -325,6 +325,9 @@ function submitinfo(id) {
 	});
 }
 function reportfunc(url) {
+	var w = $(".gray-bg").width() - 30;
+	var h = $(".gray-bg").height() - 85;
+	url += "&width=" + w + "&height=" + h;
 	var index = layer.open({
 		type : 2,
 		title : '报表明细',

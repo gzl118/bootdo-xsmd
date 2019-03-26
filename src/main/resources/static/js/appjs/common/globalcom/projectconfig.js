@@ -1,7 +1,28 @@
-var urlrunqian = "http://localhost:7878/jsDemo/reportJsp/showReportTJScroll.jsp?";
-var urlrunqiantb = "http://localhost:7878/jsDemo/reportJsp/showReportScroll.jsp?";
-var urlrunqianadmin = "http://localhost:7878/jsDemo/reportJsp/showReportAdminScroll.jsp?";
-var urlrunqianexportserver = "http://localhost:7878/jsDemo/reportJsp/exportReportServer.jsp?";
+var ipurl = location.hostname;
+
+var urlrunqian = "http://" + ipurl
+		+ ":7878/jsDemo/reportJsp/showReportTJScroll.jsp?";
+var urlrunqiantb = "http://" + ipurl
+		+ ":7878/jsDemo/reportJsp/showReportScroll.jsp?";
+var urlrunqiankbtb = "http://" + ipurl
+		+ ":7878/jsDemo/reportJsp/showReportKbScroll.jsp?";
+var urlrunqianadmin = "http://" + ipurl
+		+ ":7878/jsDemo/reportJsp/showReportAdminScroll.jsp?";
+var urlrunqianexportserver = "http://" + ipurl
+		+ ":7878/jsDemo/reportJsp/exportReportServer.jsp?";
+
+/*
+ * var urlrunqian =
+ * "http://localhost:7878/jsDemo/reportJsp/showReportTJScroll.jsp?"; var
+ * urlrunqiantb =
+ * "http://localhost:7878/jsDemo/reportJsp/showReportScroll.jsp?"; var
+ * urlrunqiankbtb =
+ * "http://localhost:7878/jsDemo/reportJsp/showReportKbScroll.jsp?"; var
+ * urlrunqianadmin =
+ * "http://localhost:7878/jsDemo/reportJsp/showReportAdminScroll.jsp?"; var
+ * urlrunqianexportserver =
+ * "http://localhost:7878/jsDemo/reportJsp/exportReportServer.jsp?";
+ */
 
 /**
  * 状态,0未提交，1已提交，2已审核通过，3审核未通过
