@@ -239,6 +239,9 @@ function showReport() {
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
 	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rdepart='
 			+ rdepart + '&rfoid=' + configId;
+	var w = $(".gray-bg").width() - 30;
+	var h = $(".gray-bg").height() - 85;
+	url += "&width=" + w + "&height=" + h;
 	console.log(url);
 	var index = layer.open({
 		type : 2,

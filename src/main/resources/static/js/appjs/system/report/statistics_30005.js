@@ -196,6 +196,10 @@ function showReport() {
 			+ '&rdepart=' + rdepart;
 	var surl = urlrunqian + 'raq=30015.raq&rdate=' + rdate + '&rdepart='
 			+ rdepart;
+	var w = $(".gray-bg").width() - 30;
+	var h = $(".gray-bg").height() - 85;
+	murl += "&width=" + w + "&height=" + h;
+	surl += "&width=" + w + "&height=" + h;
 	report5confirm(murl, surl);
 }
 function openReport(url) {
