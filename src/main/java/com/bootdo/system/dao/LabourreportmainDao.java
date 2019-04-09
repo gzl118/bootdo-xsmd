@@ -36,4 +36,6 @@ public interface LabourreportmainDao {
 	String delPkey(Map<String, Object> map);
 
 	List<DeptDO> listdept(Map<String, Object> map);
+
+	List<LabourreportmainDO> getByCondition(Map<String, Object> map);
 }

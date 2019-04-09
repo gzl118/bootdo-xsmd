@@ -190,4 +190,14 @@
 		</where>
 		order by A.order_num desc
 	</select>
+	<select id="getByCondition" resultType="com.bootdo.system.domain.LabourreportmainDO">
+		select `oid`
+		from labourreportmain
+		<where>
+			<if test="code != null and code != ''"> and Code = #{code} </if>
+			<if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(RenderDate,'%Y%m') =
+				DATE_FORMAT(#{renderdate},'%Y%m') </if>
+			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
+		</where>
+	</select>
 </mapper>

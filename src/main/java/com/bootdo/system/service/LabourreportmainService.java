@@ -14,24 +14,27 @@ import java.util.Map;
  * @date 2018-10-11 13:33:34
  */
 public interface LabourreportmainService {
-	
+
 	LabourreportmainDO get(String oid);
-	
+
 	List<LabourreportmainDO> list(Map<String, Object> map);
-	
+
 	int count(Map<String, Object> map);
-	
+
 	int save(LabourreportmainDO labourreportmain);
-	
+
 	int update(LabourreportmainDO labourreportmain);
-	
+
 	int remove(String oid);
-	
+
 	int batchRemove(String[] oids);
-	
+
 	String getPkey(LabourreportmainDO labourreportmain);
-	
-	String delPkey(Map<String,Object> map);
-	
+
+	String delPkey(Map<String, Object> map);
+
 	List<DeptDO> listdept(Map<String, Object> map);
+
+	List<LabourreportmainDO> getByCondition(Map<String, Object> map);
+
 }

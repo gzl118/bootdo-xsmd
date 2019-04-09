@@ -1,6 +1,7 @@
 package com.bootdo.system.controller;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -105,6 +106,15 @@ public class LabourreportmainController extends BaseController {
 		if (!StringUtils.isEmpty(labourreportmain.getRenderdate()))
 			labourreportmain.setRenderdate(labourreportmain.getRenderdate()
 					+ "-01");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("code", labourreportmain.getCode());
+		params.put("ext1", labourreportmain.getExt1());
+		params.put("renderdate", labourreportmain.getRenderdate());
+		List<LabourreportmainDO> labourreportmainList = labourreportmainService
+				.getByCondition(params);
+		if (labourreportmainList != null && labourreportmainList.size() > 0) {
+			return R.error("当月数据已经存在,请删除旧数据重新添加或在旧数据上修改！");
+		}
 		labourreportmain.setUptuser(uid.toString());
 		String pkey = labourreportmainService.getPkey(labourreportmain);
 		if (!StringUtils.isEmpty(pkey)) {
@@ -123,6 +133,21 @@ public class LabourreportmainController extends BaseController {
 		if (!StringUtils.isEmpty(labourreportmain.getRenderdate()))
 			labourreportmain.setRenderdate(labourreportmain.getRenderdate()
 					+ "-01");
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("code", labourreportmain.getCode());
+		params.put("ext1", labourreportmain.getExt1());
+		params.put("renderdate", labourreportmain.getRenderdate());
+		List<LabourreportmainDO> labourreportmainList = labourreportmainService
+				.getByCondition(params);
+		if (labourreportmainList != null && labourreportmainList.size() > 0) {
+			if (labourreportmainList.size() == 1) {
+				if (!labourreportmainList.get(0).getOid()
+						.equals(labourreportmain.getOid()))
+					return R.error("当月数据已经存在,请删除旧数据重新添加或在旧数据上修改！");
+			} else {
+				return R.error("当月数据已经存在,请删除旧数据重新添加或在旧数据上修改！");
+			}
+		}
 		labourreportmainService.update(labourreportmain);
 		return R.ok();
 	}
@@ -180,6 +205,10 @@ public class LabourreportmainController extends BaseController {
 		LabourreportmainDO labourreportmain = new LabourreportmainDO();
 		labourreportmain.setOid(oid);
 		labourreportmain.setStatus(status);
+		if (labourreportmain.getStatus().equals(3)) // 审批不通过，则需要重新校验
+		{
+			labourreportmain.setExt3("0");
+		}
 		int result = labourreportmainService.update(labourreportmain);
 		if (result > 0) {
 			Long uid = getUserId();
