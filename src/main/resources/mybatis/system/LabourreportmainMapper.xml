@@ -23,7 +23,12 @@
 				</if> -->
 			<if test="status != null and status != ''">
 				<if test="status==5"></if>
-				<if test="status==6">and Status >= 1</if>
+				<if test="status==6">
+					<if test="ext2 == null or ext2 == ''">
+						and Status >= 1
+					</if>
+					<if test="ext2 != null and ext2 != ''"> and Status = #{ext2} </if>
+				</if>
 				<if test="status==-1"> and Status = #{status} </if>
 			</if>
 			<if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
@@ -34,7 +39,7 @@
 			<if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
 			<if test="remark != null and remark != ''"> and Remark = #{remark} </if>
 			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
-			<if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
+			<!-- <if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if> -->
 			<if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
 		</where>
 		<choose>
@@ -62,7 +67,12 @@
 				</if> -->
 			<if test="status != null and status != ''">
 				<if test="status==5"></if>
-				<if test="status==6">and Status >= 1</if>
+				<if test="status==6">
+					<if test="ext2 == null or ext2 == ''">
+						and Status >= 1
+					</if>
+					<if test="ext2 != null and ext2 != ''"> and Status = #{ext2} </if>
+				</if>
 				<if test="status==-1"> and Status = #{status} </if>
 			</if>
 			<if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
@@ -73,7 +83,7 @@
 			<if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
 			<if test="remark != null and remark != ''"> and Remark = #{remark} </if>
 			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
-			<if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
+			<!-- <if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if> -->
 			<if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
 		</where>
 	</select>
@@ -200,4 +210,13 @@
 			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
 		</where>
 	</select>
+	<update id="batchApprove">
+		update labourreportmain set status=#{status},Ext3 =#{ext3} where oid
+		in
+		<foreach collection="oids" item="item" separator="," index="index"
+			open="(" close=")">
+			#{item}
+		</foreach>
+		;
+	</update>
 </mapper>

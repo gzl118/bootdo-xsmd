@@ -37,4 +37,5 @@ public interface LabourreportmainService {
 
 	List<LabourreportmainDO> getByCondition(Map<String, Object> map);
 
+	int batchApprove(Map<String, Object> map);
 }

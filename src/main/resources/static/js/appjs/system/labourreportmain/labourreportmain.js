@@ -24,6 +24,7 @@ function load() {
 						bordered : true,
 						dataType : "json", // 服务器返回的数据类型
 						pagination : true, // 设置为true会在底部显示分页条
+						pageList : [ 10, 25, 50, 100, 'All' ],
 						// queryParamsType : "limit",
 						// //设置为limit则会发送符合RESTFull格式的参数
 						singleSelect : false, // 设置为true将禁止多选
@@ -47,7 +48,8 @@ function load() {
 										+ '-01',
 								renderdepart : $('#renderdepart').val(),
 								code : $("#code").val(),
-								status : $("#status").val()
+								status : $("#status").val(),
+								ext2 : $("#ext2").val()
 							};
 						},
 						// //请求服务器数据时，你可以通过重写参数的方式添加一些额外的参数，例如 toolbar 中的参数 如果
@@ -57,6 +59,9 @@ function load() {
 						// sortOrder.
 						// 返回false将会终止请求
 						columns : [
+								{
+									checkbox : true
+								},
 								{
 									field : 'oid',
 									title : '主键',
@@ -493,5 +498,74 @@ function report5confirm(murl, surl) {
 			}
 		});
 		layer.full(index);
+	});
+}
+function batchApprove() {
+	layer.open({
+		type : 1,
+		title : '批量审批',
+		area : [ "300px", "200px" ],
+		content : $("#divApprove"),
+		btn : [ '审核通过', '审核不通过' ],
+		btnAlign : 'c',
+		yes : function(index, layero) {
+			bapprove(2);
+			layer.close(index);
+		},
+		btn2 : function(index, layero) {
+			bapprove(3);
+			layer.close(index);
+		}
+	});
+}
+function bapprove(nstatus) {
+	var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
+	if (rows.length == 0) {
+		layer.msg("请选择要至少一条未审批的数据");
+		return;
+	}
+	var arritems = new Array();
+	var isChecked = true;
+	var failitems = new Array();
+	$.each(rows,
+			function(i, row) {
+				if (row.status == 1)
+					arritems.push(row.oid);
+				if (row.ext3 == null || row.ext3 == 0 || row.ext3 == 2
+						|| row.ext3 == 3) {
+					isChecked = false;
+					failitems.push(row.renderdepart + ":" + row.renderdate);
+				}
+			});
+	if (arritems.length == 0) {
+		layer.msg("请选择要至少一条未审批的数据");
+		return;
+	}
+	if (isChecked == false) {
+		var str = failitems.join();
+		layer.msg("报表数据未进行校验，只有校验通过后才能审核！" + str);
+		return;
+	}
+	$.ajax({
+		cache : true,
+		type : "POST",
+		url : "/system/labourreportmain/batchApprove",
+		data : {
+			ids : arritems,
+			remark : $("#remark").val(),
+			status : nstatus
+		},
+		error : function(request) {
+			parent.layer.alert("Connection error");
+		},
+		success : function(data) {
+			if (data.code == 0) {
+				layer.msg("操作成功");
+				reLoad();
+			} else {
+				layer.alert(data.msg)
+			}
+
+		}
 	});
 }

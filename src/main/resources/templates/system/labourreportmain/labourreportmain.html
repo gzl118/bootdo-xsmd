@@ -21,9 +21,26 @@
 								type="button" class="btn  btn-primary" onclick="add()">
 								<i class="fa fa-plus" aria-hidden="true"></i>添加
 							</button>
+							<button
+								shiro:hasPermission="system:labourreportmain:batchApprove"
+								type="button" class="btn  btn-warning" onclick="batchApprove()">
+								<i class="fa fa-anchor" aria-hidden="true"></i>批量审批
+							</button>
 						</div>
 						<div class="columns pull-right" style="margin-left: 20px;">
 							<button class="btn btn-success" onclick="reLoad()">查询</button>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<select id="ext2" name="ext2" class="form-control">
+								<option value="">全部</option>
+								<option value="1">已提交</option>
+								<option value="2">审核通过</option>
+								<option value="3">审核不通过</option>
+							</select>
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">状态：</label>
 						</div>
 						<div class="columns pull-right col-md-2 nopadding">
 							<input type="text" class="laydate-icon layer-date form-control"
@@ -96,6 +113,9 @@
 			var s_admindetail_h = '';
 		</script>
 	</div>
+	<div id="divApprove" style="display: none;">
+		<textarea id="remark" name="remark" class="form-control" rows="4"
+			placeholder="请输入审批意见"></textarea>
 	</div>
 	<div th:include="include :: footer"></div>
 	<script type="text/javascript" src="/js/plugins/laydate5.9/laydate.js"></script>

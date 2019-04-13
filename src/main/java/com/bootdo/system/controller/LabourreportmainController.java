@@ -1,7 +1,7 @@
 package com.bootdo.system.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -213,7 +213,6 @@ public class LabourreportmainController extends BaseController {
 		if (result > 0) {
 			Long uid = getUserId();
 			String pkey = UUID.randomUUID().toString().replace("-", "");
-			;
 			LabourrepotapproveDO labourrepotapprove = new LabourrepotapproveDO();
 			labourrepotapprove.setOid(pkey);
 			labourrepotapprove.setFoid(oid);
@@ -263,5 +262,44 @@ public class LabourreportmainController extends BaseController {
 	@RequiresPermissions("system:labourreportmain:labourreportmaindept")
 	String Labourreportmaindept(Model model) {
 		return "system/labourreportmain/labourreportmaindept";
+	}
+
+	@PostMapping("/batchApprove")
+	@ResponseBody
+	@RequiresPermissions("system:labourreportmain:batchApprove")
+	public R batchApprove(@RequestParam("ids[]") String[] oids, String remark,
+			Integer status) {
+		String ext3 = "0";
+		if (status.equals(3)) {
+			ext3 = "0";
+		} else {
+			ext3 = "1";
+		}
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("oids", oids);
+		map.put("status", status);
+		map.put("ext3", ext3);
+		int result = labourreportmainService.batchApprove(map);
+		if (result > 0) {
+			if (StringUtils.isEmpty(remark))
+				remark = status.equals(3) ? "审核不通过" : "审核通过";
+			Long uid = getUserId();
+			List<LabourrepotapproveDO> list = new ArrayList<LabourrepotapproveDO>();
+			for (String fid : oids) {
+				String pkey = UUID.randomUUID().toString().replace("-", "");
+				LabourrepotapproveDO labourrepotapprove = new LabourrepotapproveDO();
+				labourrepotapprove.setOid(pkey);
+				labourrepotapprove.setFoid(fid);
+				labourrepotapprove.setContent(remark);
+				labourrepotapprove.setStatus(status);
+				labourrepotapprove.setUptuser(uid.toString());
+				list.add(labourrepotapprove);
+			}
+			result = labourrepotapproveService.insertlist(list);
+			if (result > 0) {
+				return R.ok();
+			}
+		}
+		return R.error("处理数据失败");
 	}
 }

@@ -36,7 +36,7 @@ function validateRule() {
 	return $("#signupForm").validate({
 		rules : {
 			remark : {
-				required : true
+				required : false
 			}
 		},
 		messages : {

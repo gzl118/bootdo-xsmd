@@ -38,4 +38,6 @@ public interface LabourreportmainDao {
 	List<DeptDO> listdept(Map<String, Object> map);
 
 	List<LabourreportmainDO> getByCondition(Map<String, Object> map);
+	
+	int batchApprove(Map<String, Object> map);
 }

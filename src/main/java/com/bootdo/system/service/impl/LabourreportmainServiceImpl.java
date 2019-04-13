@@ -72,4 +72,9 @@ public class LabourreportmainServiceImpl implements LabourreportmainService {
 	public List<LabourreportmainDO> getByCondition(Map<String, Object> map) {
 		return labourreportmainDao.getByCondition(map);
 	}
+
+	@Override
+	public int batchApprove(Map<String, Object> map) {
+		return labourreportmainDao.batchApprove(map);
+	}
 }

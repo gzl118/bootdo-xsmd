@@ -2,6 +2,7 @@ package com.bootdo.system.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -10,46 +11,48 @@ import com.bootdo.system.dao.LabourrepotapproveDao;
 import com.bootdo.system.domain.LabourrepotapproveDO;
 import com.bootdo.system.service.LabourrepotapproveService;
 
-
-
 @Service
 public class LabourrepotapproveServiceImpl implements LabourrepotapproveService {
 	@Autowired
 	private LabourrepotapproveDao labourrepotapproveDao;
-	
+
 	@Override
-	public LabourrepotapproveDO get(String oid){
+	public LabourrepotapproveDO get(String oid) {
 		return labourrepotapproveDao.get(oid);
 	}
-	
+
 	@Override
-	public List<LabourrepotapproveDO> list(Map<String, Object> map){
+	public List<LabourrepotapproveDO> list(Map<String, Object> map) {
 		return labourrepotapproveDao.list(map);
 	}
-	
+
 	@Override
-	public int count(Map<String, Object> map){
+	public int count(Map<String, Object> map) {
 		return labourrepotapproveDao.count(map);
 	}
-	
+
 	@Override
-	public int save(LabourrepotapproveDO labourrepotapprove){
+	public int save(LabourrepotapproveDO labourrepotapprove) {
 		return labourrepotapproveDao.save(labourrepotapprove);
 	}
-	
+
 	@Override
-	public int update(LabourrepotapproveDO labourrepotapprove){
+	public int update(LabourrepotapproveDO labourrepotapprove) {
 		return labourrepotapproveDao.update(labourrepotapprove);
 	}
-	
+
 	@Override
-	public int remove(String oid){
+	public int remove(String oid) {
 		return labourrepotapproveDao.remove(oid);
 	}
-	
+
 	@Override
-	public int batchRemove(String[] oids){
+	public int batchRemove(String[] oids) {
 		return labourrepotapproveDao.batchRemove(oids);
 	}
-	
+
+	@Override
+	public int insertlist(List<LabourrepotapproveDO> list) {
+		return labourrepotapproveDao.insertlist(list);
+	}
 }

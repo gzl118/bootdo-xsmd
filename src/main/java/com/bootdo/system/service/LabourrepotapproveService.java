@@ -27,4 +27,6 @@ public interface LabourrepotapproveService {
 	int remove(String oid);
 	
 	int batchRemove(String[] oids);
+	
+	int insertlist(List<LabourrepotapproveDO> list);
 }
