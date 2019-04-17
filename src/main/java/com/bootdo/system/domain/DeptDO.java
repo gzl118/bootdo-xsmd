@@ -2,8 +2,6 @@ package com.bootdo.system.domain;
 
 import java.io.Serializable;
 
-
-
 /**
  * 部门管理
  * 
@@ -13,19 +11,23 @@ import java.io.Serializable;
  */
 public class DeptDO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	//
 	private Long deptId;
-	//上级部门ID，一级部门为0
+	// 上级部门ID，一级部门为0
 	private Long parentId;
-	//部门名称
+	// 部门名称
 	private String name;
-	//部门简称
+	// 部门简称
 	private String sname;
-	//排序
+	// 排序
 	private Integer orderNum;
-	//是否删除  -1：已删除  0：正常
+	// 是否删除 -1：已删除 0：正常
 	private Integer delFlag;
+	// 联系人
+	private String contactName;
+	// 联系电话
+	private String contanctTel;
 
 	/**
 	 * 设置：
@@ -33,56 +35,65 @@ public class DeptDO implements Serializable {
 	public void setDeptId(Long deptId) {
 		this.deptId = deptId;
 	}
+
 	/**
 	 * 获取：
 	 */
 	public Long getDeptId() {
 		return deptId;
 	}
+
 	/**
 	 * 设置：上级部门ID，一级部门为0
 	 */
 	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
+
 	/**
 	 * 获取：上级部门ID，一级部门为0
 	 */
 	public Long getParentId() {
 		return parentId;
 	}
+
 	/**
 	 * 设置：部门名称
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	/**
 	 * 获取：部门名称
 	 */
 	public String getName() {
 		return name;
 	}
+
 	/**
 	 * 设置：排序
 	 */
 	public void setOrderNum(Integer orderNum) {
 		this.orderNum = orderNum;
 	}
+
 	/**
 	 * 获取：排序
 	 */
 	public Integer getOrderNum() {
 		return orderNum;
 	}
+
 	/**
-	 * 设置：是否删除  -1：已删除  0：正常
+	 * 设置：是否删除 -1：已删除 0：正常
 	 */
 	public void setDelFlag(Integer delFlag) {
 		this.delFlag = delFlag;
 	}
+
 	/**
-	 * 获取：是否删除  -1：已删除  0：正常
+	 * 获取：是否删除 -1：已删除 0：正常
 	 */
 	public Integer getDelFlag() {
 		return delFlag;
@@ -90,26 +101,39 @@ public class DeptDO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DeptDO{" +
-				"deptId=" + deptId +
-				", parentId=" + parentId +
-				", name='" + name + '\'' +
-				", sname='" + sname + '\'' +
-				", orderNum=" + orderNum +
-				", delFlag=" + delFlag +
-				'}';
+		return "DeptDO{" + "deptId=" + deptId + ", parentId=" + parentId
+				+ ", name='" + name + '\'' + ", sname='" + sname + '\''
+				+ ", orderNum=" + orderNum + ", delFlag=" + delFlag + '}';
 	}
+
 	public String getSname() {
 		return sname;
 	}
+
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
-//	@Override
-//	public String toString() {
-//		return "DeptDO [deptId=" + deptId + ", parentId=" + parentId + ", name=" + name + ", sname=" + sname
-//				+ ", orderNum=" + orderNum + ", delFlag=" + delFlag + "]";
-//	}
 
-	
+	// @Override
+	// public String toString() {
+	// return "DeptDO [deptId=" + deptId + ", parentId=" + parentId + ", name="
+	// + name + ", sname=" + sname
+	// + ", orderNum=" + orderNum + ", delFlag=" + delFlag + "]";
+	// }
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+
+	public String getContanctTel() {
+		return contanctTel;
+	}
+
+	public void setContanctTel(String contanctTel) {
+		this.contanctTel = contanctTel;
+	}
+
 }

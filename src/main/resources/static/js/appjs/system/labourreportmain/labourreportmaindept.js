@@ -56,6 +56,9 @@ function drawhtml(ndata) {
 	var temp = "";
 	var statusclass = "";
 	var statusname = "";
+	var contanctTel = "";
+	var contanctName = "";
+	var targetName = "";
 	for (var i = 0; i < rcount; i++) {
 		nhtml += '<div style="width:100vw;">'; // class="row"
 		for (var j = 0; j < colcount; j++) {
@@ -64,11 +67,22 @@ function drawhtml(ndata) {
 				temp = ndata[nindex].name;
 				statusclass = getdivclass(ndata[nindex].orderNum);
 				statusname = getstatus(ndata[nindex].orderNum);
-
+				contanctTel = ndata[nindex].contanctTel;
+				contanctName = ndata[nindex].contactName;
+				targetName = "";
+				if (contanctName != null)
+					targetName += contanctName;
+				if (contanctTel != null)
+					targetName += "(" + contanctTel + ")";
 				nhtml += '<div style="border:1px solid #e5e6e7;padding: 5px;margin:1px;width:16vw;float:left;height:50px;"><p style="font-size:12px;" >'
 						+ temp
 						+ '<span style="font-size:12px;float:right;" class="label '
-						+ statusclass + '">' + statusname + '</span></p></div>';
+						+ statusclass
+						+ '">'
+						+ statusname
+						+ '</span>'
+						+ '<span  style="font-size:12px;float:left;margin-top:10px;" >'
+						+ targetName + '</span></p></div>';
 			} else {
 				temp = "";
 				statusclass = "";

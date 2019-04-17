@@ -42,8 +42,22 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">状态：</label>
 								<div class="col-sm-8">
-									<input id="delFlag" name="delFlag" class="form-control" placeholder="0:禁用,1:正常"
-										type="text">
+									<input id="delFlag" name="delFlag" class="form-control"
+										placeholder="0:禁用,1:正常" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">联系人：</label>
+								<div class="col-sm-8">
+									<input id="contactName" name="contactName" class="form-control"
+										placeholder="请输入联系人姓名" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">联系电话：</label>
+								<div class="col-sm-8">
+									<input id="contanctTel" name="contanctTel" class="form-control"
+										placeholder="请输入联系人电话" type="text">
 								</div>
 							</div>
 							<div class="form-group">
@@ -59,6 +73,7 @@
 	</div>
 	<div th:include="include::footer"></div>
 	<script type="text/javascript" src="/js/appjs/system/sysDept/add.js">
+		
 	</script>
 </body>
 </html>

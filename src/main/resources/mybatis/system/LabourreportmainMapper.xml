@@ -176,7 +176,8 @@
 		sd.dept_id,sd.`name`,sd.parent_id,lmain.RenderDate as
 		sname,case WHEN
 		lmain.`Status` is null THEN -1 ELSE lmain.`Status` END
-		as order_num
+		as
+		order_num,sd.contactName,sd.contanctTel
 		from sys_dept sd
 		LEFT JOIN
 		labourreportmain lmain ON
