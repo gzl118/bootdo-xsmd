@@ -70,9 +70,9 @@ function drawhtml(ndata) {
 				contanctTel = ndata[nindex].contanctTel;
 				contanctName = ndata[nindex].contactName;
 				targetName = "";
-				if (contanctName != null)
+				if (contanctName != null && contanctName != "")
 					targetName += contanctName;
-				if (contanctTel != null)
+				if (contanctTel != null && contanctTel != "")
 					targetName += "(" + contanctTel + ")";
 				nhtml += '<div style="border:1px solid #e5e6e7;padding: 5px;margin:1px;width:16vw;float:left;height:50px;"><p style="font-size:12px;" >'
 						+ temp
@@ -80,9 +80,9 @@ function drawhtml(ndata) {
 						+ statusclass
 						+ '">'
 						+ statusname
-						+ '</span>'
-						+ '<span  style="font-size:12px;float:left;margin-top:10px;" >'
-						+ targetName + '</span></p></div>';
+						+ '</span></p>'
+						+ '<div  style="font-size:12px;float:left;position:absolute;" >'
+						+ targetName + '</div></div>';
 			} else {
 				temp = "";
 				statusclass = "";
