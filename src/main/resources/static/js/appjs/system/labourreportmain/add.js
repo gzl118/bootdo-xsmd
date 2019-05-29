@@ -1,14 +1,63 @@
 $().ready(function() {
 	validateRule();
 
+	var ndate=new Date().AddTime("M",-1).Format("yyyy-MM");
+	
 	laydate.render({
 		elem : '#renderdate',
 		type : 'month',
 		trigger : 'click',
-		format:'yyyy-MM'
+		format:'yyyy-MM',
+		value:ndate
 	});
 });
-
+Date.prototype.AddTime = function (fmt, nvalue) {
+    var year = this.getFullYear();
+    var month = this.getMonth();
+    var day = this.getDate();
+    var hour = this.getHours();
+    var min = this.getMinutes();
+    var sec = this.getSeconds();
+    switch (fmt) {
+        case "y":
+            year += nvalue;
+            break;
+        case "M":
+            month += nvalue;
+            break;
+        case "d":
+            day += nvalue;
+            break;
+        case "h":
+            hour += nvalue;
+            break;
+        case "m":
+            min += nvalue;
+            break;
+        case "s":
+            sec += nvalue;
+            break;
+    }
+    d = new Date(year, month, day, hour, min, sec);
+    return d;
+};
+Date.prototype.Format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S": this.getMilliseconds()
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt))
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+};
 $.validator.setDefaults({
 	submitHandler : function() {
 		save();
