@@ -196,6 +196,13 @@ public class LabourreportmainController extends BaseController {
 		return "system/labourreportmain/approve";
 	}
 
+	@GetMapping("/cancelapprove")
+	@RequiresPermissions("system:labourreportmain:approve")
+	public String cancelapprove(String oid, Model model) {
+		model.addAttribute("foid", oid);
+		return "system/labourreportmain/cancelapprove";
+	}
+
 	@ResponseBody
 	@PostMapping("/saveapprove")
 	@RequiresPermissions(value = { "system:labourreportmain:sumitinfo",

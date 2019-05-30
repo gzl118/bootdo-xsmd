@@ -189,8 +189,13 @@ function load() {
 											s_remove_h = 'hidden';
 										}
 										var checkapprove = ''; // 审批按钮控制
-										if (row.status != 1)
+										var cancelbtn = 'hidden'; // 撤销按钮控制
+										if (row.status != 1) {
 											checkapprove = 'hidden';
+										}
+										if (row.status == 2 || row.status == 3) {
+											cancelbtn = '';
+										}
 										var approverecord = ''; // 审批记录按钮控制
 										if (row.status == 0)
 											approverecord = 'hidden';
@@ -303,7 +308,15 @@ function load() {
 												+ '" href="#" title="审批记录"  mce_href="#" onclick="suggest(\''
 												+ row.oid
 												+ '\')"><i class="fa fa-envelope-o"></i></a> ';
-										return e + d + g + h + i + j + adming;
+										var k = '<a class="btn btn-warning btn-sm '
+												+ s_suggest_h
+												+ ' '
+												+ cancelbtn
+												+ '" href="#" title="撤销"  mce_href="#" onclick="cancelapprove(\''
+												+ row.oid
+												+ '\')"><i class="fa fa-reply"></i></a> ';
+										return e + d + g + h + i + k + j
+												+ adming;
 									}
 								} ]
 					});
@@ -458,6 +471,16 @@ function approveopt(id, status) {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : prefix + '/approveopt?oid=' + id // iframe的url
+	});
+}
+function cancelapprove(id) {
+	layer.open({
+		type : 2,
+		title : '撤销审批',
+		maxmin : true,
+		shadeClose : false, // 点击遮罩关闭层
+		area : [ '800px', '520px' ],
+		content : prefix + '/cancelapprove?oid=' + id // iframe的url
 	});
 }
 function report5confirm(murl, surl) {
