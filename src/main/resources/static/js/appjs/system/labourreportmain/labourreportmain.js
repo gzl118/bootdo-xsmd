@@ -336,14 +336,16 @@ function add() {
 	});
 }
 function reportfunc(url) {
-	var w = $(".gray-bg").width() - 30;
-	var h = $(".gray-bg").height() - 85;
+//	var w = $(".gray-bg").width() - 30;
+//	var h = $(".gray-bg").height() - 85;
+	var w = $("#wrapper", parent.document).width() - 20;
+	var h = $("#wrapper", parent.document).height() - 100;
 	url += "&width=" + w + "&height=" + h;
 	console.log(url);
-	var index = layer.open({
+	var index = top.layer.open({
 		type : 2,
 		title : '报表明细',
-		maxmin : true,
+		// maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : url,
@@ -351,7 +353,7 @@ function reportfunc(url) {
 			location.reload();
 		}
 	});
-	layer.full(index);
+	top.layer.full(index);
 }
 function edit(id) {
 	layer.open({
@@ -484,8 +486,10 @@ function cancelapprove(id) {
 	});
 }
 function report5confirm(murl, surl) {
-	var w = $(".gray-bg").width() - 30;
-	var h = $(".gray-bg").height() - 85;
+//	var w = $(".gray-bg").width() - 30;
+//	var h = $(".gray-bg").height() - 85;
+	var w = $("#wrapper", parent.document).width() - 20;
+	var h = $("#wrapper", parent.document).height() - 100;
 	murl += "&width=" + w + "&height=" + h;
 	surl += "&width=" + w + "&height=" + h;
 	console.log(murl);
@@ -495,7 +499,7 @@ function report5confirm(murl, surl) {
 	// 按钮
 	}, function(curindex) {
 		layer.close(curindex);
-		var index = layer.open({
+		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
 			maxmin : true,
@@ -506,10 +510,10 @@ function report5confirm(murl, surl) {
 				location.reload();
 			}
 		});
-		layer.full(index);
+		top.layer.full(index);
 
 	}, function() {
-		var index = layer.open({
+		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
 			maxmin : true,
@@ -520,7 +524,7 @@ function report5confirm(murl, surl) {
 				location.reload();
 			}
 		});
-		layer.full(index);
+		top.layer.full(index);
 	});
 }
 function batchApprove() {

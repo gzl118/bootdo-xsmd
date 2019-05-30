@@ -196,15 +196,17 @@ function showReport() {
 			+ '&rdepart=' + rdepart;
 	var surl = urlrunqian + 'raq=30015.raq&rdate=' + rdate + '&rdepart='
 			+ rdepart;
-	var w = $(".gray-bg").width() - 30;
-	var h = $(".gray-bg").height() - 85;
+//	var w = $(".gray-bg").width() - 30;
+//	var h = $(".gray-bg").height() - 85;
+	var w = $("#wrapper", parent.document).width() - 20;
+	var h = $("#wrapper", parent.document).height() - 100;
 	murl += "&width=" + w + "&height=" + h;
 	surl += "&width=" + w + "&height=" + h;
 	report5confirm(murl, surl);
 }
 function openReport(url) {
 	// 显示报表
-	var index = layer.open({
+	var index = top.layer.open({
 		type : 2,
 		title : "统计报表",
 		shadeClose : false, // 点击遮罩关闭层
@@ -213,7 +215,7 @@ function openReport(url) {
 		maxmin : true,
 		content : url
 	});
-	layer.full(index);
+	top.layer.full(index);
 }
 function report5confirm(murl, surl) {
 	// 主副表选择

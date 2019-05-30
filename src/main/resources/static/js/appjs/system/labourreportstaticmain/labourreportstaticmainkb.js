@@ -331,10 +331,12 @@ function submitinfo(id) {
 	});
 }
 function reportfunc(url) {
-	var w = $(".gray-bg").width() - 30;
-	var h = $(".gray-bg").height() - 85;
+//	var w = $(".gray-bg").width() - 30;
+//	var h = $(".gray-bg").height() - 85;
+	var w = $("#wrapper", parent.document).width() - 20;
+	var h = $("#wrapper", parent.document).height() - 100;
 	url += "&width=" + w + "&height=" + h;
-	var index = layer.open({
+	var index = top.layer.open({
 		type : 2,
 		title : '报表明细',
 		maxmin : true,
@@ -342,7 +344,7 @@ function reportfunc(url) {
 		area : [ '800px', '520px' ],
 		content : url
 	});
-	layer.full(index);
+	top.layer.full(index);
 }
 function suggest(id) {
 	layer.open({
@@ -355,8 +357,10 @@ function suggest(id) {
 	});
 }
 function report5confirm(murl, surl) {
-	var w = $(".gray-bg").width() - 30;
-	var h = $(".gray-bg").height() - 85;
+//	var w = $(".gray-bg").width() - 30;
+//	var h = $(".gray-bg").height() - 85;
+	var w = $("#wrapper", parent.document).width() - 20;
+	var h = $("#wrapper", parent.document).height() - 100;
 	murl += "&width=" + w + "&height=" + h;
 	surl += "&width=" + w + "&height=" + h;
 	layer.confirm('选择要查看的表格', {
@@ -365,7 +369,7 @@ function report5confirm(murl, surl) {
 	// 按钮
 	}, function(curindex) {
 		layer.close(curindex);
-		var index = layer.open({
+		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
 			maxmin : true,
@@ -373,10 +377,10 @@ function report5confirm(murl, surl) {
 			area : [ '800px', '520px' ],
 			content : murl
 		});
-		layer.full(index);
+		top.layer.full(index);
 
 	}, function() {
-		var index = layer.open({
+		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
 			maxmin : true,
@@ -384,6 +388,6 @@ function report5confirm(murl, surl) {
 			area : [ '800px', '520px' ],
 			content : surl
 		});
-		layer.full(index);
+		top.layer.full(index);
 	});
 }

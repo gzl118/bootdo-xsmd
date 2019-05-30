@@ -169,11 +169,13 @@ function showReport() {
 	// 打开统计报表
 	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rfoid='
 			+ rdcId;
-	var w = $(".gray-bg").width() - 30;
-	var h = $(".gray-bg").height() - 85;
+//	var w = $(".gray-bg").width() - 30;
+//	var h = $(".gray-bg").height() - 85;
+	var w = $("#wrapper", parent.document).width() - 20;
+	var h = $("#wrapper", parent.document).height() - 100;
 	url += "&width=" + w + "&height=" + h;
 	console.log(url);
-	var index = layer.open({
+	var index = top.layer.open({
 		type : 2,
 		title : "统计报表",
 		shadeClose : false, // 点击遮罩关闭层
@@ -182,7 +184,7 @@ function showReport() {
 		maxmin : true,
 		content : url
 	});
-	layer.full(index);
+	top.layer.full(index);
 }
 
 function laydateon() {
