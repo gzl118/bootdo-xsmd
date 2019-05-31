@@ -43,7 +43,7 @@ Date.prototype.AddTime = function (fmt, nvalue) {
 };
 Date.prototype.Format = function (fmt) {
     var o = {
-        "M+": this.getMonth() + 1,
+        "M+": this.getMonth(),
         "d+": this.getDate(),
         "h+": this.getHours(),
         "m+": this.getMinutes(),

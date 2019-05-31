@@ -339,7 +339,7 @@ function reportfunc(url) {
 	var index = top.layer.open({
 		type : 2,
 		title : '报表明细',
-		maxmin : true,
+		//maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : url
@@ -372,7 +372,7 @@ function report5confirm(murl, surl) {
 		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
-			maxmin : true,
+			//maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
 			content : murl
@@ -383,7 +383,7 @@ function report5confirm(murl, surl) {
 		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
-			maxmin : true,
+			//maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
 			content : surl

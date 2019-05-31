@@ -206,7 +206,7 @@ function showReport() {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '1000px', '620px' ],
 		fixed : false,
-		maxmin : true,
+		//maxmin : true,
 		content : url
 	});
 	top.layer.full(index);
