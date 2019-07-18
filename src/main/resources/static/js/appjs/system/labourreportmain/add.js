@@ -13,7 +13,7 @@ $().ready(function() {
 });
 Date.prototype.AddTime = function (fmt, nvalue) {
     var year = this.getFullYear();
-    var month = this.getMonth();
+    var month = this.getMonth()+1;
     var day = this.getDate();
     var hour = this.getHours();
     var min = this.getMinutes();

@@ -350,7 +350,7 @@ function reportfunc(url) {
 		area : [ '800px', '520px' ],
 		content : url,
 		cancel : function() {
-			location.reload();
+			reLoad();
 		}
 	});
 	top.layer.full(index);
@@ -507,7 +507,7 @@ function report5confirm(murl, surl) {
 			area : [ '800px', '520px' ],
 			content : murl,
 			cancel : function() {
-				location.reload();
+				reLoad();
 			}
 		});
 		top.layer.full(index);
@@ -521,7 +521,7 @@ function report5confirm(murl, surl) {
 			area : [ '800px', '520px' ],
 			content : surl,
 			cancel : function() {
-				location.reload();
+				reLoad();
 			}
 		});
 		top.layer.full(index);
