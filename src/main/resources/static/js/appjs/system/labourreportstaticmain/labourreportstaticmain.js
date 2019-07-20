@@ -191,12 +191,12 @@ function load() {
 										if (row.status == 0 || row.status == ''
 												|| row.status == null)
 											approverecord = 'hidden';
-
+										var selName=encodeURIComponent(row.ext2);
 										var curCode = row.code;
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
-												+ row.deptids;
+												+ row.deptids+"&gname="+selName;
 
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
@@ -208,7 +208,7 @@ function load() {
 											var suburl = urlrunqian
 													+ "raq=30015&rdate="
 													+ row.renderdate
-													+ "&rdepart=" + row.deptids;
+													+ "&rdepart=" + row.deptids+"&gname="+selName;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
 													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''

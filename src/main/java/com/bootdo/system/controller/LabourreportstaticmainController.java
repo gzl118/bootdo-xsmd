@@ -71,12 +71,13 @@ public class LabourreportstaticmainController extends BaseController {
 
 	@GetMapping("/add")
 	// @RequiresPermissions("system:labourreportstaticmain:add")
-	String add(String rdate, String rdepart, String code, Integer ctype,
+	String add(String rdate, String rdepart, String code, Integer ctype,String gname,
 			Model model) {
 		model.addAttribute("rdate", rdate);
 		model.addAttribute("rdepart", rdepart);
 		model.addAttribute("code", code);
 		model.addAttribute("ctype", ctype);
+		model.addAttribute("gname", gname);
 		return "system/labourreportstaticmain/add";
 	}
 

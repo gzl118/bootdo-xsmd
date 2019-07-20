@@ -165,6 +165,8 @@ function showReport() {
 	// 获取部门和时间
 	var rdepart = new String();
 	var rdcId = $('#dw-select').val();
+	var selName=$('#dw-select').find("option:selected").text();
+	selName=encodeURIComponent(selName);
 	if (rdcId == -1) {
 		// 自定义部门的选择
 		rdepart = getSelectedDept();
@@ -193,9 +195,9 @@ function showReport() {
 	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
 	var murl = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate
-			+ '&rdepart=' + rdepart;
+			+ '&rdepart=' + rdepart+'&gname='+selName;
 	var surl = urlrunqian + 'raq=30015.raq&rdate=' + rdate + '&rdepart='
-			+ rdepart;
+			+ rdepart+'&gname='+selName;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;
@@ -465,6 +467,8 @@ function showSaveBnt(isshow) {
 function saveReport() {
 	var rdepart = new String();
 	var rdcId = $('#dw-select').val();
+	var selName=$('#dw-select').find("option:selected").text();
+	selName=encodeURIComponent(selName);
 	if (rdcId == -1) {
 		// 自定义部门的选择
 		rdepart = getSelectedDept();
@@ -491,6 +495,6 @@ function saveReport() {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : '/system/labourreportstaticmain/add?ctype=1&rdate=' + rdate
-				+ '&rdepart=' + rdepart + '&code=' + curcode// iframe的url
+				+ '&rdepart=' + rdepart + '&code=' + curcode+'&gname='+selName// iframe的url
 	});
 }
