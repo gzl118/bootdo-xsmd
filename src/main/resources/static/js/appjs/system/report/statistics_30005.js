@@ -194,9 +194,9 @@ function showReport() {
 	// 打开统计报表
 	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
-	var murl = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate
+	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate
 			+ '&rdepart=' + rdepart+'&gname='+selName;
-	var surl = urlrunqian + 'raq=30015.raq&rdate=' + rdate + '&rdepart='
+	var surl = urlrunqian + 'raq=30015&rdate=' + rdate + '&rdepart='
 			+ rdepart+'&gname='+selName;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;

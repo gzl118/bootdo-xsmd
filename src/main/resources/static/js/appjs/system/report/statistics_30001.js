@@ -194,7 +194,7 @@ function showReport() {
 	// 打开统计报表
 	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
-	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rdepart='
+	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
 			+ rdepart+"&gname="+selName;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;

@@ -167,7 +167,7 @@ function showReport() {
 
 	var curcode = $("#dcode").val();
 	// 打开统计报表
-	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rfoid='
+	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rfoid='
 			+ rdcId;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;

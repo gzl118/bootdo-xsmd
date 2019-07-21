@@ -100,7 +100,7 @@ function showReport() {
 
 	var curcode = $("#dcode").val();
 
-	url = urlrunqian + 'raq=' + curcode + '.raq&rdate=' + rdate + '&rfoid='
+	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rfoid='
 			+ rdcId;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;
