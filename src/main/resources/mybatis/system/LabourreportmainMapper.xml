@@ -16,7 +16,7 @@
 		<where>
 			<if test="oid != null and oid != ''"> and oid = #{oid} </if>
 			<if test="code != null and code != ''"> and Code = #{code} </if>
-			<if test="renderdepart != null and renderdepart != ''"> and RenderDepart LIKE CONCAT(#{renderdepart},'%') </if>
+			<if test="renderdepart != null and renderdepart != ''"> and RenderDepart LIKE CONCAT('%',#{renderdepart},'%') </if>
 			<if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(RenderDate,'%Y%m') =
 				DATE_FORMAT(#{renderdate},'%Y%m') </if>
 			<!-- <if test="status != null and status != ''"> and Status = #{status} 
