@@ -59,6 +59,17 @@ public class LabourreportmainController extends BaseController {
 		model.addAttribute("uid", id);
 		return "system/labourreportmain/labourreportmain";
 	}
+	
+	@GetMapping("/Labouryearreportmain")
+	@RequiresPermissions("system:labourreportmain:labourreportmain")
+	String Labouryearreportmain(String Code, Model model) {
+		model.addAttribute("Code", Code);
+		Integer result = CheckRole();
+		Long id = getUserId();
+		model.addAttribute("Status", result);
+		model.addAttribute("uid", id);
+		return "system/labourreportmain/Labouryearreportmain";
+	}
 
 	@ResponseBody
 	@GetMapping("/list")

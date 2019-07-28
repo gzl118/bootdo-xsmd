@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+<link rel="stylesheet"
+	href="/js/plugins/laydate5.9/theme/default/laydate.css" />
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="col-sm-12">
+			<div class="ibox">
+				<div class="ibox-body">
+					<div class="fixed-table-toolbar">
+						<div class="columns pull-left">
+							<input id="uid" name="uid" th:value="${uid}" class="form-control"
+								type="hidden"> <input id="code" name="code"
+								th:value="${Code}" class="form-control" type="hidden"> <input
+								id="status" name="status" th:value="${Status}"
+								class="form-control" type="hidden">
+							<button shiro:hasPermission="system:labourreportmain:add"
+								type="button" class="btn  btn-primary" onclick="add()">
+								<i class="fa fa-plus" aria-hidden="true"></i>添加
+							</button>
+							<button
+								shiro:hasPermission="system:labourreportmain:batchApprove"
+								type="button" class="btn  btn-warning" onclick="batchApprove()">
+								<i class="fa fa-anchor" aria-hidden="true"></i>批量审批
+							</button>
+						</div>
+						<div class="columns pull-right" style="margin-left: 20px;">
+							<button class="btn btn-success" onclick="reLoad()">查询</button>
+						</div>
+						<div shiro:hasPermission="system:labourreportmain:batchApprove">
+							<div class="columns pull-right col-md-2 nopadding">
+								<select id="ext2" name="ext2" class="form-control">
+									<option value="">全部</option>
+									<option value="1">已提交</option>
+									<option value="2">审核通过</option>
+									<option value="3">审核不通过</option>
+								</select>
+							</div>
+							<div class="columns pull-right nopadding">
+								<label class="control-label"
+									style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">状态：</label>
+							</div>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<input type="text" class="laydate-icon layer-date form-control"
+								id="renderdate" name="renderdate" placeholder="请选择汇报年月"
+								style="background-color: #fff;" readonly="readonly" />
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px; margin-left: 20px;">汇报年月：</label>
+						</div>
+						<div class="columns pull-right col-md-2 nopadding">
+							<input id="renderdepart" name="renderdepart" type="text"
+								class="form-control" placeholder="请输入单位名称">
+						</div>
+						<div class="columns pull-right nopadding">
+							<label class="control-label"
+								style="padding: 0px; font-weight: 800; margin-top: 5px;">单位名称：</label>
+						</div>
+					</div>
+					<table id="exampleTable" data-mobile-responsive="true">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--shiro控制bootstraptable行内按钮看见性 来自bootdo的创新方案 -->
+	<div>
+		<script type="text/javascript">
+			var s_edit_h = 'hidden';
+			var s_remove_h = 'hidden';
+			var s_detail_h = 'hidden';
+			var s_sumitinfo_h = 'hidden';
+			var s_suggest_h = 'hidden';
+			var s_approve_h = 'hidden';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportmain:edit">
+		<script type="text/javascript">
+			s_edit_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportmain:remove">
+		<script type="text/javascript">
+			var s_remove_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportmain:detail">
+		<script type="text/javascript">
+			var s_detail_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportmain:sumitinfo">
+		<script type="text/javascript">
+			var s_sumitinfo_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourreportmain:approve">
+		<script type="text/javascript">
+			var s_suggest_h = '';
+		</script>
+	</div>
+	<div shiro:hasPermission="system:labourrepotapprove:labourrepotapprove">
+		<script type="text/javascript">
+			var s_approve_h = '';
+		</script>
+	</div>
+	<div id="divApprove" style="display: none;">
+		<textarea id="remark" name="remark" class="form-control" rows="4"
+			placeholder="请输入审批意见"></textarea>
+	</div>
+	<div th:include="include :: footer"></div>
+	<script type="text/javascript" src="/js/plugins/laydate5.9/laydate.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/common/globalcom/projectconfig.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/labourreportmain/labouryearreportmain.js"></script>
+</body>
+</html>
