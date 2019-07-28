@@ -212,10 +212,10 @@ public class LabourreportmainController extends BaseController {
 		LabourreportmainDO labourreportmain = new LabourreportmainDO();
 		labourreportmain.setOid(oid);
 		labourreportmain.setStatus(status);
-		if (labourreportmain.getStatus().equals(3)) // 审批不通过，则需要重新校验
-		{
-			labourreportmain.setExt3("0");
-		}
+		// if (labourreportmain.getStatus().equals(3)) // 审批不通过，则需要重新校验
+		// {
+		// labourreportmain.setExt3("0");
+		// }
 		int result = labourreportmainService.update(labourreportmain);
 		if (result > 0) {
 			Long uid = getUserId();

@@ -36,11 +36,15 @@ function load() {
 						showColumns : false, // 是否显示内容下拉框（选择显示的列）
 						sidePagination : "server", // 设置在哪里进行分页，可选值为"client" 或者
 						// "server"
+						sortable: true,
+						sortOrder: "desc",
 						queryParams : function(params) {
 							return {
 								// 说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
 								limit : params.limit,
 								offset : params.offset,
+								sort:params.sort,
+								order:params.order,
 								renderdate : ($('#renderdate').val() == null || $(
 										'#renderdate').val() == '') ? $(
 										'#renderdate').val() : $('#renderdate')
@@ -78,6 +82,7 @@ function load() {
 									field : 'renderdepart',
 									title : '单位名称',
 									align : 'center'
+									,sortable: true
 								},
 								{
 									field : 'renderdate',
@@ -92,6 +97,7 @@ function load() {
 													+ '月';
 										}
 									}
+									,sortable: true
 								},
 								{
 									field : 'status',
@@ -314,7 +320,9 @@ function load() {
 												+ cancelbtn
 												+ '" href="#" title="撤销"  mce_href="#" onclick="cancelapprove(\''
 												+ row.oid
-												+ '\')"><i class="fa fa-reply"></i></a> ';
+												+ '\','
+												+ row.ext3
+												+ ')"><i class="fa fa-reply"></i></a> ';
 										return e + d + g + h + i + k + j
 												+ adming;
 									}
@@ -475,7 +483,11 @@ function approveopt(id, status) {
 		content : prefix + '/approveopt?oid=' + id // iframe的url
 	});
 }
-function cancelapprove(id) {
+function cancelapprove(id, status) {
+	if (status != 1) { 
+		layer.alert("数据已被修改，不能进行撤销！");
+		return;
+	} 
 	layer.open({
 		type : 2,
 		title : '撤销审批',
@@ -528,6 +540,11 @@ function report5confirm(murl, surl) {
 	});
 }
 function batchApprove() {
+	var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
+	if (rows.length == 0) {
+		layer.msg("请选择要至少一条要审批的数据！");
+		return;
+	}
 	layer.open({
 		type : 1,
 		title : '批量审批',
