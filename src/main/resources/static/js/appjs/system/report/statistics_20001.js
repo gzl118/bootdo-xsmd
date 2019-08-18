@@ -99,9 +99,13 @@ function showReport() {
 		rdate = $('#renderdate').val() + '-01';
 
 	var curcode = $("#dcode").val();
+	var tempdate = new Date(rdate);
+	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
+	var tempIndex=arrReportCode.indexOf(curcode);
+	var dDateName=tempDateName+arrReportName[tempIndex];
 
 	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rfoid='
-			+ rdcId;
+			+ rdcId+ "&departName="+dDateName;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;

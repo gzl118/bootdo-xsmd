@@ -193,12 +193,16 @@ function load() {
 											approverecord = 'hidden';
 
 										var curCode = row.code;
+										var tempdate = new Date(row.renderdate);
+										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
+										var tempIndex=arrReportCode.indexOf(curCode);
+										var dDateName=tempDateName+arrReportName[tempIndex];
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
 												+ row.deptids + '&rfoid='
 												+ row.ext2 + '&rtitle='
-												+ row.remark;
+												+ row.remark+ "&departName="+dDateName;
 										console.log(curUrl);
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h

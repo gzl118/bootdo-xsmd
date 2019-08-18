@@ -194,6 +194,10 @@ function load() {
 											approverecord = 'hidden';
 										var temp = 1;
 										var curCode = row.code;
+										var tempdate = new Date(row.renderdate);
+										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
+										var tempIndex=arrReportCode.indexOf(curCode);
+										var dDateName=tempDateName+arrReportName[tempIndex];
 										var reporturlprefix = urlrunqiankbtb;
 										var rindex = codeArray.indexOf(curCode);
 										if (rindex > -1)
@@ -202,7 +206,7 @@ function load() {
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rfoid="
 												+ row.deptids + "&IsWrite="
-												+ temp + "&roid=" + row.oid;
+												+ temp + "&roid=" + row.oid+ "&departName="+dDateName;
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''

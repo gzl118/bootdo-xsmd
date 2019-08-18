@@ -191,11 +191,15 @@ function showReport() {
 		rdate = $('#renderdate').val() + '-01';
 
 	var curcode = $("#dcode").val();
+	var tempdate = new Date(rdate);
+	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
+	var tempIndex=arrReportCode.indexOf(curcode);
+	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
 	// 打开统计报表
 	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
 	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
-			+ rdepart+'&gname='+selName;
+			+ rdepart+'&gname='+selName+ "&departName="+dDateName;
 //	var w = $(".gray-bg").width() - 30;
 //	var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;

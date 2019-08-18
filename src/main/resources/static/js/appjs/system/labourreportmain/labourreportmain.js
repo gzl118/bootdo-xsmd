@@ -233,6 +233,10 @@ function load() {
 												+ '\',\''
 												+ row.code
 												+ '\')"><i class="fa fa-remove"></i></a> ';
+										var tempdate = new Date(row.renderdate);
+										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
+										var tempIndex=arrReportCode.indexOf(curCode);
+										var dDateName=tempDateName+row.renderdepart+arrReportName[tempIndex];
 										var curUrl = urlrunqiantb + "raq="
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
@@ -240,6 +244,7 @@ function load() {
 												+ "&IsWrite=" + temp
 												+ "&IsValid=" + row.ext3
 												+ "&departLevel=" + departLevel
+												+ "&departName="+dDateName
 												+ "&status=" + row.status;
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
@@ -250,6 +255,7 @@ function load() {
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
 												+ "&cdepart=" + row.ext1
+												+ "&departName="+dDateName
 												+ "&IsWrite=1";
 										var adming = '<a class="btn btn-success btn-sm '
 												+ s_admindetail_h
@@ -258,6 +264,8 @@ function load() {
 												+ '\')"><i class="fa fa-tasks"></i></a> ';
 
 										if (curCode == '10005') {
+											tempIndex=arrReportCode.indexOf('10015');
+											var dDateName=tempDateName+row.renderdepart+arrReportName[tempIndex];
 											var suburl = urlrunqiantb
 													+ "raq=10015&moid="
 													+ row.oid + "&cdate="
@@ -265,6 +273,7 @@ function load() {
 													+ "&cdepart=" + row.ext1
 													+ "&IsWrite=" + temp
 													+ "&IsValid=" + row.ext3
+													+ "&departName="+dDateName
 													+ "&departLevel="
 													+ departLevel + "&status="
 													+ row.status;
@@ -280,6 +289,7 @@ function load() {
 													+ row.oid + "&cdate="
 													+ row.renderdate
 													+ "&cdepart=" + row.ext1
+													+ "&departName="+dDateName
 													+ "&IsWrite=1";
 											adming = '<a class="btn btn-success btn-sm '
 													+ s_admindetail_h

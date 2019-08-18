@@ -193,10 +193,14 @@ function load() {
 											approverecord = 'hidden';
 										var selName=encodeURIComponent(row.ext2);
 										var curCode = row.code;
+										var tempdate = new Date(row.renderdate);
+										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
+										var tempIndex=arrReportCode.indexOf(curCode);
+										var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
-												+ row.deptids+"&gname="+selName;
+												+ row.deptids+"&gname="+selName+ "&departName="+dDateName;
 
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
@@ -205,10 +209,12 @@ function load() {
 												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
 
 										if (curCode == '30005') {
+											tempIndex=arrReportCode.indexOf('30015');
+											dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
 											var suburl = urlrunqian
 													+ "raq=30015&rdate="
 													+ row.renderdate
-													+ "&rdepart=" + row.deptids+"&gname="+selName;
+													+ "&rdepart=" + row.deptids+"&gname="+selName+ "&departName="+dDateName;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
 													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''

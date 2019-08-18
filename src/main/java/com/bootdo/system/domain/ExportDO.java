@@ -8,6 +8,8 @@ public class ExportDO implements Serializable {
 	private String rfoid;
 	private String roid;
 	private String rdepart;
+	private String rdepartname;
+	private String gname;
 
 	public String getRaq() {
 		return raq;
@@ -47,6 +49,22 @@ public class ExportDO implements Serializable {
 
 	public void setRdepart(String rdepart) {
 		this.rdepart = rdepart;
+	}
+
+	public String getRdepartname() {
+		return rdepartname;
+	}
+
+	public void setRdepartname(String rdepartname) {
+		this.rdepartname = rdepartname;
+	}
+
+	public String getGname() {
+		return gname;
+	}
+
+	public void setGname(String gname) {
+		this.gname = gname;
 	}
 
 }

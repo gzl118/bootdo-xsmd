@@ -65,9 +65,10 @@ public class OutController extends BaseController {
 		if (m.getExt3() != null) {
 			if (m.getExt3().equals("2") && status == 3) {
 				status = 1;
-			} else if (m.getExt3().equals("3") && status == 2) {
-				status = 1;
-			}
+			} 
+//			else if (m.getExt3().equals("3") && status == 2) {
+//				status = 1;
+//			}
 		}
 		LabourreportmainDO labourreportmain = new LabourreportmainDO();
 		labourreportmain.setOid(oid);

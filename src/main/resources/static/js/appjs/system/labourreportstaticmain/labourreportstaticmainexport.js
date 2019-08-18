@@ -179,30 +179,57 @@ function batchExport() {
 		return;
 	}
 	var arritems = new Array();
-	$.each(rows, function(i, row) {
-		var confnew = {};
-		$.extend(confnew, exitem);
-		confnew.raq = row.code;
-		confnew.rdate = row.renderdate;
-		confnew.rfoid = row.deptids;
-		confnew.roid = row.oid;
-		confnew.rdepart = row.deptids;
-		if (row.code.indexOf("4") == 0) {
-			confnew.roid = row.remark; // 存放标题
-			confnew.rfoid = row.ext2;
-		}
-		arritems.push(confnew);
-		if (row.code == '30005') {
-			var confnew1 = {};
-			$.extend(confnew1, exitem);
-			confnew1.raq = '30015';
-			confnew1.rdate = row.renderdate;
-			confnew1.rfoid = row.deptids;
-			confnew1.roid = row.oid;
-			confnew1.rdepart = row.deptids;
-			arritems.push(confnew1);
-		}
-	});
+	$.each(rows,
+			function(i, row) {
+				var tempdate = new Date(row.renderdate);
+				var tempDateName = tempdate.getFullYear()
+						+ ''
+						+ ((tempdate.getMonth() + 1) < 10 ? '0'
+								+ (tempdate.getMonth() + 1) : (tempdate
+								.getMonth() + 1));
+				var tempIndex = arrReportCode.indexOf(row.code);
+				var tempDis = "";
+				var selName ="";
+				if (row.ctype == 1) { // 统计报表
+					selName = encodeURIComponent(row.ext2);
+					tempDis = "(" + selName + ")";
+				} else if (row.ctype == 2) { // 快报
+
+				} else { // 自定义报表
+
+				}
+				var dDateName = tempDateName + tempDis
+						+ arrReportName[tempIndex];
+				var confnew = {};
+				$.extend(confnew, exitem);
+				confnew.raq = row.code;
+				confnew.rdate = row.renderdate;
+				confnew.rfoid = row.deptids;
+				confnew.roid = row.oid;
+				confnew.rdepart = row.deptids;
+				confnew.rdepartname = dDateName;
+				confnew.gname = selName;
+				if (row.code.indexOf("4") == 0) {
+					confnew.roid = row.remark; // 存放标题
+					confnew.rfoid = row.ext2;
+				}
+				arritems.push(confnew);
+				if (row.code == '30005') {
+					tempIndex = arrReportCode.indexOf('30015');
+					dDateName = tempDateName + tempDis
+							+ arrReportName[tempIndex];
+					var confnew1 = {};
+					$.extend(confnew1, exitem);
+					confnew1.raq = '30015';
+					confnew1.rdate = row.renderdate;
+					confnew1.rfoid = row.deptids;
+					confnew1.roid = row.oid;
+					confnew1.rdepart = row.deptids;
+					confnew1.rdepartname = dDateName;
+					confnew1.gname = selName;
+					arritems.push(confnew1);
+				}
+			});
 	var jsonresult = JSON.stringify(arritems);
 	report1_bathexport(jsonresult);
 	// alert(jsonresult);
@@ -216,5 +243,7 @@ var exitem = {
 	rdate : null,
 	rfoid : null,
 	roid : null,
-	rdepart : null
+	rdepart : null,
+	gname : null,
+	rdepartname : null
 };
