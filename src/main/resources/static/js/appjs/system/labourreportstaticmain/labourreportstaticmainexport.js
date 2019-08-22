@@ -191,7 +191,7 @@ function batchExport() {
 				var tempDis = "";
 				var selName ="";
 				if (row.ctype == 1) { // 统计报表
-					selName = encodeURIComponent(row.ext2);
+					selName = row.ext2;
 					tempDis = "(" + selName + ")";
 				} else if (row.ctype == 2) { // 快报
 
@@ -207,8 +207,8 @@ function batchExport() {
 				confnew.rfoid = row.deptids;
 				confnew.roid = row.oid;
 				confnew.rdepart = row.deptids;
-				confnew.rdepartname = dDateName;
-				confnew.gname = selName;
+				confnew.rdepartname = encodeURIComponent(dDateName);
+				confnew.gname = encodeURIComponent(selName);
 				if (row.code.indexOf("4") == 0) {
 					confnew.roid = row.remark; // 存放标题
 					confnew.rfoid = row.ext2;
@@ -225,8 +225,8 @@ function batchExport() {
 					confnew1.rfoid = row.deptids;
 					confnew1.roid = row.oid;
 					confnew1.rdepart = row.deptids;
-					confnew1.rdepartname = dDateName;
-					confnew1.gname = selName;
+					confnew1.rdepartname = encodeURIComponent(dDateName);
+					confnew1.gname = encodeURIComponent(selName);
 					arritems.push(confnew1);
 				}
 			});
@@ -235,8 +235,12 @@ function batchExport() {
 	// alert(jsonresult);
 }
 function report1_bathexport(param) {
-	var url = urlrunqianexportserver + "report=" + param;
-	document.getElementById("batchexportframe").src = url;
+//	var url = urlrunqianexportserver + "report=" + param;
+//	document.getElementById("batchexportframe").src = url;
+//	var url="http://localhost:7878/jsDemo/reportJsp/exportReportServer.jsp";
+	$("#report").val(param);
+	$("#formExport").attr("action",urlrunqianexportserver);
+	$("#formExport").submit();
 }
 var exitem = {
 	raq : null,
