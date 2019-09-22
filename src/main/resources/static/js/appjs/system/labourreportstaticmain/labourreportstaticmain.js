@@ -182,25 +182,38 @@ function load() {
 										s_remove_h = '';
 										var rol = $("#status").val();
 										var checksubmit = ''; // 提交按钮控制
+										var isWrite = 1;
 										if (row.status == 1) {
 											checksubmit = 'hidden';
 											s_edit_h = 'hidden';
 											s_remove_h = 'hidden';
+											isWrite = 0;
 										}
 										var approverecord = ''; // 审批记录按钮控制
 										if (row.status == 0 || row.status == ''
 												|| row.status == null)
 											approverecord = 'hidden';
-										var selName=encodeURIComponent(row.ext2);
+										var selName = encodeURIComponent(row.ext2);
 										var curCode = row.code;
 										var tempdate = new Date(row.renderdate);
-										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
-										var tempIndex=arrReportCode.indexOf(curCode);
-										var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
+										var tempDateName = tempdate
+												.getFullYear()
+												+ ''
+												+ ((tempdate.getMonth() + 1) < 10 ? '0'
+														+ (tempdate.getMonth() + 1)
+														: (tempdate.getMonth() + 1));
+										var tempIndex = arrReportCode
+												.indexOf(curCode);
+										var dDateName = tempDateName + "("
+												+ selName + ")"
+												+ arrReportName[tempIndex];
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
-												+ row.deptids+"&gname="+selName+ "&departName="+dDateName;
+												+ row.deptids + "&gname="
+												+ selName + "&departName="
+												+ dDateName + "&IsWrite="
+												+ isWrite + "&roid=" + row.oid;
 
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
@@ -209,12 +222,20 @@ function load() {
 												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
 
 										if (curCode == '30005') {
-											tempIndex=arrReportCode.indexOf('30015');
-											dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
+											tempIndex = arrReportCode
+													.indexOf('30015');
+											dDateName = tempDateName + "("
+													+ selName + ")"
+													+ arrReportName[tempIndex];
 											var suburl = urlrunqian
 													+ "raq=30015&rdate="
 													+ row.renderdate
-													+ "&rdepart=" + row.deptids+"&gname="+selName+ "&departName="+dDateName;
+													+ "&rdepart=" + row.deptids
+													+ "&gname=" + selName
+													+ "&departName="
+													+ dDateName + "&IsWrite="
+													+ isWrite + "&roid="
+													+ row.oid;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
 													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''
@@ -346,15 +367,15 @@ function submitinfo(id) {
 	});
 }
 function reportfunc(url) {
-//	var w = $(".gray-bg").width() - 30;
-//	var h = $(".gray-bg").height() - 85;
+	// var w = $(".gray-bg").width() - 30;
+	// var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;
 	var h = $("#wrapper", parent.document).height() - 100;
 	url += "&width=" + w + "&height=" + h;
 	var index = top.layer.open({
 		type : 2,
 		title : '报表明细',
-		//maxmin : true,
+		// maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : url
@@ -372,8 +393,8 @@ function suggest(id) {
 	});
 }
 function report5confirm(murl, surl) {
-//	var w = $(".gray-bg").width() - 30;
-//	var h = $(".gray-bg").height() - 85;
+	// var w = $(".gray-bg").width() - 30;
+	// var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;
 	var h = $("#wrapper", parent.document).height() - 100;
 	murl += "&width=" + w + "&height=" + h;
@@ -387,7 +408,7 @@ function report5confirm(murl, surl) {
 		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
-			//maxmin : true,
+			// maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
 			content : murl
@@ -398,7 +419,7 @@ function report5confirm(murl, surl) {
 		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
-			//maxmin : true,
+			// maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
 			content : surl

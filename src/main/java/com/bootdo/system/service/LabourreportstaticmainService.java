@@ -37,4 +37,6 @@ public interface LabourreportstaticmainService {
 	int removekbdetial(String oid);
 
 	List<LabourreportstaticmainDO> listexport(Map<String, Object> map);
+	
+	String extcuteplandetail(String oid);
 }

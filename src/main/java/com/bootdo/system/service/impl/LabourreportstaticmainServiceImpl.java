@@ -75,4 +75,8 @@ public class LabourreportstaticmainServiceImpl implements
 	public List<LabourreportstaticmainDO> listexport(Map<String, Object> map) {
 		return labourreportstaticmainDao.listexport(map);
 	}
+	@Override
+	public String extcuteplandetail(String oid){
+		return labourreportstaticmainDao.extcuteplandetail(oid);
+	}
 }

@@ -71,8 +71,8 @@ public class LabourreportstaticmainController extends BaseController {
 
 	@GetMapping("/add")
 	// @RequiresPermissions("system:labourreportstaticmain:add")
-	String add(String rdate, String rdepart, String code, Integer ctype,String gname,
-			Model model) {
+	String add(String rdate, String rdepart, String code, Integer ctype,
+			String gname, Model model) {
 		model.addAttribute("rdate", rdate);
 		model.addAttribute("rdepart", rdepart);
 		model.addAttribute("code", code);
@@ -127,6 +127,15 @@ public class LabourreportstaticmainController extends BaseController {
 		Long uid = getUserId();
 		labourreportstaticmain.setUptuser(uid.toString());
 		if (labourreportstaticmainService.save(labourreportstaticmain) > 0) {
+			if (labourreportstaticmain.getCode().equals("30003")
+					|| labourreportstaticmain.getCode().equals("30013")) {
+				try {
+					String foid = labourreportstaticmainService
+							.extcuteplandetail(labourreportstaticmain.getOid());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			return R.ok();
 		}
 		return R.error();

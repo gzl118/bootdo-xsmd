@@ -5,21 +5,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bootdo.common.controller.BaseController;
+import com.bootdo.system.domain.UserDO;
 import com.bootdo.system.service.ReportDeptCategoryService;
 import com.bootdo.system.service.ReportDeptService;
+import com.bootdo.system.service.UserService;
 
 @Controller
 @RequestMapping("/system/reportStatistics")
-public class ReportStatistics {
+public class ReportStatistics extends BaseController {
 
 	@Autowired
 	private ReportDeptService reportDeptService;
 
 	@Autowired
 	private ReportDeptCategoryService reportDeptCategoryService;
+	@Autowired
+	UserService userService;
 
 	@GetMapping("/staff")
 	@RequiresPermissions("system:reportStatistics:staff")
@@ -155,5 +159,23 @@ public class ReportStatistics {
 	String ShowReportStatistics20007(Model model) {
 		model.addAttribute("dcode", "20007");
 		return "system/report/statistics_20007";
+	}
+
+	@GetMapping("/report/50005")
+	@RequiresPermissions("system:reportStatistics:50005")
+	String ShowReportStatistics50005(Model model) {
+		model.addAttribute("dcode", "50005");
+		Long id = getUserId();
+		UserDO userDO = userService.get(id);
+		model.addAttribute("deptname", userDO.getDeptName());
+		model.addAttribute("deptid", userDO.getDeptId().toString());
+		return "system/report/statistics_50005";
+	}
+
+	@GetMapping("/report/50005sum")
+	@RequiresPermissions("system:reportStatistics:50005sum")
+	String ShowReportStatistics50005sum(Model model) {
+		model.addAttribute("dcode", "50005");
+		return "system/report/statistics_50005sum";
 	}
 }

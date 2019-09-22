@@ -39,4 +39,6 @@ public interface LabourreportstaticmainDao {
 	String extcutekbdetail(String oid);
 
 	int removekbdetial(String oid);
+	
+	String extcuteplandetail(String oid);
 }

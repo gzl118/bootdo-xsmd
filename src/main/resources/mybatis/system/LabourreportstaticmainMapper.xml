@@ -252,4 +252,8 @@
 			limit #{offset}, #{limit}
 		</if>
 	</select>
+	<select id="extcuteplandetail" statementType="CALLABLE"
+		resultType="java.lang.String">
+		SELECT funcPlanDetail(#{value})
+	</select>
 </mapper>
