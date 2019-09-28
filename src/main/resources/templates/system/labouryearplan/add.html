@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header">
+<link rel="stylesheet"
+	href="/js/plugins/laydate5.9/theme/default/laydate.css" />
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><em
+									style="color: red; font-style: normal; padding-right: 5px;">*</em>年份：</label>
+								<div class="col-sm-8">
+									<input id="nyear" name="nyear" class="form-control" type="text"
+										readonly="readonly">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label"><em
+									style="color: red; font-style: normal; padding-right: 5px;">*</em>单位：</label>
+								<div class="col-sm-8">
+									<textarea id="deptname" name="deptname" class="form-control"
+										onclick="openDept()" readonly="readonly" rows="5"></textarea>
+									<input id="ext1" name="ext1" class="form-control"
+										type="hidden">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">在岗职工效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a1" name="a1" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">计效原煤生产人员工吨效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a2" name="a2" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">焦炭人员效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a3" name="a3" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">发电人员效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a4" name="a4" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript" src="/js/plugins/laydate5.9/laydate.js"></script>
+	<script type="text/javascript"
+		src="/js/appjs/system/labouryearplan/add.js">
+		
+	</script>
+</body>
+</html>

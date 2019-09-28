@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bootdo.system.dao.LabouryearplanDao">
+
+	<select id="get" resultType="com.bootdo.system.domain.LabouryearplanDO">
+		select
+		`oid`,`nyear`,`deptId`,`a3`,`a2`,`a1`,`a4`,`a5`,`a6`,`a7`,`a8`,`upttime`,`ext1`,`ext2`
+		from labouryearplan where oid = #{value}
+	</select>
+
+	<select id="list" resultType="com.bootdo.system.domain.LabouryearplanDO">
+		select
+		`oid`,`nyear`,`deptId`,`a3`,`a2`,`a1`,`a4`,`a5`,`a6`,`a7`,`a8`,`upttime`,`ext1`,`ext2`,sd.`name`
+		as deptName
+		from labouryearplan lp
+		JOIN sys_dept sd ON
+		sd.dept_id=lp.deptId
+		<where>
+			<if test="oid != null and oid != ''"> and oid = #{oid} </if>
+			<if test="nyear != null and nyear != ''"> and nyear = #{nyear} </if>
+			<if test="deptid != null and deptid != ''"> and deptId = #{deptid} </if>
+			<if test="a3 != null and a3 != ''"> and a3 = #{a3} </if>
+			<if test="a2 != null and a2 != ''"> and a2 = #{a2} </if>
+			<if test="a1 != null and a1 != ''"> and a1 = #{a1} </if>
+			<if test="a4 != null and a4 != ''"> and a4 = #{a4} </if>
+			<if test="a5 != null and a5 != ''"> and a5 = #{a5} </if>
+			<if test="a6 != null and a6 != ''"> and a6 = #{a6} </if>
+			<if test="a7 != null and a7 != ''"> and a7 = #{a7} </if>
+			<if test="a8 != null and a8 != ''"> and a8 = #{a8} </if>
+			<if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
+			<if test="ext1 != null and ext1 != ''"> and ext1 = #{ext1} </if>
+			<if test="ext2 != null and ext2 != ''"> and ext2 = #{ext2} </if>
+			<if test="deptname != null and deptname != ''"> and sd.name LIKE CONCAT('%',#{deptname},'%') </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by upttime desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from labouryearplan
+		<where>
+			<if test="oid != null and oid != ''"> and oid = #{oid} </if>
+			<if test="nyear != null and nyear != ''"> and nyear = #{nyear} </if>
+			<if test="deptid != null and deptid != ''"> and deptId = #{deptid} </if>
+			<if test="a3 != null and a3 != ''"> and a3 = #{a3} </if>
+			<if test="a2 != null and a2 != ''"> and a2 = #{a2} </if>
+			<if test="a1 != null and a1 != ''"> and a1 = #{a1} </if>
+			<if test="a4 != null and a4 != ''"> and a4 = #{a4} </if>
+			<if test="a5 != null and a5 != ''"> and a5 = #{a5} </if>
+			<if test="a6 != null and a6 != ''"> and a6 = #{a6} </if>
+			<if test="a7 != null and a7 != ''"> and a7 = #{a7} </if>
+			<if test="a8 != null and a8 != ''"> and a8 = #{a8} </if>
+			<if test="upttime != null and upttime != ''"> and upttime = #{upttime} </if>
+			<if test="ext1 != null and ext1 != ''"> and ext1 = #{ext1} </if>
+			<if test="ext2 != null and ext2 != ''"> and ext2 = #{ext2} </if>
+		</where>
+	</select>
+
+	<insert id="save" parameterType="com.bootdo.system.domain.LabouryearplanDO">
+		insert into labouryearplan
+		(
+		`oid`,
+		`nyear`,
+		`deptId`,
+		`a3`,
+		`a2`,
+		`a1`,
+		`a4`,
+		`a5`,
+		`a6`,
+		`a7`,
+		`a8`,
+		`upttime`,
+		`ext1`,
+		`ext2`
+		)
+		values
+		(
+		#{oid},
+		#{nyear},
+		#{deptid},
+		#{a3},
+		#{a2},
+		#{a1},
+		#{a4},
+		#{a5},
+		#{a6},
+		#{a7},
+		#{a8},
+		#{upttime},
+		#{ext1},
+		#{ext2}
+		)
+	</insert>
+
+	<update id="update" parameterType="com.bootdo.system.domain.LabouryearplanDO">
+		update labouryearplan
+		<set>
+			<if test="nyear != null">`nyear` = #{nyear}, </if>
+			<if test="deptid != null">`deptId` = #{deptid}, </if>
+			<if test="a3 != null">`a3` = #{a3}, </if>
+			<if test="a2 != null">`a2` = #{a2}, </if>
+			<if test="a1 != null">`a1` = #{a1}, </if>
+			<if test="a4 != null">`a4` = #{a4}, </if>
+			<if test="a5 != null">`a5` = #{a5}, </if>
+			<if test="a6 != null">`a6` = #{a6}, </if>
+			<if test="a7 != null">`a7` = #{a7}, </if>
+			<if test="a8 != null">`a8` = #{a8}, </if>
+			<if test="upttime != null">`upttime` = #{upttime}, </if>
+			<if test="ext1 != null">`ext1` = #{ext1}, </if>
+			<if test="ext2 != null">`ext2` = #{ext2}</if>
+		</set>
+		where oid = #{oid}
+	</update>
+
+	<delete id="remove">
+		delete from labouryearplan where oid = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from labouryearplan where oid in
+		<foreach item="oid" collection="array" open="(" separator=","
+			close=")">
+			#{oid}
+		</foreach>
+	</delete>
+	<select id="addPlan" statementType="CALLABLE"
+		parameterType="com.bootdo.system.domain.LabouryearplanDO" resultType="java.lang.Integer">
+		SELECT
+		funcAddPlan(#{ext1},#{nyear},#{a1},#{a2},#{a3},#{a4})
+	</select>
+</mapper>

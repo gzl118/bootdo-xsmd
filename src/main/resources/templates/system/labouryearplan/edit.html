@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content ">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<form class="form-horizontal m-t" id="signupForm">
+							<input id="oid" name="oid" th:value="${labouryearplan.oid}"
+								type="hidden">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">年份：</label>
+								<div class="col-sm-8">
+									<input id="nyear" name="nyear"
+										th:value="${labouryearplan.nyear}" class="form-control"
+										type="text" readonly="readonly">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">单位：</label>
+								<div class="col-sm-8">
+									<input id="deptname" name="deptname" th:value="${deptname}"
+										class="form-control" type="text" readonly="readonly">
+									<input id="deptid" name="deptid"
+										th:value="${labouryearplan.deptid}" class="form-control"
+										type="hidden">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">在岗职工效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a1" name="a1" th:value="${labouryearplan.a1}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">计效原煤生产人员工吨效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a2" name="a2" th:value="${labouryearplan.a2}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">焦炭人员效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a3" name="a3" th:value="${labouryearplan.a3}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">发电人员效率计划：</label>
+								<div class="col-sm-8">
+									<input id="a4" name="a4" th:value="${labouryearplan.a4}"
+										class="form-control" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-8 col-sm-offset-3">
+									<button type="submit" class="btn btn-primary">提交</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="include::footer"></div>
+	<script type="text/javascript"
+		src="/js/appjs/system/labouryearplan/edit.js">
+		
+	</script>
+</body>
+</html>

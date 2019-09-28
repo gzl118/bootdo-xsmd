@@ -167,4 +167,8 @@ public class DeptController extends BaseController {
 		return prefix + "/deptTree";
 	}
 
+	@GetMapping("/treeViewmultiple")
+	String treeViewmultiple() {
+		return prefix + "/deptmultipletree";
+	}
 }
