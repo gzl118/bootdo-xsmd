@@ -63,7 +63,11 @@
 			<if test="renderdate != null and renderdate != ''"> and RenderDate = #{renderdate} </if>
 			<if test="ctype != null and ctype != ''"> and ctype = #{ctype} </if>
 			<if test="deptids != null and deptids != ''"> and deptIDs = #{deptids} </if>
-			<if test="status != null and status != ''"> and Status = #{status} </if>
+			<if test="status != null and status != ''">
+				<if test="status==8"></if>
+				<if test="status==7">and Status >= 1</if>
+				<if test="status==-1"> and Status = #{status} </if>
+			</if>
 			<if test="remark != null and remark != ''"> and Remark = #{remark} </if>
 			<if test="renderdepart != null and renderdepart != ''"> and RenderDepart = #{renderdepart} </if>
 			<if test="mineleader != null and mineleader != ''"> and MineLeader = #{mineleader} </if>
