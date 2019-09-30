@@ -164,7 +164,7 @@ function selectLoad() {
 		data : {
 			sort : 'rdc_id',
 			order : 'desc',
-			limit : 100,
+			limit : 200,
 			offset : 0,
 			// code: 30001 //不同的统计报表，选择不同的code分类,后台自己控制
 			code : $('#dcode').val()

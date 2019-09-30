@@ -19,7 +19,7 @@ function selectLoad() {
 //		url : prefix+'/common/dict/type',
 		url : '/system/reportDeptCategory/grouplist',
 		data : {
-			limit: 20,
+			limit: 200,
 			offset:0
 		},
 		success : function(data) {

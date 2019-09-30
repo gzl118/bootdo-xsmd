@@ -53,7 +53,7 @@ function selectLoad() {
 	$.ajax({
 		url : '/system/reportDeptCategory/grouplist',
 		data : {
-			limit : 20,
+			limit : 200,
 			offset : 0,
 			code : $('#dcode').val()
 		},

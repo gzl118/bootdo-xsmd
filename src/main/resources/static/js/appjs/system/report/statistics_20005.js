@@ -117,7 +117,7 @@ function selectLoad() {
 		data : {
 			sort : 'rdc_id',
 			order : 'desc',
-			limit : 20,
+			limit : 200,
 			offset : 0,
 			code : $('#dcode').val()
 		},
