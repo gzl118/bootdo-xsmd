@@ -57,7 +57,7 @@ function validateRule() {
 		},
 		messages : {
 			name : {
-				required : icon + "请输入菜单名"
+				required : icon + "请输入菜单名称"
 			},
 			type : {
 				required : icon + "请选择菜单类型"

@@ -42,7 +42,7 @@ function validateRule() {
 		},
 		messages : {
 			name : {
-				required : icon + "请输入姓名"
+				required : icon + "请输入分类名称"
 			}
 		}
 	})
