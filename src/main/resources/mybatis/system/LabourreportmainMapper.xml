@@ -186,7 +186,7 @@
 		<if test="renderdate != null and renderdate != ''"> and DATE_FORMAT(lmain.RenderDate,'%Y%m') =
 			DATE_FORMAT(#{renderdate},'%Y%m') </if>
 		<if test="ext1 != null and ext1 != ''"> and lmain.Ext1 = #{ext1} </if>
-		where sd.parent_id <![CDATA[ <> 0]]>
+		where sd.del_flag=1 and  sd.parent_id <![CDATA[ <> 0]]>
 		<if test="renderdepart != null and renderdepart != ''"> and sd.name LIKE CONCAT('%',#{renderdepart},'%')
 		</if>
 		) AS A
