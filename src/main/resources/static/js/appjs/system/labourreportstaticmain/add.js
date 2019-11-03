@@ -1,5 +1,12 @@
 $().ready(function() {
-	validateRule();
+	var ctype = $("#ctype").val();
+	if (ctype == "4" || ctype == "5") {
+		$("#divZBR").css("display", "");
+		validateRule1();
+	}
+	else{
+		validateRule();
+	}
 	laydate.render({
 		elem : '#renderdate',
 		type : 'month',
@@ -49,6 +56,27 @@ function validateRule() {
 		messages : {
 			remark : {
 				required : icon + "请输入说明"
+			}
+		}
+	})
+}
+function validateRule1() {
+	var icon = "<i class='fa fa-times-circle'></i> ";
+	$("#signupForm").validate({
+		rules : {
+			remark : {
+				required : true
+			},
+			edituser: {
+				required : true
+			}
+		},
+		messages : {
+			remark : {
+				required : icon + "请输入说明"
+			},
+			edituser : {
+				required : icon + "请输入制表人"
 			}
 		}
 	})

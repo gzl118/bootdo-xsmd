@@ -1,4 +1,4 @@
-var prefix = "/system/labourreportmain"
+var prefix = "/system/labourreportstaticmain"
 $(function() {
 	laydate.render({
 		elem : '#renderdate',
@@ -52,8 +52,8 @@ function load() {
 										+ '-01',
 								renderdepart : $('#renderdepart').val(),
 								code : $("#code").val(),
-								status : $("#status").val(),
-								ext2 : $("#ext2").val()
+								// status : $("#status").val(),
+								ctype : $("#ctype").val()
 							};
 						},
 						// //请求服务器数据时，你可以通过重写参数的方式添加一些额外的参数，例如 toolbar 中的参数 如果
@@ -63,31 +63,24 @@ function load() {
 						// sortOrder.
 						// 返回false将会终止请求
 						columns : [
-								{
-									checkbox : true
-								},
+								// {
+								// checkbox : false
+								// },
 								{
 									field : 'oid',
 									title : '主键',
-									align : 'center',
 									visible : false
 								},
 								{
 									field : 'code',
 									title : '编号',
-									align : 'center',
 									visible : false
 								},
 								{
-									field : 'renderdepart',
-									title : '单位名称',
-									align : 'center',
-									sortable : true
-								},
-								{
 									field : 'renderdate',
-									title : '汇报时间',
+									title : '统计年月',
 									align : 'center',
+									width : '180px',
 									formatter : function(value, row, index) {
 										var val = value;
 										if (val != null) {
@@ -96,13 +89,28 @@ function load() {
 													+ (date.getMonth() + 1)
 													+ '月';
 										}
-									},
-									sortable : true
+									}
+								},
+								{
+									field : 'ext1',
+									align : 'center',
+									title : '统计单位'
+								},
+								{
+									field : 'ctype',
+									title : '分类，1表示统计报表，2表示快报',
+									visible : false
+								},
+								{
+									field : 'deptids',
+									title : '统计的单位编号,多个以逗号隔开',
+									visible : false
 								},
 								{
 									field : 'status',
 									title : '状态',
 									align : 'center',
+									width : '80px',
 									formatter : function(value, row, index) { // 单元格格式化函数
 										// 0未提交，1已提交，2已审核通过，3审核未通过
 										var text = '-';
@@ -119,52 +127,46 @@ function load() {
 										}
 										return text;
 									}
+
+								},
+								{
+									field : 'remark',
+									title : '说明',
+									width : '250px'
+								},
+								{
+									field : 'renderdepart',
+									title : '填报单位',
+									visible : false
 								},
 								{
 									field : 'mineleader',
 									title : '矿负责人',
-									align : 'center',
 									visible : false
 								},
 								{
 									field : 'businessleader',
 									title : '业务部门负责人',
-									align : 'center',
 									visible : false
 								},
 								{
 									field : 'edituser',
 									title : '制表人',
-									align : 'center',
 									visible : false
 								},
 								{
 									field : 'edittime',
 									title : '制表时间',
-									align : 'center',
 									visible : false
 								},
 								{
 									field : 'upttime',
 									title : '更新时间',
-									align : 'center',
 									visible : false
 								},
 								{
 									field : 'uptuser',
 									title : '操作人',
-									align : 'center',
-									visible : false
-								},
-								{
-									field : 'remark',
-									title : '说明',
-									align : 'center',
-									visible : false
-								},
-								{
-									field : 'ext1',
-									title : '备用1',
 									visible : false
 								},
 								{
@@ -182,134 +184,95 @@ function load() {
 									field : 'id',
 									align : 'left',
 									halign : 'center',
+									width : '240px',
 									formatter : function(value, row, index) {
 										s_edit_h = '';
 										s_remove_h = '';
-										var curCode = row.code;
 										var rol = $("#status").val();
-										var temp = 0; // 控制报表可写操作，1可写，0不可写
 										var checksubmit = ''; // 提交按钮控制
-										if (row.status == 1 || row.status == 2) {
+										var isWrite = 1;
+										if (row.status == 1) {
 											checksubmit = 'hidden';
 											s_edit_h = 'hidden';
 											s_remove_h = 'hidden';
-										}
-										var checkapprove = ''; // 审批按钮控制
-										var cancelbtn = 'hidden'; // 撤销按钮控制
-										if (row.status != 1) {
-											checkapprove = 'hidden';
-										}
-										if (row.status == 2 || row.status == 3) {
-											cancelbtn = '';
+											isWrite = 0;
 										}
 										var approverecord = ''; // 审批记录按钮控制
-										if (row.status == 0)
+										if (row.status == 0 || row.status == ''
+												|| row.status == null)
 											approverecord = 'hidden';
-										var departLevel = 1; // 1下级部门，2上级部门
-										if (rol == '5') { // 可填报报表数据管理员
-											if (row.status == 0
-													|| row.status == 3)
-												temp = 1;
-											departLevel = 1;
-											checkapprove = 'hidden';
-										} else if (rol == '6') { // 可填报报表数据审批管理员
-											if (row.status == 1)
-												temp = 1;
-											checksubmit = 'hidden';
-											s_remove_h = 'hidden';
-											s_edit_h = 'hidden';
-											departLevel = 2;
-										}
-
-										var e = '<a class="btn btn-primary btn-sm '
-												+ s_edit_h
-												+ '" href="#" mce_href="#" title="编辑" onclick="edit(\''
-												+ row.oid
-												+ '\')"><i class="fa fa-edit"></i></a> ';
-										var d = '<a class="btn btn-warning btn-sm '
-												+ s_remove_h
-												+ '" href="#" title="删除"  mce_href="#" onclick="remove(\''
-												+ row.oid
-												+ '\',\''
-												+ row.code
-												+ '\')"><i class="fa fa-remove"></i></a> ';
+										var selName = encodeURIComponent(row.ext2);
+										var curCode = row.code;
+										var tempdate = new Date(row.renderdate);
+										var tempDateName = tempdate
+												.getFullYear()
+												+ ''
+												+ ((tempdate.getMonth() + 1) < 10 ? '0'
+														+ (tempdate.getMonth() + 1)
+														: (tempdate.getMonth() + 1));
+										var tempIndex = arrReportCode
+												.indexOf(curCode);
+										var dDateName = tempDateName + "("
+												+ row.ext2 + ")"
+												+ arrReportName[tempIndex];
+										dDateName = encodeURI(encodeURI(dDateName));
 										var curUrl = urlrunqian + "raq="
-												+ curCode + "&gname="
-												+ row.renderdepart + "&rdate="
+												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
-												+ row.ext1;
+												+ row.deptids + "&gname="
+												+ selName + "&departName="
+												+ dDateName + "&IsWrite="
+												+ isWrite + "&roid=" + row.oid;
+
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
 												+ curUrl
-												+ '\')"><i class="fa fa-tasks"></i></a> ';
+												+ '\')"><i class="fa fa fa-tasks"></i></a> ';
 
 										if (curCode == '50005') {
-											var suburl = urlrunqian + "raq=50015&gname="
-													+ row.renderdepart
-													+ "&rdate="
+											tempIndex = arrReportCode
+													.indexOf('50015');
+											dDateName = tempDateName + "("
+													+ row.ext2 + ")"
+													+ arrReportName[tempIndex];
+											dDateName = encodeURI(encodeURI(dDateName));
+											var suburl = urlrunqian
+													+ "raq=50015&rdate="
 													+ row.renderdate
-													+ "&rdepart=" + row.ext1;
+													+ "&rdepart=" + row.deptids
+													+ "&gname=" + selName
+													+ "&departName="
+													+ dDateName + "&IsWrite="
+													+ isWrite + "&roid="
+													+ row.oid;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
 													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''
 													+ curUrl
 													+ '\',\''
 													+ suburl
-													+ '\')"><i class="fa fa-tasks"></i></a> ';
+													+ '\')"><i class="fa fa fa-tasks"></i></a> ';
 										}
-										var h = '<a class="btn btn-warning btn-sm '
-												+ s_sumitinfo_h
-												+ ' '
-												+ checksubmit
-												+ '" href="#" title="提交"  mce_href="#" onclick="submitinfo(\''
+										var e = '<a class="btn btn-primary btn-sm '
+												+ s_edit_h
+												+ '" href="#" mce_href="#" title="编辑" onclick="edit(\''
 												+ row.oid
-												+ '\','
-												+ row.ext3
-												+ ')"><i class="fa fa-check-square-o"></i></a> ';
-										var i = '<a class="btn btn-warning btn-sm '
-												+ s_suggest_h
-												+ ' '
-												+ checkapprove
-												+ '" href="#" title="审批"  mce_href="#" onclick="approveopt(\''
+												+ '\',\''
+												+ row.ext1
+												+ '\')"><i class="fa fa-edit"></i></a> ';
+										var d = '<a class="btn btn-warning btn-sm '
+												+ s_remove_h
+												+ '" href="#" title="删除"  mce_href="#" onclick="remove(\''
 												+ row.oid
-												+ '\','
-												+ row.ext3
-												+ ')"><i class="fa fa-anchor"></i></a> ';
-										var j = '<a class="btn btn-warning btn-sm '
-												+ s_approve_h
-												+ ' '
-												+ approverecord
-												+ '" href="#" title="审批记录"  mce_href="#" onclick="suggest(\''
-												+ row.oid
-												+ '\')"><i class="fa fa-envelope-o"></i></a> ';
-										var k = '<a class="btn btn-warning btn-sm '
-												+ s_suggest_h
-												+ ' '
-												+ cancelbtn
-												+ '" href="#" title="撤销"  mce_href="#" onclick="cancelapprove(\''
-												+ row.oid
-												+ '\','
-												+ row.ext3
-												+ ')"><i class="fa fa-reply"></i></a> ';
-										return e + d + g + h + i + k + j;
+												+ '\')"><i class="fa fa-remove"></i></a> ';
+										return e + d + g;
 									}
 								} ]
 					});
 }
 function reLoad() {
 	$('#exampleTable').bootstrapTable('refresh');
-}
-function add() {
-	var curCode = $("#code").val();
-	layer.open({
-		type : 2,
-		title : '增加',
-		maxmin : true,
-		shadeClose : false, // 点击遮罩关闭层
-		area : [ '800px', '520px' ],
-		content : prefix + '/add?Code=' + curCode // iframe的url
-	});
 }
 function reportfunc(url) {
 	// var w = $(".gray-bg").width() - 30;
@@ -397,71 +360,6 @@ function batchRemove() {
 
 	});
 }
-function submitinfo(id, status) {
-//	if (status == null || status == 0) {
-//		layer.alert("报表数据未进行校验，只有校验通过后才能提交！");
-//		return;
-//	} else if (status == 2) { // 2子项已校验，3主项已校验
-//		layer.alert("主项校验未通过，只有主项和子项校验都通过后才能提交！");
-//		return;
-//	} else if (status == 3) {
-//		layer.alert("子项校验未通过，只有主项和子项校验都通过后才能提交！");
-//		return;
-//	}
-	layer.open({
-		type : 2,
-		title : '提交',
-		maxmin : true,
-		shadeClose : false, // 点击遮罩关闭层
-		area : [ '800px', '520px' ],
-		content : prefix + '/sumitinfo?oid=' + id // iframe的url
-	});
-}
-function suggest(id) {
-	layer.open({
-		type : 2,
-		title : '审批记录',
-		maxmin : true,
-		shadeClose : false, // 点击遮罩关闭层
-		area : [ '800px', '520px' ],
-		content : '/system/labourrepotapprove?foid=' + id // iframe的url
-	});
-}
-
-function approveopt(id, status) {
-//	if (status == null || status == 0) {
-//		layer.alert("报表数据未进行校验，只有校验通过后才能审核！");
-//		return;
-//	} else if (status == 2) { // 2子项已校验，3主项已校验
-//		layer.alert("主项校验未通过，只有主项和子项校验都通过后才能审核！");
-//		return;
-//	} else if (status == 3) {
-//		layer.alert("子项校验未通过，只有主项和子项校验都通过后才能审核！");
-//		return;
-//	}
-	layer.open({
-		type : 2,
-		title : '审批',
-		maxmin : true,
-		shadeClose : false, // 点击遮罩关闭层
-		area : [ '800px', '520px' ],
-		content : prefix + '/approveopt?oid=' + id // iframe的url
-	});
-}
-function cancelapprove(id, status) {
-//	if (status != 1) {
-//		layer.alert("数据已被修改，不能进行撤销！");
-//		return;
-//	}
-	layer.open({
-		type : 2,
-		title : '撤销审批',
-		maxmin : true,
-		shadeClose : false, // 点击遮罩关闭层
-		area : [ '800px', '520px' ],
-		content : prefix + '/cancelapprove?oid=' + id // iframe的url
-	});
-}
 function report5confirm(murl, surl) {
 	// var w = $(".gray-bg").width() - 30;
 	// var h = $(".gray-bg").height() - 85;
@@ -502,79 +400,5 @@ function report5confirm(murl, surl) {
 			}
 		});
 		top.layer.full(index);
-	});
-}
-function batchApprove() {
-	var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
-	if (rows.length == 0) {
-		layer.msg("请选择要至少一条要审批的数据！");
-		return;
-	}
-	layer.open({
-		type : 1,
-		title : '批量审批',
-		area : [ "300px", "200px" ],
-		content : $("#divApprove"),
-		btn : [ '审核通过', '审核不通过' ],
-		btnAlign : 'c',
-		yes : function(index, layero) {
-			bapprove(2);
-			layer.close(index);
-		},
-		btn2 : function(index, layero) {
-			bapprove(3);
-			layer.close(index);
-		}
-	});
-}
-function bapprove(nstatus) {
-	var rows = $('#exampleTable').bootstrapTable('getSelections'); // 返回所有选择的行，当没有选择的记录时，返回一个空数组
-	if (rows.length == 0) {
-		layer.msg("请选择要至少一条未审批的数据");
-		return;
-	}
-	var arritems = new Array();
-	var isChecked = true;
-	var failitems = new Array();
-	$.each(rows,
-			function(i, row) {
-				if (row.status == 1)
-					arritems.push(row.oid);
-				if (row.ext3 == null || row.ext3 == 0 || row.ext3 == 2
-						|| row.ext3 == 3) {
-					isChecked = false;
-					failitems.push(row.renderdepart + ":" + row.renderdate);
-				}
-			});
-	if (arritems.length == 0) {
-		layer.msg("请选择要至少一条未审批的数据");
-		return;
-	}
-//	if (isChecked == false) {
-//		var str = failitems.join();
-//		layer.msg("报表数据未进行校验，只有校验通过后才能审核！" + str);
-//		return;
-//	}
-	$.ajax({
-		cache : true,
-		type : "POST",
-		url : "/system/labourreportmain/batchApprove",
-		data : {
-			ids : arritems,
-			remark : $("#remark").val(),
-			status : nstatus
-		},
-		error : function(request) {
-			parent.layer.alert("Connection error");
-		},
-		success : function(data) {
-			if (data.code == 0) {
-				layer.msg("操作成功");
-				reLoad();
-			} else {
-				layer.alert(data.msg)
-			}
-
-		}
 	});
 }

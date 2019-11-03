@@ -344,4 +344,16 @@ public class LabourreportstaticmainController extends BaseController {
 		PageUtils pageUtils = new PageUtils(labourreportstaticmainList, total);
 		return pageUtils;
 	}
+	
+	@GetMapping("/labouryearreportmain")
+	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmain")
+	String Labouryearreportmain(String Code, String ctype, Model model) {
+		model.addAttribute("Code", Code);
+		model.addAttribute("ctype", ctype);
+		Integer result = CheckRole();
+		Long id = getUserId();
+		model.addAttribute("Status", result);
+		model.addAttribute("uid", id);
+		return "system/labourreportmain/Labouryearreportmain";
+	}
 }

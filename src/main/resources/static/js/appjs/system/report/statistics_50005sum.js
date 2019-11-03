@@ -493,7 +493,7 @@ function saveReport() {
 		maxmin : true,
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
-		content : '/system/labourreportstaticmain/add?ctype=1&rdate=' + rdate
+		content : '/system/labourreportstaticmain/add?ctype=4&rdate=' + rdate
 				+ '&rdepart=' + rdepart + '&code=' + curcode+'&gname='+selName// iframe的url
 	});
 }

@@ -195,6 +195,9 @@ function batchExport() {
 					tempDis = "(" + selName + ")";
 				} else if (row.ctype == 2) { // 快报
 
+				} else if (row.ctype == 4) { // 工资年报
+					selName = row.ext2;
+					tempDis = "(" + selName + ")";
 				} else { // 自定义报表
 
 				}
@@ -221,6 +224,21 @@ function batchExport() {
 					var confnew1 = {};
 					$.extend(confnew1, exitem);
 					confnew1.raq = '30015';
+					confnew1.rdate = row.renderdate;
+					confnew1.rfoid = row.deptids;
+					confnew1.roid = row.oid;
+					confnew1.rdepart = row.deptids;
+					confnew1.rdepartname = encodeURIComponent(dDateName);
+					confnew1.gname = encodeURIComponent(selName);
+					arritems.push(confnew1);
+				}
+				else if (row.code == '50005') {
+					tempIndex = arrReportCode.indexOf('50015');
+					dDateName = tempDateName + tempDis
+							+ arrReportName[tempIndex];
+					var confnew1 = {};
+					$.extend(confnew1, exitem);
+					confnew1.raq = '50015';
 					confnew1.rdate = row.renderdate;
 					confnew1.rfoid = row.deptids;
 					confnew1.roid = row.oid;

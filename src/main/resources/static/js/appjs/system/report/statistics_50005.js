@@ -78,3 +78,24 @@ function laydateon() {
 		format : 'yyyy-MM'
 	});
 };
+function saveReport() {
+	var rdepart = $('#deptid').val();
+	var deptname = $('#deptname').val();
+	selName = encodeURIComponent(deptname);
+	var rdate = $("#renderdate").val();
+	if (rdate == null || rdate == "") {
+		layer.msg("请选择要统计的年月！");
+		return;
+	}
+	rdate = rdate + "-01";
+	var curcode = $("#dcode").val();
+	layer.open({
+		type : 2,
+		title : '保存统计报表',
+		maxmin : true,
+		shadeClose : false, // 点击遮罩关闭层
+		area : [ '800px', '520px' ],
+		content : '/system/labourreportstaticmain/add?ctype=5&rdate=' + rdate
+				+ '&rdepart=' + rdepart + '&code=' + curcode+'&gname='+selName// iframe的url
+	});
+}
