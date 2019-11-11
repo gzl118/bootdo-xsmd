@@ -201,7 +201,7 @@ body.body-small .navbar-top-links li:last-child {
     padding-right: 25px;
     padding-bottom: 5px;
     padding-left: 25px;
-    background: url("patterns/header-profile.png") no-repeat;
+    /*background: url("patterns/header-profile.png") no-repeat;*/
 }
 
 .pace-done .nav-header {
@@ -437,6 +437,10 @@ body.canvas-menu .logo-element {
 body.mini-navbar .nav-header {
     padding: 0;
     background-color: #1ab394;
+}
+body.mini-navbar .nav-header img{
+    width:60px;
+    height:60px;
 }
 
 body.canvas-menu .nav-header {

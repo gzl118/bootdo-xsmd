@@ -26,34 +26,20 @@
 				<i class="fa fa-times-circle"></i>
 			</div>
 			<div class="sidebar-collapse">
-				<ul class="nav">
+				<ul class="nav" style="background-color: #F3F3F4;">
 					<li class="nav-header" style="padding-top: 5px;">
 						<div>
 							<!-- <span><img alt="image" height="80" width="80"
 								th:src="${picUrl}" /></span> -->
-								<span><img alt="image" height="80" width="80"
+								<span><img alt="image" height="120" width="120"
 								src="/img/jmlogo.png" /></span>
-							<h3>
+							<!-- <h3>
 								<i class="dept-name" th:text="${deptname}">西山煤电劳资管理系统</i>
-							</h3>
+							</h3> -->
 						</div>
-						<div class="dropdown profile-element">
+						<!-- <div class="dropdown profile-element">
 							<strong class="font-bold" th:text="${username}">admin</strong></span>
-							<!--                         <a data-toggle="dropdown" class="dropdown-toggle" href="#"> -->
-							<!--                             <span class="clear"> -->
-							<!--                             <span class="block m-t-xs"> -->
-							<!--                             <strong class="font-bold" th:text="${username}">admin</strong></span> -->
-							<!--                             <span class="text-muted text-xs block"><b class="caret"></b></span> -->
-							<!--                              </span> -->
-							<!--                         </a> -->
-							<!--                         <ul class="dropdown-menu animated fadeInRight m-t-xs"> -->
-							<!--                             <li><a @click="personal" href="#">密码修改</a> -->
-							<!--                             </li> -->
-							<!--                             <li class="divider"></li> -->
-							<!--                             <li><a href="/logout">安全退出</a> -->
-							<!--                             </li> -->
-							<!--                         </ul> -->
-						</div>
+						</div> -->
 					</li>
 				</ul>
 				<ul class="nav" id="side-menu">
@@ -96,8 +82,9 @@
 						<!--                     </form> -->
 					</div>
 					<ul class="nav navbar-top-links navbar-right">
+						<li><i class="dept-name" th:text="${deptname}" style="padding-right:20px;">西山煤电劳资管理系统</i></li>
 						<li class="hidden-xs"><a @click="personal" href="#"><i
-								class="fa fa-id-card"></i> 个人</a></li>
+								class="fa fa-id-card"></i><span  th:text="${username}"></span></a></li>
 						<!--                     <li class="dropdown hidden-xs"><a -->
 						<!--                             class="right-sidebar-toggle" aria-expanded="false"> <i -->
 						<!--                             class="fa fa-tasks"></i> 主题 -->
