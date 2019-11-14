@@ -354,6 +354,6 @@ public class LabourreportstaticmainController extends BaseController {
 		Long id = getUserId();
 		model.addAttribute("Status", result);
 		model.addAttribute("uid", id);
-		return "system/labourreportmain/Labouryearreportmain";
+		return "system/labourreportmain/labouryearreportmain";
 	}
 }
