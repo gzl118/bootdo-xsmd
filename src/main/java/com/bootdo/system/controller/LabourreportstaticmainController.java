@@ -60,6 +60,11 @@ public class LabourreportstaticmainController extends BaseController {
 	@GetMapping("/list")
 	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmain")
 	public PageUtils list(@RequestParam Map<String, Object> params) {
+		UserDO u = getUser();
+		if(params.containsKey("ctype")){
+			if (params.get("ctype").equals("5"))
+				params.put("uptuser", u.getDeptId().toString());
+		}
 		// 查询列表数据
 		Query query = new Query(params);
 		List<LabourreportstaticmainDO> labourreportstaticmainList = labourreportstaticmainService
@@ -344,7 +349,7 @@ public class LabourreportstaticmainController extends BaseController {
 		PageUtils pageUtils = new PageUtils(labourreportstaticmainList, total);
 		return pageUtils;
 	}
-	
+
 	@GetMapping("/labouryearreportmain")
 	@RequiresPermissions("system:labourreportstaticmain:labourreportstaticmain")
 	String Labouryearreportmain(String Code, String ctype, Model model) {

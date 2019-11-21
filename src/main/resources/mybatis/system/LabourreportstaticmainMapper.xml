@@ -37,7 +37,7 @@
 			<if test="edituser != null and edituser != ''"> and EditUser = #{edituser} </if>
 			<if test="edittime != null and edittime != ''"> and EditTime = #{edittime} </if>
 			<if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
-			<if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
+			<if test="uptuser != null and uptuser != ''"> and UptUser in (select user_id from sys_user where dept_id=#{uptuser})  </if>
 			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
 			<if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
 			<if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>
@@ -75,7 +75,7 @@
 			<if test="edituser != null and edituser != ''"> and EditUser = #{edituser} </if>
 			<if test="edittime != null and edittime != ''"> and EditTime = #{edittime} </if>
 			<if test="upttime != null and upttime != ''"> and UptTime = #{upttime} </if>
-			<if test="uptuser != null and uptuser != ''"> and UptUser = #{uptuser} </if>
+			<if test="uptuser != null and uptuser != ''"> and UptUser in (select user_id from sys_user where dept_id=#{uptuser}) </if>
 			<if test="ext1 != null and ext1 != ''"> and Ext1 = #{ext1} </if>
 			<if test="ext2 != null and ext2 != ''"> and Ext2 = #{ext2} </if>
 			<if test="ext3 != null and ext3 != ''"> and Ext3 = #{ext3} </if>

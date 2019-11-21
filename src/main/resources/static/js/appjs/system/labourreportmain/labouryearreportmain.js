@@ -52,7 +52,7 @@ function load() {
 										+ '-01',
 								renderdepart : $('#renderdepart').val(),
 								code : $("#code").val(),
-								// status : $("#status").val(),
+//								status : $("#status").val(),
 								ctype : $("#ctype").val()
 							};
 						},
