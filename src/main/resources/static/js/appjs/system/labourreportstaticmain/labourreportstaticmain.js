@@ -207,7 +207,7 @@ function load() {
 										var dDateName = tempDateName + "("
 												+ row.ext2 + ")"
 												+ arrReportName[tempIndex];
-										dDateName=encodeURI(encodeURI(dDateName));
+										dDateName=encodeURIComponent(encodeURIComponent(dDateName));
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
@@ -228,7 +228,7 @@ function load() {
 											dDateName = tempDateName + "("
 													+ row.ext2 + ")"
 													+ arrReportName[tempIndex];
-											dDateName=encodeURI(encodeURI(dDateName));
+											dDateName=encodeURIComponent(encodeURIComponent(dDateName));
 											var suburl = urlrunqian
 													+ "raq=30015&rdate="
 													+ row.renderdate

@@ -237,7 +237,7 @@ function load() {
 										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
 										var tempIndex=arrReportCode.indexOf(curCode);
 										var dDateName=tempDateName+row.renderdepart+arrReportName[tempIndex];
-										dDateName=encodeURI(encodeURI(dDateName));
+										dDateName=encodeURIComponent(encodeURIComponent(dDateName));
 										var curUrl = urlrunqiantb + "raq="
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
@@ -267,7 +267,7 @@ function load() {
 										if (curCode == '10005') {
 											tempIndex=arrReportCode.indexOf('10015');
 											var dDateName=tempDateName+row.renderdepart+arrReportName[tempIndex];
-											dDateName=encodeURI(encodeURI(dDateName));
+											dDateName=encodeURIComponent(encodeURIComponent(dDateName));
 											var suburl = urlrunqiantb
 													+ "raq=10015&moid="
 													+ row.oid + "&cdate="

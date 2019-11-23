@@ -165,9 +165,9 @@ function showReport() {
 	// 获取部门和时间
 	var rdepart = new String();
 	var rdcId = $('#dw-select').val();
-	var selName=$('#dw-select').find("option:selected").text();
-	selName="西山煤电集团公司（"+selName+"）（合计）";
-	selName=encodeURIComponent(selName);
+	var selName = $('#dw-select').find("option:selected").text();
+	selName = "西山煤电集团公司(" + selName + ")(合计)";
+	selName = encodeURIComponent(selName);
 	if (rdcId == -1) {
 		// 自定义部门的选择
 		rdepart = getSelectedDept();
@@ -190,15 +190,20 @@ function showReport() {
 
 	var curcode = $("#dcode").val();
 	var tempdate = new Date(rdate);
-	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
-	var tempIndex=arrReportCode.indexOf(curcode);
-	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
-	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate
-			+ '&rdepart=' + rdepart+'&gname='+selName+ "&departName="+dDateName;
-	tempIndex=arrReportCode.indexOf('50015');
-	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
-	var surl = urlrunqian + 'raq=50015&rdate=' + rdate + '&rdepart='
-			+ rdepart+'&gname='+selName+ "&departName="+dDateName;
+	var tempDateName = tempdate.getFullYear()
+			+ ''
+			+ ((tempdate.getMonth() + 1) < 10 ? '0' + (tempdate.getMonth() + 1)
+					: (tempdate.getMonth() + 1));
+	var tempIndex = arrReportCode.indexOf(curcode);
+	var dDateName = tempDateName + "(" + encodeURIComponent(selName) + ")"
+			+ arrReportName[tempIndex];
+	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
+			+ rdepart + '&gname=' + selName + "&departName=" + dDateName;
+	tempIndex = arrReportCode.indexOf('50015');
+	var dDateName = tempDateName + "(" + encodeURIComponent(selName) + ")"
+			+ arrReportName[tempIndex];
+	var surl = urlrunqian + 'raq=50015&rdate=' + rdate + '&rdepart=' + rdepart
+			+ '&gname=' + selName + "&departName=" + dDateName;
 	var w = $("#wrapper", parent.document).width() - 20;
 	var h = $("#wrapper", parent.document).height() - 100;
 	murl += "&width=" + w + "&height=" + h;
@@ -213,7 +218,7 @@ function openReport(url) {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '1000px', '620px' ],
 		fixed : false,
-		//maxmin : true,
+		// maxmin : true,
 		content : url
 	});
 	top.layer.full(index);
@@ -466,8 +471,8 @@ function showSaveBnt(isshow) {
 function saveReport() {
 	var rdepart = new String();
 	var rdcId = $('#dw-select').val();
-	var selName=$('#dw-select').find("option:selected").text();
-	selName=encodeURIComponent(selName);
+	var selName = $('#dw-select').find("option:selected").text();
+	selName = encodeURIComponent(selName);
 	if (rdcId == -1) {
 		// 自定义部门的选择
 		rdepart = getSelectedDept();
@@ -494,6 +499,7 @@ function saveReport() {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '800px', '520px' ],
 		content : '/system/labourreportstaticmain/add?ctype=4&rdate=' + rdate
-				+ '&rdepart=' + rdepart + '&code=' + curcode+'&gname='+selName// iframe的url
+				+ '&rdepart=' + rdepart + '&code=' + curcode + '&gname='
+				+ selName// iframe的url
 	});
 }

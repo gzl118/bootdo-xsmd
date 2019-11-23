@@ -198,7 +198,7 @@ function load() {
 										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
 										var tempIndex=arrReportCode.indexOf(curCode);
 										var dDateName=tempDateName+arrReportName[tempIndex];
-										dDateName=encodeURI(encodeURI(dDateName));
+										dDateName=encodeURIComponent(encodeURIComponent(dDateName));
 										var reporturlprefix = urlrunqiankbtb;
 										var rindex = codeArray.indexOf(curCode);
 										if (rindex > -1)

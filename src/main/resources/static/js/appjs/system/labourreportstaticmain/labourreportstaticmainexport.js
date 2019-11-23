@@ -212,6 +212,7 @@ function batchExport() {
 				confnew.rdepart = row.deptids;
 				confnew.rdepartname = encodeURIComponent(dDateName);
 				confnew.gname = encodeURIComponent(selName);
+				confnew.groupname=encodeURIComponent(arrReportGroupName[tempIndex]);
 				if (row.code.indexOf("4") == 0) {
 					confnew.roid = row.remark; // 存放标题
 					confnew.rfoid = row.ext2;
@@ -230,6 +231,7 @@ function batchExport() {
 					confnew1.rdepart = row.deptids;
 					confnew1.rdepartname = encodeURIComponent(dDateName);
 					confnew1.gname = encodeURIComponent(selName);
+					confnew1.groupname=encodeURIComponent(arrReportGroupName[tempIndex]);
 					arritems.push(confnew1);
 				}
 				else if (row.code == '50005') {
@@ -245,6 +247,7 @@ function batchExport() {
 					confnew1.rdepart = row.deptids;
 					confnew1.rdepartname = encodeURIComponent(dDateName);
 					confnew1.gname = encodeURIComponent(selName);
+					confnew1.groupname=encodeURIComponent(arrReportGroupName[tempIndex]);
 					arritems.push(confnew1);
 				}
 			});
@@ -267,5 +270,6 @@ var exitem = {
 	roid : null,
 	rdepart : null,
 	gname : null,
-	rdepartname : null
+	rdepartname : null,
+	groupname:null
 };

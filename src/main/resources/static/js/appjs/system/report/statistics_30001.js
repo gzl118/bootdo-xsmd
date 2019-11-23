@@ -194,7 +194,7 @@ function showReport() {
 	var tempdate = new Date(rdate);
 	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
 	var tempIndex=arrReportCode.indexOf(curcode);
-	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
+	var dDateName=tempDateName+"("+encodeURIComponent(selName)+")"+arrReportName[tempIndex];
 	// 打开统计报表
 	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;

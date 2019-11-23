@@ -197,11 +197,11 @@ function showReport() {
 	var tempdate = new Date(rdate);
 	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
 	var tempIndex=arrReportCode.indexOf(curcode);
-	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
+	var dDateName=tempDateName+"("+encodeURIComponent(selName)+")"+arrReportName[tempIndex];
 	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate
 			+ '&rdepart=' + rdepart+'&gname='+selName+ "&departName="+dDateName;
 	tempIndex=arrReportCode.indexOf('30015');
-	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
+	var dDateName=tempDateName+"("+encodeURIComponent(selName)+")"+arrReportName[tempIndex];
 	var surl = urlrunqian + 'raq=30015&rdate=' + rdate + '&rdepart='
 			+ rdepart+'&gname='+selName+ "&departName="+dDateName;
 //	var w = $(".gray-bg").width() - 30;

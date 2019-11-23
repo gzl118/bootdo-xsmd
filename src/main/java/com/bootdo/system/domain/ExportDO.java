@@ -10,6 +10,7 @@ public class ExportDO implements Serializable {
 	private String rdepart;
 	private String rdepartname;
 	private String gname;
+	private String groupname;
 
 	public String getRaq() {
 		return raq;
@@ -65,6 +66,14 @@ public class ExportDO implements Serializable {
 
 	public void setGname(String gname) {
 		this.gname = gname;
+	}
+
+	public String getGroupname() {
+		return groupname;
+	}
+
+	public void setGroupname(String groupname) {
+		this.groupname = groupname;
 	}
 
 }

@@ -20,12 +20,12 @@ function showReport() {
 			+ ((tempdate.getMonth() + 1) < 10 ? '0' + (tempdate.getMonth() + 1)
 					: (tempdate.getMonth() + 1));
 	var tempIndex = arrReportCode.indexOf(curcode);
-	var dDateName = tempDateName + "(" + selName + ")"
+	var dDateName = tempDateName + "(" + encodeURIComponent(selName) + ")"
 			+ arrReportName[tempIndex];
 	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
 			+ rdepart + '&gname=' + selName + "&departName=" + dDateName;
 	tempIndex = arrReportCode.indexOf('50015');
-	var dDateName = tempDateName + "(" + selName + ")"
+	var dDateName = tempDateName + "(" + encodeURIComponent(selName) + ")"
 			+ arrReportName[tempIndex];
 	var surl = urlrunqian + 'raq=50015&rdate=' + rdate + '&rdepart=' + rdepart
 			+ '&gname=' + selName + "&departName=" + dDateName;

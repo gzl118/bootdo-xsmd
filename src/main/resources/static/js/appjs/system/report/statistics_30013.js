@@ -197,7 +197,7 @@ function showReport() {
 	var tempdate = new Date(rdate);
 	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
 	var tempIndex=arrReportCode.indexOf(curcode);
-	var dDateName=tempDateName+"("+selName+")"+arrReportName[tempIndex];
+	var dDateName=tempDateName+"("+encodeURIComponent(selName)+")"+arrReportName[tempIndex];
 	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
 			+ rdepart+'&gname='+selName+ "&departName="+dDateName;
 //	var w = $(".gray-bg").width() - 30;

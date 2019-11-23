@@ -52,7 +52,7 @@ function load() {
 										+ '-01',
 								renderdepart : $('#renderdepart').val(),
 								code : $("#code").val(),
-//								status : $("#status").val(),
+								// status : $("#status").val(),
 								ctype : $("#ctype").val()
 							};
 						},
@@ -201,7 +201,12 @@ function load() {
 										if (row.status == 0 || row.status == ''
 												|| row.status == null)
 											approverecord = 'hidden';
-										var selName = encodeURIComponent(row.ext2);
+										var selName = row.ext2;
+										if (row.ctype == 4) {
+											selName = "西山煤电集团公司(" + selName
+													+ ")(合计)";
+										}
+										selName = encodeURIComponent(selName);
 										var curCode = row.code;
 										var tempdate = new Date(row.renderdate);
 										var tempDateName = tempdate
@@ -213,9 +218,11 @@ function load() {
 										var tempIndex = arrReportCode
 												.indexOf(curCode);
 										var dDateName = tempDateName + "("
-												+ row.ext2 + ")"
+												+ encodeURIComponent(selName)
+												+ ")"
 												+ arrReportName[tempIndex];
-										dDateName = encodeURI(encodeURI(dDateName));
+										// dDateName =
+										// encodeURIComponent(encodeURIComponent(dDateName));
 										var curUrl = urlrunqian + "raq="
 												+ curCode + "&rdate="
 												+ row.renderdate + "&rdepart="
@@ -233,10 +240,13 @@ function load() {
 										if (curCode == '50005') {
 											tempIndex = arrReportCode
 													.indexOf('50015');
-											dDateName = tempDateName + "("
-													+ row.ext2 + ")"
+											dDateName = tempDateName
+													+ "("
+													+ encodeURIComponent(selName)
+													+ ")"
 													+ arrReportName[tempIndex];
-											dDateName = encodeURI(encodeURI(dDateName));
+											// dDateName =
+											// encodeURIComponent(encodeURIComponent(dDateName));
 											var suburl = urlrunqian
 													+ "raq=50015&rdate="
 													+ row.renderdate
