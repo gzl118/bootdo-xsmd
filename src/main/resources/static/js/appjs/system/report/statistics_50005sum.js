@@ -166,6 +166,7 @@ function showReport() {
 	var rdepart = new String();
 	var rdcId = $('#dw-select').val();
 	var selName = $('#dw-select').find("option:selected").text();
+	var tempselName=selName;
 	selName = "西山煤电集团公司(" + selName + ")(合计)";
 	selName = encodeURIComponent(selName);
 	if (rdcId == -1) {
@@ -195,12 +196,12 @@ function showReport() {
 			+ ((tempdate.getMonth() + 1) < 10 ? '0' + (tempdate.getMonth() + 1)
 					: (tempdate.getMonth() + 1));
 	var tempIndex = arrReportCode.indexOf(curcode);
-	var dDateName = tempDateName + "(" + encodeURIComponent(selName) + ")"
+	var dDateName = tempDateName + "(" + encodeURIComponent(tempselName) + ")"
 			+ arrReportName[tempIndex];
 	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
 			+ rdepart + '&gname=' + selName + "&departName=" + dDateName;
 	tempIndex = arrReportCode.indexOf('50015');
-	var dDateName = tempDateName + "(" + encodeURIComponent(selName) + ")"
+	var dDateName = tempDateName + "(" + encodeURIComponent(tempselName) + ")"
 			+ arrReportName[tempIndex];
 	var surl = urlrunqian + 'raq=50015&rdate=' + rdate + '&rdepart=' + rdepart
 			+ '&gname=' + selName + "&departName=" + dDateName;

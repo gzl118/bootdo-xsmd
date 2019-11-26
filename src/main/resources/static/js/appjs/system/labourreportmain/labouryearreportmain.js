@@ -218,7 +218,7 @@ function load() {
 										var tempIndex = arrReportCode
 												.indexOf(curCode);
 										var dDateName = tempDateName + "("
-												+ encodeURIComponent(selName)
+												+ encodeURIComponent(row.ext2)
 												+ ")"
 												+ arrReportName[tempIndex];
 										// dDateName =
@@ -242,7 +242,7 @@ function load() {
 													.indexOf('50015');
 											dDateName = tempDateName
 													+ "("
-													+ encodeURIComponent(selName)
+													+ encodeURIComponent(row.ext2)
 													+ ")"
 													+ arrReportName[tempIndex];
 											// dDateName =
