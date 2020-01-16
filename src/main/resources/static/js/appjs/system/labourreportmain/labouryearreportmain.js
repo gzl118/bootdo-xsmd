@@ -229,7 +229,7 @@ function load() {
 												+ row.deptids + "&gname="
 												+ selName + "&departName="
 												+ dDateName + "&IsWrite="
-												+ isWrite + "&roid=" + row.oid;
+												+ isWrite + "&roid=" + row.oid+"&ctype="+row.ctype;
 
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h

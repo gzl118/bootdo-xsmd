@@ -199,7 +199,7 @@ function showReport() {
 	var dDateName = tempDateName + "(" + encodeURIComponent(tempselName) + ")"
 			+ arrReportName[tempIndex];
 	var murl = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
-			+ rdepart + '&gname=' + selName + "&departName=" + dDateName;
+			+ rdepart + '&gname=' + selName + "&departName=" + dDateName+"&ctype=4";
 	tempIndex = arrReportCode.indexOf('50015');
 	var dDateName = tempDateName + "(" + encodeURIComponent(tempselName) + ")"
 			+ arrReportName[tempIndex];
