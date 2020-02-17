@@ -29,10 +29,11 @@ function configLoad() {
 	$.ajax({
 		url : '/system/reportAutoconfigmain/grouplist',
 		data : {
-			sort : 'norder',
+			sort : 'norder,tname',
 			order : 'asc',
 			limit : 100,
 			offset : 0,
+			flag : 0,
 			// code: 30001 //不同的统计报表，选择不同的code分类,后台自己控制
 			code : $('#dcode').val()
 		},
@@ -234,18 +235,21 @@ function showReport() {
 		rdate = $('#renderdate').val() + '-01';
 
 	var curcode = $("#dcode").val();
-	//var selName=$('#dw-select').find("option:selected").text();
+	// var selName=$('#dw-select').find("option:selected").text();
 	var tempdate = new Date(rdate);
-	var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
-	var tempIndex=arrReportCode.indexOf(curcode);
-	var dDateName=tempDateName+arrReportName[tempIndex];
+	var tempDateName = tempdate.getFullYear()
+			+ ''
+			+ ((tempdate.getMonth() + 1) < 10 ? '0' + (tempdate.getMonth() + 1)
+					: (tempdate.getMonth() + 1));
+	var tempIndex = arrReportCode.indexOf(curcode);
+	var dDateName = tempDateName + arrReportName[tempIndex];
 	// 打开统计报表
 	// url = 'http://localhost:7878/jsDemo/reportJsp/showReport.jsp?raq='
 	// + curcode + '.raq&rdate=' + rdate + '&rdepart=' + rdepart;
 	url = urlrunqian + 'raq=' + curcode + '&rdate=' + rdate + '&rdepart='
-			+ rdepart + '&rfoid=' + configId+ "&departName="+dDateName;
-//	var w = $(".gray-bg").width() - 30;
-//	var h = $(".gray-bg").height() - 85;
+			+ rdepart + '&rfoid=' + configId + "&departName=" + dDateName;
+	// var w = $(".gray-bg").width() - 30;
+	// var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;
 	var h = $("#wrapper", parent.document).height() - 100;
 	url += "&width=" + w + "&height=" + h;
@@ -256,7 +260,7 @@ function showReport() {
 		shadeClose : false, // 点击遮罩关闭层
 		area : [ '1000px', '620px' ],
 		fixed : false,
-		//maxmin : true,
+		// maxmin : true,
 		content : url
 	});
 	top.layer.full(index);

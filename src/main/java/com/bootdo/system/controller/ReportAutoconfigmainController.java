@@ -96,6 +96,10 @@ public class ReportAutoconfigmainController extends BaseController {
 					.replace("-", ""));
 		Long uid = getUserId();
 		reportAutoconfigmain.setUptuser(uid.toString());
+		if (reportAutoconfigmain.getNorder() == null)
+			reportAutoconfigmain.setNorder(0);
+		if (reportAutoconfigmain.getFlag() == null)
+			reportAutoconfigmain.setFlag(0);
 		if (reportAutoconfigmainService.save(reportAutoconfigmain) > 0) {
 			return R.ok();
 		}
@@ -111,6 +115,10 @@ public class ReportAutoconfigmainController extends BaseController {
 	public R update(ReportAutoconfigmainDO reportAutoconfigmain) {
 		Long uid = getUserId();
 		reportAutoconfigmain.setUptuser(uid.toString());
+		if (reportAutoconfigmain.getNorder() == null)
+			reportAutoconfigmain.setNorder(0);
+		if (reportAutoconfigmain.getFlag() == null)
+			reportAutoconfigmain.setFlag(0);
 		reportAutoconfigmainService.update(reportAutoconfigmain);
 		return R.ok();
 	}
