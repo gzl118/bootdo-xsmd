@@ -17,7 +17,9 @@ function load() {
 							rdcId : $('#rdcId').val(),
 							limit : 5000,
 							offset : 0,
-							sname : $('#searchName').val()
+							sname : $('#searchName').val(),
+							sort:'order_num',
+							order:'asc'
 						}, // 请求数据的ajax的data属性
 						expandColumn : '1', // 在哪一列上面显示展开按钮
 						striped : true, // 是否各行渐变色

@@ -24,7 +24,7 @@
 				order by ${sort} ${order}
 			</when>
 			<otherwise>
-				order by order_num
+				order by dept_id
 			</otherwise>
 		</choose>
 		<if test="offset != null and limit != null">
