@@ -36,15 +36,15 @@ function load() {
 						showColumns : false, // 是否显示内容下拉框（选择显示的列）
 						sidePagination : "server", // 设置在哪里进行分页，可选值为"client" 或者
 						// "server"
-						sortable: true,
-						sortOrder: "desc",
+						sortable : true,
+						sortOrder : "desc",
 						queryParams : function(params) {
 							return {
 								// 说明：传入后台的参数包括offset开始索引，limit步长，sort排序列，order：desc或者,以及所有列的键值对
 								limit : params.limit,
 								offset : params.offset,
-								sort:params.sort,
-								order:params.order,
+								sort : params.sort,
+								order : params.order,
 								renderdate : ($('#renderdate').val() == null || $(
 										'#renderdate').val() == '') ? $(
 										'#renderdate').val() : $('#renderdate')
@@ -81,8 +81,8 @@ function load() {
 								{
 									field : 'renderdepart',
 									title : '单位名称',
-									align : 'center'
-									,sortable: true
+									align : 'center',
+									sortable : true
 								},
 								{
 									field : 'renderdate',
@@ -96,8 +96,8 @@ function load() {
 													+ (date.getMonth() + 1)
 													+ '月';
 										}
-									}
-									,sortable: true
+									},
+									sortable : true
 								},
 								{
 									field : 'status',
@@ -220,6 +220,11 @@ function load() {
 											s_edit_h = 'hidden';
 											departLevel = 2;
 										}
+										// 判断是否是管理员
+										var isadmin = s_admindetail_h == '';
+										var isAdminWrite = 0;
+										if (isadmin && row.status == 1)
+											isAdminWrite = 1;
 
 										var e = '<a class="btn btn-primary btn-sm '
 												+ s_edit_h
@@ -234,10 +239,18 @@ function load() {
 												+ row.code
 												+ '\')"><i class="fa fa-remove"></i></a> ';
 										var tempdate = new Date(row.renderdate);
-										var tempDateName=tempdate.getFullYear()+''+ ((tempdate.getMonth() + 1)<10?'0'+(tempdate.getMonth() + 1):(tempdate.getMonth() + 1));
-										var tempIndex=arrReportCode.indexOf(curCode);
-										var dDateName=tempDateName+row.renderdepart+arrReportName[tempIndex];
-										dDateName=encodeURIComponent(encodeURIComponent(dDateName));
+										var tempDateName = tempdate
+												.getFullYear()
+												+ ''
+												+ ((tempdate.getMonth() + 1) < 10 ? '0'
+														+ (tempdate.getMonth() + 1)
+														: (tempdate.getMonth() + 1));
+										var tempIndex = arrReportCode
+												.indexOf(curCode);
+										var dDateName = tempDateName
+												+ row.renderdepart
+												+ arrReportName[tempIndex];
+										dDateName = encodeURIComponent(encodeURIComponent(dDateName));
 										var curUrl = urlrunqiantb + "raq="
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
@@ -245,8 +258,10 @@ function load() {
 												+ "&IsWrite=" + temp
 												+ "&IsValid=" + row.ext3
 												+ "&departLevel=" + departLevel
-												+ "&departName="+dDateName
-												+ "&status=" + row.status;
+												+ "&departName=" + dDateName
+												+ "&status=" + row.status
+												+ "&isAdminWrite="
+												+ isAdminWrite;
 										var g = '<a class="btn btn-warning btn-sm '
 												+ s_detail_h
 												+ '" href="#" title="报表"  mce_href="#" onclick="reportfunc(\''
@@ -256,8 +271,9 @@ function load() {
 												+ curCode + "&moid=" + row.oid
 												+ "&cdate=" + row.renderdate
 												+ "&cdepart=" + row.ext1
-												+ "&departName="+dDateName
-												+ "&IsWrite=1";
+												+ "&departName=" + dDateName
+												+ "&IsWrite=1"
+												+ "&isAdminWrite=1";
 										var adming = '<a class="btn btn-success btn-sm '
 												+ s_admindetail_h
 												+ '" href="#" title="管理员报表"  mce_href="#" onclick="reportfunc(\''
@@ -265,9 +281,12 @@ function load() {
 												+ '\')"><i class="fa fa-tasks"></i></a> ';
 
 										if (curCode == '10005') {
-											tempIndex=arrReportCode.indexOf('10015');
-											var dDateName=tempDateName+row.renderdepart+arrReportName[tempIndex];
-											dDateName=encodeURIComponent(encodeURIComponent(dDateName));
+											tempIndex = arrReportCode
+													.indexOf('10015');
+											var dDateName = tempDateName
+													+ row.renderdepart
+													+ arrReportName[tempIndex];
+											dDateName = encodeURIComponent(encodeURIComponent(dDateName));
 											var suburl = urlrunqiantb
 													+ "raq=10015&moid="
 													+ row.oid + "&cdate="
@@ -275,10 +294,13 @@ function load() {
 													+ "&cdepart=" + row.ext1
 													+ "&IsWrite=" + temp
 													+ "&IsValid=" + row.ext3
-													+ "&departName="+dDateName
+													+ "&departName="
+													+ dDateName
 													+ "&departLevel="
 													+ departLevel + "&status="
-													+ row.status;
+													+ row.status
+													+ "&isAdminWrite="
+													+ isAdminWrite;
 											g = '<a class="btn btn-warning btn-sm '
 													+ s_detail_h
 													+ '" href="#" title="报表"  mce_href="#" onclick="report5confirm(\''
@@ -291,8 +313,9 @@ function load() {
 													+ row.oid + "&cdate="
 													+ row.renderdate
 													+ "&cdepart=" + row.ext1
-													+ "&departName="+dDateName
-													+ "&IsWrite=1";
+													+ "&departName="
+													+ dDateName + "&IsWrite=1"
+													+ "&isAdminWrite=1";
 											adming = '<a class="btn btn-success btn-sm '
 													+ s_admindetail_h
 													+ '" href="#" title="管理员报表"  mce_href="#" onclick="report5confirm(\''
@@ -356,8 +379,8 @@ function add() {
 	});
 }
 function reportfunc(url) {
-//	var w = $(".gray-bg").width() - 30;
-//	var h = $(".gray-bg").height() - 85;
+	// var w = $(".gray-bg").width() - 30;
+	// var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;
 	var h = $("#wrapper", parent.document).height() - 100;
 	url += "&width=" + w + "&height=" + h;
@@ -496,10 +519,10 @@ function approveopt(id, status) {
 	});
 }
 function cancelapprove(id, status) {
-	if (status != 1) { 
+	if (status != 1) {
 		layer.alert("数据已被修改，不能进行撤销！");
 		return;
-	} 
+	}
 	layer.open({
 		type : 2,
 		title : '撤销审批',
@@ -510,8 +533,8 @@ function cancelapprove(id, status) {
 	});
 }
 function report5confirm(murl, surl) {
-//	var w = $(".gray-bg").width() - 30;
-//	var h = $(".gray-bg").height() - 85;
+	// var w = $(".gray-bg").width() - 30;
+	// var h = $(".gray-bg").height() - 85;
 	var w = $("#wrapper", parent.document).width() - 20;
 	var h = $("#wrapper", parent.document).height() - 100;
 	murl += "&width=" + w + "&height=" + h;
@@ -526,7 +549,7 @@ function report5confirm(murl, surl) {
 		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
-			//maxmin : true,
+			// maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
 			content : murl,
@@ -540,7 +563,7 @@ function report5confirm(murl, surl) {
 		var index = top.layer.open({
 			type : 2,
 			title : '报表明细',
-			//maxmin : true,
+			// maxmin : true,
 			shadeClose : false, // 点击遮罩关闭层
 			area : [ '800px', '520px' ],
 			content : surl,
