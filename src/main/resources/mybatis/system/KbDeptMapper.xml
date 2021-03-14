@@ -138,4 +138,34 @@
 		and
 		skd.foid=#{value}
 	</select>
+	<select id="sortlist" resultType="com.bootdo.system.domain.SortKbDeptDO">
+		select *
+from (select skd.`oid`,skd.`dept_id`,skd.`dept_group_id`,skd.`norder`, sd.`name` as ext1
+from sys_kb_dept skd 
+LEFT JOIN sys_kb_group skg on skd.dept_group_id=skg.oid
+,sys_dept sd
+ where skd.dept_id=sd.dept_id 
+and skd.foid = #{value} 
+UNION
+		SELECT DISTINCT '' as oid,skd.dept_group_id as dept_id,'0' as dept_group_id,MIN(skd.`norder`) as norder,skg.cname as ext1
+		from
+		sys_kb_dept skd,sys_kb_group skg
+		where skd.dept_group_id=skg.oid
+		and
+		skd.foid=#{value}
+		GROUP BY skd.dept_group_id
+) AS A
+order by norder
+	</select>
+	
+	<update id="updatelist" parameterType="java.util.List">
+		<foreach collection="list" item="item" separator=";" index="index"
+			open="" close="">
+			update sys_kb_dept
+			<set>
+				norder=${item.norder}
+			</set>
+			where oid = ${item.oid}
+		</foreach>
+	</update>
 </mapper>

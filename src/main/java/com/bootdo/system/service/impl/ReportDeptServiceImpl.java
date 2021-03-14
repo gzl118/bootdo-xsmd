@@ -60,4 +60,8 @@ public class ReportDeptServiceImpl implements ReportDeptService {
 	public List<Long> getDeptsByRdcId(Long rdcId){
 		return reportDeptDao.getDeptsByRdcId(rdcId);
 	}
+	@Override
+	public int updatelist(List<ReportDeptDO> deptIds){
+		return reportDeptDao.updatelist(deptIds);
+	}
 }

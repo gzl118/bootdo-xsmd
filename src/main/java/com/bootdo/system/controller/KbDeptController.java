@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bootdo.system.domain.KbDeptDO;
+import com.bootdo.system.domain.ReportDeptDO;
+import com.bootdo.system.domain.SortKbDeptDO;
 import com.bootdo.system.service.KbDeptService;
 import com.bootdo.common.utils.PageUtils;
 import com.bootdo.common.utils.Query;
@@ -43,6 +45,13 @@ public class KbDeptController {
 		return "system/kbDept/kbDept";
 	}
 
+	@GetMapping("/kbDeptTreeDrap")
+	String deptTreeDrap(String foid, String code, Model model) {
+		model.addAttribute("foid", foid);
+		model.addAttribute("code", code);
+		return "system/kbDept/kbDeptTreeDrap";
+	}
+	
 	@ResponseBody
 	@GetMapping("/list")
 	@RequiresPermissions("system:kbDept:kbDept")
@@ -128,5 +137,20 @@ public class KbDeptController {
 		kbDeptService.batchRemove(oids);
 		return R.ok();
 	}
+	@PostMapping("/changeOrder")
+	@ResponseBody
+	public R changeOrder(@RequestBody List<SortKbDeptDO> deptIds) {
+		if (kbDeptService.updatelist(deptIds) > 0) {
+			return R.ok();
+		}
+		return R.error();
+	}
 
+	@ResponseBody
+	@GetMapping("/sortlist")
+	@RequiresPermissions("system:kbDept:kbDept")
+	public List<SortKbDeptDO> sortlist(Integer foid) {
+		List<SortKbDeptDO> kbDeptList = kbDeptService.sortlist(foid);
+		return kbDeptList;
+	}
 }

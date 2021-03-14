@@ -8,6 +8,7 @@ import java.util.Map;
 
 import com.bootdo.system.dao.KbDeptDao;
 import com.bootdo.system.domain.KbDeptDO;
+import com.bootdo.system.domain.SortKbDeptDO;
 import com.bootdo.system.service.KbDeptService;
 
 @Service
@@ -53,5 +54,13 @@ public class KbDeptServiceImpl implements KbDeptService {
 	@Override
 	public List<KbDeptDO> listnew(Integer foid) {
 		return kbDeptDao.listnew(foid);
+	}
+	@Override
+	public List<SortKbDeptDO> sortlist(Integer foid){
+		return kbDeptDao.sortlist(foid);
+	}
+	@Override
+	public int updatelist(List<SortKbDeptDO> deptIds){
+		return kbDeptDao.updatelist(deptIds);
 	}
 }

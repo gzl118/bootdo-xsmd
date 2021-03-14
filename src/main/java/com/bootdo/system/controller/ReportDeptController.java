@@ -44,6 +44,12 @@ public class ReportDeptController {
 		return "system/reportDept/reportDept";
 	}
 
+	@GetMapping("/deptTreeDrap")
+	String deptTreeDrap(Long rdcId, Model model) {
+		model.addAttribute("rdcId", rdcId);
+		return "system/reportDept/deptTreeDrap";
+	}
+
 	@ResponseBody
 	@GetMapping("/list")
 	@RequiresPermissions("system:reportDept:reportDept")
@@ -140,6 +146,15 @@ public class ReportDeptController {
 	R batchAddToDepts(@RequestParam("ids[]") Long[] deptIds, Long rdcId) {
 		int r = reportDeptService.batchSave(deptIds, rdcId);
 		if (r > 0) {
+			return R.ok();
+		}
+		return R.error();
+	}
+
+	@PostMapping("/changeOrder")
+	@ResponseBody
+	public R changeOrder(@RequestBody List<ReportDeptDO> deptIds) {
+		if (reportDeptService.updatelist(deptIds) > 0) {
 			return R.ok();
 		}
 		return R.error();

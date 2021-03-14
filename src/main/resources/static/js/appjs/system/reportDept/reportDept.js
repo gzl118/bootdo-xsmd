@@ -183,3 +183,15 @@ function removeone(id) {
 		});
 	})
 }
+function changeOrder(pId) {
+	var pid=$("#rdcId").val();
+	var index=layer.open({
+		type : 2,
+		title : '调整顺序',
+		maxmin : true,
+		shadeClose : false, // 点击遮罩关闭层
+		area : [ '800px', '520px' ],
+		content : prefix + '/deptTreeDrap?rdcId=' + pid // iframe的url
+	});
+	layer.full(index);
+}

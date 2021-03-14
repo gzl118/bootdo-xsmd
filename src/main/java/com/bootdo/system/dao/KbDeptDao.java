@@ -1,6 +1,7 @@
 package com.bootdo.system.dao;
 
 import com.bootdo.system.domain.KbDeptDO;
+import com.bootdo.system.domain.SortKbDeptDO;
 
 import java.util.List;
 import java.util.Map;
@@ -31,4 +32,8 @@ public interface KbDeptDao {
 	int batchRemove(Integer[] oids);
 
 	List<KbDeptDO> listnew(Integer foid);
+	
+	List<SortKbDeptDO> sortlist(Integer foid);
+	
+	int updatelist(List<SortKbDeptDO> deptIds);
 }
