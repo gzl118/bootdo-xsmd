@@ -25,9 +25,11 @@
 		src="/js/plugins/zTree/jquery.ztree.exedit.min.js"></script>
 	<script type="text/javascript">
 		var arrs = [];
+		var inx = 0;
 		$(document).ready(function() {
 			zhouliMenu.loadMenu();
 			$(".save_btn").click(function() {
+				inx = 0;
 				arrs = [];
 				var treeObj = zhouliMenu.getZtreeObj();
 				var nodes = treeObj.getNodes();
@@ -37,7 +39,7 @@
 					}
 				}
 				if (arrs && arrs.length > 0) {
-					var paramjson=JSON.stringify(arrs);
+					var paramjson = JSON.stringify(arrs);
 					console.log(paramjson);
 					$.ajax({
 						type : "POST",
@@ -60,12 +62,13 @@
 			});
 		});
 		function GetAllIndex(node) {
-			var index = node.getIndex();
+			//var index = node.getIndex();
 			var obj = {
 				rdId : node.rdId,
-				orderNum : index
+				orderNum : inx
 			};
 			arrs.push(obj);
+			inx++;
 			if (node.children && node.children.length > 0) {
 				for (var i = 0, l = node.children.length; i < l; i++) {
 					GetAllIndex(node.children[i]);
